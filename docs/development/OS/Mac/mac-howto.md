@@ -1,22 +1,5 @@
 # mac-howto
 
-1. [ipad air 5 64G 选购依据](#ipad-air-5-64g-选购依据)
-2. [numbers](#numbers)
-   1. [trigger applescript within numbers](#trigger-applescript-within-numbers)
-3. [mac switch between hidden/minimized tabs](#mac-switch-between-hiddenminimized-tabs)
-4. [mac 录屏](#mac-录屏)
-   1. [为什么 mac 录屏无法录制耳机（系统输出）](#为什么mac录屏无法录制耳机系统输出)
-5. [mac dict config](#mac-dict-config)
-6. [how to disable `iphone copy ...`](#how-to-disable-iphone-copy-)
-7. [how to disable floating window after macOS screenshot](#how-to-disable-floating-window-after-macos-screenshot)
-8. [mac file system management](#mac-file-system-management)
-   1. [trash](#trash)
-9. [远程控制 windows](#远程控制windows)
-10. [add filepath into python path permanently](#add-filepath-into-python-path-permanently)
-11. [how to configure permanent environment variable?](#how-to-configure-permanent-environment-variable)
-12. [Can local dns set and work for chrome? [No, it can't]](#can-local-dns-set-and-work-for-chrome-no-it-cant)
-13. [how to uninstall Microsoft AutoUpdate and microsoft worksuits](#how-to-uninstall-microsoft-autoupdate-and-microsoft-worksuits)
-
 ## ipad air 5 64G 选购依据
 
 产品对比官网： [iPad Air (4th generation) vs iPad Air (5th generation) vs iPad Pro 11‑in. (3rd generation) - Apple](https://www.apple.com/ipad/compare/?modelList=ipad-air-4th-gen,ipad-air-5th-gen,ipad-pro-11-3rd-gen)

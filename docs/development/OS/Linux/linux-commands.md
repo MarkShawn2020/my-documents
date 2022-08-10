@@ -1,4 +1,3 @@
-# linux common commands
 
 ## command:zip/unzip
 

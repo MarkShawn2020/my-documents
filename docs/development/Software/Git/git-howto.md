@@ -1,6 +1,6 @@
 # git-howto
 
-## BEST-PRACTICE: improve git pull speed
+## improve git pull speed
 
 ### resolution 1: config proxy (vpn required)
 
@@ -28,7 +28,7 @@ ref:
 
 - [(19 封私信 / 61 条消息) git clone 一个 github 上的仓库，太慢，经常连接失败，但是 github 官网流畅访问，为什么？ - 知乎](https://www.zhihu.com/question/27159393)
 
-## BEST-PRACTICE: improve terminal speed (lagged/delayed by git)
+## improve terminal speed (lagged/delayed by git)
 
 ```sh
 git config --add oh-my-zsh.hide-status 1
@@ -86,7 +86,7 @@ ref:
 
 - [(1 条消息) 解决 git 连接问题: You‘ve successfully authenticated, but GitHub does not provide shell access.\_z 向前的博客-CSDN 博客](https://blog.csdn.net/weixin_42562387/article/details/114443451)
 
-## BEST-PRACTICE: git merge
+## git merge
 
 ### resolution 1
 
@@ -184,7 +184,7 @@ git rebase upstream/main
 
 ## `git apply/am` (git patch)
 
-### BEST-PRACTICE: git patch workflow
+### git patch workflow
 
 ref:
 
@@ -249,7 +249,7 @@ git apply -3 PATCH_FILE
 
 - [patch - What to do if git-am fails with "does not match index"? - Stack Overflow](https://stackoverflow.com/questions/3575712/what-to-do-if-git-am-fails-with-does-not-match-index)
 
-### BEST-PRACTICE: merge git patch files
+### merge git patch files
 
 ref:
 
@@ -433,7 +433,7 @@ ref:
 
 ## `git reflog`
 
-### BEST-PRACTICE: customized git reflog
+### customized git reflog
 
 ```sh
 git reflog --format="%C(auto)%h %<|(17)%gd %C(blue)%ci %C(reset)%an %C(green)%gs"
@@ -563,7 +563,7 @@ usage sample:
 
 - [Importing a Git repository using the command line - GitHub Docs](https://docs.github.com/en/github/importing-your-projects-to-github/importing-source-code-to-github/importing-a-git-repository-using-the-command-line)
 
-## BEST-PRACTICE: `git lfs`: About Erasing Large File Commit in the Git History
+## `git lfs`: About Erasing Large File Commit in the Git History
 
 ref:
 

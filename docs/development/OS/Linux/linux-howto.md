@@ -1,10 +1,9 @@
-# linux-howto
 
 ## linux init manual
 
 see: [centos init manual](centos-init-manual.md)
 
-## BEST-PRACTICE: linux connection (`ssh`)
+## linux connection (`ssh`)
 
 ### ssh without password
 
@@ -55,7 +54,7 @@ ref:
 
 - [How to use the Linux ‘scp’ command without a password to make remote backups | alvinalexander.com](https://alvinalexander.com/linux-unix/how-use-scp-without-password-backups-copy/)
 
-## BEST-PRACTICE: linux env management
+## linux env management
 
 ### how to change apt source
 
@@ -216,7 +215,7 @@ This discussion seems wonderful but didn't get my problem solved.
 
 - [apt - "The package lists or status file could not be parsed or opened" - Ask Ubuntu](https://askubuntu.com/questions/410045/the-package-lists-or-status-file-could-not-be-parsed-or-opened)
 
-## BEST-PRACTICE: linux file system management
+## linux file system management
 
 ### mkdir if not exist
 
@@ -393,7 +392,7 @@ ref:
 
 - [cp recursively into a directory that symlinks to dirs of same name as in source - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/555985/cp-recursively-into-a-directory-that-symlinks-to-dirs-of-same-name-as-in-source)
 
-## BEST-PRACTICE: linux disk management
+## linux disk management
 
 ### `ncdu`, disk space tui
 
@@ -420,7 +419,7 @@ brew install baobab
 
 ![picture 7](https://mark-vue-oss.oss-cn-hangzhou.aliyuncs.com/linux-hwoto-1642600987157-8df330aac5a1fedd7d6c5f6d46f98256fedfcfa18b3f4f3ba05914fc06e19ac4.png)
 
-## BEST-PRACTICE: linux shells management
+## linux shells management
 
 ref:
 
@@ -544,23 +543,9 @@ chsh -s /bin/bash
 chsh -s /bin/bash $USER
 ```
 
-### set zsh as the default terminal (need re-login)
+### set zsh as default shell
 
-```sh
-chsh -s $(which zsh)
-```
-
-https://askubuntu.com/questions/131823/how-to-make-zsh-the-default-shell
-
-#### FIXED: can't work even after re-login
-
-change the `/bin/bash` to be `/bin/zsh` in `/usr/passwd` file:
-
-![picture 13](https://mark-vue-oss.oss-cn-hangzhou.aliyuncs.com/linux-howto-1645459032382-ceba5154e950cfb7b53912c52e3504f52c828b3a88b152e38382831edec01859.png)
-
-ref:
-
-- [linux - chsh: PAM authentication failed - Server Fault](https://serverfault.com/questions/500865/chsh-pam-authentication-failed)
+see: [zsh-howto](../Mac/zsh-howto.md)
 
 ### how to prefix any output in a bash script?
 
@@ -630,7 +615,7 @@ find -L . -name . -o -type d -prune -o -type l -exec rm {} +
 
 - [bash - Delete all broken symbolic links with a line? - Stack Overflow](https://stackoverflow.com/questions/22097130/delete-all-broken-symbolic-links-with-a-line)
 
-## BEST-PRACTICE: linux commands management
+## linux commands management
 
 > :warning:
 >
@@ -689,7 +674,7 @@ ref:
 
 - [(1 条消息) Shell 和 Bash 中的三元运算符，控制 log 打印时间\_kouryoushine 的博客-CSDN 博客\_shell 三元运算](https://blog.csdn.net/kouryoushine/article/details/92838138)
 
-### BEST-PRACTICE: `|` , `||`, `&`, `&&`, `;`
+### `|` , `||`, `&`, `&&`, `;`
 
 ```sh
 A | B   # 管道！
@@ -716,7 +701,7 @@ ref:
 
 > `alias` is used for executable command, while variable is a variable, so if we want to use alias as a variable, we should first define a variable of the same name.
 
-#### BEST-PRACTICE: auto-translate
+#### auto-translate
 
 !!!warning Don't use `~` as the user dir, since it can't be auto translated as the sub variable. e.g.
 
@@ -1023,7 +1008,7 @@ grep -F -e '-gen-index' <<< '-gen-index-xxx'
 
 - [bash - How to match a string containing the character "$" with grep? - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/387408/how-to-match-a-string-containing-the-character-with-grep)
 
-## BEST-PRACTICE: linux accounts management
+## linux accounts management
 
 ### how to create user
 
@@ -1071,7 +1056,7 @@ sudo passwd <USER>
 
   - https://askubuntu.com/questions/180402/how-to-set-a-short-password-on-ubuntu
 
-## BEST-PRACTICE: linux net management
+## linux net management
 
 ### how to know my public ip address
 
@@ -1123,7 +1108,7 @@ And another wield thing is before the system was restarted, the `env | grep -i p
 
 Maybe we can do more tests later.
 
-## BEST-PRACTICE: linux date/time management
+## linux date/time management
 
 ### how to format date
 
@@ -1168,7 +1153,7 @@ tzselect
 
 And finally you will get a command suggestion to write into profile file, that is [#solution-1-directly-export](#solution-1-directly-export)
 
-## BEST-PRACTICE: linux system management
+## linux system management
 
 ## FIXED: `apt-get /var/lib/dpkg/lock-frontend`
 
