@@ -63,10 +63,10 @@ ref:
 
 核心要领:
 
-1. 基于`NMSSH-iOS.xcodeproj`编译时需要设置好`Destinition`，simulator 和 real device 需要分别编译
+1. 基于`NMSSH-iOS.xcodeproj`编译时需要设置好`Destination`，simulator 和 real device 需要分别编译
 2. 编译完成后，要通过`show build folder`定位到 product-framework 所在文件夹，并一层层往下找到 framework 文件
 3. 将 framework 导入自己的 xcodeproject 的时候，可以不用向官网一样去修改`build phase`，因为可以在导入时弹窗选择，但是一定要选中`copy`选项，否则编译时将找不到 framework
-4. 弹窗选完之后，还要在 target 页面，把 framework emble 进工程，否则也会找不到。target 为 simulator 时只需要选非签名 emble 即可，真机运行必须要签名，签名方法之前自动化时已研究过，此处会记录之前的签名信息，即”川南“。
+4. 弹窗选完之后，还要在 target 页面，把 framework embed 进工程，否则也会找不到。target 为 simulator 时只需要选非签名 embed 即可，真机运行必须要签名，签名方法之前自动化时已研究过，此处会记录之前的签名信息，即”川南“。
 
 如果没有配置好的话，一般会出现各种找不到的问题，例如：
 

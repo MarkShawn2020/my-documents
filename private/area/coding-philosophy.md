@@ -1,10 +1,5 @@
-# THe World From A Coder's Eye
+# coding philosophy
 
-1. [different and usually better choice from a coder](#different-and-usually-better-choice-from-a-coder)
-2. [持续整理之道](#持续整理之道)
-3. [一个比较极客的 TODO](#一个比较极客的todo)
-4. [discuss: "Always On Top" window design between macOS and windows](#discuss-always-on-top-window-design-between-macos-and-windows)
-5. [如何调试（debug）](#如何调试debug)
 
 ## different and usually better choice from a coder
 
@@ -89,3 +84,21 @@ ref:
 使用`DEBUG=true`的环境变量：
 
 ![picture 10](https://mark-vue-oss.oss-cn-hangzhou.aliyuncs.com/mark_net-all-you-should-know-1644547980040-7a7d3ee4067270142d7661e89985057c48d5ffe350fe995dd25691543d771ae2.png)
+
+## 慢就是快：使用 css、scss、jsx 等的启示
+
+## where to declare the filename in code blocks
+
+I am very willing to declare the filename after the coding type, since I have seen many cases in the most popular frameworks, like gatsby.
+
+However, when I am using vscode, it's sad for me to find that it's tricky since few of plugins did this work.
+
+Then later, I find a wonderful alternative method to help me realize this goal, i.e. not declare it in the `label` position, but as a comment in the top of body of the code block.
+
+<img alt="picture 3" src="https://mark-vue-oss.oss-cn-hangzhou.aliyuncs.com/coding-philosophy-1640990299378-bc148f9b5c68aebfdc18242a874713bb8938aa46a20ef1c79b1f3ca141e7e3bc.png" width="480" />
+
+That's the wisdom!
+
+## Macro Control and Interface decoupling(解耦)
+
+<img alt="picture 9" src="https://mark-vue-oss.oss-cn-hangzhou.aliyuncs.com/1640814695693-coding-philosophy-a0c7ec7d984b5ab7b86d5a16ba87d9dd07d654ed42318a4ebbf027a730361819.png" width="480" />
