@@ -1,5 +1,21 @@
 # jetbrains-howto
 
+## my recommended configuration
+
+### uncheck inspection on `redundant local variable`
+
+config:
+
+![picture 2](.imgs/jetbrains-howto-1660213190102-79e0a167e1914be5ced868e4f23dffa6d3648cfbdc8d3e1f6365c8755327aee1.png)  
+
+reason: 方便随时开合一些程序逻辑，inline不方便
+
+![picture 1](.imgs/jetbrains-howto-1660213177132-b4d99c8577d1ba67a26296ab2651dca3715c6447b3c38e77d0188fbaa222768d.png)  
+
+if not:
+
+![picture 3](.imgs/jetbrains-howto-1660213284017-d9e0e69952e24660cdd6bbc61780a80284396c6cf2802776ee6a15ed74960ec9.png)  
+
 ## how to customize file template
 
 :::warning

@@ -12,6 +12,40 @@ Keep hungry, keep foolish.
 - [x] 滑板轮颜色 {issue: 0809, finish: 0809}
 - [ ] 燃气灶外火盖 {issue: 0809}
 
+## 2022-08-12, Fri
+
+### 与万冰琪吃幸福食堂，回来聊基尼系数
+
+![picture 1](.imgs/life-daily-private-1660328615031-b92bf39323aa750a95b7af4ebf83baf91ac7c8240e2ff85b5ec33f6e8e094dd4.png)  
+
+![picture 2](.imgs/life-daily-private-1660328621082-8b299daceabf27ac664d213249272276a7de8ebc296bf2454b83e2ffc6660949.png)  
+
+![picture 3](.imgs/life-daily-private-1660328625257-260898211ee976088ce2ba4a0343ca8d643f84c94fefeec7328eaa71a89b5c75.png)  
+
+![picture 4](.imgs/life-daily-private-1660328629216-bd73d9340356bfb4f50d72d9b96e6472fbd3386b22734b10c6c9c0dd7b4789a9.png)  
+
+## 2022-08-11, Thu
+
+### 蛋炒饭总结
+
+![picture 5](.imgs/life-daily-private-1660328671488-58e7ca506748e8cd578cc184f3c84dcfee7a789eba9c6f82c865928334826fb7.png)  
+
+![picture 6](.imgs/life-daily-private-1660328680508-638bf35685cad1bf2f39b58f2fa9ce600711c1a6574e7f4b3acd7b4570a5204b.png)  
+
+![picture 7](.imgs/life-daily-private-1660328686157-9491e72d5fc93b3bdf0d0d2d7a0f6d51850c2e97c22ba57b40329ce13c576a11.png)  
+
+![picture 8](.imgs/life-daily-private-1660328690630-44047e52ef4d375a26b534365bbad39cbc4ebb86e53dd95e862fa40aafc23c02.png)  
+
+## 2022-08-10, Wed
+
+### 爆肝研究mume
+
+![picture 9](.imgs/life-daily-private-1660328725207-d6d551e555499a0ad95febc4f6f189397956b0a2f5c9c33a772495021800536a.png)  
+
+![picture 10](.imgs/life-daily-private-1660328731342-e86855e438258270b6d7771b5d4e3ab9b6b09035dbf5922ab3560802fd79c88a.png)  
+
+![picture 12](.imgs/life-daily-private-1660328739253-c3a207d1eb4a77964e9f0274a292bbefe31b523a52d2d6ef8fe39a02f09b8ea0.png)  
+
 ## 2022-08-09, Tue
 
 ### 升级 bjjkb（-13.5）
@@ -20,6 +54,38 @@ Keep hungry, keep foolish.
 - 统一了入口调用，基于 `main.py` 入口
 - 重构梳理了核心接口
 
+### 原野追逐·四惠版
+
+![picture 36](.imgs/life-daily-private-1660329226429-e1950642bb84fb275832188eed55f9aaf5df17a6c319fb875d95ee4f7a20f291.png)  
+
+## 2022-08-08, Wed
+
+### 蛋炒饭越来越棒
+
+![picture 37](.imgs/life-daily-private-1660329307020-7dcc0c4d9d8467346cc5b7434fe3cc53dc05e0d3a606b752fd04c8bf1af5d401.png)  
+
+![picture 38](.imgs/life-daily-private-1660329317154-f2d7de6a1e88fce6cf544438cebfe5be083091639cb17d87d978163b1faa5075.png)  
+
+![picture 39](.imgs/life-daily-private-1660329322503-da6ef2857d75526de85a5212818bff91f2f851ff114c4a1f6c795a6a1354893b.png)  
+
+![picture 40](.imgs/life-daily-private-1660329326476-52b178574707da1f5c6a0ca641182b798e38287676f8b7af678eeea539190320.png)  
+
+![picture 41](.imgs/life-daily-private-1660329330795-03be61957f74ab650db6028536b81d4aa3439dda37d8127e0ca669110a6a07f1.png)  
+
+![picture 42](.imgs/life-daily-private-1660329334749-4ea00d6985bef48fda29fa77376e41bd09f920fd361e74a128cf79063187dbc6.png)  
+
+![picture 43](.imgs/life-daily-private-1660329340040-5530b6978fb817beaecc31095d3f9b90dde5e198bab3d72a3e7bb1d5c204d23c.png)  
+
+![picture 44](.imgs/life-daily-private-1660329344198-44047e52ef4d375a26b534365bbad39cbc4ebb86e53dd95e862fa40aafc23c02.png)  
+
+## 2022-08-07, Tue
+
+### 烂尾楼的代码烂尾了
+
+![picture 34](.imgs/life-daily-private-1660329187880-c855adb8550e706a0123f287edf10d5f210f2f86c104edd1d66fdeb8437689af.png)  
+
+![picture 35](.imgs/life-daily-private-1660329193375-7557b9a5cebfecc0f25cce22cf6ae8f56d292265214c091dbeffdd29502efe88.png)  
+
 ## 2022-08-08, Mon
 
 ### 整理仓库（全部基于submodules）
@@ -27,6 +93,14 @@ Keep hungry, keep foolish.
 ![picture 1](.imgs/life-daily-private-1659923996355-f4aa3c1673c51d6608a08ff22173520d1583555ee983bee7eeb80a13badb6178.png)  
 
 ![picture 2](.imgs/life-daily-private-1659924011980-9aac02015d83aaed20fcfe6b86c34c92eb1d0318b892d489fa11acec251b892c.png)  
+
+### 对乐视与房地产的认知不够成熟
+
+![picture 13](.imgs/life-daily-private-1660328775736-df7effc682ae82708474fc57f99ecedf94bf366b560e386888f88cf5faead606.png)  
+
+![picture 14](.imgs/life-daily-private-1660328779848-c8ccc6a659fbe5846aba0ca06e260f841797daed13a6a0adf8b30b166ad6bda7.png)  
+
+![picture 15](.imgs/life-daily-private-1660328782973-030d09359cac90d01c91de961a24610c49dd1d9ad321981489b2ba143af04a0f.png)  
 
 ### 与 snow-bmf 作者 Leo 聊了聊持续开发 bg 的想法
 
@@ -43,6 +117,32 @@ Keep hungry, keep foolish.
 2. 赋值方案（若哥的选择）
 
   ![picture 2](.imgs/life-daily-private-1660022408300-dfe872d1fb20e07654a0cee61be14a62bd4eed41797ced43bd863328114adcce.png)  
+
+## 2022-08-06, Sat
+
+### 汤倒饭上，还是饭倒汤上
+
+![picture 18](.imgs/life-daily-private-1660328846734-974e5c8eea210c4d95515026b8a3945e082768007b66448383bf6282ebc29121.png)  
+
+![picture 19](.imgs/life-daily-private-1660328855252-cff723902888e0b0d0f8a0381b756167583df610be13195c70b2ef2721ef184b.png)  
+
+## 2022-08-05, Fri
+
+### 日本抗议中国把导弹射入EEZ（pandas经纬度可视化）
+
+![picture 20](.imgs/life-daily-private-1660328918690-05210fe47a5c9ece27ffd50ce0e650ae33cd9ba17f0e72504e13140ce50b8471.png)  
+
+![picture 21](.imgs/life-daily-private-1660328923817-d6885fe271e949d3e3fac2e4242f9a8b53bbe20c50f2c1092fa9d34d76cdb1ec.png)  
+
+![picture 22](.imgs/life-daily-private-1660328939934-434b0ae01b5d24ef28efb9296e29a6859649f565a1c41000b0c88596fa9711c7.png)  
+
+![picture 23](.imgs/life-daily-private-1660328943888-b90495a26c79dbc110821549e58c01c0fb5b62de8d89981bea08fb8ff43cfb64.png)  
+
+## 2022-08-04, Thu
+
+### 围岛了没有
+
+![picture 24](.imgs/life-daily-private-1660328976279-16b3144b90303c48fe324b56e7de27551601b88829fb25738fc45c0d3e888c8a.png)  
 
 ## 2022-08-03, Wed
 
@@ -111,11 +211,37 @@ Keep hungry, keep foolish.
 
 ![picture 48](.imgs/life-daily-private-1659548930950-dd33adc98e6d4eadb34c497cd8b20d55ccbc9ea50c8baff78a1f5adfed080246.png)  
 
+## 2022-07-31, Sun
+
+### docusaurus pr (7843, 7849, 7852)
+
+![picture 25](.imgs/life-daily-private-1660329037639-8c0c0cc3b1e5447948f0645866cd1f661074e70f54746be4ce7e1f5c16afe9bc.png)  
+
+![picture 26](.imgs/life-daily-private-1660329042208-28278962b0a61e93faf242cbc5f22896ac56e144ceb8d36e8b55421de44a32a5.png)  
+
+![picture 27](.imgs/life-daily-private-1660329046649-8055f6f777b0a52cbfb1e5267070dc4a1b1dd9b11bf795bfe4624d4a4af2c96d.png)  
+
+![picture 28](.imgs/life-daily-private-1660329050781-42b39a5bc1aa0c834ec8ad16165c84a6b42f2cf7b6bc552f0b58718698658e92.png)  
+
+![picture 29](.imgs/life-daily-private-1660329055074-6316426e0c908918ca93c34f55679ea6932f3348228759680e12c3bd660b1a7c.png)  
+
+![picture 30](.imgs/life-daily-private-1660329058806-c68a6741345a702decaed7cc9e507268e0daa4f5f4868cf81dda38222090f7fa.png)  
+
+![picture 31](.imgs/life-daily-private-1660329064329-5a57705b42c7f970b8ad08be4b7f7caf7f6c8e0202bc39b98eaad30b76e958e9.png)  
+
 ## 2022-07-28, Thu
 
 ### 二舅：第一幸福、第二幸福
 
 ![picture 1](.imgs/life-daily-private-1659586798460-1187b923cbc1b147d20e4a4c7688c97075cf2dccb2085e837854e6d5b9660830.png)  
+
+## 2022-07-27, Wed
+
+### vr 拼图密集恐惧症（工作报告）
+
+![picture 32](.imgs/life-daily-private-1660329139469-7ede1d70f8d0960e9ed44e8eb562166abd9dc33048b285d1bded8b2d25014620.png)  
+
+![picture 33](.imgs/life-daily-private-1660329148703-59b7b558215e2efa6811a033689ca0d973d04e715333b0b8c3f2ac7ced7e4b13.png)  
 
 ## 2022-07-26, Tue
 
