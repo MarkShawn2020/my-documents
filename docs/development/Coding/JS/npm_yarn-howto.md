@@ -1,23 +1,5 @@
 # npm/yarn howto
 
-1. [BEST-PRACTICE: nvm](#best-practice-nvm)
-   1. [install](#install)
-   2. [use](#use)
-2. [BEST-PRACTICE: `mirror-config-china`](#best-practice-mirror-config-china)
-   1. [a chinese mirror practice: how does it save an electron project](#a-chinese-mirror-practice-how-does-it-save-an-electron-project)
-   2. [config npm mirrors](#config-npm-mirrors)
-   3. [config yarn mirrors](#config-yarn-mirrors)
-3. [BEST-PRACTICE: how to install `node-sass`](#best-practice-how-to-install-node-sass)
-   1. [Step 1. ensure `sass-binary-site` enabled in `.npmrc`](#step-1-ensure-sass-binary-site-enabled-in-npmrc)
-   2. [Step 2. change node/npm version](#step-2-change-nodenpm-version)
-4. [npm commands](#npm-commands)
-   1. [update package](#update-package)
-   2. [check exist, locally and globally, with and without dependencies](#check-exist-locally-and-globally-with-and-without-dependencies)
-5. [TUTORIAL: modify `diff2html-cli` html logo](#tutorial-modify-diff2html-cli-html-logo)
-   1. [Step 1. locate the package position](#step-1-locate-the-package-position)
-   2. [Step 2. modify the template html file, since the inner code generates dependent on it](#step-2-modify-the-template-html-file-since-the-inner-code-generates-dependent-on-it)
-   3. [Ref 1. check tree structure](#ref-1-check-tree-structure)
-
 ## BEST-PRACTICE: nvm
 
 ref:
