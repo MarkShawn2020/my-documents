@@ -284,6 +284,7 @@
         "strptime",
         "superimage",
         "surfaceflinger",
+        "syncpack",
         "sysprop",
         "systemimage",
         "Systemproperties",

@@ -341,3 +341,17 @@ logo url
 
 55 directories, 38 files
 ```
+
+## project manager
+
+### use `syncpack`
+
+use [syncpack - npm](https://www.npmjs.com/package/syncpack) to sync workspaces packages.
+
+```sh
+# list in the root
+syncpack list-mismatches
+
+# fix in the root
+syncpack fix-mismatches
+```
