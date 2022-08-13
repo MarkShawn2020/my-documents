@@ -1,12 +1,12 @@
-# npm/yarn howto
 
-## BEST-PRACTICE: nvm
+
+## config `nvm`
 
 ref:
 
 - [nvm/README.md at master · nvm-sh/nvm](https://github.com/nvm-sh/nvm/blob/master/README.md)
 
-### install
+install:
 
 ```sh
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
@@ -15,14 +15,14 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 ```
 
-### use
+use:
 
 ```sh
 nvm install 14
 nvm use 14
 ```
 
-## BEST-PRACTICE: `mirror-config-china`
+## config `mirror-config-china`
 
 ```sh
 npm i -g mirror-config-china --registry=https://registry.npm.taobao.org
@@ -137,7 +137,7 @@ ref:
 
 - [如何在国内加速 yarn install | Recording](https://www.jibing57.com/2020/02/24/how-to-speed-yarn-install-interiorly/)
 
-## BEST-PRACTICE: how to install `node-sass`
+## config `node-sass`
 
 ### Step 1. ensure `sass-binary-site` enabled in `.npmrc`
 
@@ -145,7 +145,7 @@ ref:
 
 !!!warning this would set into `project/.npmrc`
 
-ref: [BEST-PRACTICE: `mirror-config-china`](#best-practice-mirror-config-china)
+ref: [`mirror-config-china`](#best-practice-mirror-config-china)
 
 #### Option 2: set directly
 
@@ -164,15 +164,13 @@ For example, one of my projects used `node-sass` of version `"node-sass": "^4.14
 
 ![picture 4](https://mark-vue-oss.oss-cn-hangzhou.aliyuncs.com/npm_yarn-howto-1642841662888-801b5f5f69831c1fc22b0430c10d9cea0079cc51c58815fd2260ba001e627bd5.png)
 
-And at that time, my node version is `17+`, so I use `nvm` [BEST-PRACTICE: nvm](#best-practice-nvm) to change it down to `14` and `npm i -D node-sass` and worked.
+And at that time, my node version is `17+`, so I use `nvm` [nvm](#best-practice-nvm) to change it down to `14` and `npm i -D node-sass` and worked.
 
 ![picture 5](https://mark-vue-oss.oss-cn-hangzhou.aliyuncs.com/npm_yarn-howto-1642841787353-3028ce9fdfa5b03b272ecb705ccafbaa3e5469d1e6d64fa36b268872ff29ca0d.png)
 
 ![picture 6](https://mark-vue-oss.oss-cn-hangzhou.aliyuncs.com/npm_yarn-howto-1642841802474-23d1f0911ea6d1c73f2c7bb5d6a58c3278862d58f77beb5d2fb95dc85f6379e1.png)
 
-## npm commands
-
-### update package
+## npm: how to update package
 
 ```sh
 # update all
@@ -187,7 +185,7 @@ npm outdated
 
 see: - [node.js - npm check and update package if needed - Stack Overflow](https://stackoverflow.com/questions/16525430/npm-check-and-update-package-if-needed)
 
-### check exist, locally and globally, with and without dependencies
+## npm: how to check exist, locally and globally, with and without dependencies
 
 ```sh
 # check a npm package P exist locally
@@ -204,7 +202,7 @@ ref:
 
 - [How to check if an npm package installed globally or locally | Reactgo](https://reactgo.com/check-npm-packages-installed/)
 
-## TUTORIAL: modify `diff2html-cli` html logo
+## how to modify `diff2html-cli` html logo
 
 ### Step 1. locate the package position
 
