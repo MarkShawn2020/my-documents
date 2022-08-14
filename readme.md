@@ -2,7 +2,7 @@
 
 ## Jump
 
-- [docusaurus-my-website](https://github.com/markshawn2020/docusaurus-my-website)
+- [docusaurus-my-website](https://github.com/markshawn2020/my-website)
 - [docusaurus-framework](https://github.com/markshawn2020/keeeps-learning)
 - [docusaurus-my-documents](https://github.com/markshawn2020/my-documents)
 
