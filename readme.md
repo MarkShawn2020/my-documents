@@ -1,6 +1,6 @@
 # MarkShawn's Secondary Brain
 
-## Jump
+## My Blog
 
 - [docusaurus-framework](https://github.com/markshawn2020/keeeps-learning)
 - [docusaurus-my-website](https://github.com/markshawn2020/my-website)
@@ -35,6 +35,12 @@
 - [m-archive/my-chrome-extensions](https://github.com/m-archive/my-chrome-extensions)
 - [m-archive/my-alfred-workflows](https://github.com/m-archive/my-alfred-workflows)
 
+### Wechat Relative
+
+- [m-archive/wechat-dbcracker](https://github.com/m-archive/wechat-dbcracker)
+- [m-archive/Wechaty-Socket-React](https://github.com/m-archive/Wechaty-Socket-React)
+- [m-archive/wxmp-mock-huluxinan](https://github.com/m-archive/wxmp-mock-huluxinan)
+
 ### DevOpts Relative
 
 - [m-archive/my-scripts](https://github.com/m-archive/my-scripts)
@@ -59,15 +65,9 @@
 
 - [m-archive/mypapers](https://github.com/m-archive/mypapers)
 
-### Backend Relative
+### Secrets Relative
 
 - [m-archive/oauth2-py](https://github.com/m-archive/oauth2-py)
-
-### Wechat Relative
-
-- [m-archive/wechat-dbcracker](https://github.com/m-archive/wechat-dbcracker)
-- [m-archive/Wechaty-Socket-React](https://github.com/m-archive/Wechaty-Socket-React)
-- [m-archive/wxmp-mock-huluxinan](https://github.com/m-archive/wxmp-mock-huluxinan)
 
 ### Algorithm Relative
 
