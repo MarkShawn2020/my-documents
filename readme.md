@@ -84,7 +84,7 @@
 
 ## History
 - 2022-08-15, Mon
-  - aggregated all the projects into index
+  - :sparkles: aggregated all the projects into index
 - 2022-08-02, Tue, Sunny
   - :rocket: managed to deploy a 3-layers git architect
   - enable private access of library
