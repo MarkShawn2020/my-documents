@@ -1,0 +1,4 @@
+[submodule "private"]
+	path = private
+	url = https://github.com/MarkShawn2020/my-private-documents
+	branch = main
