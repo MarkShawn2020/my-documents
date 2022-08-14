@@ -8,19 +8,11 @@
 
 ## My Projects
 
+other projects recommended: [recommends](./recommends.md)
+
 ### Indexes
 
 - [MarkShawn2020/whats-the-best-to-learn](https://github.com/MarkShawn2020/whats-the-best-to-learn)
-
-### Society Relative
-
-- https://github.com/The-Run-Philosophy-Organization/run
-- https://github.com/WeNeedHome/SummaryOfLoanSuspension
-
-### AI Relative
-
-- https://github.com/GokuMohandas/Made-With-ML
-- https://github.com/handcraftsman/GeneticAlgorithmsWithPython
 
 ### Documents Relative
 
