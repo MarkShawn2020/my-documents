@@ -8,8 +8,6 @@
 
 ## My Projects
 
-other projects recommended: [recommends](./recommends.md)
-
 ### Indexes
 
 - [MarkShawn2020/whats-the-best-to-learn](https://github.com/MarkShawn2020/whats-the-best-to-learn)
@@ -74,7 +72,12 @@ other projects recommended: [recommends](./recommends.md)
 - https://github.com/m-archive/CodeCraft2020
 - https://github.com/m-archive/CodeCraft2019Rem
 
+## Other Projects 
+
+- see: [my recommends](./recommends.md)
+
 ## History
+
 - 2022-08-15, Mon
   - :sparkles: aggregated all the projects into index
 - 2022-08-02, Tue, Sunny
