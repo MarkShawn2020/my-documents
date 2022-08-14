@@ -8,29 +8,14 @@
 
 ## My Projects
 
-### Extensions Relative
+### Algorithm Relative
 
-- [m-archive/my-vscode-extensions](https://github.com/m-archive/my-vscode-extensions)
-- [m-archive/my-TamperMonkeys](https://github.com/m-archive/my-TamperMonkeys)
-- [m-archive/my-chrome-extensions](https://github.com/m-archive/my-chrome-extensions)
-- [m-archive/my-alfred-workflows](https://github.com/m-archive/my-alfred-workflows)
+- [m-archive/mark-algo-visualization](https://github.com/m-archive/mark-algo-visualization)
 
-### Documents Relative
+### Competition Relative
 
-- [m-archive/my-markdown-parser](https://github.com/m-archive/my-markdown-parser)
-- [m-archive/my-pdf-parser](https://github.com/m-archive/my-pdf-parser)
-- [m-archive/blogs](https://github.com/m-archive/blogs)
-
-### Wechat Relative
-
-- [m-archive/wechat-dbcracker](https://github.com/m-archive/wechat-dbcracker)
-- [m-archive/Wechaty-Socket-React](https://github.com/m-archive/Wechaty-Socket-React)
-- [m-archive/wxmp-mock-huluxinan](https://github.com/m-archive/wxmp-mock-huluxinan)
-
-### DevOpts Relative
-
-- [m-archive/my-scripts](https://github.com/m-archive/my-scripts)
-- [m-archive/my-snippets](https://github.com/m-archive/my-snippets)
+- https://github.com/m-archive/CodeCraft2020
+- https://github.com/m-archive/CodeCraft2019Rem
 
 ### Data Relative
 
@@ -40,6 +25,28 @@
 - [m-archive/AutoBarleyTicketBooking](https://github.com/m-archive/AutoBarleyTicketBooking)
 - [m-archive/douban-renting](https://github.com/m-archive/douban-renting)
 
+### DevOpts Relative
+
+- [m-archive/my-scripts](https://github.com/m-archive/my-scripts)
+- [m-archive/my-snippets](https://github.com/m-archive/my-snippets)
+
+### Documents Relative
+
+- [m-archive/my-markdown-parser](https://github.com/m-archive/my-markdown-parser)
+- [m-archive/my-pdf-parser](https://github.com/m-archive/my-pdf-parser)
+- [m-archive/blogs](https://github.com/m-archive/blogs)
+
+### Education Relative
+
+- [m-archive/mypapers](https://github.com/m-archive/mypapers)
+
+### Extensions Relative
+
+- [m-archive/my-vscode-extensions](https://github.com/m-archive/my-vscode-extensions)
+- [m-archive/my-TamperMonkeys](https://github.com/m-archive/my-TamperMonkeys)
+- [m-archive/my-chrome-extensions](https://github.com/m-archive/my-chrome-extensions)
+- [m-archive/my-alfred-workflows](https://github.com/m-archive/my-alfred-workflows)
+
 ### Image Relative
 
 - [m-archive/wechat-moment-cover-wall](https://github.com/m-archive/wechat-moment-cover-wall)
@@ -47,28 +54,21 @@
 - [m-archive/merge-images-script](https://github.com/m-archive/merge-images-script)
 - [m-archive/image-uploader](https://github.com/m-archive/image-uploader)
 
-### Education Relative
+### IoT Relative
 
-- [m-archive/mypapers](https://github.com/m-archive/mypapers)
+- [m-archive/my-gopro](https://github.com/m-archive/my-gopro)
 
 ### Secrets Relative
 
 - [m-archive/oauth2-py](https://github.com/m-archive/oauth2-py)
 
-### Algorithm Relative
+### Wechat Relative
 
-- [m-archive/mark-algo-visualization](https://github.com/m-archive/mark-algo-visualization)
+- [m-archive/wechat-dbcracker](https://github.com/m-archive/wechat-dbcracker)
+- [m-archive/Wechaty-Socket-React](https://github.com/m-archive/Wechaty-Socket-React)
+- [m-archive/wxmp-mock-huluxinan](https://github.com/m-archive/wxmp-mock-huluxinan)
 
-### IoT Relative
-
-- [m-archive/my-gopro](https://github.com/m-archive/my-gopro)
-
-### Competition Relative
-
-- https://github.com/m-archive/CodeCraft2020
-- https://github.com/m-archive/CodeCraft2019Rem
-
-## Other Projects 
+## Other Projects
 
 - see: [my recommends](./recommends.md)
 
