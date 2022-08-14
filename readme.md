@@ -8,22 +8,18 @@
 
 ## My Projects
 
-### Indexes
-
-- [MarkShawn2020/whats-the-best-to-learn](https://github.com/MarkShawn2020/whats-the-best-to-learn)
-
-### Documents Relative
-
-- [m-archive/my-markdown-parser](https://github.com/m-archive/my-markdown-parser)
-- [m-archive/my-pdf-parser](https://github.com/m-archive/my-pdf-parser)
-- [m-archive/blogs](https://github.com/m-archive/blogs)
-
 ### Extensions Relative
 
 - [m-archive/my-vscode-extensions](https://github.com/m-archive/my-vscode-extensions)
 - [m-archive/my-TamperMonkeys](https://github.com/m-archive/my-TamperMonkeys)
 - [m-archive/my-chrome-extensions](https://github.com/m-archive/my-chrome-extensions)
 - [m-archive/my-alfred-workflows](https://github.com/m-archive/my-alfred-workflows)
+
+### Documents Relative
+
+- [m-archive/my-markdown-parser](https://github.com/m-archive/my-markdown-parser)
+- [m-archive/my-pdf-parser](https://github.com/m-archive/my-pdf-parser)
+- [m-archive/blogs](https://github.com/m-archive/blogs)
 
 ### Wechat Relative
 
