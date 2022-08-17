@@ -1,4 +1,3 @@
-# 如何向`Element-UI`一样封装`Message`全局组件
 
 ## 需求分析
 
