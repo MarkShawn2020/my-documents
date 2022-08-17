@@ -5,6 +5,7 @@ hide_table_of_contents: true
 
 | sDate      | eDate | category     | title                                   | priority | status    | reason   | detail                      |
 | ---------- | ----- | ------------ | --------------------------------------- | -------- | --------- | -------- | --------------------------- |
+| 2022-08-17 |       | bug          | fix docusaurus file updated date        |          |           |          |                             |
 | 2022-08-12 |       | learn        | research on different eslint recommends |          |           |          |                             |
 | 2022-08-11 |       | clean        | qq-zone notes, like peking university   | 0.6      | pending   |          |                             |
 | 2022-08-09 |       | learn        | google js/ts style learning             | 0.9      | pending   |          | [^learn-google-js/ts-style] |
