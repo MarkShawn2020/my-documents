@@ -4,14 +4,10 @@ sidebar_position: 1
 
 # Intro
 
-> _Stay hungry, stay foolish._
->
-> $1 = 0.999999999\cdots$
+:::tip motto
+***Stay hungry, stay foolish.***
+:::
 
 ![cover](../../static/img/天空之城-孤独的号.jpg)
 
-::: tip
-hhh
-:::
 
-![test](../../static/img/docusaurus.png)
