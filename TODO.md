@@ -3,53 +3,54 @@ hide_title: true
 hide_table_of_contents: true
 ---
 
-| sDate      | eDate | category     | title                                   | priority | status    | reason   | detail                      |
-| ---------- | ----- | ------------ | --------------------------------------- | -------- | --------- | -------- | --------------------------- |
-| 2022-08-17 |       | bug          | fix docusaurus file updated date        |          |           |          |                             |
-| 2022-08-12 |       | learn        | research on different eslint recommends |          |           |          |                             |
-| 2022-08-11 |       | clean        | qq-zone notes, like peking university   | 0.6      | pending   |          |                             |
-| 2022-08-09 |       | learn        | google js/ts style learning             | 0.9      | pending   |          | [^learn-google-js/ts-style] |
-| 2022-06-20 |       | bug          | adobe photoshop export                  | -        | discarded | GONE     | [^ps-bug]                   |
-| 2022-06-20 |       | chore        | delete MP4 in git repo                  | -        | finished  | FIXED    | [^git-rm-mp4]               |
-| 2022-02-04 |       | article      | linux core intro                        | -        | finished  | FINISHED |                             |
-| 2022-01-06 |       | feat         | vscode md image upload                  | -        | finished  | FIXED    | [^vscode-md-img-upload]     |
-| 2022-08-05 |       | project      | ganta graph                             |          | pending   |          | inspired by ruo/jack        |
-| 2022-08-09 | -     | reading      | 你当飞向你的山                          | 0.7      | pending   |          |                             |
-| 2022-08-09 | -     | reading      | 置身事内                                | 0.7      | pending   |          |                             |
-|            |       | blog         | sort out the blog category              |          | pending   |          |                             |
-|            |       | blog         | sort out the tsinghua docs              |          | pending   |          |                             |
-|            |       | learn        | Lee-SLAM                                |          | started   |          | [^learn-slam]               |
-|            |       | learn        | computer graph                          |          | pending   |          | [^learn-computer-graph]     |
-|            |       | project      | markdown output with multi-platforms    |          | pending   |          | [^md-multi-output]          |
-|            |       | project      | agg-music                               |          | delayed   |          | [^agg-music]                |
-|            |       | project      | markdown realtime engine                |          | delayed   |          | [^md-realtime-engine]       |
-|            |       | project      | aggregated search                       |          | delayed   |          | [^agg-search]               |
-|            |       | project      | knowledge graph based on blog system    | 0.7      | delayed   |          |                             |
-|            |       | TamperMonkey | douban rent                             |          | started   |          | [^tm-douban-rent]           |
-|            |       | mac          | customize dictionary app                |          | delayed   |          | chinese <--> english        |
-|            |       | project      | online reader                           |          | delayed   |          | [^online-reader]            |
-|            |       | project      | video synchronized with captain         |          | delayed   |          | [^video-captain-sync]       |
-|            |       | project      | e-commercial analysis system            | 0.6      | delayed   |          |                             |
-|            |       | project      | super financial bill                    |          | delayed   |          | difficulty: need root       |
-|            |       | vscode       | markdown synchronized scroll algorithm  |          | delayed   |          |                             |
-|            |       | vscode       | auto-completion for headings from md    |          | delayed   |          | [^vscode-auto-heading]      |
-|            |       | vscode       | comment line with cursor down           |          | delayed   |          | stay if line is empty       |
-|            |       | article      | blog tools comparison                   |          | pending   |          | about remark                |
-|            |       | pr           | ttf2bmf backend                         |          | discarded | PASS     | [^ttf2bmf-node]             |
-|            |       | article      | ASCII ART                               |          | discarded | PASS     |                             |
-|            |       | feat         | vscode markdown container support       |          | finished  | FIXED    |                             |
-|            |       | bug          | vscode lag when input                   |          | finished  | FIXED    | [^vscode-lag-when-input]    |
-|            |       | feat         | vscode md flex                          |          | finished  | FIXED    | [^vscode-md-flex]           |
-|            |       | chore        | best-practice of md workflow            |          | finished  | ENOUGH   | [^vscode-md-best-practice]  |
-|            |       | book         | frontend, backend to algo               |          | discarded | LATER    | [^book-coding-overview]     |
-|            |       | chore        | control mkl repo size                   |          | finished  | SOLVED   | [^git-control-repo-size]    |
-|            |       | refactor     | change `index.yaml` to be `index.md`    |          | discarded | PASS     |                             |
-|            |       | project      | Legend of King Auto Simulate System     |          | discarded | PASS     |                             |
-|            |       | chore        | add color support for `build/init.zsh`  |          | discarded | PASS     |                             |
-|            |       | article      | Prisma is not suitable for electron     |          | discarded | PASS     |                             |
-|            |       | plugin       | LinkToText                              |          | finished  | PASS     |                             |
-|            |       | chore        | change the default TOC config           |          | finished  | SOLVED   | [^config-md-toc-depth]      |
-|            |       | article      | shortcuts comparison                    |          | finished  | FINISHED |                             |
+| sDate      | eDate | category     | title                                      | priority | status    | reason   | detail                      |
+| ---------- | ----- | ------------ | ------------------------------------------ | -------- | --------- | -------- | --------------------------- |
+| 2022-08-18 |       | bug          | fix stock-chips step down problem (by fei) |          |           |          |                             |
+| 2022-08-17 |       | bug          | fix docusaurus file updated date           |          |           |          |                             |
+| 2022-08-12 |       | learn        | research on different eslint recommends    |          |           |          |                             |
+| 2022-08-11 |       | clean        | qq-zone notes, like peking university      | 0.6      | pending   |          |                             |
+| 2022-08-09 |       | learn        | google js/ts style learning                | 0.9      | pending   |          | [^learn-google-js/ts-style] |
+| 2022-06-20 |       | bug          | adobe photoshop export                     | -        | discarded | GONE     | [^ps-bug]                   |
+| 2022-06-20 |       | chore        | delete MP4 in git repo                     | -        | finished  | FIXED    | [^git-rm-mp4]               |
+| 2022-02-04 |       | article      | linux core intro                           | -        | finished  | FINISHED |                             |
+| 2022-01-06 |       | feat         | vscode md image upload                     | -        | finished  | FIXED    | [^vscode-md-img-upload]     |
+| 2022-08-05 |       | project      | gantt graph                                |          | pending   |          | inspired by ruo/jack        |
+| 2022-08-09 | -     | reading      | 你当飞向你的山                             | 0.7      | pending   |          |                             |
+| 2022-08-09 | -     | reading      | 置身事内                                   | 0.7      | pending   |          |                             |
+|            |       | blog         | sort out the blog category                 |          | pending   |          |                             |
+|            |       | blog         | sort out the tsinghua docs                 |          | pending   |          |                             |
+|            |       | learn        | Lee-SLAM                                   |          | started   |          | [^learn-slam]               |
+|            |       | learn        | computer graph                             |          | pending   |          | [^learn-computer-graph]     |
+|            |       | project      | markdown output with multi-platforms       |          | pending   |          | [^md-multi-output]          |
+|            |       | project      | agg-music                                  |          | delayed   |          | [^agg-music]                |
+|            |       | project      | markdown realtime engine                   |          | delayed   |          | [^md-realtime-engine]       |
+|            |       | project      | aggregated search                          |          | delayed   |          | [^agg-search]               |
+|            |       | project      | knowledge graph based on blog system       | 0.7      | delayed   |          |                             |
+|            |       | TamperMonkey | douban rent                                |          | started   |          | [^tm-douban-rent]           |
+|            |       | mac          | customize dictionary app                   |          | delayed   |          | chinese <--> english        |
+|            |       | project      | online reader                              |          | delayed   |          | [^online-reader]            |
+|            |       | project      | video synchronized with captain            |          | delayed   |          | [^video-captain-sync]       |
+|            |       | project      | e-commercial analysis system               | 0.6      | delayed   |          |                             |
+|            |       | project      | super financial bill                       |          | delayed   |          | difficulty: need root       |
+|            |       | vscode       | markdown synchronized scroll algorithm     |          | delayed   |          |                             |
+|            |       | vscode       | auto-completion for headings from md       |          | delayed   |          | [^vscode-auto-heading]      |
+|            |       | vscode       | comment line with cursor down              |          | delayed   |          | stay if line is empty       |
+|            |       | article      | blog tools comparison                      |          | pending   |          | about remark                |
+|            |       | pr           | ttf2bmf backend                            |          | discarded | PASS     | [^ttf2bmf-node]             |
+|            |       | article      | ASCII ART                                  |          | discarded | PASS     |                             |
+|            |       | feat         | vscode markdown container support          |          | finished  | FIXED    |                             |
+|            |       | bug          | vscode lag when input                      |          | finished  | FIXED    | [^vscode-lag-when-input]    |
+|            |       | feat         | vscode md flex                             |          | finished  | FIXED    | [^vscode-md-flex]           |
+|            |       | chore        | best-practice of md workflow               |          | finished  | ENOUGH   | [^vscode-md-best-practice]  |
+|            |       | book         | frontend, backend to algo                  |          | discarded | LATER    | [^book-coding-overview]     |
+|            |       | chore        | control mkl repo size                      |          | finished  | SOLVED   | [^git-control-repo-size]    |
+|            |       | refactor     | change `index.yaml` to be `index.md`       |          | discarded | PASS     |                             |
+|            |       | project      | Legend of King Auto Simulate System        |          | discarded | PASS     |                             |
+|            |       | chore        | add color support for `build/init.zsh`     |          | discarded | PASS     |                             |
+|            |       | article      | Prisma is not suitable for electron        |          | discarded | PASS     |                             |
+|            |       | plugin       | LinkToText                                 |          | finished  | PASS     |                             |
+|            |       | chore        | change the default TOC config              |          | finished  | SOLVED   | [^config-md-toc-depth]      |
+|            |       | article      | shortcuts comparison                       |          | finished  | FINISHED |                             |
 
 [^learn-google-js/ts-style]:
     provided by ruo:
