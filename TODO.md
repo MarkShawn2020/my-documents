@@ -5,6 +5,7 @@ hide_table_of_contents: true
 
 | sDate      | eDate | category     | title                                      | priority | status    | reason   | detail                      |
 | ---------- | ----- | ------------ | ------------------------------------------ | -------- | --------- | -------- | --------------------------- |
+| 2022-08-26 |       | project      | dev vscode sync to feishu docs             |          |           |          |                             |
 | 2022-08-18 |       | feat         | enable chinese align in markdown table     |          |           |          | [^md-table-align]           |
 | 2022-08-18 |       | bug          | fix stock-chips step down problem (by fei) |          |           |          |                             |
 | 2022-08-17 |       | bug          | fix docusaurus file updated date           |          |           |          |                             |

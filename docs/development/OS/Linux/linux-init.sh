@@ -1,9 +1,9 @@
 
-" 
+"
 version: 0.0.3
 features:
     1. disable sudo password so running commands faster
-    2. disable apt password so installing packages faster 
+    2. disable apt password so installing packages faster
     3. enable arrow up/down to backward/forward search prefix command
     4. auto change deb(apt) source
     5. auto install zsh, config oh-my-zsh, set as the default shell, you may need to switch to bash when build android in case of errors, it's easy just to input `bash` in terminal
@@ -31,6 +31,9 @@ echo "$PASSWORD\n$USER ALL=(ALL:ALL) NOPASSWD: ALL" | sudo -S tee /etc/sudoers.d
 # enable backward/forward prefix commands search
 echo '"\e[A": history-search-backward     # arrow up      --> backward
 "\e[B": history-search-forward      # arrow down    --> forward' >> ~/.inputrc
+
+# reload ~/.inputrc, ref: https://superuser.com/a/1064223/1365851
+bind -f ~/.inputrc
 
 # --- step 1.7 ---
 
