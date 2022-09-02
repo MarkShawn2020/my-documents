@@ -257,6 +257,7 @@
         "pylance",
         "pymongo",
         "pytest",
+        "quli",
         "Quora",
         "ranchu",
         "rdparty",
