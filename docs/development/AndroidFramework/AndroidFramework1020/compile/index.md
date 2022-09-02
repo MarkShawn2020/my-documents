@@ -14,6 +14,14 @@ ref:
 
 ### TODO: 1. using `CCACHE`
 
+```sh
+# solution 1
+USE_CCACHE=true CCACHE_EXEC=/usr/bin/ccache COMMAND
+
+# solution 2
+# build/core/ccache.mk 
+```
+
 see the discussion on whether to use `CCACHE`: https://groups.google.com/g/android-building/c/EI-w1WX-e90/m/wnaJ8IXfDQAJ 
 ![picture 1](.imgs/index-1662103609140-177fa4e1be90623764fa295e3677ca085a9ff22be10a977a87581a9285e3a4d0.png)  
 
@@ -23,6 +31,8 @@ refs:
 - [android source - How to use ccache to speed up compiling of aosp? - Stack Overflow](https://stackoverflow.com/questions/59811821/how-to-use-ccache-to-speed-up-compiling-of-aosp)
 
 - [ccache.mk - Android Code Search](https://cs.android.com/android/platform/superproject/+/android10-release:build/make/core/ccache.mk;l=17)
+
+- [Android Q默认不使用ccache编译，以及修改方法_傻熙Ta爸的博客-CSDN博客](https://blog.csdn.net/zhangqi6627/article/details/107762572)
 
 ### TODO: 2. using `ramdisk` for `/tmp`
 
