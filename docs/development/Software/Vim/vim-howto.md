@@ -1,52 +1,6 @@
 # vim-howto
 
-1. [BEST-PRACTICE: init/config vim](#best-practice-initconfig-vim)
-   1. [vim plugin: `Vundle`](#vim-plugin-vundle)
-   2. [color scheme: `monokai`](#color-scheme-monokai)
-   3. [vim plugin: `file-line`: go/jump to line after name](#vim-plugin-file-line-gojump-to-line-after-name)
-   4. [autocomplete support: `YouCompleteMe`](#autocomplete-support-youcompleteme)
-      1. [bugfix: `No .ycm_extra_conf.py file detected. #415`](#bugfix-no-ycm_extra_confpy-file-detected-415)
-   5. [Add custom input](#add-custom-input)
-      1. [Add date input](#add-date-input)
-      2. [Add arpara signature input](#add-arpara-signature-input)
-   6. [Add edit control](#add-edit-control)
-   7. [Add display control](#add-display-control)
-2. [BEST-PRACTICE: diff2html](#best-practice-diff2html)
-   1. [recommended html render solution of `diff2html-cli` based on `npm`](#recommended-html-render-solution-of-diff2html-cli-based-on-npm)
-   2. [a simpler solution to have a look at basic html style (based on vim)](#a-simpler-solution-to-have-a-look-at-basic-html-style-based-on-vim)
-   3. [gerrit render effect](#gerrit-render-effect)
-      1. [under file list view](#under-file-list-view)
-      2. [under file content view](#under-file-content-view)
-3. [copy selected lines to clipboard](#copy-selected-lines-to-clipboard)
-4. [how to delete from current position to the end of line](#how-to-delete-from-current-position-to-the-end-of-line)
-5. [BEST-PRACTICE: vim force tab to be spaces (so that the git diff won't have errors)](#best-practice-vim-force-tab-to-be-spaces-so-that-the-git-diff-wont-have-errors)
-6. [vim filter matched lines](#vim-filter-matched-lines)
-   1. [resolution 1. just to display (no buffer)](#resolution-1-just-to-display-no-buffer)
-   2. [resolution 2. write into current files](#resolution-2-write-into-current-files)
-   3. [BEST-PRACTICE: resolution 3. open a new vim window](#best-practice-resolution-3-open-a-new-vim-window)
-7. [vim resize height and width](#vim-resize-height-and-width)
-   1. [resolution 1. use commands](#resolution-1-use-commands)
-   2. [resolution 2. use mouse](#resolution-2-use-mouse)
-8. [vim highlight line or column](#vim-highlight-line-or-column)
-9. [vim mouse mode](#vim-mouse-mode)
-10. [vimdiff](#vimdiff)
-    1. [:white_check_mark: force `vimdiff` to wrap line](#white_check_mark-force-vimdiff-to-wrap-line)
-    2. [TODO: vimdiff show only differences](#todo-vimdiff-show-only-differences)
-11. [bookmarks](#bookmarks)
-12. [files relative](#files-relative)
-    1. [open other file](#open-other-file)
-    2. [copy between two vim files](#copy-between-two-vim-files)
-13. [how to update `vim`](#how-to-update-vim)
-14. [multi-line insert under `visual mode`](#multi-line-insert-under-visual-mode)
-15. [Copy-Paste in Vim](#copy-paste-in-vim)
-    1. [copy paste of line](#copy-paste-of-line)
-    2. [copy paste of selected](#copy-paste-of-selected)
-16. [column selection](#column-selection)
-17. [undo changes after file saved](#undo-changes-after-file-saved)
-18. [search for selected text](#search-for-selected-text)
-19. [BEST-PRACTICE: fold(collapse) and unfold(expand)](#best-practice-foldcollapse-and-unfoldexpand)
-
-## BEST-PRACTICE: init/config vim
+## init/config vim
 
 ### vim plugin: `Vundle`
 
@@ -172,7 +126,7 @@ ref:
 
 - [whitespace - Displaying tabs as characters - Vi and Vim Stack Exchange](https://vi.stackexchange.com/questions/422/displaying-tabs-as-characters)
 
-## BEST-PRACTICE: diff2html
+## diff2html
 
 ref: - [diff to html (diff2html) program - Stack Overflow](https://stackoverflow.com/questions/641055/diff-to-html-diff2html-program)
 
@@ -252,7 +206,7 @@ D
 
 - [vim - Delete from cursor to end of line in `vi` - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/4415/delete-from-cursor-to-end-of-line-in-vi)
 
-## BEST-PRACTICE: vim force tab to be spaces (so that the git diff won't have errors)
+## how to force tab to be spaces (so that the git diff won't have errors)
 
 ```vim
 " ref: https://vim.fandom.com/wiki/Converting_tabs_to_spaces
@@ -263,7 +217,7 @@ filetype plugin indent on
 :set shiftwidth=4
 ```
 
-## vim filter matched lines
+## how to filter matched lines
 
 ref:
 
@@ -300,7 +254,7 @@ ref:
 :cw
 ```
 
-## vim resize height and width
+## how to resize height and width
 
 ### resolution 1. use commands
 
@@ -342,7 +296,7 @@ ref:
 
 - [How do I change the current split's width and height? - Vi and Vim Stack Exchange](https://vi.stackexchange.com/questions/514/how-do-i-change-the-current-splits-width-and-height)
 
-## vim highlight line or column
+## how to highlight line or column
 
 > :sparkles:
 >
@@ -365,7 +319,7 @@ ref:
 
 - [vim - what is the difference between cterm color and gui color? - Stack Overflow](https://stackoverflow.com/questions/60590376/what-is-the-difference-between-cterm-color-and-gui-color)
 
-## vim mouse mode
+## mouse mode
 
 ```vim
 
@@ -525,6 +479,26 @@ more:
 
 - [meaning - Why does yank in vim mean copy? - English Language Learners Stack Exchange](https://ell.stackexchange.com/questions/14632/why-does-yank-in-vim-mean-copy)
 
+### how to copy to clipboard
+
+这篇提供了不少办法： https://stackoverflow.com/questions/3961859/how-to-copy-to-clipboard-in-vim#:~:text=In%20vim%20command%20mode%20press,and%20CMD%20%2B%20v%20to%20paste.
+
+其中我最喜欢基于map的方案：https://stackoverflow.com/a/67890119/9422455
+
+```vim
+nnoremap Y "+y
+vnoremap Y "+y
+nnoremap yY ^"+y$
+```
+
+这个方案，在本地mac上测试通过，但是在公司服务器（ubuntu）上没有成功，就是没有进粘贴板，还没太明白。
+
+## how to insert datetime
+
+ref:
+
+- [Insert current date or time | Vim Tips Wiki | Fandom](https://vim.fandom.com/wiki/Insert_current_date_or_time)
+
 ## column selection
 
 Vim Tip: Select Column Put cursor and beginning of text to select. Press **\<CTRL-V\>** to begin select of the column. When you reach the end of your select, type '**\<c\>** ' Type the new text. Note that this will only replace the first instance. Now hit **\<ESC\>** . All the text has been changed!
@@ -563,7 +537,7 @@ see:
 
 - [How to search for selected text in Vim? - Super User](https://superuser.com/questions/41378/how-to-search-for-selected-text-in-vim)
 
-## BEST-PRACTICE: fold(collapse) and unfold(expand)
+## fold(collapse) and unfold(expand)
 
 ```vim
 "~/.vimrc

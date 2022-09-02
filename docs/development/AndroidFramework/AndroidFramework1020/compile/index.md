@@ -1,3 +1,5 @@
+# compile AOSP
+
 ## AOSP build efficiency
 
 ### AOSP build time vs CPU core count (up to 56)
