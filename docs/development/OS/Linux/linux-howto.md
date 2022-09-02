@@ -24,7 +24,7 @@ change into these:
 
 ```yaml
 HOST: *
-	ServerAliveInternal 60
+	ServerAliveInterval 60
 ```
 
 finally, maybe you should restart your client. If you use the mac, you can:

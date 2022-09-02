@@ -22,137 +22,6 @@ tags: [开发笔记, Linux]
 >
 > ![picture 16](https://mark-vue-oss.oss-cn-hangzhou.aliyuncs.com/mark_core-notes-of-linux-1643723806431-00b5b858aa9372ebc4b9dfc37178554d0d0d4eb62c854edb6cd2385e15333e07.png)
 
-- [首先，linux 是什么](#首先linux是什么)
-- [其次，如何拥有一台 linux](#其次如何拥有一台linux)
-- [接着，如何登录 linux](#接着如何登录linux)
-- [最后，如何掌控 Linux，以下给出一部分经验笔记](#最后如何掌控linux以下给出一部分经验笔记)
-- [-------------------------------------](#-------------------------------------)
-- [BEST-PRACTICE: ubuntu initialization](#best-practice-ubuntu-initialization)
-  - [step 0. install](#step-0-install)
-  - [step 1. config apt source](#step-1-config-apt-source)
-    - [1. change apt source](#1-change-apt-source)
-    - [2. update apt](#2-update-apt)
-  - [step 2. config git](#step-2-config-git)
-  - [step 3. config terminal](#step-3-config-terminal)
-  - [step 4. config language](#step-4-config-language)
-    - [resolution 1: config chinese input source via ibus](#resolution-1-config-chinese-input-source-via-ibus)
-    - [FIXME: resolution 2: config chinese input source via sougou](#fixme-resolution-2-config-chinese-input-source-via-sougou)
-    - [how to switch language input source](#how-to-switch-language-input-source)
-    - [how to change language to english](#how-to-change-language-to-english)
-  - [IMPROVE: a script to init ubuntu (may not work)](#improve-a-script-to-init-ubuntu-may-not-work)
-- [BEST-PRACTICE: linux connection (`ssh`)](#best-practice-linux-connection-ssh)
-  - [ssh no secret/password](#ssh-no-secretpassword)
-  - [ssh keep connection alive](#ssh-keep-connection-alive)
-- [BEST-PRACTICE: linux env management](#best-practice-linux-env-management)
-  - [how to change apt source](#how-to-change-apt-source)
-    - [resolution 1: manual change from the App of `Softwares & Updates`](#resolution-1-manual-change-from-the-app-of-softwares--updates)
-    - [resolution 2: modify the configuration manually from the terminal](#resolution-2-modify-the-configuration-manually-from-the-terminal)
-  - [how to know what's the os platform](#how-to-know-whats-the-os-platform)
-  - [how to configure python environment](#how-to-configure-python-environment)
-  - [:white_check_mark: cannot use `sudo apt-get install xxx` to install packages](#white_check_mark-cannot-use-sudo-apt-get-install-xxx-to-install-packages)
-- [BEST-PRACTICE: linux file system management](#best-practice-linux-file-system-management)
-  - [mkdir if not exist](#mkdir-if-not-exist)
-  - [ls and delete files](#ls-and-delete-files)
-  - [fastest delete file](#fastest-delete-file)
-  - [how to show absolute path of file from relative](#how-to-show-absolute-path-of-file-from-relative)
-  - [how to copy file into clipboard](#how-to-copy-file-into-clipboard)
-    - [it's easy to copy a text file](#its-easy-to-copy-a-text-file)
-    - [but it cannot be done for a binary file](#but-it-cannot-be-done-for-a-binary-file)
-  - [how to show file size](#how-to-show-file-size)
-  - [how to compare between files (`diff` & `vimdiff`)](#how-to-compare-between-files-diff--vimdiff)
-    - [resolution 1: `diff F1 F2`](#resolution-1-diff-f1-f2)
-    - [resolution 2: `diff -y F1 F2` or `sdiff F1 F2`](#resolution-2-diff--y-f1-f2-or-sdiff-f1-f2)
-    - [resolution 3: `vimdiff F1 F2`](#resolution-3-vimdiff-f1-f2)
-    - [TODO: resolution 4: git diff](#todo-resolution-4-git-diff)
-  - [FIXME: how to copy/move directory files correctly to soft links under target directory without affecting git?](#fixme-how-to-copymove-directory-files-correctly-to-soft-links-under-target-directory-without-affecting-git)
-- [BEST-PRACTICE: linux disk management](#best-practice-linux-disk-management)
-  - [`ncdu`, disk space tui](#ncdu-disk-space-tui)
-  - [`baobab`, disk space gui](#baobab-disk-space-gui)
-    - [install problem](#install-problem)
-    - [effects](#effects)
-- [BEST-PRACTICE: linux shells management](#best-practice-linux-shells-management)
-  - [list all the shells](#list-all-the-shells)
-  - [background: `sh` is different with `bash`](#background-sh-is-different-with-bash)
-  - [see what's the current Shell](#see-whats-the-current-shell)
-  - [switch shell](#switch-shell)
-  - [set zsh as the default terminal (need re-login)](#set-zsh-as-the-default-terminal-need-re-login)
-- [BEST-PRACTICE: linux terminal management](#best-practice-linux-terminal-management)
-  - [:white_check_mark: the terminal cannot up down after editing](#white_check_mark-the-terminal-cannot-up-down-after-editing)
-  - [TODO: bind `option + arrow` to jump word in zsh on ubuntu vmware on MacOS](#todo-bind-option--arrow-to-jump-word-in-zsh-on-ubuntu-vmware-on-macos)
-- [BEST-PRACTICE: linux commands management](#best-practice-linux-commands-management)
-  - [how to auto input in command](#how-to-auto-input-in-command)
-    - [auto input password for sudo commands](#auto-input-password-for-sudo-commands)
-    - [auto yes for some command (`yes | `)](#auto-yes-for-some-command-yes--)
-    - [auto yes for `apt` installing packages (`-y`)](#auto-yes-for-apt-installing-packages--y)
-  - [how to search commands by prefix (`history-search-backward/forward`)](#how-to-search-commands-by-prefix-history-search-backwardforward)
-  - [how to repeat command](#how-to-repeat-command)
-  - [how to use variable as multi args](#how-to-use-variable-as-multi-args)
-  - [how to set an alias](#how-to-set-an-alias)
-    - [resolution 1: in terminal](#resolution-1-in-terminal)
-    - [resolution 2: write into `~/.bash_aliases`](#resolution-2-write-into-bash_aliases)
-    - [:sparkles: resolution 3: use `.bash_aliases` with `zsh`](#sparkles-resolution-3-use-bash_aliases-with-zsh)
-    - [unalias](#unalias)
-  - [how to compare between outputs from two commands](#how-to-compare-between-outputs-from-two-commands)
-- [BEST-PRACTICE: linux accounts management](#best-practice-linux-accounts-management)
-  - [how to create user](#how-to-create-user)
-  - [how to log out](#how-to-log-out)
-    - [resolution 1 (11.10 and above)](#resolution-1-1110-and-above)
-    - [resolution 2](#resolution-2)
-  - [set a shorter password for ubuntu](#set-a-shorter-password-for-ubuntu)
-- [BEST-PRACTICE: linux net management](#best-practice-linux-net-management)
-  - [how to know my public ip address](#how-to-know-my-public-ip-address)
-  - [how to monitor network traffic](#how-to-monitor-network-traffic)
-  - [FIXME: check proxy](#fixme-check-proxy)
-- [BEST-PRACTICE: linux date/time management](#best-practice-linux-datetime-management)
-  - [how to format date in terminal](#how-to-format-date-in-terminal)
-  - [how to change timezone (and time)](#how-to-change-timezone-and-time)
-    - [resolution 1 (conclusion): directly export](#resolution-1-conclusion-directly-export)
-    - [resolution 2 (detail): choose following directions](#resolution-2-detail-choose-following-directions)
-- [BEST-PRACTICE: linux system management](#best-practice-linux-system-management)
-  - [:white_check_mark: `A stop job is running for Session c2 of user ... (1min 30s)`](#white_check_mark-a-stop-job-is-running-for-session-c2-of-user--1min-30s)
-- [-----------------------------------](#-----------------------------------)
-- [BEST-PRACTICE: linux common commands](#best-practice-linux-common-commands)
-  - [command:tar](#commandtar)
-  - [command:perl](#commandperl)
-    - [how to use perl to replace multi-lines](#how-to-use-perl-to-replace-multi-lines)
-  - [command:find](#commandfind)
-    - [how to ignore case](#how-to-ignore-case)
-    - [how to specify search type](#how-to-specify-search-type)
-    - [how to exclude dir](#how-to-exclude-dir)
-    - [TODO: how to find file with time used](#todo-how-to-find-file-with-time-used)
-    - [tip: find efficiency comparison](#tip-find-efficiency-comparison)
-  - [command:grep](#commandgrep)
-    - [how to exclude dir (`--exclude-dir=dir`)](#how-to-exclude-dir---exclude-dirdir)
-    - [how to limit depth (`-maxdepth`)](#how-to-limit-depth--maxdepth)
-    - [tip: grep by lines context is MUCH FASTER than grep by words context, and even better for output](#tip-grep-by-lines-context-is-much-faster-than-grep-by-words-context-and-even-better-for-output)
-    - [tip: grep by negative captured group needs to use `ggrep`](#tip-grep-by-negative-captured-group-needs-to-use-ggrep)
-  - [command:tree](#commandtree)
-    - [how to display chinese (`-N`)](#how-to-display-chinese--n)
-    - [how to exclude dir(`-I`)](#how-to-exclude-dir-i)
-  - [command:head](#commandhead)
-    - [head basic usage](#head-basic-usage)
-    - [how to exclude the last k rows](#how-to-exclude-the-last-k-rows)
-    - [discuss: use `head` or `sed`](#discuss-use-head-or-sed)
-  - [command:top](#commandtop)
-  - [command:cat](#commandcat)
-    - [how to write raw string into file using `cat`](#how-to-write-raw-string-into-file-using-cat)
-    - [usage: how to know what's the bash string](#usage-how-to-know-whats-the-bash-string)
-  - [command:Unzip](#commandunzip)
-    - [how to unzip to specific directory](#how-to-unzip-to-specific-directory)
-  - [command:kill](#commandkill)
-  - [command:scp](#commandscp)
-  - [command:lsof](#commandlsof)
-  - [command:ufw](#commandufw)
-  - [command:time](#commandtime)
-  - [command:tr](#commandtr)
-  - [command:cd](#commandcd)
-    - [usage: a superb scene using `cd .`](#usage-a-superb-scene-using-cd-)
-  - [command:sed](#commandsed)
-    - [how to print only matched lines](#how-to-print-only-matched-lines)
-    - [:sparkles: how to increment version number](#sparkles-how-to-increment-version-number)
-    - [how to match digits (`[0-9]` or `:digit:`)](#how-to-match-digits-0-9-or-digit)
-    - [how to insert text before first line of file](#how-to-insert-text-before-first-line-of-file)
-
 ## 首先，linux 是什么
 
 作为南川的核心开发笔记（从实际工作经验中提炼出来的笔记），我无意过多展开一些基本的背景介绍，因此也不会花时间去讲述 linux 和 unix 和 mac 之间的关系，这些读者们都可以很方便地在互联网找到答案。
@@ -262,7 +131,7 @@ rm $file
 ```yaml
 # /etc/ssh/ssh_config
 HOST: *
-	ServerAliveInternal 60
+	ServerAliveInterval 60
 ```
 
 ## 最后，如何掌控 Linux，以下给出一部分经验笔记
@@ -424,6 +293,7 @@ echo "$PASSWORD\n$USER ALL=(ALL:ALL) NOPASSWD: ALL" | sudo -S tee /etc/sudoers.d
 # enable backward/forward prefix commands search
 echo '"\e[A": history-search-backward
 "\e[B": history-search-forward' >> ~/.inputrc
+bind -f ~/.inputrc
 
 # --- step 1.7 ---
 
@@ -477,16 +347,42 @@ sudo pkill -u $USER
 
 ## BEST-PRACTICE: linux connection (`ssh`)
 
+### ssh generate public keys
+
+ref: https://git-scm.com/book/en/v2/Git-on-the-Server-Generating-Your-SSH-Public-Key
+
+```sh
+mkdir -p ~/.ssh
+cd ~/.ssh
+ssh-keygen -o
+```
+
 ### ssh no secret/password
 
 It's easy that if only you generate a `id_rsa.pub` and `scp` to your `~/.ssh/authorization_keys` then things all done.
 
+#### Solution 1
+
 ```sh
 username="xxx"
 server="xxxxx"
-file="id_rsa.pub"
+file="~/.ssh/id_rsa.pub"
 
-scp ~/.ssh/$file $username@$server:
+# command
+cat $file | ssh $username@$server "cat - >> ~/.ssh/authorized_keys"
+
+# sample
+cat $file | ssh aosp@192.168.1.242 "cat - >> ~/.ssh/authorized_keys"
+```
+
+#### Solution 2
+
+```sh
+username="xxx"
+server="xxxxx"
+file="~/.ssh/id_rsa.pub"
+
+scp $file $username@$server:
 ssh $username@$server
 cat $file >> .ssh/authorized_keys
 rm $file
@@ -508,7 +404,7 @@ change into these:
 
 ```yaml
 HOST: *
-	ServerAliveInternal 60
+	ServerAliveInterval 60
 ```
 
 finally, maybe you should restart your client. If you use the mac, you can:
@@ -1168,7 +1064,6 @@ sudo useradd USERNAME
 
 # create passwd [under root]
 sudo passwd USERNAME
-
 ```
 
 ### how to log out

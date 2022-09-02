@@ -1,26 +1,5 @@
 # centos init manual
 
-- [shell relative](#shell-relative)
-  - [enable navigation between history commands using arrows](#enable-navigation-between-history-commands-using-arrows)
-- [vim relative](#vim-relative)
-  - [show chinese](#show-chinese)
-- [user relative](#user-relative)
-  - [list users](#list-users)
-  - [create user](#create-user)
-  - [check user permission](#check-user-permission)
-- [ssh relative](#ssh-relative)
-  - [enable ssh password authentication](#enable-ssh-password-authentication)
-  - [ssh login via PRIVATE KEY](#ssh-login-via-private-key)
-- [python relative](#python-relative)
-  - [set mirror](#set-mirror)
-  - [install python](#install-python)
-  - [check python](#check-python)
-  - [use virtualenv](#use-virtualenv)
-  - [run project](#run-project)
-- [npm relative](#npm-relative)
-  - [use npm](#use-npm)
-  - [use pm2](#use-pm2)
-
 ## shell relative
 
 ### enable navigation between history commands using arrows
@@ -65,11 +44,11 @@ USER=mark
 PSWD=123456
 
 # 创建user
-useradd $USER
+sudo useradd $USER
 # 修改user的密码
-passwd $USER
+sudo passwd $USER
 # 加入wheel组, todo: 这是啥，有啥用
-usermod -a -G wheel,root $USER
+sudo usermod -a -G wheel,root $USER
 ```
 
 ### check user permission

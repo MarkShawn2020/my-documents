@@ -1,19 +1,19 @@
 # ubuntu init manual
 
-1. [step 0. install](#step-0-install)
-2. [step 1. config apt source](#step-1-config-apt-source)
-   1. [1. change apt source](#1-change-apt-source)
-      1. [fastest/script way: 直接修改`/etc/apt/sources.list`](#fastestscript-way-直接修改etcaptsourceslist)
-      2. [robustest/recommend-for-newbie way: 在`softwares & update`里修改 server](#robustestrecommend-for-newbie-way-在softwares--update里修改server)
-      3. [use others way: 使用别人写好的 git 仓库进行配置](#use-others-way-使用别人写好的-git仓库进行配置)
-   2. [2. update apt](#2-update-apt)
-3. [step 2. config git](#step-2-config-git)
-4. [step 3. config terminal](#step-3-config-terminal)
-5. [step 4. config language](#step-4-config-language)
-   1. [resolution 1: config chinese input source via ibus](#resolution-1-config-chinese-input-source-via-ibus)
-   2. [FIXME: resolution 2: config chinese input source via sougou](#fixme-resolution-2-config-chinese-input-source-via-sougou)
-   3. [how to switch language input source](#how-to-switch-language-input-source)
-   4. [how to change language to english](#how-to-change-language-to-english)
+- [step 0. install](#step-0-install)
+- [step 1. config apt source](#step-1-config-apt-source)
+  - [1. change apt source](#1-change-apt-source)
+    - [fastest/script way: 直接修改`/etc/apt/sources.list`](#fastestscript-way-直接修改etcaptsourceslist)
+    - [robustest/recommend-for-newbie way: 在`softwares & update`里修改 server](#robustestrecommend-for-newbie-way-在softwares--update里修改-server)
+    - [use others way: 使用别人写好的 git 仓库进行配置](#use-others-way-使用别人写好的-git-仓库进行配置)
+  - [2. update apt](#2-update-apt)
+- [step 2. config git](#step-2-config-git)
+- [step 3. config terminal](#step-3-config-terminal)
+- [step 4. config language](#step-4-config-language)
+  - [resolution 1: config chinese input source via ibus](#resolution-1-config-chinese-input-source-via-ibus)
+  - [FIXME: resolution 2: config chinese input source via sougou](#fixme-resolution-2-config-chinese-input-source-via-sougou)
+  - [how to switch language input source](#how-to-switch-language-input-source)
+  - [how to change language to english](#how-to-change-language-to-english)
 
 ## step 0. install
 
@@ -36,13 +36,11 @@ Update 2022-01-24：实际上所有方式底层都是通过修改 apt sources.li
 GUI 版（也就是`softwares & update` app 里会提供测试，自动修改，改完之后触发更新操作，而这些其实可以自己用脚本完成，响应也更快！
 
 ```sh
-# backup source file
 APT_SOURCES_LIST_FILE=/etc/apt/sources.list
-cp $APT_SOURCES_LIST_FILE $APT_SOURCES_LIST_FILE.bak
-
-# change source
 APT_SOURCE="http://mirrors.yun-idc.com/ubuntu/"
-sudo sed -i  "s|deb \S+|deb $APT_SOURCE|g" $APT_SOURCES_LIST_FILE
+
+# backup & change source file
+sudo sed -i.bak -E  "s|deb \S+|deb $APT_SOURCE|g" $APT_SOURCES_LIST_FILE
 
 # update source
 sudo apt update
