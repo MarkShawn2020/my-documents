@@ -2,6 +2,20 @@
 
 > refer to my blog for better experience: [趣立编译笔记](https://markshawn.com/docs/@arpara/android-framework/quli/compile)
 
+- [basic info](#basic-info)
+- [pre-compile](#pre-compile)
+  - [install dependencies (necessary)](#install-dependencies-necessary)
+  - [increase swap area (necessary in low memory machine)](#increase-swap-area-necessary-in-low-memory-machine)
+  - [config environment variables (recommended)](#config-environment-variables-recommended)
+- [compile](#compile)
+  - [auto build script](#auto-build-script)
+  - [speed up compilation](#speed-up-compilation)
+- [compile efficiency](#compile-efficiency)
+- [bugfix](#bugfix)
+  - [FIXED: `cd is not defined` when `source ./build/envsetup.sh`](#fixed-cd-is-not-defined-when-source-buildenvsetupsh)
+  - [PASS: `Could not create symlink` when `source ./build/envsetup.sh`](#pass-could-not-create-symlink-when-source-buildenvsetupsh)
+  - [PASS: `Disallowed Path Tools` when compiling](#pass-disallowed-path-tools-when-compiling)
+
 ## basic info
 
 ```yaml
@@ -30,7 +44,7 @@ sudo apt-get install -y libx11-dev:i386 libreadline6-dev:i386 libgl1-mesa-dev g+
 
 see: [3-increase-swap-area-recommend](../general/AndroidFramework/02-aosp-compile/index.md#3-increase-swap-area-recommend)
 
-### config environment variables (recommend)
+### config environment variables (recommended)
 
 ```sh
 AF_SOURCE="~/work@arpara/AF1020"
@@ -71,6 +85,10 @@ cd ../../..
 ```
 
 ![picture 1](https://mark-vue-oss.oss-cn-hangzhou.aliyuncs.com/compile-1661847002308-9c3f8bc0082f05543f409ced04d7163670e86eda431dde7ad70e109af49f7780.png)  
+
+### speed up compilation
+
+see: [how-to-speed-up-aosp-building](../general/AndroidFramework/02-aosp-compile/index.md#how-to-speed-up-aosp-building)
 
 ## compile efficiency
 
