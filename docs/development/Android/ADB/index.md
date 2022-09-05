@@ -1,4 +1,3 @@
-# adb howto
 
 ## overview
 

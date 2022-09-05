@@ -1,4 +1,3 @@
-# compile AOSP
 
 ## AOSP build efficiency
 
