@@ -46,7 +46,20 @@ refs:
 
 - [How to Check the Size of /TMP in Linux](https://linuxhint.com/check-size-tmp-linux/)
 
-### TODO: 3. adding `swp`
+### 3. increase swap area (recommend)
+
+> if not, the `-j` must be smaller, e.g. 4 instead of 8, otherwise would fail
+
+see: https://askubuntu.com/a/1075516
+
+```sh
+sudo swapoff /swapfile
+sudo rm /swapfile
+sudo fallocate -l 16G /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+```
 
 - [Optimize the Usage of Swap to Speed up Response for Ubuntu - Ubuntu Sharing](http://ubuntuguide.net/optimize-the-usage-of-swap-to-speed-up-response-for-ubuntu)
 
