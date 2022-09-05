@@ -1,10 +1,11 @@
 # quli todo
 
-| sDate      | eDate      | category    | title                                | priority | status   | reason | detail                |
-| ---------- | ---------- | ----------- | ------------------------------------ | -------- | -------- | ------ | --------------------- |
-| 2022-08-26 |            | instruction | ensure compile via Docker            |          |          |        | [^ins-docker-compile] |
-| 2022-08-26 |            | solution    | flush on Ubuntu, instead of Win+Qual |          |          |        |                       |
-| 2022-08-26 | 2022-09-02 | test        | check fail on eng/debug mode         |          | finished |        | [^test-flush-mode]    |
+| sDate      | eDate      | category    | title                                | priority | status   | reason      | detail                |
+| ---------- | ---------- | ----------- | ------------------------------------ | -------- | -------- | ----------- | --------------------- |
+| 2022-09-05 |            | research    | odm tree structure and architect     | .7       |          |             |                       |
+| 2022-08-26 |            | solution    | flush on Ubuntu, instead of Win+Qual | .9       |          |             |                       |
+| 2022-08-26 | 2022-09-03 | instruction | ensure compile via Docker            | -        | canceled | unnecessary | [^ins-docker-compile] |
+| 2022-08-26 | 2022-09-02 | test        | check fail on eng/debug mode         | -        | finished |             | [^test-flush-mode]    |
 
 [^ins-compile-via-docker]:
     ![picture 2](.imgs/TODO-1661499942273-e8b34641cfab7fde055290450b119b04d9eb0e67ce111b073d4022000ebfeed5.png)  
