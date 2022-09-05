@@ -1,6 +1,6 @@
 # 趣立编译笔记
 
-> refer to my blog for better experience: [趣立编译笔记](https://markshawn.com/docs/@arpara/android-framework/quli/compile)
+> Feel free to refer to [blog: 趣立编译笔记](https://markshawn.com/docs/@arpara/android-framework/quli/compile) for better reading experience.
 
 - [basic info](#basic-info)
 - [pre-compile](#pre-compile)
