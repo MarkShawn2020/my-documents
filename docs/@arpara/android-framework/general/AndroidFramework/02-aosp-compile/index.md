@@ -45,7 +45,7 @@ refs:
 
 - [How to Check the Size of /TMP in Linux](https://linuxhint.com/check-size-tmp-linux/)
 
-### 3. increase swap area (recommend)
+### 3. increase swap area (recommended)
 
 > if not, the `-j` must be smaller, e.g. 4 instead of 8, otherwise would fail
 
