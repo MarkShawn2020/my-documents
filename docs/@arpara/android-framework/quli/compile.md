@@ -1,6 +1,6 @@
-# compile quli 1020
+# 趣立编译笔记
 
-> refer to my blog for better experience: [南川笔记](markshawn.com)
+> refer to my blog for better experience: [趣立编译笔记](https://markshawn.com/docs/@arpara/android-framework/quli/compile)
 
 ## basic info
 
