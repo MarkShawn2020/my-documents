@@ -47,7 +47,7 @@ alias af-root="cd $AF_ROOT"
 > - Android官方: https://source.android.com/docs/setup/build/building
 > - arpara编译: https://arpara2021.feishu.cn/wiki/wikcn1lWQsHDluKB5WHwm83WlJd?appStyle=UI4&domain=www.feishu.cn&locale=en-US&tabName=space&theme=light&userId=7085189359086878748
 
-:::warn
+:::caution
 使用`m`编译无法通过，要基于`build.sh`
 :::
 
