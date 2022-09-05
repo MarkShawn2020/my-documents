@@ -14,7 +14,9 @@ android_path: sxr2130_apps/LINUX/android
 
 > reference: [搭建构建环境  |  Android 开源项目  |  Android Open Source Project](https://source.android.com/docs/setup/build/initializing#installing-required-packages-ubuntu-1804)
 
-> :warning: 必须要按照趣立的依赖进行安装，按照谷歌的会报错，因为趣立的依赖里包含谷歌未给出的，例如`openssl`
+:::caution
+必须要按照趣立的依赖进行安装，按照谷歌的会报错，因为趣立的依赖里包含谷歌未给出的，例如`openssl`
+:::
 
 ```sh
 # AOSP dependencies given officially by google for Ubuntu 18
