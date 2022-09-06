@@ -87,16 +87,22 @@ vim $(which repo)
 
 #### Step 4. `repo init`
 
-At here we can get diversified versions of aosp [代号、标记和 Build 号  |  Android 开源项目  |  Android Open Source Project](https://source.android.com/setup/start/build-numbers#source-code-tags-and-builds), and we can know that the version is composed of: `android-{VERSION_NUMBER}-r{NUMBER}`.
+> ref: AOSP | 镜像站使用帮助 | 清华大学开源软件镜像站 | Tsinghua Open Source Mirror, https://mirrors.tuna.tsinghua.edu.cn/help/AOSP/
 
-So since I wanna to install the android 11, I can specify the version as `android-11.0.0-r1`.
+At here we can get diversified versions of aosp [代号、标记和 Build 号  |  Android 开源项目  |  Android Open Source Project](https://source.android.com/setup/start/build-numbers#source-code-tags-and-builds), and we can know that the version is composed of: `android-{VERSION_NUMBER}_r{NUMBER}`.
+
+So since I wanna to install the android 11, I can specify the version as `android-11.0.0_r1`.
 
 And then download it via:
 
 ```sh
 cd {ANDROID}
 # e.g. VERSION=android-10.0.0_r1
-repo init -u https://android.googlesource.com/platform/manifest -b {VERSION}
+# solution 1:
+repo init -u https://android.googlesource.com/platform/manifest -b $VERSION
+
+# solution 2:
+repo init -u https://mirrors.tuna.tsinghua.edu.cn/git/AOSP/platform/manifest -b $VERSION
 ```
 
 ref:
