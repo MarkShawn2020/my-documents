@@ -8,12 +8,12 @@
 
 ## chapters
 
-1. [how to pull AOSP](./01-aosp-pull/index.md)
+1. [how to pull AOSP](./01-aosp-pull.md)
 2. [how to compile AOSP](./02-aosp-compile/index.md)
-3. [what's the changes between different AOSP versions](./03-aosp-changes/index.md)
+3. [what's the changes between different AOSP versions](./03-aosp-changes.md)
 4. [research on AOSP SurfaceFlinger](./04-aosp-sf-research/index.md)
-5. [how to read AOSP](./05-aosp-read/index.md)
-6. [misc of AOSP](./06-aosp-misc/index.md)
+5. [how to read AOSP](./05-aosp-read.md)
+6. [misc of AOSP](./06-aosp-misc.md)
 
 ## others
 
