@@ -1,7 +1,3 @@
-# aosp pull
-
-[toc]
-
 ## prepare
 
 ```sh
@@ -99,6 +95,7 @@ And then download it via:
 
 ```sh
 cd {ANDROID}
+# e.g. VERSION=android-10.0.0_r1
 repo init -u https://android.googlesource.com/platform/manifest -b {VERSION}
 ```
 
@@ -112,7 +109,7 @@ Since `repo sync` needs a lot of time, 1-10 hours or so, depending on the intern
 
 So:
 
-1. the internet connection, especialy vpn setup is necessary!
+1. the internet connection, especially vpn setup is necessary!
 2. the terminal time is recommended to set for time review.
 
 #### Step 6. build (make)
