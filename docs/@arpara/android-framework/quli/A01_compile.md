@@ -3,6 +3,9 @@
 > For better reading experience, refer to [blog: 趣立编译笔记](https://markshawn.com/docs/@arpara/android-framework/quli/compile).
 
 - [basic info](#basic-info)
+  - [path variables](#path-variables)
+  - [project structure of OEM](#project-structure-of-oem)
+  - [project structure of Android](#project-structure-of-android)
 - [pre-compile](#pre-compile)
   - [install dependencies (necessary)](#install-dependencies-necessary)
   - [increase swap area (necessary in low memory machine)](#increase-swap-area-necessary-in-low-memory-machine)
@@ -18,6 +21,8 @@
 
 ## basic info
 
+### path variables
+
 ```yaml
 # premise
 AF_SOURCE: ~/work@arpara/AF1020
@@ -25,6 +30,177 @@ AF_OEM: $AF_SOURCE/forluci/oem
 
 # const
 AF_ROOT: $AF_OEM/sxr2130_apps/LINUX/android
+```
+
+### project structure of OEM
+
+```txt
+➜  oem tree -L 2
+.
+├── A11B
+│   ├── BATTERY.PROVISION.A11B
+│   ├── ChargerExProtocol.c
+│   ├── DisplayUtils.c
+│   ├── MDPPlatformLib.c
+│   ├── MDPPlatformLibPanelCommon.c
+│   ├── QUPAC_Access.c
+│   ├── QcomChargerConfig_VbattTh.cfg
+│   ├── bdwlan.e11
+│   ├── bdwlan.elf
+│   ├── htnv10.bin
+│   ├── htnv20.bin
+│   └── logo1.bmp
+├── NORMAL
+│   ├── BATTERY.PROVISION
+│   ├── ChargerExProtocol.c
+│   ├── DisplayUtils.c
+│   ├── MDPPlatformLib.c
+│   ├── MDPPlatformLibPanelCommon.c
+│   ├── QUPAC_Access.c
+│   ├── QcomChargerConfig_VbattTh.cfg
+│   ├── bdwlan.elf
+│   ├── htnv10.bin
+│   ├── htnv20.bin
+│   ├── logo1.bmp
+│   ├── pm_config_pam.c
+│   ├── pm_config_target.c
+│   ├── por.py
+│   ├── railway_config.c
+│   └── slpi
+├── V02A
+│   ├── BATTERY.PROVISION.V02A
+│   ├── ChargerExProtocol.c
+│   ├── DisplayUtils.c
+│   ├── MDPPlatformLib.c
+│   ├── MDPPlatformLibPanelCommon.c
+│   ├── QUPAC_Access.c
+│   ├── QcomChargerConfig_VbattTh.cfg
+│   ├── bdwlan.e11
+│   ├── bdwlan.elf
+│   ├── htnv10.bin
+│   ├── htnv20.bin
+│   ├── logo1.bmp
+│   ├── pm_config_pam.c
+│   ├── pm_config_target.c
+│   ├── pm_sbl_boot_oem.c
+│   ├── por.py
+│   ├── railway_config.c
+│   └── slpi
+├── about.html          // 基线信息都在这（趣立）
+├── bld_adsp.sh
+├── bld_aop.sh
+├── bld_boot.sh
+├── bld_cdsp.sh
+├── bld_common.sh
+├── bld_prj.sh
+├── bld_slpi.sh
+├── bld_tz.sh
+├── common
+│   ├── Core
+│   ├── build
+│   ├── config
+│   ├── core_qupv3fw
+│   └── sectools
+├── contents.xml
+├── cpota.sh
+├── dir
+│   ├── dir.zip
+│   └── ufs
+├── make_usf.sh
+├── ota.py
+├── sxr2130_adsp
+│   ├── BuildProducts.txt
+│   ├── VariantImgInfo_8250.adsp.prodQ.json
+│   └── adsp_proc
+├── sxr2130_aop
+│   ├── BuildProducts.txt
+│   ├── VariantImgInfo_AAAAANAZO.json
+│   └── aop_proc
+├── sxr2130_apps
+│   └── LINUX
+├── sxr2130_boot
+│   ├── BuildProducts.txt
+│   └── boot_images
+├── sxr2130_btfm
+│   └── btfm_proc
+├── sxr2130_btfm_hsp
+│   └── btfm_proc
+├── sxr2130_cdsp
+│   ├── BuildProducts.txt
+│   ├── VariantImgInfo_8250.cdsp.prodQ.json
+│   └── cdsp_proc
+├── sxr2130_cvp
+│   ├── cvp_proc
+│   └── manifest.xml
+├── sxr2130_npu
+│   └── npu_proc
+├── sxr2130_slpi
+│   ├── BuildProducts.txt
+│   ├── VariantImgInfo_8250.slpi.prodQ.json
+│   └── slpi_proc
+├── sxr2130_spss
+│   └── spss_proc
+├── sxr2130_tz
+│   ├── BuildProducts.txt
+│   └── trustzone_images
+├── sxr2130_tzapps
+│   └── qtee_tas
+├── sxr2130_video
+│   ├── manifest.xml
+│   └── venus_proc
+├── sxr2130_wigig
+│   ├── BuildProducts.txt
+│   └── wigig_proc
+├── sxr2130_wlan_hsp
+│   └── wlan_proc
+└── sxr2130_wlan_hst
+    └── wlan_proc
+
+47 directories, 71 files
+```
+
+### project structure of Android
+
+```log
+➜  android git:(master) ✗ ll
+total 32K
+lrwxrwxrwx 1 mark mark   19 Sep  5 16:34 Android.bp -> build/soong/root.bp
+-r--r--r-- 1 mark mark   92 Aug 25 17:25 Makefile
+drwxrwxr-x 1 mark mark  692 Aug 25 17:25 art
+-rwxrwxr-x 1 mark mark  199 Sep  5 16:33 auto-build.sh
+drwxrwxr-x 1 mark mark  360 Aug 25 17:26 bionic
+drwxrwxr-x 1 mark mark   36 Aug 25 17:23 bootable
+lrwxrwxrwx 1 mark mark   26 Sep  5 16:34 bootstrap.bash -> build/soong/bootstrap.bash
+drwxrwxr-x 1 mark mark  160 Sep  5 16:34 build
+lrwxrwxrwx 1 mark mark   48 Sep  5 16:34 build.sh -> vendor/qcom/opensource/core-utils/build/build.sh
+drwxrwxr-x 1 mark mark  384 Aug 25 17:25 cts
+drwxrwxr-x 1 mark mark  212 Aug 25 17:26 dalvik
+drwxrwxr-x 1 mark mark   34 Aug 25 17:24 developers
+drwxrwxr-x 1 mark mark  222 Aug 25 17:23 development
+drwxrwxr-x 1 mark mark  104 Aug 25 17:26 device
+drwxrwxr-x 1 mark mark   20 Sep  5 16:34 disregard
+drwxrwxr-x 1 mark mark 5.1K Aug 25 17:25 external
+drwxrwxr-x 1 mark mark  134 Aug 25 17:23 frameworks
+drwxrwxr-x 1 mark mark  138 Aug 25 17:24 hardware
+drwxrwxr-x 1 mark mark   86 Sep  5 16:34 kernel
+drwxrwxr-x 1 mark mark  814 Aug 25 17:26 libcore
+drwxrwxr-x 1 mark mark  422 Aug 25 17:26 libnativehelper
+drwxrwxr-x 1 mark mark  846 Sep  6 06:34 logs
+drwxrwxr-x 1 mark mark    8 Sep  3 10:24 logs.bak
+drwxrwxr-x 1 mark mark 1.8K Sep  5 16:34 out
+drwxrwxr-x 1 mark mark  124 Aug 25 17:26 packages
+drwxrwxr-x 1 mark mark   38 Aug 25 17:26 pdk
+drwxrwxr-x 1 mark mark  112 Aug 25 17:25 platform_testing
+drwxrwxr-x 1 mark mark  400 Aug 25 17:25 prebuilts
+-rw-rw-r-- 1 mark mark  101 Sep  2 11:33 readme.md
+drwxrwxr-x 1 mark mark  500 Aug 25 17:24 sdk
+drwxrwxr-x 1 mark mark  110 Aug 25 17:24 shortcut-fe
+-rwxrwxr-x 1 mark mark 4.5K Aug 25 17:24 sync.sh
+drwxrwxr-x 1 mark mark  566 Aug 25 17:23 system
+drwxrwxr-x 1 mark mark   94 Aug 25 17:26 test
+drwxrwxr-x 1 mark mark   42 Aug 25 17:26 toolchain
+drwxrwxr-x 1 mark mark  288 Aug 25 17:24 tools
+drwxrwxr-x 1 mark mark   50 Aug 25 17:26 vendor
 ```
 
 ## pre-compile
@@ -98,7 +274,7 @@ see: [external: how-to-speed-up-aosp-building](../general/AndroidFramework/02-ao
 ## compile efficiency
 
 :::tip
-`ln out` implementation not yet passed, we caught one `-j1` log at: `$AF_LOGS/build_09-04T00:33.log`, with its last lines as:
+TODO: `ln out` implementation not yet passed, however we caught one `-j1` log at: `$AF_LOGS/build_09-04T00:33.log`, with its last lines as:
 
 ```txt
 [  3% 1557/47140] Export includes file: out/soong/.intermediates/system/libhidl/transport/manager/1.0/android.hidl.manager@1.0_genc++_headers/gen/android/hidl/manager/1.0/IServiceManager.h -- out/target/product/kona/obj/SHARED_LIBRARIES/vendor.qti.hardware.audiohalext@1.0.vendor_intermediates/export_includes
