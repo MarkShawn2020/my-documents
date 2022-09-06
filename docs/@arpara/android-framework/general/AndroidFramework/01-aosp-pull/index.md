@@ -45,24 +45,50 @@ checkout 的时候最卡，因为 cpu 都用满了（无堵塞的那种），单
 
 ### repo detailed steps
 
-#### Step 1. download repo
+#### Step 1. config repo
+
+1. download repo
 
 ```sh
+# - [源代码控制工具  |  Android 开源项目  |  Android Open Source Project](https://source.android.com/setup/develop#installing-repo)
 sudo apt install repo
 ```
 
-ref:
+2. change python version
 
-- [源代码控制工具  |  Android 开源项目  |  Android Open Source Project](https://source.android.com/setup/develop#installing-repo)
+There are a lot of methods to let repo using python3, but the easiest way I learned is to modify the first line of `repo` script file: change `python` to `python3`
 
-#### Step 2. change repo mirror
+```sh
+vim $(which repo)
+```
+
+#### Step 2. set git
+
+```sh
+# set user, necessary
+git config --global user.email shawninjuly@gmail.com
+git config --global user.name markshawn2020
+```
+
+#### Step 3. set mirror
 
 > 1. 如果是在公司，则直接用公司的网络即可
 > 2. 如果是个人，则**即使有 vpn，也要用镜像，因为流量太大了！**。因此接下来说说镜像操作
 
 参考：- [AOSP | 镜像站使用帮助 | 清华大学开源软件镜像站 | Tsinghua Open Source Mirror](https://mirrors.tuna.tsinghua.edu.cn/help/AOSP/) 可以通过以下方法快速更换镜像地址：
 
+method 1:
+
 ```sh
+# ~/.bashrc
+# ref: https://blog.csdn.net/zy13608089849/article/details/84767864
+export REPO_URL='https://mirrors.tuna.tsinghua.edu.cn/git/git-repo/'
+```
+
+method 2:
+
+```sh
+# set mirror, faster
 git config --global url.https://mirrors.tuna.tsinghua.edu.cn/git/AOSP/.insteadof https://android.googlesource.com
 ```
 
@@ -75,14 +101,6 @@ mark@ubuntu:/var/lib/dpkg/updates$ cat ~/.gitconfig
 	email = XXX@gmail.com
 [url "https://mirrors.tuna.tsinghua.edu.cn/git/AOSP/"]
 	insteadof = https://android.googlesource.com
-```
-
-#### Step 3. change python version used via repo
-
-There are a lot of methods to let repo using python3, but the easiest way I learned is to modify the first line of `repo` script file: change `python` to `python3`
-
-```sh
-vim $(which repo)
 ```
 
 #### Step 4. `repo init`
@@ -98,6 +116,9 @@ And then download it via:
 ```sh
 cd {ANDROID}
 # e.g. VERSION=android-10.0.0_r1
+
+# ensure `REPO_URL` set is better
+
 # solution 1:
 repo init -u https://android.googlesource.com/platform/manifest -b $VERSION
 
@@ -112,6 +133,10 @@ ref:
 #### Step 5. `repo sync`
 
 Since `repo sync` needs a lot of time, 1-10 hours or so, depending on the internet speed.
+
+```sh
+repo sync -j88
+```
 
 So:
 
