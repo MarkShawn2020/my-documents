@@ -27,11 +27,11 @@ tags: ssh, vim, tmux, clipboard
   - [2. chmod (necessary)](#2-chmod-necessary)
   - [3. start plist](#3-start-plist)
   - [4. test plist](#4-test-plist)
-- [4. vim copy to clipboard](#4-vim-copy-to-clipboard)
+- [4. enable vim copy to registry](#4-enable-vim-copy-to-registry)
   - [1. map `Y` to copy selected content into register `+`](#1-map-y-to-copy-selected-content-into-register-)
   - [2. usage](#2-usage)
-- [5. vim copy to local clipboard](#5-vim-copy-to-local-clipboard)
-- [6. tmux copy to local clipboard](#6-tmux-copy-to-local-clipboard)
+- [5. enable vim copy to local clipboard](#5-enable-vim-copy-to-local-clipboard)
+- [6. enable tmux copy to local clipboard](#6-enable-tmux-copy-to-local-clipboard)
 - [core reference](#core-reference)
 
 ## 0. before you start
@@ -209,7 +209,7 @@ echo 'test 2' | nc -q0 localhost 19988
 
 then we can access the `test 2` in the local clipboard.
 
-## 4. vim copy to clipboard
+## 4. enable vim copy to registry
 
 > see more at: [How to copy to clipboard in Vim? - Stack Overflow](https://stackoverflow.com/questions/3961859/how-to-copy-to-clipboard-in-vim#:~:text=In%20vim%20command%20mode%20press,and%20CMD%20%2B%20v%20to%20paste.)
 
@@ -224,7 +224,7 @@ vnoremap Y "+y
 1. `shift + V` to switch to `Visual Mode` and select the current line, then use the Arrow key of `UP | DOWN` to select more lines.
 2. press `Y` to copy the selected lines into the clipboard
 
-## 5. vim copy to local clipboard
+## 5. enable vim copy to local clipboard
 
 > see more at: [ssh - How to use X11 forwarding to copy from vim to local machine - Stack Overflow](https://stackoverflow.com/questions/47822357/how-to-use-x11-forwarding-to-copy-fro m-vim-to-local-machine)
 
@@ -246,7 +246,7 @@ So, for convenience, we can directly use the following vim script to map the seq
 vnoremap Y "+y :call system('nc -q0 localhost 19988', @+)<CR>
 ```
 
-## 6. tmux copy to local clipboard
+## 6. enable tmux copy to local clipboard
 
 > see more at: [vim与系统剪切板之间的复制粘贴 - 广漠飘羽 - 博客园](https://www.cnblogs.com/gmpy/p/11177719.html)
 
