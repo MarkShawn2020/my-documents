@@ -5,6 +5,7 @@ hide_table_of_contents: true
 
 | sDate      | eDate      | category     | title                                        | priority | status    | reason   | detail                      |
 | ---------- | ---------- | ------------ | -------------------------------------------- | -------- | --------- | -------- | --------------------------- |
+| 2022-09-08 |            | docusaurus   | blog list page format title with ending      |          |           |          | [^blog-list-title-style]    |
 | 2022-09-08 |            | docusaurus   | frontmatter of `ref-expand-depth`            | .8       |           |          | [^ref-expand-depth]         |
 | 2022-09-06 |            | docusaurus   | scale image if h > w                         | .3       |           |          |                             |
 | 2022-09-06 |            | docusaurus   | add directory route with covers for articles | .7       |           |          |                             |
@@ -57,6 +58,15 @@ hide_table_of_contents: true
 |            |            | chore        | change the default TOC config                |          | finished  | SOLVED   | [^config-md-toc-depth]      |
 |            |            | article      | shortcuts comparison                         |          | finished  | FINISHED |                             |
 | 2022-09-06 | 2022-09-06 | docusaurus   | fallback sidebar title with dirname if index | .8       | finished  |          |                             |
+
+[^blog-list-title-style]:
+
+    solution 1: via css
+      use `.plugin-blog .container li`:
+      ![picture 3](.imgs/TODO-1662610209423-14259db00578122d294cf20b70ee5bd09d1c2b0efd9a7780192e482434fe4ef7.png)  
+
+    solution 2: via modification of source code
+      `@theme/BlogListPage` at `/Users/mark/my-docusaurus/my-website/config/src/blog.ts`
 
 [^ref-expand-depth]:
 
