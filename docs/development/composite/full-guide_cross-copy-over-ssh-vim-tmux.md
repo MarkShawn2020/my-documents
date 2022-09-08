@@ -1,5 +1,3 @@
-## Full Guide: how to sync clipboard over ssh + tmux + vim
-
 ## 1. enable `xclip` on remote ubuntu via ssh
 
 to fix `Error: Can't open display: (null)` when using `echo "xx" | xclip` on remote ubuntu, I found we should config `ForwardX11 yes` in both local and remote ssh config, see: https://askubuntu.com/a/305681/1629991
