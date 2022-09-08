@@ -43,7 +43,7 @@ clip on clipboard
 clip on clipboard
 ```
 
-## enable access to clipboard on remote ubuntu at local (part 1: basic)
+## 2. enable access to clipboard on remote ubuntu at local (part 1: basic)
 
 首先可以看一下这篇[Forward your clipboard via SSH reverse tunnels](https://gist.github.com/dergachev/8259104)，它给出了最简单的基于无限循环监听端口(`nc -l`)并复制(`pbcopy`)的方案。
 
@@ -91,7 +91,7 @@ echo "test 1" | nc -q0 localhost 5556
 
 then we can access the `test 1` in the local clipboard.
 
-## enable access to clipboard on remote ubuntu at local (part 2: socket)
+## 3. enable access to clipboard on remote ubuntu at local (part 2: socket)
 
 ref: https://medium.com/hackernoon/tmux-in-practice-copy-text-from-remote-session-using-ssh-remote-tunnel-and-systemd-service-dd3c51bca1fa
 
@@ -166,9 +166,55 @@ echo 'test 2' | nc -q0 localhost 19988
 
 then we can access the `test 2` in the local clipboard.
 
+## 4. vim copy to clipboard
 
+> see more at: [How to copy to clipboard in Vim? - Stack Overflow](https://stackoverflow.com/questions/3961859/how-to-copy-to-clipboard-in-vim#:~:text=In%20vim%20command%20mode%20press,and%20CMD%20%2B%20v%20to%20paste.)
 
-ref:
-- [ssh - How to use X11 forwarding to copy from vim to local machine - Stack Overflow](https://stackoverflow.com/questions/47822357/how-to-use-x11-forwarding-to-copy-fro m-vim-to-local-machine)
-- [How to copy to clipboard in Vim? - Stack Overflow](https://stackoverflow.com/questions/3961859/how-to-copy-to-clipboard-in-vim#:~:text=In%20vim%20command%20mode%20press,and%20CMD%20%2B%20v%20to%20paste.)
+### 1. map `Y` to copy selected content into register `+`
 
+```.vimrc
+vnoremap Y "+y
+```
+
+### 2. usage
+
+1. `shift + V` to switch to `Visual Mode` and select the current line, then use the Arrow key of `UP | DOWN` to select more lines.
+2. press `Y` to copy the selected lines into the clipboard
+
+## 5. vim copy to local clipboard
+
+> see more at: [ssh - How to use X11 forwarding to copy from vim to local machine - Stack Overflow](https://stackoverflow.com/questions/47822357/how-to-use-x11-forwarding-to-copy-fro m-vim-to-local-machine)
+
+Based on section of "4. vim copy to clipboard", we can manually run a system command that send the registered content into system clipboard (local via `xclip or pbcopy` or remote via `nc and xclip or pbcopy`).
+
+For example, we can use `: call system('nc -q0 localhost 19988', @+)` to send the content in register `+` to the local port at 19988.
+
+:::caution
+we should add `-q0` for `nc` if necessary, otherwise I found that the command just won't stop input (since it would has verbose output).
+:::
+
+So, for convenience, we can directly use the following vim script to map the sequences into one key of `Y`:
+
+```.vimrc
+" -- enable Y to copy to clipboard, ref: https://stackoverflow.com/a/67890119/9422455
+" how to map two commands with only one key, ref: https://vi.stackexchange.com/a/3886
+" what's the meaning of <CR> (which can be omitted in bottom command), ref: https://stackoverflow.com/a/22143208/9422455
+
+vnoremap Y "+y :call system('nc -q0 localhost 19988', @+)<CR>
+```
+
+## 6. tmux copy to local clipboard
+
+> see more at: [vim与系统剪切板之间的复制粘贴 - 广漠飘羽 - 博客园](https://www.cnblogs.com/gmpy/p/11177719.html)
+
+after vim configured, the tmux copy paste would runs well if we use the `oh-my-tmux` config at `https://github.com/gpakosz/.tmux`
+
+![picture 1](.imgs/index-1662628851309-1d53983832c95df31fae1955313276fbc7171937bd0dcc854ebdf760c063c429.png)  
+
+## core reference
+
+- [Forward your clipboard via SSH reverse tunnels](https://gist.github.com/dergachev/8259104)
+- [vim与系统剪切板之间的复制粘贴 - 广漠飘羽 - 博客园](https://www.cnblogs.com/gmpy/p/11177719.html#1492777136)
+- [tmux in practice: integration with the system clipboard | by Alexey Samoshkin | We’ve moved to freeCodeCamp.org/news | Medium](https://medium.com/free-code-camp/tmux-in-practice-integration-with-system-clipboard-bcd72c62ff7b)
+- [tmux in practice: copy text from remote session using SSH remote tunnel and systemd service | by Alexey Samoshkin | HackerNoon.com | Medium](https://medium.com/hackernoon/tmux-in-practice-copy-text-from-remote-session-using-ssh-remote-tunnel-and-systemd-service-dd3c51bca1fa)
+- [gpakosz/.tmux: 🇫🇷 Oh my tmux! My self-contained, pretty & versatile tmux configuration made with ❤️](https://github.com/gpakosz/.tmux)
