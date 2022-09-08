@@ -11,6 +11,29 @@ tags: ssh, vim, tmux, clipboard
 
 # 南川笔记：ssh 跨系统共享 VIM 剪切板的最佳解决方案
 
+- [0. before you start](#0-before-you-start)
+- [1. enable `xclip` on remote ubuntu via ssh](#1-enable-xclip-on-remote-ubuntu-via-ssh)
+  - [1. config](#1-config)
+  - [2. connect on client](#2-connect-on-client)
+  - [3. test on remote](#3-test-on-remote)
+- [2. enable access to clipboard on remote ubuntu at local (part 1: basic)](#2-enable-access-to-clipboard-on-remote-ubuntu-at-local-part-1-basic)
+  - [1. enable listen on one shell](#1-enable-listen-on-one-shell)
+  - [2. connect using reverse tunnelling](#2-connect-using-reverse-tunnelling)
+    - [solution 1](#solution-1)
+    - [solution 2](#solution-2)
+  - [3. test on remote](#3-test-on-remote-1)
+- [3. enable access to clipboard on remote ubuntu at local (part 2: socket)](#3-enable-access-to-clipboard-on-remote-ubuntu-at-local-part-2-socket)
+  - [1. config plist](#1-config-plist)
+  - [2. chmod (necessary)](#2-chmod-necessary)
+  - [3. start plist](#3-start-plist)
+  - [4. test plist](#4-test-plist)
+- [4. vim copy to clipboard](#4-vim-copy-to-clipboard)
+  - [1. map `Y` to copy selected content into register `+`](#1-map-y-to-copy-selected-content-into-register-)
+  - [2. usage](#2-usage)
+- [5. vim copy to local clipboard](#5-vim-copy-to-local-clipboard)
+- [6. tmux copy to local clipboard](#6-tmux-copy-to-local-clipboard)
+- [core reference](#core-reference)
+
 ## 0. before you start
 
 - premise your socket port for sharing clipboard is `19988`
@@ -205,7 +228,7 @@ vnoremap Y "+y
 
 > see more at: [ssh - How to use X11 forwarding to copy from vim to local machine - Stack Overflow](https://stackoverflow.com/questions/47822357/how-to-use-x11-forwarding-to-copy-fro m-vim-to-local-machine)
 
-Based on section of "4. vim copy to clipboard", we can manually run a system command that send the registered content into system clipboard (local via `xclip or pbcopy` or remote via `nc and xclip or pbcopy`).
+Based on section of [4. vim copy to clipboard](#4-vim-copy-to-clipboard), we can manually run a system command that send the registered content into system clipboard (local via `xclip or pbcopy` or remote via `nc and xclip or pbcopy`).
 
 For example, we can use `: call system('nc -q0 localhost 19988', @+)` to send the content in register `+` to the local port at 19988.
 
