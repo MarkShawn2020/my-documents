@@ -8,9 +8,18 @@ image: .imgs/full-guide_cross-copy-over-ssh-vim-tmux-1662630169987-51fb98f3430a7
 
 <!-- truncate -->
 
+## 0. before you start
+
+- premise your socket port for sharing clipboard is `19988`
+- premise your server connected to is `$YOUR_SERVER`
+- I just implemented from MacOS(local) to Ubuntu(remote), and the logic is no different on other platforms.
+- `mark` is my nickname
+
 ## 1. enable `xclip` on remote ubuntu via ssh
 
+:::caution
 to fix `Error: Can't open display: (null)` when using `echo "xx" | xclip` on remote ubuntu, I found we should config `ForwardX11 yes` in both local and remote ssh config, see: https://askubuntu.com/a/305681/1629991
+:::
 
 ### 1. config
 
@@ -29,7 +38,7 @@ X11Forwarding yes
 
 ```sh
 # the `-X` is to enable the `X11-forward` feature
-ssh -X mark$ARPARA_AOSP_SERVER
+ssh -X mark$YOUR_SERVER
 ```
 
 ### 3. test on remote
@@ -58,7 +67,7 @@ clip on clipboard
 ### 1. enable listen on one shell
 
 ```sh
-while (true); do nc -l 5556 | pbcopy; done
+while (true); do nc -l 19988 | pbcopy; done
 ```
 
 ### 2. connect using reverse tunnelling
@@ -66,7 +75,7 @@ while (true); do nc -l 5556 | pbcopy; done
 #### solution 1
 
 ```sh
-ssh mark@$ARPARA_AOSP_SERVER -R 5556:localhost:5556
+ssh mark@$YOUR_SERVER -R 19988:localhost:19988
 ```
 
 #### solution 2
@@ -75,7 +84,7 @@ ssh mark@$ARPARA_AOSP_SERVER -R 5556:localhost:5556
 
 ```conf
 # ~/.ssh/config
-RemoteForward 5556 localhost:5556
+RemoteForward 19988 localhost:19988
 ```
 
 2. (possibly necessary) reload ssh
@@ -88,20 +97,20 @@ sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist
 3. connect without `-R`
 
 ```sh
-ssh mark@$ARPARA_AOSP_SERVER
+ssh mark@$YOUR_SERVER
 ```
 
 ### 3. test on remote
 
 ```sh
-echo "test 1" | nc -q0 localhost 5556
+echo "test 1" | nc -q0 localhost 19988
 ```
 
 then we can access the `test 1` in the local clipboard.
 
 ## 3. enable access to clipboard on remote ubuntu at local (part 2: socket)
 
-ref: https://medium.com/hackernoon/tmux-in-practice-copy-text-from-remote-session-using-ssh-remote-tunnel-and-systemd-service-dd3c51bca1fa
+> see more at: [tmux in practice: copy text from remote session using SSH remote tunnel and systemd service | by Alexey Samoshkin | HackerNoon.com | Medium](https://medium.com/hackernoon/tmux-in-practice-copy-text-from-remote-session-using-ssh-remote-tunnel-and-systemd-service-dd3c51bca1fa)
 
 ### 1. config plist
 
@@ -167,7 +176,7 @@ we can also check the running state of plist via `launchctl print gui/501/pbcopy
 ### 4. test plist
 
 ```sh
-ssh mark@$ARPARA_AOSP_SERVER -R 19988:localhost:19988
+ssh mark@$YOUR_SERVER -R 19988:localhost:19988
 
 echo 'test 2' | nc -q0 localhost 19988
 ```
