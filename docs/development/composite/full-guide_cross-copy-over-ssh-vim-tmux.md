@@ -11,7 +11,7 @@ title: ssh 跨系统共享 vims 剪切板的最佳解决方案
 ![picture 2](.imgs/full-guide_cross-copy-over-ssh-vim-tmux-1662630169987-51fb98f3430a72c001eb7f3c151fb86fe315673a2334bb818da631aefdee2a58.png)  
 
 - [0. before you start](#0-before-you-start)
-- [1. enable `xclip` on remote ubuntu via ssh](#1-enable-xclip-on-remote-ubuntu-via-ssh)
+- [1. enable `X11` on remote ubuntu via ssh](#1-enable-x11-on-remote-ubuntu-via-ssh)
   - [1. config](#1-config)
   - [2. connect on client](#2-connect-on-client)
   - [3. test on remote](#3-test-on-remote)
@@ -40,7 +40,7 @@ title: ssh 跨系统共享 vims 剪切板的最佳解决方案
 - I just implemented from MacOS(local) to Ubuntu(remote), and the logic is no different on other platforms.
 - `mark` is my nickname
 
-## 1. enable `xclip` on remote ubuntu via ssh
+## 1. enable `X11` on remote ubuntu via ssh
 
 :::caution
 to fix `Error: Can't open display: (null)` when using `echo "xx" | xclip` on remote ubuntu, I found we should config `ForwardX11 yes` in both local and remote ssh config, see: https://askubuntu.com/a/305681/1629991
@@ -227,7 +227,7 @@ vnoremap Y "+y
 
 > see more at: [ssh - How to use X11 forwarding to copy from vim to local machine - Stack Overflow](https://stackoverflow.com/questions/47822357/how-to-use-x11-forwarding-to-copy-fro m-vim-to-local-machine)
 
-Based on section of [4. vim copy to clipboard](#4-vim-copy-to-clipboard), we can manually run a system command that send the registered content into system clipboard (local via `xclip or pbcopy` or remote via `nc and xclip or pbcopy`).
+Based on section of [4. enable vim copy to registry](#4-enable-vim-copy-to-registry), we can manually run a system command that send the registered content into system clipboard (local via `xclip or pbcopy` or remote via `nc and xclip or pbcopy`).
 
 For example, we can use `: call system('nc -q0 localhost 19988', @+)` to send the content in register `+` to the local port at 19988.
 
