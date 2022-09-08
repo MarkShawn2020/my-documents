@@ -3,11 +3,11 @@ image: .imgs/full-guide_cross-copy-over-ssh-vim-tmux-1662630169987-51fb98f3430a7
 tags: [ssh, vim, tmux, clipboard]
 ---
 
+# 南川笔记：ssh 跨系统共享 VIM 剪切板的最佳解决方案
+
 本篇文章详细地记录整理了如何跨系统共享VIM剪切板的问题，具体地说来，就是如何在 `ssh` 的 `vim` （in or not in `tmux`）里快捷地复制到本地系统剪切板，主要用到了 `X11` 共享剪切板的特性，以及基于 `socket` 实现地传输。
 
 <!-- truncate -->
-
-# 南川笔记：ssh 跨系统共享 VIM 剪切板的最佳解决方案
 
 ![picture 2](.imgs/full-guide_cross-copy-over-ssh-vim-tmux-1662630169987-51fb98f3430a72c001eb7f3c151fb86fe315673a2334bb818da631aefdee2a58.png)  
 
