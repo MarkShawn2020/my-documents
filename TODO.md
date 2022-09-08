@@ -5,6 +5,7 @@ hide_table_of_contents: true
 
 | sDate      | eDate      | category     | title                                        | priority | status    | reason   | detail                      |
 | ---------- | ---------- | ------------ | -------------------------------------------- | -------- | --------- | -------- | --------------------------- |
+| 2022-09-08 |            | docusaurus   | frontmatter of `ref-expand-depth`            | .8       |           |          | [^ref-expand-depth]         |
 | 2022-09-06 |            | docusaurus   | scale image if h > w                         | .3       |           |          |                             |
 | 2022-09-06 |            | docusaurus   | add directory route with covers for articles | .7       |           |          |                             |
 | 2022-08-26 |            | project      | dev vscode sync to feishu docs               |          |           |          |                             |
@@ -56,6 +57,12 @@ hide_table_of_contents: true
 |            |            | chore        | change the default TOC config                |          | finished  | SOLVED   | [^config-md-toc-depth]      |
 |            |            | article      | shortcuts comparison                         |          | finished  | FINISHED |                             |
 | 2022-09-06 | 2022-09-06 | docusaurus   | fallback sidebar title with dirname if index | .8       | finished  |          |                             |
+
+[^ref-expand-depth]:
+
+    ![picture 2](.imgs/TODO-1662607915913-cabbae8912ccfdb20e5dfe0be6c6a817ba2b3c6990040776d2bc0e6c43d56dc0.png)  
+
+    ![picture 1](.imgs/TODO-1662607897888-24b032d43cae09ba452a5aa9ecd200223cef98b628c4c3e24ed808fa3e3485d4.png)  
 
 [^md-table-align]: 
     vscode配置:
