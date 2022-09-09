@@ -5,6 +5,7 @@ hide_table_of_contents: true
 
 | sDate      | eDate      | category     | title                                        | priority | status    | reason   | detail                      |
 | ---------- | ---------- | ------------ | -------------------------------------------- | -------- | --------- | -------- | --------------------------- |
+| 2022-09-09 |            | docusaurus   | fix failure to run workflow                  |          |           |          |                             |
 | 2022-09-09 |            | project      | feishu-doc-sdk manage docs seen and update   |          |           |          |                             |
 | 2022-09-09 |            | project      | feishu-doc-sdk hook on doc update            |          |           |          |                             |
 | 2022-09-09 |            | project      | feishu-doc-sdk download and parse docs       |          |           |          |                             |
