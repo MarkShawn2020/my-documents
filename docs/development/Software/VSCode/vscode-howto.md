@@ -43,6 +43,20 @@ use multiple prefixes as an alternative to the target of using regex in prefix
 
 - [visual studio code - Is there a way to use regex expression in vscode snippet prefix? - Stack Overflow](https://stackoverflow.com/questions/54388765/is-there-a-way-to-use-regex-expression-in-vscode-snippet-prefix)
 
+### why snippet with backquote(`\``) not works
+
+[Snippet with prefix "``" (double backtick) not working for inline Markdown code block - Stack Overflow](https://stackoverflow.com/questions/72672897/snippet-with-prefix-double-backtick-not-working-for-inline-markdown-code) introduced the reason that "\`" not works is that the "\`" is not a "word character":
+
+> The prefix can be anything but "suggestions as you type" are only triggered when typing a word character. What that is defines the corresponding language. For non word prefixes suggestion must be triggered manually, using ctrl+space
+
+### TODO: how to make snippet work with backquote(`\``)
+
+use sequenced command:
+
+```sh
+
+```
+
 ## how to enable suggestion for markdown
 
 ```json
