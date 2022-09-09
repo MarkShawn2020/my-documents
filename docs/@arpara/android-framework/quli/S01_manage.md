@@ -41,10 +41,57 @@ diskutil unmount /Volumes/XXX
 
 #### how to mount LAN-drivers on Mac
 
-In [network - mount_smbfs: server rejected the connection: Authentication error on Mac OS High Sierra 10.13.6 - Ask Different](https://apple.stackexchange.com/questions/341631/mount-smbfs-server-rejected-the-connection-authentication-error-on-mac-os-high), it recommends using:
+##### solution 1 (via `osascript`)
 
 ```sh
-mount -t smbfs '//share;user@server.domain/share' /Volumes/share
+# ref: https://apple.stackexchange.com/a/282778
+osascript -e 'mount volume "smb://zhifeiji-pc/LUCI"'
 ```
 
+##### solution 2 (via `mount`)
+
+=== track part ===
+
+[network - mount_smbfs: server rejected the connection: Authentication error on Mac OS High Sierra 10.13.6 - Ask Different](https://apple.stackexchange.com/questions/341631/mount-smbfs-server-rejected-the-connection-authentication-error-on-mac-os-high), recommends using:
+
+```sh
+# all the following would fail for authentication
+mount -t smbfs '//server.domain/share' /Volumes/share
+mount -t smbfs '//user@server.domain/share' /Volumes/share
+mount -t smbfs '//share;user@server.domain/share' /Volumes/share
+
+# I also find a `-N` parameter for `not ask for password`, but I didn't find it in mac `mount`
+# ref: https://apple.stackexchange.com/a/282778
 ```
+
+=== resolution part ===
+
+![picture 1](.imgs/S01_manage-1662708171816-fb43e2620e0222339eb6cbeabd4376e56658a37d737e83b6af696f268c9782b8.png)  
+
+Indeed, the problem is not consistent with `mount`, but with filesystem permission.
+
+Since we wanna to mount filesystem to under `/Volumes` which need root permission, so we use `sudo mkdir` to get the owner of `/Volumes/targetMountPoint` to be `root`, and we cannot use `sudo` with `mount` (I do not know clearly it why).
+
+TODO: why we can not mount to a driver with the root role.
+
+Then when we `chgrp` the directory, we can easily mount the driver.
+
+=== answer part ===
+
+```sh
+TARGET_SERVER="zhifeiji-pc"
+TARGET_SHARE="QVR"
+TARGET_MOUNT_POINT_NAME="zhifeiji_quli-QVR"
+
+TARGET_MOUNT_POINT_PATH=/Volumes/$TARGET_MOUNT_POINT_NAME
+# sudo rm -rf $TARGET_MOUNT_POINT_PATH # delete directory (if not mounted)
+# diskutil unmount $TARGET_MOUNT_POINT_PATH # delete directory (if mounted)
+
+sudo mkdir -p $TARGET_MOUNT_POINT_PATH
+sudo chown $USER $TARGET_MOUNT_POINT_PATH
+# sudo chgrp staff $TARGET_MOUNT_POINT_PATH # not necessary, but to get the same result if I use iFinder
+
+# do not use `mount_smbfs -N` directly as `man mount_smbfs` instructed
+mount -t smbfs //guest:@$TARGET_SERVER/$TARGET_SHARE $TARGET_MOUNT_POINT_PATH
+```
+
