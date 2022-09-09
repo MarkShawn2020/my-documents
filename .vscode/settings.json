@@ -61,6 +61,7 @@
         "cpll",
         "cprint",
         "croot",
+        "crossref",
         "csdn",
         "cterm",
         "ctermbg",
@@ -77,6 +78,7 @@
         "deps",
         "devel",
         "DEVMEM",
+        "diskutil",
         "distutils",
         "douban",
         "doxygen",
@@ -101,6 +103,7 @@
         "feishu",
         "fengxian",
         "filegroup",
+        "fing",
         "foldclose",
         "foldlevel",
         "foldmethod",
@@ -369,6 +372,7 @@
         "yyds",
         "Zetetic",
         "zhida",
+        "zhifeiji",
         "ZKJ's"
     ]
 }

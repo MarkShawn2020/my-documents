@@ -1,20 +1,49 @@
-# vscode-howto
-
-## python 索引跳转问题
-
-在` "python.analysis.extraPaths"`项中加入目标库的`site_packages`路径就可以！（不是加`python`，也不是加单独的 library，都没用，必须是`site_packages`！）
-
-![picture 1](https://mark-vue-oss.oss-cn-hangzhou.aliyuncs.com/vscode-howto-1657102764438-e0733d12911d606a08caae91bde21c1d8bd7229d77d9d036593b13013b34a6a8.png)
-
-ref:
-
-- [Auto-imports only work for code from currently open files when indexing is enabled · Issue #1055 · microsoft/pylance-release](https://github.com/microsoft/pylance-release/issues/1055)
 
 ## extensions
 
 - [awesome-vscode | 🎨 A curated list of delightful VS Code packages and resources.](https://viatsko.github.io/awesome-vscode/#bash)
 
-## BEST-PRACTICE: vscode enable markdown suggestion
+## snippets
+
+### documentation: vscode snippet
+
+- [Userdefinedsnippets - vscode-docs](https://vscode-docs.readthedocs.io/en/latest/customization/userdefinedsnippets/)
+
+a good and detailed article concludes many methods to use code snippets
+
+- [Custom polymorphic code snippets in VS Code - LogRocket Blog](https://blog.logrocket.com/custom-polymorphic-code-snippets-in-vs-code-e76d8cad656b/)
+
+### how to develop snippet extensions
+
+- [Support for Snippet prefix and other values inside Snippet's body · Issue #54661 · microsoft/vscode](https://github.com/Microsoft/vscode/issues/54661)
+
+ref:
+
+- [vscode-extension-samples/extension.ts at main · microsoft/vscode-extension-samples](https://github.com/Microsoft/vscode-extension-samples/blob/main/completions-sample/src/extension.ts)
+
+### can snippets use variables
+
+1. we can use predefined variables
+
+   since vscode has defined some common variables I can use, i.e. macro variables, so that reduced my work of developing an extension
+
+   - [Snippets in Visual Studio Code](https://code.visualstudio.com/docs/editor/userdefinedsnippets#_variables)
+
+2. others we can't, see also [can snippets cannot use functions](#can-snippets-cannot-use-functions)
+
+### can snippets use functions
+
+- [Execute functions during snippet expansion · Issue #10561 · microsoft/vscode](https://github.com/microsoft/vscode/issues/10561)
+
+- [[Solved] Visual studio code Dynamic snippet evaluation in VSCode - Code Redirect](https://coderedirect.com/questions/396102/dynamic-snippet-evaluation-in-vscode)
+
+### can snippet use regex in prefix
+
+use multiple prefixes as an alternative to the target of using regex in prefix
+
+- [visual studio code - Is there a way to use regex expression in vscode snippet prefix? - Stack Overflow](https://stackoverflow.com/questions/54388765/is-there-a-way-to-use-regex-expression-in-vscode-snippet-prefix)
+
+## how to enable suggestion for markdown
 
 ```json
 // User/settings.json
@@ -32,7 +61,7 @@ ref:
 
 - [Enable quick suggestions for Markdown in VS Code - Deepan Seeralan](https://www.deepanseeralan.com/tech/enable-quick-suggestions-for-markdown-in-vscode/)
 
-## configure python interpreter and auto activate
+## how to configure python interpreter and auto activate
 
 After installed my local virtualenv, I need to activate it.
 
@@ -90,7 +119,7 @@ ref:
 
 - [Fixes for listing of duplicate kernels in kernel picker by DonJayamanne · Pull Request #4066 · microsoft/vscode-jupyter](https://github.com/microsoft/vscode-jupyter/pull/4066)
 
-## :white_check_mark: vscode markdown image upload
+## how to upload image in markdown
 
 After a litter research deep into the extension of `markdown image`, I'd think it has a main drawback that doesn't allow me to save local first and then upload together which is rawly supported in typora.
 
@@ -106,7 +135,7 @@ It seems that vscode didn't support a `multi cursors mode` allows me to switch s
 
 Since I do think this trigger mechanism is more user-friendly.
 
-## :white_circle: python auto import not work: `indexing: true`
+## TODO: python auto import not work: `indexing: true`
 
 I suffered from the problem of not able to auto import from libraries.
 
@@ -171,7 +200,7 @@ ref:
 
 - [Highlight color custom](https://binaryify.github.io/OneDark-Pro/#/?id=highlight-color-custom)
 
-## suppress `autopep8` of `sort import` for python `sys.insert`
+## how to suppress `autopep8` of `sort import` for python `sys.insert`
 
 recommend way is to use `# nopep8` or `# noqa`
 
@@ -186,45 +215,6 @@ ref:
 
 - [python - Allow statements before imports with Visual Studio Code and autopep8 - Stack Overflow](https://stackoverflow.com/questions/54030320/allow-statements-before-imports-with-visual-studio-code-and-autopep8)
 
-## snippets
-
-### vscode snippet documentation/tutorials
-
-- [Userdefinedsnippets - vscode-docs](https://vscode-docs.readthedocs.io/en/latest/customization/userdefinedsnippets/)
-
-a good and detailed article concludes many methods to use code snippets
-
-- [Custom polymorphic code snippets in VS Code - LogRocket Blog](https://blog.logrocket.com/custom-polymorphic-code-snippets-in-vs-code-e76d8cad656b/)
-
-### resolution of vscode develop snippet extensions
-
-- [Support for Snippet prefix and other values inside Snippet's body · Issue #54661 · microsoft/vscode](https://github.com/Microsoft/vscode/issues/54661)
-
-ref:
-
-- [vscode-extension-samples/extension.ts at main · microsoft/vscode-extension-samples](https://github.com/Microsoft/vscode-extension-samples/blob/main/completions-sample/src/extension.ts)
-
-### can snippets use variables
-
-1. we can use predefined variables
-
-   since vscode has defined some common variables I can use, i.e. macro variables, so that reduced my work of developing an extension
-
-   - [Snippets in Visual Studio Code](https://code.visualstudio.com/docs/editor/userdefinedsnippets#_variables)
-
-2. others we can't, see also [can snippets cannot use functions](#can-snippets-cannot-use-functions)
-
-### can snippets cannot use functions
-
-- [Execute functions during snippet expansion · Issue #10561 · microsoft/vscode](https://github.com/microsoft/vscode/issues/10561)
-
-- [[Solved] Visual studio code Dynamic snippet evaluation in VSCode - Code Redirect](https://coderedirect.com/questions/396102/dynamic-snippet-evaluation-in-vscode)
-
-### can snippet use regex in prefix
-
-use multiple prefixes as an alternative to the target of using regex in prefix
-
-- [visual studio code - Is there a way to use regex expression in vscode snippet prefix? - Stack Overflow](https://stackoverflow.com/questions/54388765/is-there-a-way-to-use-regex-expression-in-vscode-snippet-prefix)
 
 ## how to trigger open via 'double click'
 
@@ -266,7 +256,7 @@ ref:
 
 - [linux - Bash Code Block Syntax colouring - Stack Overflow](https://stackoverflow.com/questions/36064368/bash-code-block-syntax-colouring)
 
-## add commentLine-cursorDown support like jetbrains
+## how to add commentLine-cursorDown support like jetbrains
 
 TODO: not satisfied since when I comment in an empty line, then it will still cursor down
 
@@ -284,43 +274,13 @@ ref:
 
 - [multi-command - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=ryuta46.multi-command&ssr=false#overview)
 
-## double click to select a whole word with '-'
+## how to make double click to select a whole word with '-'
 
 just to exclude '-' from the `word separators` is OK!
 
 <img alt="picture 1" src="https://mark-vue-oss.oss-cn-hangzhou.aliyuncs.com/1640267591863-vscode-howto-dd58c887e87b8893ff10725c9fb606f8b5ffe993d8acff6a8171520e1a8d5483.png" width="480" />
 
 ref: https://superuser.com/a/1357918
-
-## about 'new file' when right click on a file
-
-I am interested at finding one issue about this feature on VSCode's github at ["New file" / "New folder" on file context menu · Issue #83693 · microsoft/vscode](https://github.com/microsoft/vscode/issues/83693).
-
-And the official considers this feature better suitable for an extension. <img alt="picture 4" src="https://mark-vue-oss.oss-cn-hangzhou.aliyuncs.com/1640110292460-vscode-howto-d85086990f33be5b30df47326d11ce6691b3068b3928af026d9b9083776edbce.png" width="480" />
-
-And at the later part of this page, I found one had posted a handy extension, so I just installed it which helped me solve out this problem perfectly.
-
-ref:
-
-- ["New file" / "New folder" on file context menu · Issue #83693 · microsoft/vscode](https://github.com/microsoft/vscode/issues/83693)
-
-- [New - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=wenfangdu.faster-new)
-
-## about switch tab view
-
-It's a classic scene when we wanna switch between tabs, and I find out that the default shortcut in VSCode is `⌘ + K, ⌘ + ⌥ + >` for next tab (`<` for previous).
-
-And before which what confused me is that the concept of 'tab' and 'editor', which the 'editor' in VSCode means the 'tab' in the chrome, and I couldn't understand what does the 'tab' mean in VSCode though it does exist.
-
-And after when I searched and figured out the right concept of 'editor' according to following answer, I managed to modify the key just from 'Keyboard Shortcuts' 'panel'(ops, maybe I should named it as a 'editor', so wield!) <img alt="picture 3" src="https://mark-vue-oss.oss-cn-hangzhou.aliyuncs.com/1640107428265-vscode-howto-29f2bb2beaf16e0a9cb84332970e62e4800d4bcb28a21c1fb96fedffefafbbc7.png" width="480" />
-
-ref:
-
-- [vscode settings - Is there a quick change tabs function in Visual Studio Code? - Stack Overflow](https://stackoverflow.com/questions/38957302/is-there-a-quick-change-tabs-function-in-visual-studio-code)
-
-## about definition suggestion
-
-the first one is the `definition show popup` as mentioned in <img alt="picture 6" src="https://mark-vue-oss.oss-cn-hangzhou.aliyuncs.com/1640104688310-vscode-howto-bcf19e8c6e0f56799b24d8d13cebcabd7ac11c2b77b7641247d2c78ddd66e83e.png" width="480" />
 
 ## how to start vscode using `code .`
 
@@ -361,3 +321,43 @@ It's about files that would be hidden in the vscode.
 see:
 
 - [How to hide all files & folders starting with dot? : vscode](https://www.reddit.com/r/vscode/comments/jlhpho/how_to_hide_all_files_folders_starting_with_dot/)
+
+## how to make python click jump/crossref
+
+在` "python.analysis.extraPaths"`项中加入目标库的`site_packages`路径就可以！（不是加`python`，也不是加单独的 library，都没用，必须是`site_packages`！）
+
+![picture 1](https://mark-vue-oss.oss-cn-hangzhou.aliyuncs.com/vscode-howto-1657102764438-e0733d12911d606a08caae91bde21c1d8bd7229d77d9d036593b13013b34a6a8.png)
+
+ref:
+
+- [Auto-imports only work for code from currently open files when indexing is enabled · Issue #1055 · microsoft/pylance-release](https://github.com/microsoft/pylance-release/issues/1055)
+
+## about 'new file' when right click on a file
+
+I am interested at finding one issue about this feature on VSCode's github at ["New file" / "New folder" on file context menu · Issue #83693 · microsoft/vscode](https://github.com/microsoft/vscode/issues/83693).
+
+And the official considers this feature better suitable for an extension. <img alt="picture 4" src="https://mark-vue-oss.oss-cn-hangzhou.aliyuncs.com/1640110292460-vscode-howto-d85086990f33be5b30df47326d11ce6691b3068b3928af026d9b9083776edbce.png" width="480" />
+
+And at the later part of this page, I found one had posted a handy extension, so I just installed it which helped me solve out this problem perfectly.
+
+ref:
+
+- ["New file" / "New folder" on file context menu · Issue #83693 · microsoft/vscode](https://github.com/microsoft/vscode/issues/83693)
+
+- [New - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=wenfangdu.faster-new)
+
+## about switch tab view
+
+It's a classic scene when we wanna switch between tabs, and I find out that the default shortcut in VSCode is `⌘ + K, ⌘ + ⌥ + >` for next tab (`<` for previous).
+
+And before which what confused me is that the concept of 'tab' and 'editor', which the 'editor' in VSCode means the 'tab' in the chrome, and I couldn't understand what does the 'tab' mean in VSCode though it does exist.
+
+And after when I searched and figured out the right concept of 'editor' according to following answer, I managed to modify the key just from 'Keyboard Shortcuts' 'panel'(ops, maybe I should named it as a 'editor', so wield!) <img alt="picture 3" src="https://mark-vue-oss.oss-cn-hangzhou.aliyuncs.com/1640107428265-vscode-howto-29f2bb2beaf16e0a9cb84332970e62e4800d4bcb28a21c1fb96fedffefafbbc7.png" width="480" />
+
+ref:
+
+- [vscode settings - Is there a quick change tabs function in Visual Studio Code? - Stack Overflow](https://stackoverflow.com/questions/38957302/is-there-a-quick-change-tabs-function-in-visual-studio-code)
+
+## about definition suggestion
+
+the first one is the `definition show popup` as mentioned in <img alt="picture 6" src="https://mark-vue-oss.oss-cn-hangzhou.aliyuncs.com/1640104688310-vscode-howto-bcf19e8c6e0f56799b24d8d13cebcabd7ac11c2b77b7641247d2c78ddd66e83e.png" width="480" />

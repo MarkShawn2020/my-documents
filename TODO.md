@@ -5,6 +5,9 @@ hide_table_of_contents: true
 
 | sDate      | eDate      | category     | title                                        | priority | status    | reason   | detail                      |
 | ---------- | ---------- | ------------ | -------------------------------------------- | -------- | --------- | -------- | --------------------------- |
+| 2022-09-09 |            | project      | feishu-doc-sdk manage docs seen and update   |          |           |          |                             |
+| 2022-09-09 |            | project      | feishu-doc-sdk hook on doc update            |          |           |          |                             |
+| 2022-09-09 |            | project      | feishu-doc-sdk download and parse docs       |          |           |          |                             |
 | 2022-09-08 |            | docusaurus   | blog list page format title with ending      |          |           |          | [^blog-list-title-style]    |
 | 2022-09-08 |            | docusaurus   | frontmatter of `ref-expand-depth`            | .8       |           |          | [^ref-expand-depth]         |
 | 2022-09-06 |            | docusaurus   | scale image if h > w                         | .3       |           |          |                             |

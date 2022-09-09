@@ -1,5 +1,7 @@
 
-- [Android Project Structure](#android-project-structure)
+- [Android Project](#android-project)
+  - [structure](#structure)
+  - [size](#size)
 - [pre-compile](#pre-compile)
   - [install dependencies (necessary)](#install-dependencies-necessary)
   - [increase swap area (necessary in low memory machine)](#increase-swap-area-necessary-in-low-memory-machine)
@@ -13,7 +15,9 @@
   - [PASS: `Could not create symlink` when `source ./build/envsetup.sh`](#pass-could-not-create-symlink-when-source-buildenvsetupsh)
   - [PASS: `Disallowed Path Tools` when compiling](#pass-disallowed-path-tools-when-compiling)
 
-## Android Project Structure
+## Android Project
+
+### structure
 
 ```log
 ➜  android git:(master) ✗ ll
@@ -55,6 +59,56 @@ drwxrwxr-x 1 mark mark   94 Aug 25 17:26 test
 drwxrwxr-x 1 mark mark   42 Aug 25 17:26 toolchain
 drwxrwxr-x 1 mark mark  288 Aug 25 17:24 tools
 drwxrwxr-x 1 mark mark   50 Aug 25 17:26 vendor
+```
+### size
+
+```yaml
+without out: ~60G
+out: 184.2G
+with out: 240+G
+```
+
+```sh
+$ ncdu --exclude out
+
+--- /opt/aosp/xingjian/oem/sxr2130_apps/LINUX/android -------------------------------------------------------------------------------------------
+   27.2 GiB [##########] /prebuilts
+   11.9 GiB [####      ] /vendor
+    8.4 GiB [###       ] /external
+    2.7 GiB [          ] /frameworks
+    1.7 GiB [          ] /kernel
+    1.6 GiB [          ] /tools
+    1.4 GiB [          ] /cts
+    1.2 GiB [          ] /packages
+  523.2 MiB [          ] /logs
+  519.7 MiB [          ] /system
+  454.8 MiB [          ] /developers
+  428.9 MiB [          ] /test
+  403.0 MiB [          ] /logs.bak
+  306.1 MiB [          ] /device
+  246.0 MiB [          ] /bootable
+  152.7 MiB [          ] /development
+  105.9 MiB [          ] /toolchain
+   99.8 MiB [          ] /hardware
+   92.0 MiB [          ] /libcore
+   85.4 MiB [          ] /art
+   46.4 MiB [          ] /bionic
+   30.6 MiB [          ] /sdk
+   28.1 MiB [          ] /dalvik
+   17.1 MiB [          ] /build
+    6.1 MiB [          ] /platform_testing
+  860.5 KiB [          ] /pdk
+  464.5 KiB [          ] /shortcut-fe
+  413.5 KiB [          ] /libnativehelper
+   92.5 KiB [          ] /.git
+   24.5 KiB [          ]  .usecase_cache
+    8.5 KiB [          ]  sync.sh
+    4.5 KiB [          ]  auto-build.sh
+    4.5 KiB [          ]  readme.md
+    4.5 KiB [          ]  Makefile
+    4.5 KiB [          ]  .gitignore
+    1.0 KiB [          ] /disregard
+ Total disk usage:  59.6 GiB  Apparent size:  54.8 GiB  Items: 994935
 ```
 
 ## pre-compile
