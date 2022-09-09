@@ -3,35 +3,36 @@ hide_title: true
 hide_table_of_contents: true
 ---
 
+## reading list
+
+- [ ] 你当飞向你的山
+- [ ] 置身事内
+
+## task table
+
 | sDate      | eDate      | category     | title                                        | priority | status    | reason   | detail                      |
 | ---------- | ---------- | ------------ | -------------------------------------------- | -------- | --------- | -------- | --------------------------- |
 | 2022-09-09 |            | docusaurus   | fix failure to run workflow                  |          |           |          |                             |
-| 2022-09-09 |            | project      | feishu-doc-sdk manage docs seen and update   |          |           |          |                             |
-| 2022-09-09 |            | project      | feishu-doc-sdk hook on doc update            |          |           |          |                             |
-| 2022-09-09 |            | project      | feishu-doc-sdk download and parse docs       |          |           |          |                             |
+| 2022-09-09 |            | feishu       | feishu-doc-sdk manage docs seen and update   |          |           |          |                             |
+| 2022-09-09 |            | feishu       | feishu-doc-sdk hook on doc update            |          |           |          |                             |
+| 2022-09-09 |            | feishu       | feishu-doc-sdk download and parse docs       |          |           |          |                             |
 | 2022-09-08 |            | docusaurus   | blog list page format title with ending      |          |           |          | [^blog-list-title-style]    |
 | 2022-09-08 |            | docusaurus   | frontmatter of `ref-expand-depth`            | .8       |           |          | [^ref-expand-depth]         |
 | 2022-09-06 |            | docusaurus   | scale image if h > w                         | .3       |           |          |                             |
 | 2022-09-06 |            | docusaurus   | add directory route with covers for articles | .7       |           |          |                             |
-| 2022-08-26 |            | project      | dev vscode sync to feishu docs               |          |           |          |                             |
+| 2022-08-26 |            | feishu       | vscode sync to feishu docs                   |          |           |          |                             |
 | 2022-08-18 |            | feat         | enable chinese align in markdown table       |          |           |          | [^md-table-align]           |
 | 2022-08-18 |            | bug          | fix stock-chips step down problem (by fei)   |          |           |          |                             |
 | 2022-08-17 |            | bug          | fix docusaurus file updated date             |          |           |          |                             |
 | 2022-08-12 |            | learn        | research on different eslint recommends      |          |           |          |                             |
-| 2022-08-11 |            | clean        | qq-zone notes, like peking university        | 0.6      | pending   |          |                             |
-| 2022-08-09 |            | learn        | google js/ts style learning                  | 0.6      | pending   |          | [^learn-google-js/ts-style] |
-| 2022-06-20 |            | bug          | adobe photoshop export                       | -        | discarded | GONE     | [^ps-bug]                   |
-| 2022-06-20 |            | chore        | delete MP4 in git repo                       | -        | finished  | FIXED    | [^git-rm-mp4]               |
-| 2022-02-04 |            | article      | linux core intro                             | -        | finished  | FINISHED |                             |
-| 2022-01-06 |            | feat         | vscode md image upload                       | -        | finished  | FIXED    | [^vscode-md-img-upload]     |
-| 2022-08-05 |            | project      | gantt graph                                  |          | pending   |          | inspired by ruo/jack        |
-| 2022-08-09 | -          | reading      | 你当飞向你的山                               | 0.7      | pending   |          |                             |
-| 2022-08-09 | -          | reading      | 置身事内                                     | 0.7      | pending   |          |                             |
-|            |            | blog         | sort out the blog category                   |          | pending   |          |                             |
-|            |            | blog         | sort out the tsinghua docs                   |          | pending   |          |                             |
+| 2022-08-11 |            | clean        | qq-zone notes, like peking university        | 0.6      |           |          |                             |
+| 2022-08-09 |            | learn        | google js/ts style learning                  | 0.6      |           |          | [^learn-google-js/ts-style] |
+| 2022-08-05 |            | docusaurus   | gantt graph                                  |          |           |          | inspired by ruo/jack        |
+|            |            | docusaurus   | sort out the blog category                   |          |           |          |                             |
+|            |            | docusaurus   | sort out the tsinghua docs                   |          |           |          |                             |
 |            |            | learn        | Lee-SLAM                                     |          | started   |          | [^learn-slam]               |
-|            |            | learn        | computer graph                               |          | pending   |          | [^learn-computer-graph]     |
-|            |            | project      | markdown output with multi-platforms         |          | pending   |          | [^md-multi-output]          |
+|            |            | learn        | computer graph                               |          |           |          | [^learn-computer-graph]     |
+|            |            | project      | markdown output with multi-platforms         |          |           |          | [^md-multi-output]          |
 |            |            | project      | agg-music                                    |          | delayed   |          | [^agg-music]                |
 |            |            | project      | markdown realtime engine                     |          | delayed   |          | [^md-realtime-engine]       |
 |            |            | project      | aggregated search                            |          | delayed   |          | [^agg-search]               |
@@ -45,22 +46,26 @@ hide_table_of_contents: true
 |            |            | vscode       | markdown synchronized scroll algorithm       |          | delayed   |          |                             |
 |            |            | vscode       | auto-completion for headings from md         |          | delayed   |          | [^vscode-auto-heading]      |
 |            |            | vscode       | comment line with cursor down                |          | delayed   |          | stay if line is empty       |
-|            |            | article      | blog tools comparison                        |          | pending   |          | about remark                |
-|            |            | pr           | ttf2bmf backend                              |          | discarded | PASS     | [^ttf2bmf-node]             |
-|            |            | article      | ASCII ART                                    |          | discarded | PASS     |                             |
-|            |            | feat         | vscode markdown container support            |          | finished  | FIXED    |                             |
-|            |            | bug          | vscode lag when input                        |          | finished  | FIXED    | [^vscode-lag-when-input]    |
-|            |            | feat         | vscode md flex                               |          | finished  | FIXED    | [^vscode-md-flex]           |
-|            |            | chore        | best-practice of md workflow                 |          | finished  | ENOUGH   | [^vscode-md-best-practice]  |
-|            |            | book         | frontend, backend to algo                    |          | discarded | LATER    | [^book-coding-overview]     |
-|            |            | chore        | control mkl repo size                        |          | finished  | SOLVED   | [^git-control-repo-size]    |
-|            |            | refactor     | change `index.yaml` to be `index.md`         |          | discarded | PASS     |                             |
-|            |            | project      | Legend of King Auto Simulate System          |          | discarded | PASS     |                             |
-|            |            | chore        | add color support for `build/init.zsh`       |          | discarded | PASS     |                             |
-|            |            | article      | Prisma is not suitable for electron          |          | discarded | PASS     |                             |
-|            |            | plugin       | LinkToText                                   |          | finished  | PASS     |                             |
-|            |            | chore        | change the default TOC config                |          | finished  | SOLVED   | [^config-md-toc-depth]      |
-|            |            | article      | shortcuts comparison                         |          | finished  | FINISHED |                             |
+|            |            | article      | blog tools comparison                        |          |           |          | about remark                |
+| 2022-06-20 |            | bug          | adobe photoshop export                       | -        | discarded | GONE     | [^ps-bug]                   |
+| 2022-06-20 | -          | chore        | delete MP4 in git repo                       | -        | finished  | FIXED    | [^git-rm-mp4]               |
+| 2022-02-04 | -          | article      | linux core intro                             | -        | finished  | FINISHED |                             |
+| 2022-01-06 | -          | feat         | vscode md image upload                       | -        | finished  | FIXED    | [^vscode-md-img-upload]     |
+| -          | -          | pr           | ttf2bmf backend                              |          | discarded | PASS     | [^ttf2bmf-node]             |
+| -          | -          | article      | ASCII ART                                    |          | discarded | PASS     |                             |
+| -          | -          | feat         | vscode markdown container support            |          | finished  | FIXED    |                             |
+| -          | -          | bug          | vscode lag when input                        |          | finished  | FIXED    | [^vscode-lag-when-input]    |
+| -          | -          | feat         | vscode md flex                               |          | finished  | FIXED    | [^vscode-md-flex]           |
+| -          | -          | chore        | best-practice of md workflow                 |          | finished  | ENOUGH   | [^vscode-md-best-practice]  |
+| -          | -          | book         | frontend, backend to algo                    |          | discarded | LATER    | [^book-coding-overview]     |
+| -          | -          | chore        | control mkl repo size                        |          | finished  | SOLVED   | [^git-control-repo-size]    |
+| -          | -          | refactor     | change `index.yaml` to be `index.md`         |          | discarded | PASS     |                             |
+| -          | -          | project      | Legend of King Auto Simulate System          |          | discarded | PASS     |                             |
+| -          | -          | chore        | add color support for `build/init.zsh`       |          | discarded | PASS     |                             |
+| -          | -          | article      | Prisma is not suitable for electron          |          | discarded | PASS     |                             |
+| -          | -          | plugin       | LinkToText                                   |          | finished  | PASS     |                             |
+| -          | -          | chore        | change the default TOC config                |          | finished  | SOLVED   | [^config-md-toc-depth]      |
+| -          | -          | article      | shortcuts comparison                         |          | finished  | FINISHED |                             |
 | 2022-09-06 | 2022-09-06 | docusaurus   | fallback sidebar title with dirname if index | .8       | finished  |          |                             |
 
 [^blog-list-title-style]:
