@@ -1,4 +1,3 @@
-# mac-howto
 
 ## ipad air 5 64G 选购依据
 
@@ -158,3 +157,17 @@ At this step, I used the Alfred to help me goto the target position, just enable
 - [What Is Microsoft AutoUpdate on Mac and How to Delete It](https://www.guidingtech.com/what-is-microsoft-autoupdate-mac-how-to-delete/)
 
 - [How to Delete Microsoft AutoUpdate from Mac](https://osxdaily.com/2019/07/20/how-delete-microsoft-autoupdate-mac/)
+
+## how to disable sudo password
+
+see: https://jefftriplett.com/2022/enable-sudo-without-a-password-on-macos/
+
+`sudo visudo`
+
+change:
+`%admin          ALL = (ALL) ALL`
+
+to:
+`%admin          ALL = (ALL) NOPASSWD: ALL`
+
+re-login may need.
