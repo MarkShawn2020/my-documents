@@ -12,6 +12,8 @@ hide_table_of_contents: true
 
 | sDate      | eDate | category     | title                                        | pri | status  | reason | detail                      |
 | ---------- | ----- | ------------ | -------------------------------------------- | --- | ------- | ------ | --------------------------- |
+| 2022-09-12 |       | project      | inject post interface of nucleic acid        |     |         |        |                             |
+| 2022-09-12 |       | project      | graph analysis of Top Party                  |     |         |        |                             |
 | 2022-09-09 |       | docusaurus   | fix failure to run workflow                  |     |         |        |                             |
 | 2022-09-09 |       | feishu       | feishu-doc-sdk manage docs seen and update   |     |         |        |                             |
 | 2022-09-09 |       | feishu       | feishu-doc-sdk hook on doc update            |     |         |        |                             |
