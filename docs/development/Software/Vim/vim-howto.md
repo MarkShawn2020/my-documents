@@ -637,6 +637,14 @@ enable:
 vim +PlugInstall
 ```
 
+### install `YouCompleteMe` via `vim-plug`
+
+```sh
+# bugfix: CMake Error at ycm/CMakeLists file DOWNLOAD HASH mismatch #1711
+# ref: https://github.com/ycm-core/YouCompleteMe/issues/1711#issuecomment-329520570
+python3 ./install.py --clang-completer --system-libclang --all
+```
+
 ### `vundle`: how to uninstall vim plugin
 
 ref: https://stackoverflow.com/a/49251184/9422455
