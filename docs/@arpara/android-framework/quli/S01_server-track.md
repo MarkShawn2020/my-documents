@@ -46,7 +46,7 @@ CMake suite maintained and supported by Kitware (kitware.com/cmake).
 
 see: 
 
-- recommended by 缪永俊：521xueweihan/GitHub520: 让你“爱”上 GitHub，解决访问时图裂、加载慢的问题。（无需安装）](https://github.com/521xueweihan/GitHub520)
+- recommended by 缪永俊：[521xueweihan/GitHub520: 让你“爱”上 GitHub，解决访问时图裂、加载慢的问题。（无需安装）](https://github.com/521xueweihan/GitHub520)
 
 ### resolution 2, via manually config
 
