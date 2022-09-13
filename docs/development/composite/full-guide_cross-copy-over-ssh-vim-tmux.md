@@ -12,27 +12,27 @@ title: ssh 跨系统共享 vims 剪切板的最佳解决方案
 
 - [0. before you start](#0-before-you-start)
 - [1. ensure the installed vim supports `X11`](#1-ensure-the-installed-vim-supports-x11)
-- [1. enable `X11` on remote ubuntu via ssh](#1-enable-x11-on-remote-ubuntu-via-ssh)
+- [2. enable `X11` on remote ubuntu via ssh](#2-enable-x11-on-remote-ubuntu-via-ssh)
   - [1. config](#1-config)
   - [2. connect on client](#2-connect-on-client)
   - [3. test on remote](#3-test-on-remote)
-- [2. enable access to clipboard on remote ubuntu at local (part 1: basic)](#2-enable-access-to-clipboard-on-remote-ubuntu-at-local-part-1-basic)
+- [3. enable access to clipboard on remote ubuntu at local (part 1: basic)](#3-enable-access-to-clipboard-on-remote-ubuntu-at-local-part-1-basic)
   - [1. enable listen on one shell](#1-enable-listen-on-one-shell)
   - [2. connect using reverse tunnelling](#2-connect-using-reverse-tunnelling)
     - [solution 1](#solution-1)
     - [solution 2](#solution-2)
   - [3. test on remote](#3-test-on-remote-1)
-- [3. enable access to clipboard on remote ubuntu at local (part 2: socket)](#3-enable-access-to-clipboard-on-remote-ubuntu-at-local-part-2-socket)
+- [4. enable access to clipboard on remote ubuntu at local (part 2: socket)](#4-enable-access-to-clipboard-on-remote-ubuntu-at-local-part-2-socket)
   - [1. config plist](#1-config-plist)
   - [2. chmod (necessary)](#2-chmod-necessary)
   - [3. start plist](#3-start-plist)
   - [4. test plist](#4-test-plist)
   - [TODO: 5. auto-start plist after login](#todo-5-auto-start-plist-after-login)
-- [4. enable vim copy to registry](#4-enable-vim-copy-to-registry)
+- [5. enable vim copy to registry](#5-enable-vim-copy-to-registry)
   - [1. map `Y` to copy selected content into register `+`](#1-map-y-to-copy-selected-content-into-register-)
   - [2. usage](#2-usage)
-- [5. enable vim copy to local clipboard](#5-enable-vim-copy-to-local-clipboard)
-- [6. enable tmux copy to local clipboard](#6-enable-tmux-copy-to-local-clipboard)
+- [6. enable vim copy to local clipboard](#6-enable-vim-copy-to-local-clipboard)
+- [7. enable tmux copy to local clipboard](#7-enable-tmux-copy-to-local-clipboard)
 - [core reference](#core-reference)
 
 ## 0. before you start
@@ -55,7 +55,7 @@ if not, install another version of `vim`, otherwise the `* | +` registries would
 sudo apt install vim-gtk3
 ```
 
-## 1. enable `X11` on remote ubuntu via ssh
+## 2. enable `X11` on remote ubuntu via ssh
 
 :::caution
 to fix `Error: Can't open display: (null)` when using `echo "xx" | xclip` on remote ubuntu, I found we should config `ForwardX11 yes` in both local and remote ssh config, see: https://askubuntu.com/a/305681/1629991
@@ -100,7 +100,7 @@ clip on clipboard
 clip on clipboard
 ```
 
-## 2. enable access to clipboard on remote ubuntu at local (part 1: basic)
+## 3. enable access to clipboard on remote ubuntu at local (part 1: basic)
 
 首先可以看一下这篇[Forward your clipboard via SSH reverse tunnels](https://gist.github.com/dergachev/8259104)，它给出了最简单的基于无限循环监听端口(`nc -l`)并复制(`pbcopy`)的方案。
 
@@ -148,7 +148,7 @@ echo "test 1" | nc -q0 localhost 19988
 
 then we can access the `test 1` in the local clipboard.
 
-## 3. enable access to clipboard on remote ubuntu at local (part 2: socket)
+## 4. enable access to clipboard on remote ubuntu at local (part 2: socket)
 
 > see more at: [tmux in practice: copy text from remote session using SSH remote tunnel and systemd service | by Alexey Samoshkin | HackerNoon.com | Medium](https://medium.com/hackernoon/tmux-in-practice-copy-text-from-remote-session-using-ssh-remote-tunnel-and-systemd-service-dd3c51bca1fa)
 
@@ -225,7 +225,7 @@ then we can access the `test 2` in the local clipboard.
 
 ### TODO: 5. auto-start plist after login
 
-## 4. enable vim copy to registry
+## 5. enable vim copy to registry
 
 > see more at: [How to copy to clipboard in Vim? - Stack Overflow](https://stackoverflow.com/questions/3961859/how-to-copy-to-clipboard-in-vim#:~:text=In%20vim%20command%20mode%20press,and%20CMD%20%2B%20v%20to%20paste.)
 
@@ -240,7 +240,7 @@ vnoremap Y "+y
 1. `shift + V` to switch to `Visual Mode` and select the current line, then use the Arrow key of `UP | DOWN` to select more lines.
 2. press `Y` to copy the selected lines into the clipboard
 
-## 5. enable vim copy to local clipboard
+## 6. enable vim copy to local clipboard
 
 > see more at: [ssh - How to use X11 forwarding to copy from vim to local machine - Stack Overflow](https://stackoverflow.com/questions/47822357/how-to-use-x11-forwarding-to-copy-fro m-vim-to-local-machine)
 
@@ -262,7 +262,7 @@ So, for convenience, we can directly use the following vim script to map the seq
 vnoremap Y "+y :call system('nc -q0 localhost 19988', @+)<CR>
 ```
 
-## 6. enable tmux copy to local clipboard
+## 7. enable tmux copy to local clipboard
 
 > see more at: [vim与系统剪切板之间的复制粘贴 - 广漠飘羽 - 博客园](https://www.cnblogs.com/gmpy/p/11177719.html)
 
