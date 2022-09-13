@@ -564,3 +564,60 @@ zR: not fold (show the most words)
 - [folding - Fold function in vim - Stack Overflow](https://stackoverflow.com/questions/2362914/fold-function-in-vim)
 
 - [Folding | Vim Tips Wiki | Fandom](https://vim.fandom.com/wiki/Folding)
+
+## Vundle
+
+### how to uninstall vim plugin provided by Vundle
+
+ref: https://stackoverflow.com/a/49251184/9422455
+
+1. comment target plugin to be removed
+2. `:BundleClean`
+
+
+## bugfix: `YouCompleteMe unavailable: requires Vim 8.1.2269+.`
+
+core ref: 
+- [YouCompleteMe unavailable: requires Vim 8.1.2269+ · Issue #3764 · ycm-core/YouCompleteMe](https://github.com/ycm-core/YouCompleteMe/issues/3764)
+- [Building Vim from source · ycm-core/YouCompleteMe Wiki](https://github.com/ycm-core/YouCompleteMe/wiki/Building-Vim-from-source)
+
+### scenario
+
+see: https://www.cnblogs.com/varden/p/13857004.html
+
+![picture 2](.imgs/vim-howto-1663043497755-f4ab7a10de23326cbe8a57bd0d2f87ecc4d1d8ff8475f1f2029e2aa067fe5ed1.png)  
+
+### resolution 1: using an older version of `youcompleteme`
+
+1. check vim version
+
+check vim version installed on local (run `$ vim`):
+
+![picture 3](.imgs/vim-howto-1663043531483-ac80ae271dcab356d321517c4304850f768d42b76660927e8c8937372d15fd95.png)  
+
+check vim version supported for this system:
+
+> ref: https://packages.ubuntu.com/bionic/vim
+
+![picture 4](.imgs/vim-howto-1663044842319-84e20309784ccfe095fbdc77d05578cb4d9453588bae6cff92a3e6d9d41c061d.png)  
+
+1. checkout youcompleteme
+
+```sh
+# ref: 
+git checkout d98f896
+```
+
+3. install 
+
+```sh
+cd ~/.vim/bundle/YouCompleteMe
+
+# 要保证 github.com 的网速要好，最好用代理或者 host，否则很慢，以及看运气！
+git submodule update --init --recursive
+python3 install.py
+```
+
+### resolution 2: using the latest vim built from source
+
+core ref: [Building Vim from source · ycm-core/YouCompleteMe Wiki](https://github.com/ycm-core/YouCompleteMe/wiki/Building-Vim-from-source)

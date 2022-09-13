@@ -5,7 +5,6 @@
 use `bash` (not `zsh`, otherwise the script won't pass, see: [mmm 编译模块报错 Couldn't locate the directory - 简书](https://www.jianshu.com/p/2a4731385773))
 
 ```sh
-bash
 source build/envsetup.sh && lunch rk3399_Android10-userdebug
 
 mmm development/tools/idegen
@@ -17,8 +16,6 @@ otherwise, the android studio would complain the logs (each module would) and it
 
 ```sh
 echo "ulimit -S -n 2048" >> ~/.bashrc
-
-bash
 source ~/.bashrc
 ```
 
@@ -143,7 +140,7 @@ ref:
 
 涉及到语法问题，简单检查会发现，一般都不是什么大问题，因此就要把他们屏蔽。
 
-办法就是修改对应的 `CMakeLists.txt` 文件，整个文件分成自己包库与依赖包库，一般是在依赖包库会出现问题，在最后面的 `CXX-FALGS` 后面一次次编译补上所需要的屏蔽条件即可，例如我在编译 `libsurfaceflinger` 中，要补全的条目如下：
+办法就是修改对应的 `CMakeLists.txt` 文件，整个文件分成自己包库与依赖包库，一般是在依赖包库会出现问题，在最后面的 `CXX-FLAGS` 后面一次次编译补上所需要的屏蔽条件即可，例如我在编译 `libsurfaceflinger` 中，要补全的条目如下：
 
 ```cpp
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-implicit-int-float-conversion")

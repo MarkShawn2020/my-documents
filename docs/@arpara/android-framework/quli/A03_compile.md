@@ -11,6 +11,7 @@
   - [how to speed up compilation](#how-to-speed-up-compilation)
 - [compile efficiency](#compile-efficiency)
 - [bugfix](#bugfix)
+  - [`10:55:31 mkuserimg_mke2fs.py ERROR: Failed to run e2fsdroid_cmd: __populate_fs: Could not allocate block in ext2 filesystem while writing file "LuciSetUp.apk"`](#105531-mkuserimg_mke2fspy-error-failed-to-run-e2fsdroid_cmd-__populate_fs-could-not-allocate-block-in-ext2-filesystem-while-writing-file-lucisetupapk)
   - [FIXED: `cd is not defined` when `source ./build/envsetup.sh`](#fixed-cd-is-not-defined-when-source-buildenvsetupsh)
   - [PASS: `Could not create symlink` when `source ./build/envsetup.sh`](#pass-could-not-create-symlink-when-source-buildenvsetupsh)
   - [PASS: `Disallowed Path Tools` when compiling](#pass-disallowed-path-tools-when-compiling)
@@ -212,6 +213,39 @@ ninja: build stopped: subcommand failed.
 | 09-02T18:34 | 09-02T20:38 | 124     | af-root, j88, ccache-0, inplace         |      |
 
 ## bugfix
+
+### `10:55:31 mkuserimg_mke2fs.py ERROR: Failed to run e2fsdroid_cmd: __populate_fs: Could not allocate block in ext2 filesystem while writing file "LuciSetUp.apk"`
+
+![picture 1](.imgs/A03_compile-1663038824320-2cd775e6506621357d6c95ef68fb9ad9c825984465fae845e851f797b1de89ac.png)  
+
+查看博文指出的 `BoardConfig.mk` 文件可以发现目前比 `BOARD_SYSTEMIMAGE_PARTITION_SIZE` 更重要的一个参数：`BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE`，显然我们至少要把这个参数从 `ext4` 改成 `ext2`（基于目前 `zfs` 的磁盘系统）。
+
+```sh
+➜  android grep BOARD_SYSTEMIMAGE -C 3 device/qcom/kona/BoardConfig.mk
+### Dynamic partition Handling
+ifneq ($(strip $(BOARD_DYNAMIC_PARTITION_ENABLE)),true)
+BOARD_VENDORIMAGE_PARTITION_SIZE := 1395863552
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3221225472
+BOARD_ODMIMAGE_PARTITION_SIZE := 67108864
+BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
+AB_OTA_PARTITIONS ?= boot vendor dtbo vbmeta
+--
+BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
+
+TARGET_USERIMAGES_USE_F2FS := true
+BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
+BOARD_BOOTIMAGE_PARTITION_SIZE := 0x06000000
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 48318382080
+```
+
+其次，报错的具体命令是：
+
+```sh
+mke2fs -O ^has_journal -L / -N 4533 -I 256 -M / -m 0 -U 4729639d-b5f2-5cc1-a120-9ac5f788683c -E android_sparse,hash_seed=fd77d4fd-bb91-5ef5-9533-d5d806da85a3 -t ext4 -b 4096 /opt/aosp/mark1/forluci/oem/sxr2130_apps/LINUX/android/out/target/product/qssi/obj/PACKAGING/target_files_intermediates/qssi-target_files-eng.mark/IMAGES/system.img 554201
+
+e2fsdroid -T 1230768000 -C /opt/aosp/mark1/forluci/oem/sxr2130_apps/LINUX/android/out/soong/.temp/merged_fs_configs1YtSg.txt -B /opt/aosp/mark1/forluci/oem/sxr2130_apps/LINUX/android/out/target/product/qssi/obj/PACKAGING/target_files_intermediates/qssi-target_files-eng.mark/IMAGES/system.map -s -S /opt/aosp/mark1/forluci/oem/sxr2130_apps/LINUX/android/out/target/product/qssi/obj/PACKAGING/target_files_intermediates/qssi-target_files-eng.mark/META/file_contexts.bin -f /opt/aosp/mark1/forluci/oem/sxr2130_apps/LINUX/android/out/soong/.temp/tmpSsIhR7 -a / /opt/aosp/mark1/forluci/oem/sxr2130_apps/LINUX/android/out/target/product/qssi/obj/PACKAGING/target_files_intermediates/qssi-target_files-eng.mark/IMAGES/system.img
+```
 
 ### FIXED: `cd is not defined` when `source ./build/envsetup.sh`
 

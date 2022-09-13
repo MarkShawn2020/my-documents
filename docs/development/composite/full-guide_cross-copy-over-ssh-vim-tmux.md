@@ -11,6 +11,7 @@ title: ssh 跨系统共享 vims 剪切板的最佳解决方案
 ![picture 2](.imgs/full-guide_cross-copy-over-ssh-vim-tmux-1662630169987-51fb98f3430a72c001eb7f3c151fb86fe315673a2334bb818da631aefdee2a58.png)  
 
 - [0. before you start](#0-before-you-start)
+- [1. ensure the installed vim supports `X11`](#1-ensure-the-installed-vim-supports-x11)
 - [1. enable `X11` on remote ubuntu via ssh](#1-enable-x11-on-remote-ubuntu-via-ssh)
   - [1. config](#1-config)
   - [2. connect on client](#2-connect-on-client)
@@ -26,6 +27,7 @@ title: ssh 跨系统共享 vims 剪切板的最佳解决方案
   - [2. chmod (necessary)](#2-chmod-necessary)
   - [3. start plist](#3-start-plist)
   - [4. test plist](#4-test-plist)
+  - [TODO: 5. auto-start plist after login](#todo-5-auto-start-plist-after-login)
 - [4. enable vim copy to registry](#4-enable-vim-copy-to-registry)
   - [1. map `Y` to copy selected content into register `+`](#1-map-y-to-copy-selected-content-into-register-)
   - [2. usage](#2-usage)
@@ -39,6 +41,19 @@ title: ssh 跨系统共享 vims 剪切板的最佳解决方案
 - premise your server connected to is `$YOUR_SERVER`
 - I just implemented from MacOS(local) to Ubuntu(remote), and the logic is no different on other platforms.
 - `mark` is my nickname
+
+## 1. ensure the installed vim supports `X11`
+
+ensure `+X11` (instead of `-X11`) in `vim --version`:
+
+![picture 5](.imgs/B01_full-guide_copy-over-ssh-vim-tmux-1663050280446-47e8715625d6eed589d6a24648171e053933754a68874c668da7ba552b5ea2a5.png)  
+
+if not, install another version of `vim`, otherwise the `* | +` registries would not work (with a sound of beam for warning):
+
+```sh
+# ref: sudo apt install vim-gtk3
+sudo apt install vim-gtk3
+```
 
 ## 1. enable `X11` on remote ubuntu via ssh
 
@@ -207,6 +222,8 @@ echo 'test 2' | nc -q0 localhost 19988
 ```
 
 then we can access the `test 2` in the local clipboard.
+
+### TODO: 5. auto-start plist after login
 
 ## 4. enable vim copy to registry
 
