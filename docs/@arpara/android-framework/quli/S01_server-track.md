@@ -40,6 +40,24 @@ cmake version 3.20.0
 CMake suite maintained and supported by Kitware (kitware.com/cmake).
 ```
 
+## feat: speed up connection to github.com
+
+### resolution 1, via project of github520
+
+see: 
+
+- recommended by 缪永俊：521xueweihan/GitHub520: 让你“爱”上 GitHub，解决访问时图裂、加载慢的问题。（无需安装）](https://github.com/521xueweihan/GitHub520)
+
+### resolution 2, via manually config
+
+1. visit [多个地点ping[github.com]服务器-网站测速-站长工具](https://ping.chinaz.com/github.com) and check the best server, e.g the russia one of `140.82.121.3`
+2. wrote into hosts file: `echo '140.82.121.3 github.com # russia' | sudo tee -a /etc/hosts`
+
+:::tip
+This resolution is the most lightning one, and also works for `raw.githubcontent.com`, etc. 
+:::
+
+
 <!-- ARPARA-END -->
 
 ## bugfix: system perl config
@@ -64,9 +82,3 @@ locale: Cannot set LC_ALL to default locale: No such file or directory
 ```
 
 ### TODO: resolution
-
-## TODO: feat: speed up connection to githubusercontent.com
-
-
-ref: https://docs.rackspace.com/support/how-to/modify-your-hosts-file
-

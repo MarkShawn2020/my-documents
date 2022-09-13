@@ -10,6 +10,8 @@
   - [auto build script](#auto-build-script)
   - [how to speed up compilation](#how-to-speed-up-compilation)
 - [compile efficiency](#compile-efficiency)
+- [ZFS porting](#zfs-porting)
+  - [disk](#disk)
 - [bugfix](#bugfix)
   - [`10:55:31 mkuserimg_mke2fs.py ERROR: Failed to run e2fsdroid_cmd: __populate_fs: Could not allocate block in ext2 filesystem while writing file "LuciSetUp.apk"`](#105531-mkuserimg_mke2fspy-error-failed-to-run-e2fsdroid_cmd-__populate_fs-could-not-allocate-block-in-ext2-filesystem-while-writing-file-lucisetupapk)
   - [FIXED: `cd is not defined` when `source ./build/envsetup.sh`](#fixed-cd-is-not-defined-when-source-buildenvsetupsh)
@@ -212,6 +214,12 @@ ninja: build stopped: subcommand failed.
 | 09-03T03:02 | 09-03T05:10 | 128     | af-root, j88, ccache-1, inplace         |      |
 | 09-02T18:34 | 09-02T20:38 | 124     | af-root, j88, ccache-0, inplace         |      |
 
+## ZFS porting
+
+### disk
+
+https://patch-diff.githubusercontent.com/raw/landley/toybox/pull/177.diff
+
 ## bugfix
 
 ### `10:55:31 mkuserimg_mke2fs.py ERROR: Failed to run e2fsdroid_cmd: __populate_fs: Could not allocate block in ext2 filesystem while writing file "LuciSetUp.apk"`
@@ -272,4 +280,5 @@ solution: 咨询趣立的结果是：“不影响”：
   - [Build System Changes for Android.mk Writers](https://android.googlesource.com/platform/build/+/master/Changes.md#PATH_Tools)
 
   以及（如果明确副作用的话）可以将工具写入配置文件中，参考：https://forum.xda-developers.com/t/guide-complete-android-rom-development-from-source-to-end.2814763/post-80923041
+
 
