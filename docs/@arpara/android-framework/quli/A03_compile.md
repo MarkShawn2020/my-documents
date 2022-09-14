@@ -134,7 +134,7 @@ sudo apt-get install -y libx11-dev:i386 libreadline6-dev:i386 libgl1-mesa-dev g+
 
 ### increase swap area (necessary in low memory machine)
 
-see: [external: increase-swap-area-recommended](../general/AndroidFramework/02-aosp-compile/index.md#3-increase-swap-area-recommended)
+see: [external: increase-swap-area-recommended](../general//02-aosp-compile/index.md#3-increase-swap-area-recommended)
 
 ### config environment variables (recommended private usage)
 
@@ -180,7 +180,7 @@ cd ../../..
 
 ### how to speed up compilation
 
-see: [external: how-to-speed-up-aosp-building](../general/AndroidFramework/02-aosp-compile/index.md#how-to-speed-up-aosp-building)
+see: [external: how-to-speed-up-aosp-building](../general//02-aosp-compile/index.md#how-to-speed-up-aosp-building)
 
 ## compile efficiency
 

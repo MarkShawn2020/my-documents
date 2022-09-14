@@ -44,9 +44,7 @@ title: ssh 跨系统共享 vims 剪切板的最佳解决方案
 
 ## 1. ensure the installed vim supports `X11`
 
-ensure `+X11` (instead of `-X11`) in `vim --version`:
-
-![picture 5](.imgs/B01_full-guide_copy-over-ssh-vim-tmux-1663050280446-47e8715625d6eed589d6a24648171e053933754a68874c668da7ba552b5ea2a5.png)  
+ensure `+X11` (instead of `-X11`) in `vim --version`
 
 if not, install another version of `vim`, otherwise the `* | +` registries would not work (with a sound of beam for warning):
 

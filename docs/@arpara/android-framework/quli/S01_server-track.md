@@ -48,6 +48,14 @@ see:
 
 - recommended by 缪永俊：[521xueweihan/GitHub520: 让你“爱”上 GitHub，解决访问时图裂、加载慢的问题。（无需安装）](https://github.com/521xueweihan/GitHub520)
 
+resolution:
+
+suppose `cp `
+
+```sh
+cat /etc/hosts.bak | cat - <(curl https://raw.githubusercontent.com/521xueweihan/GitHub520/main/hosts) | sudo tee /etc/hosts.test
+```
+
 ### resolution 2, via manually config
 
 1. visit [多个地点ping[github.com]服务器-网站测速-站长工具](https://ping.chinaz.com/github.com) and check the best server, e.g the russia one of `140.82.121.3`
