@@ -44,8 +44,8 @@ echo "export TZ='Asia/Shanghai'" >> ~/.profile # need relogin
 # update apt and install packages
 
 # change apt source
-APT_SOURCE="http://mirrors.yun-idc.com/ubuntu/"
 APT_SOURCES_LIST_FILE=/etc/apt/sources.list
+APT_SOURCE="http://mirrors.yun-idc.com/ubuntu/"
 sudo sed -i.bak -r  "s|deb \S+|deb $APT_SOURCE|g" $APT_SOURCES_LIST_FILE
 
 echo "Y" | sudo apt update # need confirm but skipped since configured

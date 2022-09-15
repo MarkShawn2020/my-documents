@@ -1,4 +1,8 @@
 
+## create a ubuntu 18.04.6 in a vmware
+
+see: [full-guide_ubuntu-in-vmware](../../../development/OS/virtual-machine/full-guide_ubuntu-in-vmware.md)
+
 ## path variables
 
 ```yaml
@@ -8,6 +12,27 @@ AF_OEM: $AF_SOURCE/forluci/oem
 
 # const
 AF_ROOT: $AF_OEM/sxr2130_apps/LINUX/android
+```
+
+## get source codes
+
+### resolution 1, via smb to `zhifeiji-pc`
+
+```sh
+sudo apt install smbclient
+
+cd $AF_SOURCE
+
+# 29.15G
+smbget smb://x:y@zhifeiji-pc/QVR/forluci_20220813.tar.gz
+
+# 10.46G
+smbget smb://x:y@zhifeiji-pc/QVR/pkg.zip
+
+# 193.03G
+# unnecessary to store (if disk shortage)
+# since we can directly view the origin via ssh in bcomp
+smbget smb://x:y@zhifeiji-pc/QVR/luci_origin_0829.tar.gz
 ```
 
 ## project structure of OEM

@@ -120,7 +120,14 @@ smb://192.168.1.236/QVR/pkg.zip can't be found on the remote server
 === answer ===
 
 ```sh
-# -- usage --
+## -- usage --
+# arbitrary
+USER=xx PSWD=yy 
+# must use the name, ip is not OK, can be known in `Mac-Files-Network`
+SERVER=zhifeiji-pc 
+FILE_PATH=QVR/pkg.zip
+
+# needs install `smbclient` to use `smbget`
 smbget -U $USER%$PSWD smb://$SERVER/$FILE_PATH
 
 # -- example --
