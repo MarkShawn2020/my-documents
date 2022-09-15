@@ -171,3 +171,19 @@ to:
 `%admin          ALL = (ALL) NOPASSWD: ALL`
 
 re-login may need.
+
+## TODO: how to symlink `/home` to `/Users`
+
+I did it in recovery mode on `Ventura` system, with `shift + command + t` to open hidden terminal, and executed the following:
+
+```sh
+mount -uw /
+ln -s /Users /home
+
+ls /home
+# out: share
+```
+
+It's OKAY, but it won't after I rebooted.
+
+ref: - [unix - Mac OS X - How to Symlink /home to /Users - Ask Different](https://apple.stackexchange.com/questions/44058/mac-os-x-how-to-symlink-home-to-users)

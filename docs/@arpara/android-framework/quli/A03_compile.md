@@ -206,6 +206,7 @@ ninja: build stopped: subcommand failed.
 
 | sDate       | eDate       | minutes | env                                     | note |
 | ----------- | ----------- | ------- | --------------------------------------- | ---- |
+| 09-15T09:53 | 09-15T13:26 | 213     | vmware, j12, ccache-2, inplace, clion   |      |
 | 09-06T08:35 | 09-06T09:20 | 45      | /aospPool/mark3, j88. ccache-2, inplace |      |
 | 09-06T03:27 | 09-06T04:10 | 43      | /aospPool/mark2, j88, ccache-2, inplace |      |
 | 09-06T00:29 | 09-06T03:26 | 177     | /aospPool/mark2, j88, ccache-1, inplace |      |
