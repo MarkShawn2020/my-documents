@@ -292,7 +292,8 @@ perl -i.bak2 -0pe "s|reverted:
 l | grep interpolate
 
 # show the html
-diff2html -i file  -s sid -- interpolate.diff
+# ref: https://github.com/rtfpessoa/diff2html-cli#setup
+diff2html -i file  --style side -- interpolate.diff
 ```
 
 ## `git submodule`

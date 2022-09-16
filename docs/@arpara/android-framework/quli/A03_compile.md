@@ -166,7 +166,8 @@ cd sxr2130_apps/LINUX/android
 
 source ./build/envsetup.sh
 
-choosecombo debug kona eng V02A
+# cannot compile eng version for kona
+choosecombo debug kona userdebug V02A
 
 ./build.sh dist -j8 | tee "build_$(date +"%m-%dT%H:%M").log"
 
