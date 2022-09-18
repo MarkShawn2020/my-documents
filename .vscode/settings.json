@@ -144,6 +144,7 @@
         "hmac",
         "hmdclient",
         "hmdservice",
+        "homekit",
         "howto",
         "huaweicloudsdkcore",
         "huaweicloudsdkocr",
