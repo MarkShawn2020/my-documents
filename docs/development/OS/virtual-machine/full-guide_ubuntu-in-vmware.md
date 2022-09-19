@@ -39,7 +39,7 @@ sudo apt update
 sudo apt upgrade
 ```
 
-## 配置界面
+## 2. 配置界面
 
 首先是虚拟机界面，确保开启了 retina 选项：
 
@@ -70,7 +70,7 @@ gsettings set org.gnome.desktop.interface scaling-factor 2
 gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
 ```
 
-## 配置复制粘贴
+## 3. 配置复制粘贴
 
 尽管我们已经在设置里启动了沙箱隔离里复制粘贴、拖拽选项：
 
@@ -84,13 +84,13 @@ gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffe
 
 ![picture 10](.imgs/full-guide_ubuntu-in-vmware-1663149214216-eebb1047ac3585c2a439ddc484647ab6bfcc00c500da671e8c2152f47d8d0c3a.png)  
 
-## 配置sudo免密
+## 4. 配置sudo免密
 
 ```sh
 echo "$USER ALL=(ALL:ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers.d/$USER
 ```
 
-## 安装常用命令行
+## 5. 安装常用命令行
 
 ```sh
 sudo apt install -Y git curl wget terminator zsh vim tmux htop
@@ -107,7 +107,7 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 
 TODO: 
 
-## 磁盘共享
+## 6. 磁盘共享
 
 ### from host to remote
 
@@ -121,7 +121,7 @@ see:
 - [via ` Disk Internal's Linux Reader (windows only)`](https://superuser.com/a/1077650/1365851)
 - https://superuser.com/questions/67636/vmware-workstation-how-to-access-the-virtual-disk-from-the-host-system
 
-## 性能优化
+## 7. 性能优化
 
 ### 磁盘：关闭测通道缓冲
 

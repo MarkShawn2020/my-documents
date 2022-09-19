@@ -8,6 +8,7 @@ version: 18.04.6
 
 ## init configuration / utilities
 
+
 ### feat: enable back/front search commands
 
 ```sh
@@ -20,6 +21,7 @@ bind -f ~/.inputrc
 
 ### change apt sources to speed up package installation
 
+
 ```sh
 APT_SOURCES_LIST_FILE=/etc/apt/sources.list
 APT_SOURCE="http://mirrors.yun-idc.com/ubuntu/"
@@ -31,3 +33,9 @@ sudo sed -i.bak -E  "s|deb \S+|deb $APT_SOURCE|g" $APT_SOURCES_LIST_FILE
 sudo apt update
 sudo apt upgrade
 ``` 
+
+### how to increase partition space from free space
+
+via built-in `disk` app:
+
+![picture 1](.imgs/ubuntu-index-1663570593373-eeacafb9adf917d2acba07d7ff547e015b89cdf48c70c8a38007fd7eb12fff9d.png)  
