@@ -25,6 +25,26 @@ adb shell am start -n com.android.gallery3d/.app.GalleryActivity
 
 - [[HOWTO] New Hot Reboot Command!!!! | XDA Forums](https://forum.xda-developers.com/t/howto-new-hot-reboot-command.2325378/)
 
+## connection relative
+
+### how to check available devices (especially via usb)
+
+```sh
+adb devices
+```
+
+### how to get wifi from adb devices
+
+```sh
+# restart server first
+adb tcpip 5555
+
+# list first ip of device and connect
+adb shell ifconfig | grep inet | head -n1 | awk '{print $2}' | awk -F : '{print  $2}' | xargs adb connect
+```
+
+After connection over wifi, the usb cable can be plugged out then.
+
 ## fast push
 
 ```sh
