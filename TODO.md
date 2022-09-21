@@ -10,45 +10,46 @@ hide_table_of_contents: true
 
 ## todo task table
 
-| sDate      | eDate | category     | title                                        | pri | status  | reason | detail                      |
-| ---------- | ----- | ------------ | -------------------------------------------- | --- | ------- | ------ | --------------------------- |
-| 2022-09-12 |       | project      | inject post interface of nucleic acid        |     |         |        |                             |
-| 2022-09-12 |       | project      | graph analysis of Top Party                  |     |         |        |                             |
-| 2022-09-09 |       | docusaurus   | fix failure to run workflow                  |     |         |        |                             |
-| 2022-09-09 |       | feishu       | feishu-doc-sdk manage docs seen and update   |     |         |        |                             |
-| 2022-09-09 |       | feishu       | feishu-doc-sdk hook on doc update            |     |         |        |                             |
-| 2022-09-09 |       | feishu       | feishu-doc-sdk download and parse docs       |     |         |        |                             |
-| 2022-09-08 |       | docusaurus   | blog list page format title with ending      |     |         |        | [^blog-list-title-style]    |
-| 2022-09-08 |       | docusaurus   | frontmatter of `ref-expand-depth`            | .8  |         |        | [^ref-expand-depth]         |
-| 2022-09-06 |       | docusaurus   | scale image if h > w                         | .3  |         |        |                             |
-| 2022-09-06 |       | docusaurus   | add directory route with covers for articles | .7  |         |        |                             |
-| 2022-08-26 |       | feishu       | vscode sync to feishu docs                   |     |         |        |                             |
-| 2022-08-18 |       | feat         | enable chinese align in markdown table       |     |         |        | [^md-table-align]           |
-| 2022-08-18 |       | bug          | fix stock-chips step down problem (by fei)   |     |         |        |                             |
-| 2022-08-17 |       | bug          | fix docusaurus file updated date             |     |         |        |                             |
-| 2022-08-12 |       | learn        | research on different eslint recommends      |     |         |        |                             |
-| 2022-08-11 |       | clean        | qq-zone notes, like peking university        | .6  |         |        |                             |
-| 2022-08-09 |       | learn        | google js/ts style learning                  | .6  |         |        | [^learn-google-js/ts-style] |
-| 2022-08-05 |       | docusaurus   | gantt graph                                  |     |         |        | inspired by ruo/jack        |
-| -          |       | docusaurus   | sort out the blog category                   |     |         |        |                             |
-| -          |       | docusaurus   | sort out the tsinghua docs                   |     |         |        |                             |
-| -          |       | learn        | Lee-SLAM                                     |     | started |        | [^learn-slam]               |
-| -          |       | learn        | computer graph                               |     |         |        | [^learn-computer-graph]     |
-| -          |       | project      | markdown output with multi-platforms         |     |         |        | [^md-multi-output]          |
-| -          |       | project      | agg-music                                    |     | delayed |        | [^agg-music]                |
-| -          |       | project      | markdown realtime engine                     |     | delayed |        | [^md-realtime-engine]       |
-| -          |       | project      | aggregated search                            |     | delayed |        | [^agg-search]               |
-| -          |       | project      | knowledge graph based on blog system         | .7  | delayed |        |                             |
-| -          |       | TamperMonkey | douban rent                                  |     | started |        | [^tm-douban-rent]           |
-| -          |       | mac          | customize dictionary app                     |     | delayed |        | chinese <--> english        |
-| -          |       | project      | online reader                                |     | delayed |        | [^online-reader]            |
-| -          |       | project      | video synchronized with captain              |     | delayed |        | [^video-captain-sync]       |
-| -          |       | project      | e-commercial analysis system                 | .6  | delayed |        |                             |
-| -          |       | project      | super financial bill                         |     | delayed |        | difficulty: need root       |
-| -          |       | vscode       | markdown synchronized scroll algorithm       |     | delayed |        |                             |
-| -          |       | vscode       | auto-completion for headings from md         |     | delayed |        | [^vscode-auto-heading]      |
-| -          |       | vscode       | comment line with cursor down                |     | delayed |        | stay if line is empty       |
-| -          |       | article      | blog tools comparison                        |     |         |        | about remark                |
+| sDate      | eDate | category     | title                                            | pri | status  | reason | detail                      |
+| ---------- | ----- | ------------ | ------------------------------------------------ | --- | ------- | ------ | --------------------------- |
+| 2022-09-21 |       | project      | build a chatting server based on matrix protocol |     |         |        |                             |
+| 2022-09-12 |       | project      | inject post interface of nucleic acid            |     |         |        |                             |
+| 2022-09-12 |       | project      | graph analysis of Top Party                      |     |         |        |                             |
+| 2022-09-09 |       | docusaurus   | fix failure to run workflow                      |     |         |        |                             |
+| 2022-09-09 |       | feishu       | feishu-doc-sdk manage docs seen and update       |     |         |        |                             |
+| 2022-09-09 |       | feishu       | feishu-doc-sdk hook on doc update                |     |         |        |                             |
+| 2022-09-09 |       | feishu       | feishu-doc-sdk download and parse docs           |     |         |        |                             |
+| 2022-09-08 |       | docusaurus   | blog list page format title with ending          |     |         |        | [^blog-list-title-style]    |
+| 2022-09-08 |       | docusaurus   | frontmatter of `ref-expand-depth`                | .8  |         |        | [^ref-expand-depth]         |
+| 2022-09-06 |       | docusaurus   | scale image if h > w                             | .3  |         |        |                             |
+| 2022-09-06 |       | docusaurus   | add directory route with covers for articles     | .7  |         |        |                             |
+| 2022-08-26 |       | feishu       | vscode sync to feishu docs                       |     |         |        |                             |
+| 2022-08-18 |       | feat         | enable chinese align in markdown table           |     |         |        | [^md-table-align]           |
+| 2022-08-18 |       | bug          | fix stock-chips step down problem (by fei)       |     |         |        |                             |
+| 2022-08-17 |       | bug          | fix docusaurus file updated date                 |     |         |        |                             |
+| 2022-08-12 |       | learn        | research on different eslint recommends          |     |         |        |                             |
+| 2022-08-11 |       | clean        | qq-zone notes, like peking university            | .6  |         |        |                             |
+| 2022-08-09 |       | learn        | google js/ts style learning                      | .6  |         |        | [^learn-google-js/ts-style] |
+| 2022-08-05 |       | docusaurus   | gantt graph                                      |     |         |        | inspired by ruo/jack        |
+| -          |       | docusaurus   | sort out the blog category                       |     |         |        |                             |
+| -          |       | docusaurus   | sort out the tsinghua docs                       |     |         |        |                             |
+| -          |       | learn        | Lee-SLAM                                         |     | started |        | [^learn-slam]               |
+| -          |       | learn        | computer graph                                   |     |         |        | [^learn-computer-graph]     |
+| -          |       | project      | markdown output with multi-platforms             |     |         |        | [^md-multi-output]          |
+| -          |       | project      | agg-music                                        |     | delayed |        | [^agg-music]                |
+| -          |       | project      | markdown realtime engine                         |     | delayed |        | [^md-realtime-engine]       |
+| -          |       | project      | aggregated search                                |     | delayed |        | [^agg-search]               |
+| -          |       | project      | knowledge graph based on blog system             | .7  | delayed |        |                             |
+| -          |       | TamperMonkey | douban rent                                      |     | started |        | [^tm-douban-rent]           |
+| -          |       | mac          | customize dictionary app                         |     | delayed |        | chinese <--> english        |
+| -          |       | project      | online reader                                    |     | delayed |        | [^online-reader]            |
+| -          |       | project      | video synchronized with captain                  |     | delayed |        | [^video-captain-sync]       |
+| -          |       | project      | e-commercial analysis system                     | .6  | delayed |        |                             |
+| -          |       | project      | super financial bill                             |     | delayed |        | difficulty: need root       |
+| -          |       | vscode       | markdown synchronized scroll algorithm           |     | delayed |        |                             |
+| -          |       | vscode       | auto-completion for headings from md             |     | delayed |        | [^vscode-auto-heading]      |
+| -          |       | vscode       | comment line with cursor down                    |     | delayed |        | stay if line is empty       |
+| -          |       | article      | blog tools comparison                            |     |         |        | about remark                |
 
 ## handled task table
 

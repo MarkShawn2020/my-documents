@@ -29,6 +29,10 @@ smbget smb://x:y@zhifeiji-pc/QVR/forluci_20220813.tar.gz
 # 10.46G
 smbget smb://x:y@zhifeiji-pc/QVR/pkg.zip
 
+sha256sum luci_origin_0829.tar.gz 
+# file on Disk1
+# out: ad85efb339f32c8cdd5e6aaf25a2e149859f3eb9ed069efa3070d1543c413dc5  luci_origin_0829.tar.gz
+
 # 193.03G
 # unnecessary to store (if disk shortage)
 # since we can directly view the origin via ssh in bcomp

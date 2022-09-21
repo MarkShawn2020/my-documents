@@ -2,6 +2,7 @@
 
 | sDate      | eDate      | category    | title                                               | priority | status   | reason      | detail                |
 | ---------- | ---------- | ----------- | --------------------------------------------------- | -------- | -------- | ----------- | --------------------- |
+| 2022-09-21 |            | architect   | enable version selection to simplify architect      |          |          |             | [^simplify-architect] |
 | 2022-09-15 |            | compilation | enable out path customization, for copy convenience |          |          |             |                       |
 | 2022-09-09 |            | review      | compare between AOSP and af-android                 |          |          |             |                       |
 | 2022-09-08 |            | compilation | fix ln out                                          |          |          |             |                       |
@@ -10,6 +11,9 @@
 | 2022-08-26 |            | solution    | flush on Ubuntu, instead of Win+Qual                | .9       |          |             |                       |
 | 2022-08-26 | 2022-09-03 | instruction | ensure compile via Docker                           | -        | canceled | unnecessary | [^ins-docker-compile] |
 | 2022-08-26 | 2022-09-02 | test        | check fail on eng/debug mode                        | -        | finished |             | [^test-flush-mode]    |
+
+[^simplify-architect]:
+    ![picture 1](.imgs/TODO-1663747533211-d03fe8807ec932fd4dfaa2240537d2d58ac74cf872c82a9cf9fcb5b8ecb7109f.png)  
 
 [^better-build.sh]:
     1. it's wield with the end of `Could not find the file: "out/dist/qssi-target_files-eng.mark.zip`
