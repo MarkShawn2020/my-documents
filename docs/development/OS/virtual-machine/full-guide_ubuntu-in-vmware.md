@@ -39,6 +39,13 @@ sudo apt update
 sudo apt upgrade
 ```
 
+## 2. 配置 apt
+
+```sh
+sudo sed -i.bak -E  "s|deb \S+|deb http://mirrors.yun-idc.com/ubuntu/|g" /etc/apt/sources.list
+
+```
+
 ## 2. 配置界面
 
 首先是虚拟机界面，确保开启了 retina 选项：

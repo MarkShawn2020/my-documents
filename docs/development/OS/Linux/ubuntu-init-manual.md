@@ -42,6 +42,9 @@ APT_SOURCE="http://mirrors.yun-idc.com/ubuntu/"
 # backup & change source file
 sudo sed -i.bak -E  "s|deb \S+|deb $APT_SOURCE|g" $APT_SOURCES_LIST_FILE
 
+# e.g
+sudo sed -i.bak -E  "s|deb \S+|deb http://mirrors.yun-idc.com/ubuntu/|g" /etc/apt/sources.list
+
 # update source
 sudo apt update
 ```
