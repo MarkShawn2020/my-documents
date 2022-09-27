@@ -287,7 +287,7 @@ echo "export PASSWORD=$PASSWORD" >> ~/.bash_profile
 source ~/.bash_profile
 
 # disable sudo password, ref: https://askubuntu.com/a/878705
-echo "$PASSWORD\n$USER ALL=(ALL:ALL) NOPASSWD: ALL" | sudo -S tee /etc/sudoers.d/$USER # skip confirm based on -S
+echo "$USER ALL=(ALL:ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers.d/$USER
 
 # --- step 1.5 ---
 # enable backward/forward prefix commands search
@@ -885,7 +885,7 @@ Anyway, terminal is hard to learn, I just know `control + a` can help me exit th
 
 ```sh
 # sample
-echo "$PASSWORD\n$USER ALL=(ALL:ALL) NOPASSWD: ALL" | sudo -S tee /etc/sudoers.d/$USER # no password for sudo
+echo "$USER ALL=(ALL:ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers.d/$USER
 ```
 
 ref:
