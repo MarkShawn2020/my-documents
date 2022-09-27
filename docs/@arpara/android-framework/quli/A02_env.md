@@ -16,7 +16,33 @@ AF_ROOT: $AF_OEM/sxr2130_apps/LINUX/android
 
 ## get source codes
 
-### resolution 1, via smb to `zhifeiji-pc`
+### resolution 1, via `192.168.1.2/backup/luci_origin`
+
+```sh
+rsync -avP mark@$ARPARA_AOSP_SERVER:/backup/origin_sources/luci_origin_0829.tar.gz .
+```
+
+validate:
+
+```sh
+2022/09/27 14:27:27 ➜  sources md5sum luci_origin_0829.tar.gz
+77dab5573b41a499fa2c8f32690a425e  luci_origin_0829.tar.gz
+```
+
+unzip:
+
+```txt
+2022/09/27 14:29:32 ➜  sources pv luci_origin_0829.tar.gz | tar -xz
+luci/external/kotlinc/LICENSE: Can't replace existing directory with non-directory                           ]  1% ETA 2:17:54
+ 179GiB 0:42:12 [72.7MiB/s] [==============================================================================>] 100%
+tar: Error exit delayed from previous errors.
+
+2022/09/27 15:12:00 ➜  sources du -sh luci
+214G	luci
+```
+
+
+### (depreciated since failed to validate) resolution 2, via smb to `zhifeiji-pc`
 
 ```sh
 sudo apt install smbclient

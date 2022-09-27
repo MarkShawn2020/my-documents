@@ -15,3 +15,9 @@
 
   mac官方（不推荐）：
     - [How to create a bootable installer for macOS - Apple Support](https://support.apple.com/en-us/HT201372)`
+
+## ubuntu无法读取mac的ssd
+
+- [macintosh - How can you get any version of Linux to see the 2018 MacBook Pro SSD? - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/463422/how-can-you-get-any-version-of-linux-to-see-the-2018-macbook-pro-ssd) said:
+
+![picture 1](.imgs/dual-boot-systems-1664137278828-04d7cb68355c1faa5e95a41520c105f6a2f22698db9c0e2285ea33b8dbaf80ab.png)  
