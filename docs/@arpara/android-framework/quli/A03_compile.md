@@ -136,8 +136,10 @@ sudo apt-get install -y libx11-dev:i386 libreadline6-dev:i386 libgl1-mesa-dev g+
 sudo apt install aptitude
 
 sudo aptitude install -y libx11-dev:i386 libreadline6-dev:i386 libgl1-mesa-dev g++-multilib git flex bison gperf build-essential libncurses5-dev:i386 tofrodos python-markdown libxml2-utils xsltproc zlib1g-dev:i386 dpkg-dev libsdl1.2-dev git-core gnupg flex bison gperf build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev libgl1-mesa-dev libxml2-utils xsltproc unzip m4 lib32z-dev ccache libssl-dev libxml-simple-perl bc rsync
-# https://stackoverflow.com/questions/48674104/clang-error-while-loading-shared-libraries-libtinfo-so-5-cannot-open-shared-o
+# bugfix for libtinfo.so not found: https://stackoverflow.com/questions/48674104/clang-error-while-loading-shared-libraries-libtinfo-so-5-cannot-open-shared-o
 sudo apt install libncurses5
+# bugfix for python not found: https://stackoverflow.com/a/61608129/9422455 
+sudo apt install python-is-python3
 ```
 
 ### increase swap area (necessary in low memory machine)
