@@ -41,7 +41,6 @@ tar: Error exit delayed from previous errors.
 214G	luci
 ```
 
-
 ### (depreciated since failed to validate) resolution 2, via smb to `zhifeiji-pc`
 
 ```sh
@@ -49,8 +48,14 @@ sudo apt install smbclient
 
 cd $AF_SOURCE
 
-# 29.15G
+# 29.15G，解压后61G
 smbget smb://x:y@zhifeiji-pc/QVR/forluci_20220813.tar.gz
+
+# output `forluci` dir
+pv forluci_20220813.tar.gz | tar -xz
+sources du -sh forluci --exclude out
+# out: 61G	forluci
+
 
 # 10.46G
 smbget smb://x:y@zhifeiji-pc/QVR/pkg.zip

@@ -146,6 +146,17 @@ sudo apt install python-is-python3
 
 see: [external: increase-swap-area-recommended](../general//02-aosp-compile/index.md#3-increase-swap-area-recommended)
 
+I would suggest moving the source code to an SSD that is connected to
+the MotherBoard of the computer via SATA interface or (NVMe M.2 if
+possible) instead of using an external SSD , reason being there is lot
+of linking involved while building AOSP(or any project for that
+matter).
+
+I'm assuming your external SSD is connected to your PC via USB 3.0
+interface or USB-C interface , either of which would be slower than
+SATA/NVMe M.2 and would require more processor time to perform
+linking, that might be a reason why your CPU usage is so outrageous!
+:P 
 ### config environment variables (recommended private usage)
 
 ```sh
@@ -157,6 +168,28 @@ alias af-oem="cd $AF_OEM"
 export AF_ROOT="$AF_OEM/sxr2130_apps/LINUX/android"
 alias af-root="cd $AF_ROOT"
 ```
+
+## 编译优化
+
+### 磁盘系统与存储路径
+
+推荐将源代码放在 SATA/NVMe 连接的主板上，而非外置ssd，因为会有大量的链接引用（需要CPU去处理，这似乎可以解释为什么我放在外置盘编译时CPU是满的，但是内存始终就耗了一半）：
+
+as said at https://groups.google.com/g/android-building/c/fCKrBlzdGfM/m/tyh3Orp7AQAJ: 
+> Software builds are typically bottlenecked by link time(disk bound)
+> and not compile time(processor bound). 
+> 
+> I would suggest moving the source code to an SSD that is connected to
+> the MotherBoard of the computer via SATA interface or (NVMe M.2 if
+> possible) instead of using an external SSD , reason being there is lot
+> of linking involved while building AOSP(or any project for that
+> matter).
+> 
+> I'm assuming your external SSD is connected to your PC via USB 3.0
+> interface or USB-C interface , either of which would be slower than
+> SATA/NVMe M.2 and would require more processor time to perform
+> linking, that might be a reason why your CPU usage is so outrageous!
+> :P 
 
 ## compile
  
