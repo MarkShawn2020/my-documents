@@ -140,6 +140,11 @@ sudo aptitude install -y libx11-dev:i386 libreadline6-dev:i386 libgl1-mesa-dev g
 sudo apt install libncurses5
 # bugfix for python not found: https://stackoverflow.com/a/61608129/9422455 
 sudo apt install python-is-python3
+
+# ensure python2, for later merge_images.py use
+# ➜  android ls prebuilts/python/linux-x86/      
+# 2.7.5
+sudo ln -fs /usr/bin/python2 /usr/bin/python
 ```
 
 ### increase swap area (necessary in low memory machine)
