@@ -1,22 +1,6 @@
+## 编译经验总结
 
-- [Android Project](#android-project)
-  - [structure](#structure)
-  - [size](#size)
-- [pre-compile](#pre-compile)
-  - [install dependencies (necessary)](#install-dependencies-necessary)
-  - [increase swap area (necessary in low memory machine)](#increase-swap-area-necessary-in-low-memory-machine)
-  - [config environment variables (recommended private usage)](#config-environment-variables-recommended-private-usage)
-- [compile](#compile)
-  - [auto build script](#auto-build-script)
-  - [how to speed up compilation](#how-to-speed-up-compilation)
-- [compile efficiency](#compile-efficiency)
-- [ZFS porting](#zfs-porting)
-  - [disk](#disk)
-- [bugfix](#bugfix)
-  - [`10:55:31 mkuserimg_mke2fs.py ERROR: Failed to run e2fsdroid_cmd: __populate_fs: Could not allocate block in ext2 filesystem while writing file "LuciSetUp.apk"`](#105531-mkuserimg_mke2fspy-error-failed-to-run-e2fsdroid_cmd-__populate_fs-could-not-allocate-block-in-ext2-filesystem-while-writing-file-lucisetupapk)
-  - [FIXED: `cd is not defined` when `source ./build/envsetup.sh`](#fixed-cd-is-not-defined-when-source-buildenvsetupsh)
-  - [PASS: `Could not create symlink` when `source ./build/envsetup.sh`](#pass-could-not-create-symlink-when-source-buildenvsetupsh)
-  - [PASS: `Disallowed Path Tools` when compiling](#pass-disallowed-path-tools-when-compiling)
+- 多次编译过程中，不要更换源代码目录，否则会引发`FAILED: out/target/product/xxxx/abl.elf`，如果确已更换，可参考本文相应章节进行修复而不需要全部重新编译
 
 ## Android Project
 
@@ -271,6 +255,26 @@ ninja: build stopped: subcommand failed.
 https://patch-diff.githubusercontent.com/raw/landley/toybox/pull/177.diff
 
 ## bugfix
+
+### `FAILED: out/target/product/xxxx/abl.elf`
+
+参考：
+- https://blog.csdn.net/ngyzqf/article/details/82054329
+- https://www.cnblogs.com/xuewangkai/p/14385813.html
+
+这是由于我更换了源代码目录导致的（去掉了原来路径中的`@`）
+
+解决办法：
+
+```sh
+cd bootable/bootloader/edk2
+rm -rf Conf/BuildEnv.sh
+unset EDK_TOOLS_PATH
+./edksetup.sh BaseTools
+
+cd BaseTools
+make clean
+```
 
 ### `10:55:31 mkuserimg_mke2fs.py ERROR: Failed to run e2fsdroid_cmd: __populate_fs: Could not allocate block in ext2 filesystem while writing file "LuciSetUp.apk"`
 
