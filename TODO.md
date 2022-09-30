@@ -12,6 +12,7 @@ hide_table_of_contents: true
 
 | sDate      | eDate | category     | title                                            | pri | status  | reason | detail                      |
 | ---------- | ----- | ------------ | ------------------------------------------------ | --- | ------- | ------ | --------------------------- |
+| 2022-09-30 |       | project      | mitmproxy listen multi ports                     |     |         |        | [^mitmproxy-multi-ports]    |
 | 2022-09-21 |       | project      | build a chatting server based on matrix protocol |     |         |        |                             |
 | 2022-09-12 |       | project      | inject post interface of nucleic acid            |     |         |        |                             |
 | 2022-09-12 |       | project      | graph analysis of Top Party                      |     |         |        |                             |
@@ -75,6 +76,21 @@ hide_table_of_contents: true
 | -          | -          | plugin     | LinkToText                                   |     | finished  | PASS     |                            |
 | -          | -          | chore      | change the default TOC config                |     | finished  | SOLVED   | [^config-md-toc-depth]     |
 | -          | -          | article    | shortcuts comparison                         |     | finished  | FINISHED |                            |
+
+[^mitmproxy-multi-ports]:
+    problem: needs too much memory, each port(progress) with 40MB almost:
+      ![snapshot on luci2 server, after set swap to be 1GB](.imgs/TODO-1664545935894-23e234b5f8afeae537e7c8f907aa7d49357ea12ba8c579b58f2d20ab2ae161e5.png)  
+
+    solutions:
+      - TODO: recommended solution: https://github.com/mitmproxy/mitmproxy/issues/4887#issuecomment-1242993745 said: `You can pip install the wheel from https://snapshots.mitmproxy.org/branches/main/ and provide feedback. :-)`
+      - another solution: [Listen on Multiple Ports? - mitmproxy](https://discourse.mitmproxy.org/t/listen-on-multiple-ports/158)
+        ```sh
+        mitmproxy -T --host -p 8083
+
+        iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 9000 -j REDIRECT --to-port 8083
+        iptables -t nat -A PREROUTING -i lo -p tcp --dport 9000 -j REDIRECT --to-port 8083
+        iptables -t nat -I OUTPUT -p tcp -o lo --dport 9000 -j REDIRECT --to-ports 8083
+        ```
 
 [^blog-list-title-style]:
 
