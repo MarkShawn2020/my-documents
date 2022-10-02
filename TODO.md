@@ -12,6 +12,7 @@ hide_table_of_contents: true
 
 | sDate      | eDate | category     | title                                            | pri | status  | reason | detail                      |
 | ---------- | ----- | ------------ | ------------------------------------------------ | --- | ------- | ------ | --------------------------- |
+| 2022-10-02 |       | learn        | reverse Mac apps                                 |     |         |        | [^learn-mac-reverse]        |
 | 2022-09-30 |       | project      | mitmproxy listen multi ports                     |     |         |        | [^mitmproxy-multi-ports]    |
 | 2022-09-21 |       | project      | build a chatting server based on matrix protocol |     |         |        |                             |
 | 2022-09-12 |       | project      | inject post interface of nucleic acid            |     |         |        |                             |
@@ -77,6 +78,9 @@ hide_table_of_contents: true
 | -          | -          | chore      | change the default TOC config                |     | finished  | SOLVED   | [^config-md-toc-depth]     |
 | -          | -          | article    | shortcuts comparison                         |     | finished  | FINISHED |                            |
 
+[^learn-mac-reverse]:
+    targets:
+      - decrease the time of float timestamp when hitting Elmedia Player left/right
 [^mitmproxy-multi-ports]:
     problem: needs too much memory, each port(progress) with 40MB almost:
       ![snapshot on luci2 server, after set swap to be 1GB](.imgs/TODO-1664545935894-23e234b5f8afeae537e7c8f907aa7d49357ea12ba8c579b58f2d20ab2ae161e5.png)  
