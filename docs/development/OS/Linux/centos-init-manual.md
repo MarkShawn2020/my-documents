@@ -126,6 +126,8 @@ wget $PY_URL
 tar zxvf $PY_FILENAME
 cd $PY_FILENAME
 ./configure --enable-optimizations
+
+sudo apt install zlib1g-dev
 sudo make altinstall
 ```
 
@@ -146,6 +148,8 @@ pip3.9 install -U pip
 pip3.9 install virtualenv
 
 # create
+sudo apt-get install libssl-dev 
+
 virtualenv venv
 
 # activate
