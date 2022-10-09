@@ -796,8 +796,8 @@ fi
 > sparkles: Use `sudo -S` to read input from stdin.
 
 ```sh
-# sample
-echo "$PASSWORD\n$USER ALL=(ALL:ALL) NOPASSWD: ALL" | sudo -S tee /etc/sudoers.d/$USER # no password for sudo
+# no password / no secret for sudo
+echo "$USER ALL=(ALL:ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers.d/$USER 
 ```
 
 ref:
