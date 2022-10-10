@@ -323,8 +323,8 @@ export "TZ=Asia/Shanghai'\n" >> ~/.profile
 # configure zsh (installed in \$INSTALLED_PACKAGES) / oh-my-zsh
 
 # install oh-my-zsh (built-in backward search)
-wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
-yes | sh install.sh
+# ref: https://ohmyz.sh/#install
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # --- step 5 ---
 # diy zsh based on 'oh-my-zsh'
