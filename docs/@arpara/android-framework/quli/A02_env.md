@@ -196,3 +196,99 @@ smbget smb://x:y@zhifeiji-pc/QVR/luci_origin_0829.tar.gz
 
 47 directories, 71 files
 ```
+
+## Android Project
+
+### structure
+
+```log
+➜  android git:(master) ✗ ll
+total 32K
+lrwxrwxrwx 1 mark mark   19 Sep  5 16:34 Android.bp -> build/soong/root.bp
+-r--r--r-- 1 mark mark   92 Aug 25 17:25 Makefile
+drwxrwxr-x 1 mark mark  692 Aug 25 17:25 art
+-rwxrwxr-x 1 mark mark  199 Sep  5 16:33 auto-build.sh
+drwxrwxr-x 1 mark mark  360 Aug 25 17:26 bionic
+drwxrwxr-x 1 mark mark   36 Aug 25 17:23 bootable
+lrwxrwxrwx 1 mark mark   26 Sep  5 16:34 bootstrap.bash -> build/soong/bootstrap.bash
+drwxrwxr-x 1 mark mark  160 Sep  5 16:34 build
+lrwxrwxrwx 1 mark mark   48 Sep  5 16:34 build.sh -> vendor/qcom/opensource/core-utils/build/build.sh
+drwxrwxr-x 1 mark mark  384 Aug 25 17:25 cts
+drwxrwxr-x 1 mark mark  212 Aug 25 17:26 dalvik
+drwxrwxr-x 1 mark mark   34 Aug 25 17:24 developers
+drwxrwxr-x 1 mark mark  222 Aug 25 17:23 development
+drwxrwxr-x 1 mark mark  104 Aug 25 17:26 device
+drwxrwxr-x 1 mark mark   20 Sep  5 16:34 disregard
+drwxrwxr-x 1 mark mark 5.1K Aug 25 17:25 external
+drwxrwxr-x 1 mark mark  134 Aug 25 17:23 frameworks
+drwxrwxr-x 1 mark mark  138 Aug 25 17:24 hardware
+drwxrwxr-x 1 mark mark   86 Sep  5 16:34 kernel
+drwxrwxr-x 1 mark mark  814 Aug 25 17:26 libcore
+drwxrwxr-x 1 mark mark  422 Aug 25 17:26 libnativehelper
+drwxrwxr-x 1 mark mark  846 Sep  6 06:34 logs
+drwxrwxr-x 1 mark mark    8 Sep  3 10:24 logs.bak
+drwxrwxr-x 1 mark mark 1.8K Sep  5 16:34 out
+drwxrwxr-x 1 mark mark  124 Aug 25 17:26 packages
+drwxrwxr-x 1 mark mark   38 Aug 25 17:26 pdk
+drwxrwxr-x 1 mark mark  112 Aug 25 17:25 platform_testing
+drwxrwxr-x 1 mark mark  400 Aug 25 17:25 prebuilts
+-rw-rw-r-- 1 mark mark  101 Sep  2 11:33 readme.md
+drwxrwxr-x 1 mark mark  500 Aug 25 17:24 sdk
+drwxrwxr-x 1 mark mark  110 Aug 25 17:24 shortcut-fe
+-rwxrwxr-x 1 mark mark 4.5K Aug 25 17:24 sync.sh
+drwxrwxr-x 1 mark mark  566 Aug 25 17:23 system
+drwxrwxr-x 1 mark mark   94 Aug 25 17:26 test
+drwxrwxr-x 1 mark mark   42 Aug 25 17:26 toolchain
+drwxrwxr-x 1 mark mark  288 Aug 25 17:24 tools
+drwxrwxr-x 1 mark mark   50 Aug 25 17:26 vendor
+```
+### size
+
+```yaml
+without out: ~60G
+out: 184.2G
+with out: 240+G
+```
+
+```sh
+$ ncdu --exclude out
+
+--- /opt/aosp/xingjian/oem/sxr2130_apps/LINUX/android -------------------------------------------------------------------------------------------
+   27.2 GiB [##########] /prebuilts
+   11.9 GiB [####      ] /vendor
+    8.4 GiB [###       ] /external
+    2.7 GiB [          ] /frameworks
+    1.7 GiB [          ] /kernel
+    1.6 GiB [          ] /tools
+    1.4 GiB [          ] /cts
+    1.2 GiB [          ] /packages
+  523.2 MiB [          ] /logs
+  519.7 MiB [          ] /system
+  454.8 MiB [          ] /developers
+  428.9 MiB [          ] /test
+  403.0 MiB [          ] /logs.bak
+  306.1 MiB [          ] /device
+  246.0 MiB [          ] /bootable
+  152.7 MiB [          ] /development
+  105.9 MiB [          ] /toolchain
+   99.8 MiB [          ] /hardware
+   92.0 MiB [          ] /libcore
+   85.4 MiB [          ] /art
+   46.4 MiB [          ] /bionic
+   30.6 MiB [          ] /sdk
+   28.1 MiB [          ] /dalvik
+   17.1 MiB [          ] /build
+    6.1 MiB [          ] /platform_testing
+  860.5 KiB [          ] /pdk
+  464.5 KiB [          ] /shortcut-fe
+  413.5 KiB [          ] /libnativehelper
+   92.5 KiB [          ] /.git
+   24.5 KiB [          ]  .usecase_cache
+    8.5 KiB [          ]  sync.sh
+    4.5 KiB [          ]  auto-build.sh
+    4.5 KiB [          ]  readme.md
+    4.5 KiB [          ]  Makefile
+    4.5 KiB [          ]  .gitignore
+    1.0 KiB [          ] /disregard
+ Total disk usage:  59.6 GiB  Apparent size:  54.8 GiB  Items: 994935
+```
