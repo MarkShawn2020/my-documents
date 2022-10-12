@@ -221,6 +221,8 @@
         "mitmdump",
         "mitmproxy",
         "mkdir",
+        "mongodbdump",
+        "mongodbrestore",
         "monokai",
         "Mybatis",
         "mypapers",

@@ -52,12 +52,14 @@ refs:
 see: https://askubuntu.com/a/1075516
 
 ```sh
-sudo swapoff /swapfile
-sudo rm /swapfile
-sudo fallocate -l 16G /swapfile
-sudo chmod 600 /swapfile
-sudo mkswap /swapfile
-sudo swapon /swapfile
+function changeSwapfileSize() {
+  sudo swapoff /swapfile
+  sudo rm /swapfile
+  sudo fallocate -l $1 /swapfile
+  sudo chmod 600 /swapfile
+  sudo mkswap /swapfile
+  sudo swapon /swapfile
+}
 ```
 
 - [Optimize the Usage of Swap to Speed up Response for Ubuntu - Ubuntu Sharing](http://ubuntuguide.net/optimize-the-usage-of-swap-to-speed-up-response-for-ubuntu)
