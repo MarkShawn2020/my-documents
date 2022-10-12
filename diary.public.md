@@ -4,6 +4,7 @@
 
 ### finished
 
+- validated wechat-bot with feat of 糗事百科纯文 on remote server
 - enabled syncing mongodb database from local to remote
   - resolution: using `mongodbdump` and `mongodbrestore`
     - learned that `mongodbrestore` should use `--nsInclude "DB.*"` to restore all the collections under 'DB' database
