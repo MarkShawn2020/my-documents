@@ -223,6 +223,7 @@
         "mkdir",
         "mongodbdump",
         "mongodbrestore",
+        "mongosh",
         "monokai",
         "Mybatis",
         "mypapers",
