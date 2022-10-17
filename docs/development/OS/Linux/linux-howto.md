@@ -9,7 +9,7 @@ see: [centos init manual](centos-init-manual.md)
 
 ```sh
 # ref: https://superuser.com/a/400720/1365851
-cat ~/.ssh/id_ed25519.pub | ssh root@47.113.227.53 -T "cat >> ~/.ssh/authorized_keys"
+cat ~/.ssh/id_ed25519.pub | ssh root@47.113.227.53 -T "cat - >> ~/.ssh/authorized_keys"
 ```
 
 ### ssh keep connection alive
