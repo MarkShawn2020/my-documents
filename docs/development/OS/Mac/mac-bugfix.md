@@ -1,7 +1,8 @@
 # mac bugfix
 
+- [FIXED: 每次启动clashX都会弹窗安装 Helper Tool](#fixed-每次启动clashx都会弹窗安装-helper-tool)
 - [FIXED: adobe acrobat save-as blank](#fixed-adobe-acrobat-save-as-blank)
-- [FIXED: mac 静电问题](#fixed-mac静电问题)
+- [FIXED: mac 静电问题](#fixed-mac-静电问题)
 - [FIXED: `date -d` not work on Mac](#fixed-date--d-not-work-on-mac)
 - [FIXED: `/etc/sudoers` file broken](#fixed-etcsudoers-file-broken)
 - [FIXME: need double confirm/password when boot/restart mac](#fixme-need-double-confirmpassword-when-bootrestart-mac)
@@ -13,6 +14,24 @@
 - [bashrc messy code](#bashrc-messy-code)
   - [when using `bash` and see the messy code](#when-using-bash-and-see-the-messy-code)
   - [when using `bash` and see the `bash: git_prompt_info: command not found`](#when-using-bash-and-see-the-bash-git_prompt_info-command-not-found)
+
+## FIXED: 每次启动clashX都会弹窗安装 Helper Tool
+
+问题：`clashx needs to install/update a helper tool with administrator privileges, otherwise clashx won't be able to configure system proxy.`
+
+原因：之前安装过其他版本的 clashX，导致其 Helper 程序在系统中有残余文件，这些文件迷惑了当前运行的 clashX 程序，在识别到无效之后弹窗提示你安装，但可能由于不是全新的安装所以每次安装几乎都是无效的。
+
+解决办法：移除这些之前安装的 Helper 程序： `cd /Library/PrivilegedHelperTools && sudo rm com.west2online.*`
+
+![picture 1](.imgs/mac-bugfix-1668998441865-427e8d9902d4aabc6b87a822b24efdfe769d9c4ce31a5baa44de6549600e8ca4.png)
+
+- 在移除之前，启动 clashX 会在接近半分钟时提示安装 Helper 程序，并且每次重启 clashX 都会重复该行为。另外，在这样的环境下，即使安装也不起作用，例如程序的 `Enhance Mode` 始终处于无法打开状态。
+- 移除之后，则为立即弹窗，输入验证后，重启不再有弹窗。
+
+参考：
+
+- https://apple.stackexchange.com/a/312517
+- https://github.com/yichengchen/clashX/search?q=helper+tool+with+administrator+privileges
 
 ## FIXED: adobe acrobat save-as blank
 

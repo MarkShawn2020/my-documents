@@ -12,6 +12,7 @@ hide_table_of_contents: true
 
 | sDate      | eDate | category     | title                                               | pri | status  | reason | detail                      |
 | ---------- | ----- | ------------ | --------------------------------------------------- | --- | ------- | ------ | --------------------------- |
+| 2022-11-23 |       | project      | frontend for OCR splitter of Anki                   | .8  |         |        |                             |
 | 2022-10-25 |       | project      | use server for mitm to avoid configuring credential |     |         |        |                             |
 | 2022-10-02 |       | learn        | reverse Mac apps                                    |     |         |        | [^learn-mac-reverse]        |
 | 2022-09-30 |       | project      | mitmproxy listen multi ports                        |     |         |        | [^mitmproxy-multi-ports]    |
