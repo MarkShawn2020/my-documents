@@ -1,6 +1,8 @@
 
 "
-version: 0.0.3
+version: 0.0.4
+updates:
+    2023-02-11: updated zsh prefix of datetime format
 features:
     1. disable sudo password so running commands faster
     2. disable apt password so installing packages faster
@@ -58,16 +60,13 @@ echo $INSTALLED_PACKAGES | xargs sudo apt install -y
 # configure zsh (installed in \$INSTALLED_PACKAGES) / oh-my-zsh
 
 # install oh-my-zsh (built-in backward search)
-wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
-yes | sh install.sh
+wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh && yes | sh install.sh
 
 # --- step 5 ---
 # diy zsh based on 'oh-my-zsh'
 
 # add dynamical time display
-echo "setopt PROMPT_SUBST
-PROMPT='%B%F{yellow}[%D{%L:%M:%S}]%f:%F{green}\${\${(%):-%~}}%f$ %b'
-" >> ~/.zshrc
+echo 'PROMPT="%{$fg[yellow]%}%D{%Y/%m/%d} %D{%H:%M:%S} %{$fg[default]%}"$PROMPT' >> ~/.zshrc
 
 # set zsh as the default terminal (need relogin!)
 sudo chsh -s $(which zsh) # after configed sudo, no need to input password

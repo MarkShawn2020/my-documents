@@ -330,9 +330,7 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 # diy zsh based on 'oh-my-zsh'
 
 # add dynamical time display
-echo "setopt PROMPT_SUBST
-PROMPT='%B%F{yellow}[%D{%L:%M:%S}]%f:%F{green}\${\${(%):-%~}}%f$ %b'
-" >> ~/.zshrc
+echo 'PROMPT="%{$fg[yellow]%}%D{%Y/%m/%d} %D{%H:%M:%S} %{$fg[default]%}"$PROMPT' >> ~/.zshrc
 
 # set zsh as the default terminal (need relogin!)
 sudo chsh -s $(which zsh) # after configed sudo, no need to input password
@@ -358,6 +356,23 @@ ssh-keygen -o
 ```
 
 ### ssh no secret/password
+
+:::tip
+最近遇到了发现即使加了 authorization_keys 还是不行，搜了很多帖子，大致理出了解决办法
+
+首先可以在服务器上使用 `/usr/sbin/sshd -d -p 2222` 开启sshd调试，然后在client上使用 `ssh -vv xxx@xxx` 进行调试，主要看服务端报什么错，例如：`esca`算法不支持啥的，然后就意识到了是 ssh 版本太低，要升级。
+
+不过由于 ssh-client 依赖于 ssh-server，所以也可能还比较难升，具体的办法可以用：
+
+```sh
+sudo apt purge openssh-server
+sudo apt-get install openssh-client
+sudo apt-get install openssh-server
+sudo systemctl restart sshd
+sudo systemctl restart ssh
+```
+
+:::
 
 It's easy that if only you generate a `id_rsa.pub` and `scp` to your `~/.ssh/authorization_keys` then things all done.
 
@@ -544,7 +559,7 @@ sudo apt install ${PY_VERSION}
 
 # use `virtualenv` to create and activate a new python env fast~
 sudo apt install virtualenv
-virtualenv -p ${PY_VERSION} venv_py
+virtualenv -p ${PY_VERSION} venv
 source venv_py/bin/activate
 
 # install all the requirements
@@ -1051,19 +1066,47 @@ ref:
 
 ## BEST-PRACTICE: linux accounts management
 
+### init user with root config
+
+```sh
+脚本：
+
+USER_=chuanmx
+HOME_=/home/$USER_
+
+# add user with password and home directory
+sudo useradd -m $USER_
+echo "$USER_\n$USER_" | sudo -S -k passwd $USER_
+sudo usermod -a -G dev $USER_
+
+# enable ssh
+sudo mkdir $HOME_/.ssh
+
+# enable zsh
+sudo cp -rf ~/.oh-my-zsh $HOME_/
+sudo cp  ~/.zshrc $HOME_/
+sudo chsh --shell /bin/zsh $USER_
+
+# enable user grant
+sudo chown -R $USER_:$USER_ $HOME_
+
+# avoid typing password when using sudo command
+echo "$USER_  ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/$USER_
+```
+
 ### how to create user
 
 ```sh
 # create user with a home directory
-sudo useradd -m {USERNAME}
-ls -la /home/{USERNAME}
+sudo useradd -m $USER_
+ls -la /home/$USER_
 
 
 # create user [under root]
-sudo useradd USERNAME
+sudo useradd $USER_
 
 # create passwd [under root]
-sudo passwd USERNAME
+sudo passwd $USER_
 ```
 
 ### how to log out

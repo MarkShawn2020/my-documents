@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "name": "macos-clang-x64",
+            "includePath": [
+                "/Users/mark/my-coding/m-archive-blog/my-docusaurus/my-website/my-documents/docs/algorithm/**"
+            ],
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c11",
+            "cppStandard": "c++20",
+            "intelliSenseMode": "macos-clang-x64",
+            "compilerArgs": [
+                ""
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true
+            }
+        }
+    ],
+    "version": 4
+}

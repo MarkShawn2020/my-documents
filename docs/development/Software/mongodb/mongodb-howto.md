@@ -35,7 +35,8 @@ reference:
 ## Mongodb create superuser
 
 ```py
-db.createUser({user:"admin", pwd:"admin",roles:[{role:"root","db":"admin"}],authenticationRestrictions:[{clientSource:["127.0.0.1"]}]})
+db.createUser({user:"admin", pwd:"admin",roles:[{role:"root","db":"admin"}]})
+# db.createUser({user:"admin", pwd:"admin",roles:[{role:"root","db":"admin"}],authenticationRestrictions:[{clientSource:["127.0.0.1"]}]})
 ```
 
 ## Mongodb Auth JS
