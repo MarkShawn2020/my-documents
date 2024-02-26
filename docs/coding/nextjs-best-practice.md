@@ -37,11 +37,11 @@
 	- version management
 		- 教训：所以接第三方库真地还是谨慎，就算vercel这种公司的第三方库，也可能有bug，或者不满足需求，vercel的sdk里是一股脑塞messages给后端，但这样不但性能低，而且灵活性也不够，看chatgpt的前端实现，肯定是要维护一个conversation的，这样可以增量交互，不过chatgpt也鸡贼，它的网页访问速度那么快，除了基于edge之外，我猜就是做了暴力的rolling window，不然得数据库交互，就变慢了
 		- at the beginning
-		  ![image.png](../assets/image_1693667840442_0.png)
+		  ![image.png](https://poketto.oss-cn-hangzhou.aliyuncs.com/image_1693667840442_0.png)
 		- after ` yarn add langchain@latest`
-		  ![image.png](../assets/image_1693667872670_0.png)
+		  ![image.png](https://poketto.oss-cn-hangzhou.aliyuncs.com/image_1693667872670_0.png)
 		- after `yarn add ai@latest`
-		  ![image.png](../assets/image_1693667893080_0.png)
+		  ![image.png](https://poketto.oss-cn-hangzhou.aliyuncs.com/image_1693667893080_0.png)
 		-
 		-
 	- ```ts
@@ -71,7 +71,7 @@
 	        temperature: 0.7,
 	      })
 	  ```
-	- ![image.png](../assets/image_1693667033047_0.png)
+	- ![image.png](https://poketto.oss-cn-hangzhou.aliyuncs.com/image_1693667033047_0.png)
 	- https://sdk.vercel.ai/docs/api-reference/openai-stream
-	  ![image.png](../assets/image_1693667066209_0.png)
+	  ![image.png](https://poketto.oss-cn-hangzhou.aliyuncs.com/image_1693667066209_0.png)
 	-

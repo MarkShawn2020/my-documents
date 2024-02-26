@@ -34,7 +34,7 @@ Hi，这是一封来自 Poketto.AI 团队的邀请信。
 
 而从今天开始，Poketto.AI 将正式开放给所有人。
 
-![image-20230831230027540](/Users/mark/Library/Application%20Support/typora-user-images/image-20230831230027540.png)
+xx
 
 ## Poketto.AI 怎么用
 
@@ -55,11 +55,11 @@ Hi，这是一封来自 Poketto.AI 团队的邀请信。
 
 大家可以根据自己的偏好自主选择使用，值得注意的是：**彼此账号、数据库是独立的**。
 
-![image-20230831232048689](/Users/mark/Library/Application%20Support/typora-user-images/image-20230831232048689.png)
+xx
 
 由于采用 OAuth 技术，以邮箱登录为例，在输入邮箱之后，poketto 会往您的邮箱发送一封登录邮件，您只需要点击该邮件内的跳转按钮，将会自动在默认浏览器内打开 poketto，并可以使用。
 
-![image-20230831232151992](/Users/mark/Library/Application%20Support/typora-user-images/image-20230831232151992.png)
+xx
 
 值得注意的是，这个过程是自动的，因此如果您想控制在特定浏览器内登录，请复制邮件内底部的链接，然后在目标浏览器打开即可。
 
@@ -69,15 +69,15 @@ Hi，这是一封来自 Poketto.AI 团队的邀请信。
 
 在登录成功之后，您会默认拥有/已安装一个 App 叫 `Your Sole Poketto`，您可以直接与它进行聊天，它拥有一定的“特异功能”，我们后期的许多产品特性也会基于它展开。
 
-![image-20230831231611466](/Users/mark/Library/Application%20Support/typora-user-images/image-20230831231611466.png)
+xx
 
 同时您还可以安装很多其他平台（目前包括 flowgpt 等）的 App ：
 
-![image-20230831231753268](/Users/mark/Library/Application%20Support/typora-user-images/image-20230831231753268.png)
+xx
 
 在桌面端，您只需按住 `⌘ + K`键，即可立即召唤出快捷搜索窗，高速开始对话：
 
-![image-20230831231841252](/Users/mark/Library/Application%20Support/typora-user-images/image-20230831231841252.png)
+xx
 
 更多精彩等您探索！
 
@@ -89,8 +89,6 @@ Poketto.AI 开发到到现在也才不到一个月，因此可能存在一定的
 
 最后，快进入“Poketto.AI”，体验您的专属 Poketto 吧，分享本文到三个群，将可赠送 Poketto 通用货币100 Dora ～
 
-Poketto 内测群：
-
-![image-20230831233537507](/Users/mark/Library/Application%20Support/typora-user-images/image-20230831233537507.png)
+Poketto 内测群：xx
 
 > AIGC 时代，愿人人都是魔法师，愿人人都能拥有一个哆啦A梦！
