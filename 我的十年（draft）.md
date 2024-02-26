@@ -13,11 +13,7 @@
 
 - 【南】不撞南墙不回头之南。但我想，区区南墙，亦不足以使我回头也。
 
-![https://www.baike.com/wikiid/3393333327453431045?view_id=3gc39m91tac000](.imgs/image-20230612171004480.png)
-
 - 【川】子在川上曰：逝者如斯夫，不舍昼夜。流逝是永恒的，人生没有寸步回头之路。
-
-![https://www.baike.com/wikiid/4222087868300060348?prd=home_search&search_id=2y8ob3zbqwe000&view_id=5hbe6fhvbv0000](.imgs/bd8acc86f62f40f38c7311f296a45f64~tplv-mlhdmxsy5m-q75:0:0.jpeg)
 
 杰克·凯鲁亚克的《在路上》有这么一段：“趁着年轻生猛，我要再和生活死磕几年。要么我就毁灭，要么我就铸就辉煌。如果有一天，你发现我在平庸面前低了头，那么请向我开炮。”你看，我并不孤单。
 
@@ -260,7 +256,7 @@ p/j
 
 ### 01 学会成为一个开心的人
 
-![[Pasted image 20240106203022.png]]
+![Pasted image 20240106203022](https://poketto.oss-cn-hangzhou.aliyuncs.com/Pasted%20image%2020240106203022.png)
 
 
 ### 02 热爱生活，从每个早晨开始
@@ -388,7 +384,7 @@ p/j
 
 某种程度上，我认为大语言模型的出现，极大地推进了知识平权，尽管它最终还是被监管、被约束，但依旧可谈得上人类知识史上光辉的一步。
 
-![[Pasted image 20240108172906.png]]
+![Pasted image 20240108172906](https://poketto.oss-cn-hangzhou.aliyuncs.com/Pasted%20image%2020240108172906.png)
 ## INFP与数字游民
 
 但我并没有一下就投入到 AIGC 的浪潮内。
@@ -421,11 +417,11 @@ p/j
 
 在我写作此文的日子，我正好刷到了《游者多来惧》的短片，它的拍摄地是武汉大学旁边的凌波门，正是我此次游民的第一站，不可谓不巧乎。
 
-![[Pasted image 20240108173610.png]]
+![Pasted image 20240108173610](https://poketto.oss-cn-hangzhou.aliyuncs.com/Pasted%20image%2020240108173610.png)
 
-![[Pasted image 20240108174720.png]]
+![Pasted image 20240108174720](https://poketto.oss-cn-hangzhou.aliyuncs.com/Pasted%20image%2020240108174720.png)
 
-![[Pasted image 20240108174818.png]]
+![Pasted image 20240108174818](https://poketto.oss-cn-hangzhou.aliyuncs.com/Pasted%20image%2020240108174818.png)
 
 在这期间遇到了很多新朋友，每个人都有自己独特的地方， ~~外向开朗内心明媚信仰一跃奔向深圳的南方姑娘、热心冷静着手研究GPT的武大理工科博士、硬件软件音乐绘画全才自己DIY数字媒体实验室的高校教师、雷厉风行年销十亿公司的老板娘、岳麓山顶冒雨相遇行走南北的大胡子漫像师、岁月静好热爱生活的广西大学小分队、留学归来甘在桂林工作奉献的大学同学……~~ 但疏于文墨，无法一一将他们陈列，甚是惭愧。
 
