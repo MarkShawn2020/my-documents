@@ -1,0 +1,29 @@
+- #rsync #mac
+	- 版本
+		- 检查
+			- `rsync --version`
+		- 升级
+			- `brew install rsync` 后 `zsh` 刷新一下 terminal 即可，参考：https://stackoverflow.com/a/52694461
+	- 使用 `--info=progress2` 显示总进度
+		- 前提
+			- 需要 版本 大于 3
+		- ![image.png](../assets/image_1694682676417_0.png)
+		-
+		-
+		-
+- #clean #清理mac
+	- 初始
+		- 总磁盘 只剩7个G
+			- ![image.png](../assets/image_1694680132814_0.png)
+			- 其中照片占了 31 个 G
+				- ![image.png](../assets/image_1694680167564_0.png)
+			- 这与 ncdu 的结果基本一致
+				- ![image.png](../assets/image_1694680017824_0.png)
+				- ![image.png](../assets/image_1694680223118_0.png)
+				-
+	- 照片有30个 G
+		- 清理
+			- ![image.png](../assets/image_1694682676417_0.png)
+			- ![image.png](../assets/image_1694682690107_0.png)
+			-
+-

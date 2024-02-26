@@ -1,0 +1,17 @@
+
+- 室温有点小高，电脑疯狂发热，webstorm 开始抽风，恶劣的开发环境！
+	- ![[Pasted image 20230815154718.png]]
+	- 
+- #dev #next-auth #prisma  init user when first logged in
+	- #best-practice hook the `createUser` function
+	  ![[Pasted image 20230815131501.png]]
+	  ![[Pasted image 20230815131548.png]]
+	  ![[Pasted image 20230815131603.png]]
+	  
+	- ref
+		- what's the correct place to save user info in database when user signs in for the first time? · nextauthjs/next-auth · Discussion #3192, https://github.com/nextauthjs/next-auth/discussions/3192
+		- Overview | Auth.js, https://authjs.dev/reference/adapters#models
+		- @auth/prisma-adapter | Auth.js, https://authjs.dev/reference/adapter/prisma
+- #poketto 
+	终于（好几个小时！）重构这么大个数据结构到 prisma 了，困死，眼睛都睁不开了
+	![[Pasted image 20230815012239.png]]

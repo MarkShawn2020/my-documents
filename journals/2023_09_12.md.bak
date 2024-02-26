@@ -1,0 +1,35 @@
+- #论文 #doi #sci-hub #tutorial
+	- 以下载 NSTL国家科技图书文献中心, https://www.nstl.gov.cn/paper_detail.html?id=cf0e4ada514c64f8c8d6fdda8e8bf4ab 为例
+	- 解决方案
+		- 先点击全文链接，弹出了 doi 链接
+		  ![image.png](../assets/image_1694518908673_0.png)
+		- 访问 doi 跳转到了 wiley 
+		  ![image.png](../assets/image_1694518947468_0.png)
+		- 使用 science-helper 插件，点击即可发现一个免费下载的链接 https://openaccessbutton.org/?url=10.1111/cgf.13380
+		  ![image.png](../assets/image_1694519014344_0.png)
+		  ![image.png](../assets/image_1694519191852_0.png)
+		- 关于这个插件如何找到的
+			- google 搜索 `doi download`（直接搜索`sci-hub`结果不一样）
+			  logseq.order-list-type:: number
+			- 访问第一个结果： https://sci-hub.41610.org/
+			  logseq.order-list-type:: number
+			  ![image.png](../assets/image_1694519128312_0.png)
+			- 点击`Chrome Extension`安装即可，地址： https://chrome.google.com/webstore/detail/sciencehelper-download-mi/bfcnpcbokihfdpffiiocgjlcnjpicffb 
+			  logseq.order-list-type:: number
+			  ![image.png](../assets/image_1694519156890_0.png)
+			- logseq.order-list-type:: number
+			-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-

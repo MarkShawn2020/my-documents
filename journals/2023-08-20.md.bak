@@ -1,0 +1,55 @@
+- #prisma #zod-prisma-types #zod #stuck
+	-  好像都不行。。
+	   ![[Pasted image 20230820230452.png]]
+	  ![[Pasted image 20230820230438.png]]
+	- 降级也不行！
+	  ![[Pasted image 20230820231924.png]]
+	  - 最后发现是 mac 的问题：Binary Query Engine keeps running even after the parent process is killed when using `migrate reset` or `db seed` · Issue #5054 · prisma/docs, https://github.com/prisma/docs/issues/5054
+	- ` npm exec zod-prisma-types`
+``
+	  ![[Pasted image 20230820233531.png]]
+	- 丢！原来是 `npx` 的问题！
+		- https://github.com/chrishoermann/zod-prisma-types/issues/113
+		- ![[Pasted image 20230821004946.png]]
+		- 
+- #share #motiful #lumos 
+	- ![[Pasted image 20230820204526.png]]
+- #openai #ai-sdk #id 
+	- 由于 ai-sdk 的  id 赋值动作，是写死在 sdk 而非暴露在后端，并且也非从后端返回，但根据数据库第一的原则，我们还是要强制从后端往前端覆写 id （绝绝子，都不如自己写这套接口了，不过这套接口还是不错的，edge、function、hook等的设计还行，瑕不掩瑜，但最终，在我们吃透之后，自己写一份可能是最舒服的）
+	  ![[Pasted image 20230820200916.png]]
+	- 终于把 id 给对上了！通过在 response.headers 里加信息！（而非更改 resposne steam（缺点：破坏数据结构），也非通过数据库去同步（缺点：需要等待数据库同步，以及增加IO）
+	  ![[Pasted image 20230820204158.png]]
+	  
+	- 
+- #openai #token #TODO #poketto 
+	- ![[Pasted image 20230820170903.png]]
+- #webstorm #prisma #css #bug #TODO 
+	- ![[Pasted image 20230820170628.png]]
+- 
+- #comparison #zod-prisma #zod-prisma-types #npm #github 
+	- 结论：github 的 star 数还是不能反映包的实际质量，npm的下载量才是真地硬指标
+	- ![[Pasted image 20230820150643.png]]
+	- ![[Pasted image 20230820150651.png]]
+	- ![[Pasted image 20230820150711.png]]
+	- ![[Pasted image 20230820150725.png]]
+	- 
+	- #share #motiful #cs-magic-2023 
+	- ![[Pasted image 20230820150909.png]]
+	- 
+- #trpc #invalidate
+	- 还没有实现：feat: invalidation built into the routers · Issue #3468 · trpc/trpc, https://github.com/trpc/trpc/issues/3468
+	  ![[Pasted image 20230820043647.png]]
+	  
+- #edge-runtime #origin
+	- using `req.headers.get('origin')`
+	- `process.env` 是不可靠的，比如 `PORT=3333 yarn dev` 可以获得，但是 `yarn dev -p 3333`就不行，它只可以在 `npm-xxx`里获得，此外，没有host，因此最可靠的办法是直接查 `headers`
+	- ![[Pasted image 20230820035540.png]]
+- #prisma #nextjs #trpc #edge #openai #vercel 
+	- 终于搞定在edge环境基于trpc使用prisma数据库，完成openai的光速调用与持久化
+	- ![[Pasted image 20230820032518.png]]
+	- 主要参考：
+		- https://github.com/trpc/trpc/blob/main/examples/vercel-edge-runtime/src/client.ts 提供了 `createTRPCProxyClient` 的写法
+		- t3 的 `trpc.helpers.ts` 里提供了 `transformer`
+	- ![[Pasted image 20230820032809.png]]
+	- 
+- 

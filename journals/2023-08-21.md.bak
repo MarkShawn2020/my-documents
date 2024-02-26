@@ -1,0 +1,169 @@
+## 随感
+- 安装了 #navicat ，真地舒服，比 #pgadmin 真地好用太多（一点开就是表，双击就能看表格内容，而在pgadmin里要点N次才能到这一步……），pgadmin 就不是产品驱动的，太难用了！navicat 不愧是商业付费产品！
+  ![[Pasted image 20230821154456.png]]
+- 暂时还是不要搞 message id 了， ai-sdk 现在在客户端是一个全局的 data，这样是很不方便的，还不如我直接从 header 里 塞：
+  ![[Pasted image 20230821193201.png]]
+  
+
+## langchain 研究
+#langchain #memory #token 
+
+https://js.langchain.com/docs/modules/memory/how_to/summary_buffer
+
+![[Pasted image 20230821164855.png]]
+
+https://js.langchain.com/docs/modules/memory/how_to/vectorstore_retriever_memory
+
+![[Pasted image 20230821165324.png]]
+
+
+
+## 程序员修炼之路
+#TODO #website #blog 
+1. 有一台电脑
+2. 能够翻墙
+3. 配置clashx/vpn
+4. 安装各种环境
+5. 学会 stackoverflow/github, kaggle/openai/...
+6. 
+## prisma 多态
+#dev #多态 #prisma #TODO 
+
+
+## mac dict extension
+### 总结
+
+mac字典扩展：
+- 转换工具： https://github.com/ritou11/dictconv
+- 词源： http://download.huzheng.org/zh_CN/
+- 重点：运行 dictconv 无误后要有耐心，等个十分钟这样子，就行了，不要试其他工具了，很多都没法用了，坑很多
+### 过程
+
+词典来源：
+- http://download.huzheng.org/zh_CN/
+  ![[Pasted image 20230821153231.png]]
+
+搜索过程：
+![[Pasted image 20230821161023.png]]
+![[Pasted image 20230821161124.png]]
+
+参考：
+把查词做到极致的 macOS 原生词典，其实很好用 - 少数派, https://sspai.com/post/43155
+![[Pasted image 20230821161034.png]]
+
+把查词做到极致的 macOS 原生词典，其实很好用 - 少数派, https://sspai.com/post/43155 以下拖文件这一步无效：
+![[Pasted image 20230821161742.png]]
+
+实操过程：
+最后定位到两个包：
+1. 星星最多的： https://github.com/jjgod/mac-dictionary-kit 
+![[Pasted image 20230821161155.png]]
+
+但是实测发现，这玩意没法用，首先这个命令行得更新下：
+![[Pasted image 20230821161052.png]]
+
+其次，即便修复好了，弹出UI了，把文件拖进去，也没法开启转换：直接就不见了！
+
+2. 这个包星星数量相对少一些，但是看起来可用！ https://github.com/ritou11/dictconv
+   ![[Pasted image 20230821161405.png]]
+   
+   一直卡住，会很久！我就把它丢后台，让它自己慢慢跑再说了（词典文件一个也就10兆……真不知道卡在哪里了……）
+   ![[Pasted image 20230821161444.png]]
+   
+   具体命令：
+```shell
+npm i -g @ritou11/dictconv
+# 其中 -i 表示 install，即直接安装进系统字典，-v 表示 verbose，显示详细的信息
+convert ~/Downloads/stardict-langdao-ec-gb-2.4.2.tar.bz2 -iv
+   
+```
+   
+   几分钟后：哇终于好了！
+   ![[Pasted image 20230821161926.png]]
+   
+   确认一下：
+   在 dict 的设置里，确实多了一个朗道英汉！
+   ![[Pasted image 20230821162019.png]]
+   ![[Pasted image 20230821162314.png]]
+   
+   有个这个的成功经验，我们再把其他几个字典也给导入一下！
+   ```shell
+convert -iv ~/Downloads/stardict-langdao-ce-gb-2.4.2.tar.bz2
+convert -iv stardict-oxford-gb-2.4.2.tar.bz2
+```
+   
+
+
+
+
+---
+
+  
+## install clashx 
+
+#clashx #build
+
+### 资料
+- 必看： What is Clash? | Clash, https://dreamacro.github.io/clash/
+- 理清各种关系： Loyalsoldier/clash-rules: 🦄️ 🎃 👻 Clash Premium 规则集(RULE-SET)，兼容 ClashX Pro、Clash for Windows 客户端。, https://github.com/Loyalsoldier/clash-rules
+- premium（跨平台）版： https://release.dreamacro.workers.dev/
+- 重点：访问openai等服务，必须上 Clash Premium/Pro !
+### 过程
+
+1. 直接在官网 clone 最新的： https://github.com/yichengchen/clashX
+   ![[Pasted image 20230821140407.png]]
+2. 按照步骤进行编译
+   ![[Pasted image 20230821140437.png]]
+	值得注意的是：
+	1.  `bash install_dependency.sh` 这一步我报了很多问题，首先我是已经有安装 python 和 go 的，结果它报错总是从 `http://localhost:7890/github....` 下载东西，很显然，这是代理问题了，询问 gpt 得知 `go env` 可以列出所有 go 的环境变量，然后 `unset GOPROXY` 取消 go 的代理，go 的问题得以解决（但在没有使用代理的情况下，下载github的东西也没问题，属实幸运；而有代理会出现上述问题，根据经验，应该是包自己的url拼接问题）
+	2. go 解决完了之后，又报 `gem` 的问题，说是 `activesupports`目前版本是`7.0.5`，但找不到，需要更换。这个东西我也没用过，问了gpt，按照它的指引（并根据经验），一步步 `gem install xxx`、`bundle install xxx` 也搞定了
+			  - 
+3. 编译！官网只说了一句 `build and run`，但怎么 build 怎么 run，一头雾水，看了一下工程文件，是要用 pod，再问了一下gpt，是要用 xcode 打开 `xxx.workspacecxx` ，按照步骤打开后，又是一个相对熟悉的界面（之前编译过iOS app）。但又遇到了问题：
+	1. 点击build，提示没有签名（run local 是没问题的，我之前也配过开发者账号，所以简单点几步，配置了一下  `mac development`），这一步就也解决了
+	2. 出现了频繁需要密码的问题，我连续点击了多次，结果完全消不掉，越点越多，并且无法关闭，无奈，只好重启！
+			       ![[Pasted image 20230821134638.png]]![[Pasted image 20230821134814.png]]
+
+4. 重启之后，再次打开xcode，编译成功！
+   ![[Pasted image 20230821135458.png]]
+5. 最后就是比较常规的环节了！把之前的 clashx 退出，然后在 `~/Applications` 里把程序删除，接着把新的程序启动，无脑点点点，放进`~/Applications`，然后启用之前的 config，（config是在 `~/.config/clash` 下，和程序是独立的，所以删除程序不会删除配置），测试 google 一切正常。然后配置开机自启动，再重启，确认开机自启动，google一切正常。再打开需要翻墙的node程序，确认程序也正常（之前的clashx需要第二次启动才能使程序正常），则一切测试通过。
+6. 最后总结：过程还是比意料地复杂许多，得多亏 gpt，让效率提高至少3倍，心情至少舒畅10倍。以及，之前我安装的是 `clashx premium`（或者叫 `clashx pro`？）（同样在那个仓库下，不过在不同的 tag 下），我也一直不清楚这玩意和普通的 `clashx` 有啥区别，它多一个 `enhanced mode`，但是那玩意总是不灵，就是开机的时候无法点，第二次启动后自动勾上…… anyway，我现在就用我自己编译的普通版本，一切也正常，那就再也不管那个 clashx 了，连想一下都觉得没有必要（暂时）！
+7. over！自己动手，丰衣足食！
+
+---
+
+
+
+
+
+
+
+
+
+---
+
+
+- #clashx 
+	- remote config error
+		- ![[Pasted image 20230821124011.png]]
+		- ![[Pasted image 20230821124026.png]]
+	- address already in use
+		- ![[Pasted image 20230821124716.png]]
+		- 
+	- 
+- #strategy
+	- ![[Pasted image 20230821055548.png]]
+	- ![[Pasted image 20230821055606.png]]
+	- 
+- #scroll #anchor #learn
+	- 弄了两三小时，终于明白了，不是 nextjs 不支持，而是我用了 hook，link只在访问的一瞬间适用于滚动，而我们基于hook后续加载内容的，滚动就不适用了，这也是为啥 scrollToBottom 组件会直接滚到底，无视link
+	- 后续又仔细观察了一下 discord 的逻辑，很显然，它也不是基于 id 的，而是后续客户机处理，还有专属的动画设计 : https://discord.com/channels/1007166914801434634/1041898824974749788
+	  - 测试结束，存档，删档！
+	    ![[Pasted image 20230821052131.png]]
+	    ![[Pasted image 20230821052509.png]]
+	    
+	    
+- #🤡
+	- `npx tsc --noEmit` 我记成了 `tsx` 开头，后面没记住是驼峰！然后 `history | grep tsx`，和  `history | grep emit` 都找不到！
+- #mac #bug 
+	- ![[Pasted image 20230821005012.png]]
+	- 

@@ -1,0 +1,576 @@
+- #mdnice
+	- 自定义主题-mjcn底
+	  ![image.png](../assets/image_1693488756145_0.png) 
+	  ```css
+	  /*自定义样式，实时生效*/
+	  
+	  /* 全局属性 */
+	  .nice-wx-box {
+	  
+	  }
+	  
+	  #nice {
+	    /*color: #000;*/
+	    background: #030C32;
+	    font-family: -apple-system,system-ui,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Arial,sans-serif;
+	  }
+	  
+	  /* 标题的通用设置 */
+	  #nice h1,
+	  #nice h2,
+	  #nice h3,
+	  #nice h4,
+	  #nice h5,
+	  #nice h6 {
+	    padding: 30px 0;
+	    margin: 0;
+	    color: white;
+	  }
+	  
+	  /* 一级标题 */
+	  #nice h1 {
+	    position: relative;
+	    margin-top: 30px;
+	    margin-bottom: 10px;
+	    text-align: center;
+	  }
+	  
+	  /* 一级标题前缀，用来放背景图，支持透明度控制 */
+	  #nice h1 .prefix {
+	    display: inline-block;
+	    top: 0;
+	    width: 60px;
+	    height: 60px;
+	    background: url(https://my-wechat.mdnice.com/ape_blue.svg);
+	    background-size: 100% 100%;
+	    opacity: .12;
+	  }
+	  
+	  /* 一级标题内容 */
+	  #nice h1 .content {
+	    font-size: 22px;
+	    display: block;
+	    margin-top: -36px;
+	  }
+	  
+	  /* 二级标题 */
+	  #nice h2 {
+	    position: relative;
+	  	font-size: 20px;
+	  }
+	  
+	  /* 二级标题前缀，有兴趣加内容的可以魔改 */
+	  #nice h2 .prefix {
+	  
+	  }
+	  
+	  /* 二级标题内容 */
+	  #nice h2 .content {
+	  	border-left: 4px solid;
+	    padding-left: 10px;
+	  }
+	  
+	  /* 一二级标题之间间距控制一下 */
+	  #nice h1 + h2 {
+	    padding-top: 0;
+	  }
+	  
+	  /* 三级标题 */
+	  #nice h3 {
+	    font-size: 16px;
+	  }
+	  
+	  /* 段落 */
+	  #nice p {
+	    font-size: 16px;
+	    line-height: 2;
+	    font-weight: 400;
+	    color: #eee;
+	  }
+	  
+	  /* 段落间距控制 */
+	  #nice p+p {
+	    margin-top: 16px;
+	  }
+	  
+	  /* 无序列表 */
+	  #nice ul>li ul>li {
+	    list-style: circle;
+	  }
+	  
+	  /* 无序列表内容行高 */
+	  #nice li section {
+	    line-height: 2;
+	  }
+	  
+	  /* 引用 */
+	  #nice .multiquote-1 {
+	    border-left-color: #b2aec5;
+	    background: #fff9f9;
+	  }
+	  
+	  /* 引用文字 */
+	  #nice .multiquote-1 p {
+	    color: #666;
+	    line-height: 2;
+	  }
+	  
+	  /* 链接 */
+	  #nice a {
+	    color: #036aca;
+	    border-bottom: 0;
+	    font-weight: 400;
+	    text-decoration: none;
+	  }
+	  
+	  /* 加粗 */
+	  #nice strong {
+	    background: linear-gradient(to right ,#3299d2,#efbdb5);
+	    color: #fff;
+	    font-weight: 400;
+	    padding: 0 4px;
+	    display: inline-block;
+	    border-radius: 4px;
+	    margin: 0 2px;
+	    letter-spacing: 1px;
+	  }
+	  
+	  /* 加粗斜体 */
+	  #nice em strong {
+	    color: #fff;
+	  }
+	  
+	  /* 分隔线 */
+	  #nice hr {
+	    border-top: 1px solid #135ce0;
+	  }
+	  
+	  /* 图片描述文字，隐藏了，如果需要，请删除display */
+	  #nice figcaption {
+	    display: none;
+	    opacity: .6;
+	    margin-top: 12px;
+	    font-size: 12px;
+	  }
+	  
+	  /* 行内代码 */
+	  #nice p code, li code {
+	    color: #1394d8;
+	    padding: 2px 6px;
+	    word-break: normal;
+	  }
+	  
+	  /* 表格 */
+	  #nice table {
+	    border-spacing: 0;
+	  }
+	  
+	  /*
+	   * 表格内的单元格
+	   */
+	  #nice table tr th {
+	    background-color: #d4f1ff;
+	  }
+	  
+	  /* 脚注文字 */
+	  #nice .footnote-word {
+	    color: #135ce0;
+	    font-weight: 400;
+	  }
+	  
+	  /* 脚注上标 */
+	  #nice .footnote-ref {
+	    color: #5ba1e2;
+	    font-weight: 400;
+	  }
+	  
+	  /* 参考资料 */
+	  #nice .footnotes-sep:before {
+	    text-align: center;
+	    color: #135ce0;
+	    content: "参考";
+	  }
+	  
+	  /* 参考编号 */
+	  #nice .footnote-num {
+	    color: #666;
+	  }
+	  
+	  /* 参考文字 */
+	  #nice .footnote-item p { 
+	    color: #999;
+	    font-weight: 700;
+	    font-style: italic;
+	    font-size: 13px;
+	  }
+	  
+	  /* 参考解释 */
+	  #nice .footnote-item p em {
+	    color: #3375e2;
+	    font-style: normal;
+	    margin-left: 4px;
+	  }
+	  ```
+	- 自定义主题 - 红绯
+	  ```css
+	  /*自定义样式，实时生效*/
+	  
+	  /* 全局属性
+	   * 页边距 padding:30px;
+	   * 全文字体 font-family:ptima-Regular;
+	   * 英文换行 word-break:break-all;
+	   */
+	  #nice {
+	      font-family: Optima-Regular, Optima, PingFangSC-light, PingFangTC-light, "PingFang SC", Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+	      padding: 5px;
+	      font-size: 16px;
+	      color: #353535;
+	      word-spacing: 0.8px;
+	      letter-spacing: 0.8px;
+	      border-radius: 16px;
+	  }
+	  
+	  /* 段落，下方未标注标签参数均同此处
+	     * 上边距 margin-top:5px;
+	     * 下边距 margin-bottom:5px;
+	     * 行高 line-height:26px;
+	     * 词间距 word-spacing:3px;
+	     * 字间距 letter-spacing:3px;
+	     * 对齐 text-align:left;
+	     * 颜色 color:#3e3e3e;
+	     * 字体大小 font-size:16px;
+	     * 首行缩进 text-indent:2em;
+	     */
+	  #nice p {
+	      line-height: 1.75;
+	      margin: 0.8em 0;
+	      font-size: 16px;
+	      color: #353535;
+	  }
+	  
+	  /* 一级标题 */
+	  #nice h1 {
+	      border-top: 2px solid rgb(248, 57, 41);
+	      text-align: center;
+	      font-size: 1.3em;
+	  }
+	  
+	  /* 一级标题内容 */
+	  #nice h1 .content {
+	      display: inline-block;
+	      font-weight: normal;
+	      background: rgb(248, 57, 41);
+	      color: #ffffff;
+	      padding: 3px 10px 1px;
+	      border-radius: 0 0 13px 13px;
+	  }
+	  
+	  /* 一级标题修饰 请参考有实例的主题 */
+	  #nice h1:after {}
+	  
+	  /* 二级标题 */
+	  #nice h2 {
+	      text-align: left;
+	      margin: 20px 10px 0px 0px;
+	  }
+	  
+	  /* 二级标题内容 */
+	  #nice h2 .content {
+	      font-size: 18px;
+	      font-weight: 700;
+	      color: #222;
+	      display: inline-block;
+	      padding-left: 10px;
+	      border-left: 5px solid rgb(248, 57, 41);
+	  }
+	  
+	  /* 二级标题修饰 请参考有实例的主题 */
+	  #nice h2:after {}
+	  
+	  /* 三级标题 */
+	  #nice h3 {}
+	  
+	  /* 三级标题内容 */
+	  #nice h3 .content {
+	      font-size: 16px;
+	      color: #222;
+	  }
+	  
+	  /* 三级标题修饰 请参考有实例的主题 */
+	  #nice h3:after {}
+	  
+	  /* 无序列表整体样式
+	     * list-style-type: square|circle|disc;
+	     */
+	  #nice ul {
+	      color: #f83929;
+	      font-size: 16px;
+	  }
+	  
+	  /* 有序列表整体样式
+	     * list-style-type: upper-roman|lower-greek|lower-alpha;
+	     */
+	  #nice ol {
+	      color: #f83929;
+	      font-size: 16px;
+	  }
+	  
+	  /* 列表内容，不要设置li
+	     */
+	  #nice li section {
+	      color: #353535;
+	  }
+	  
+	  /* 引用
+	     * 左边缘颜色 border-left-color:black;
+	     * 背景色 background:gray;
+	     */
+	  #nice .multiquote-1 {
+	      font-style: normal;
+	      border-left: none;
+	      padding: 15px 10px;
+	      line-height: 1.75;
+	      border-radius: 13px;
+	      color: #353535;
+	      background: #f5f5f5;
+	  }
+	  
+	  #nice .multiquote-1:before {
+	      content: "“";
+	      display: block;
+	      font-size: 2em;
+	      color: rgb(248, 57, 41);
+	      font-family: Arial, serif;
+	      line-height: 1em;
+	      font-weight: 700;
+	  }
+	  
+	  /* 引用文字 */
+	  #nice .multiquote-1 p {
+	      color: #353535;
+	      font-size: 16px;
+	      margin: 0 10px;
+	      display: block;
+	  }
+	  
+	  #nice .multiquote-1:after {
+	      content: "”";
+	      float: right;
+	      display: block;
+	      font-size: 2em;
+	      color: rgb(248, 57, 41);
+	      font-family: Arial, serif;
+	      line-height: 1em;
+	      font-weight: 700;
+	  }
+	  
+	  /* 链接 
+	  * border-bottom: 1px solid #009688;
+	  */
+	  #nice a {
+	      color: rgb(248, 57, 41);
+	      font-weight: 400;
+	      border-bottom: 1px solid rgb(248, 57, 41);
+	  
+	  }
+	  
+	  /* 加粗 */
+	  #nice strong {
+	      font-weight: 700;
+	      color: rgb(248, 57, 41);
+	  }
+	  
+	  /* 斜体 */
+	  #nice em {
+	      color: rgb(248, 57, 41);
+	  }
+	  
+	  /* 加粗斜体 */
+	  #nice em strong {
+	      color: rgb(248, 57, 41);
+	  }
+	  
+	  /* 删除线 */
+	  #nice del {}
+	  
+	  /* 分隔线
+	     * 粗细、样式和颜色
+	     * border-top:1px solid #3e3e3e;
+	     */
+	  #nice hr {
+	      height: 1px;
+	      padding: 0;
+	      border: none;
+	      border-top: medium solidid #333;
+	      text-align: center;
+	      background-image: linear-gradient(to right, rgba(248, 57, 41, 0), rgba(248, 57, 41, 0.75), rgba(248, 57, 41, 0));
+	  }
+	  
+	  /* 图片
+	     * 宽度 width:80%;
+	     * 居中 margin:0 auto;
+	     * 居左 margin:0 0;
+	     */
+	  #nice figure {
+	      border-radius: 16px;
+	      overflow: hidden;
+	  }
+	  
+	  #nice figure a img {
+	      border-radius: 16px;
+	      width: 100%;
+	      max-width: 100%;
+	  }
+	  
+	  #nice img {
+	      border-radius: 6px;
+	      display: block;
+	      margin: 20px auto;
+	      max-width: 95%;
+	      object-fit: contain;
+	  }
+	  
+	  /* 图片描述文字 */
+	  #nice figcaption {
+	      display: none;
+	      font-size: 12px;
+	  }
+	  
+	  /* 行内代码 */
+	  #nice p code,
+	  #nice li code {
+	      color: rgb(271, 93, 108);
+	  }
+	  
+	  /* 非微信代码块
+	     * 代码块不换行 display:-webkit-box !important;
+	     * 代码块换行 display:block;
+	     */
+	  #nice pre code {}
+	  
+	  /*
+	     * 表格内的单元格
+	     * 字体大小 font-size: 16px;
+	     * 边框 border: 1px solid #ccc;
+	     * 内边距 padding: 5px 10px;
+	     */
+	  #nice table tr th,
+	  #nice table tr td {
+	      font-size: 16px;
+	      color: #645647;
+	  }
+	  
+	  #nice table tr th {
+	      color: #353535;
+	      background-color: #dbd9d8;
+	  }
+	  
+	  #nice .footnotes {
+	      font-size: 16px;
+	  }
+	  
+	  /* 脚注文字 */
+	  #nice .footnote-word {
+	      font-weight: normal;
+	      color: #f83929;
+	  }
+	  
+	  /* 脚注上标 */
+	  #nice .footnote-ref {
+	      font-weight: normal;
+	      color: #f83929;
+	  }
+	  
+	  /*脚注链接样式*/
+	  #nice .footnote-item em {
+	      font-size: 16px;
+	      display: block;
+	  }
+	  
+	  /* "参考资料"四个字 
+	    * 内容 content: "参考资料";
+	    */
+	  #nice .footnotes-sep:before {
+	      content: '参考资料 ';
+	      color: #f83929;
+	      letter-spacing: 1px;
+	      text-align: left;
+	      display: block;
+	      font-weight: 500;
+	      padding-bottom: .1em;
+	      border-bottom: 3px double #f83929;
+	      font-size: 20px;
+	  }
+	  
+	  /* 参考资料编号 */
+	  #nice .footnote-num {
+	      color: #f83929;
+	  }
+	  
+	  /* 参考资料文字 */
+	  #nice .footnote-item p {
+	      font-weight: 400;
+	      color: #f83929;
+	  }
+	  
+	  /* 参考资料解释 */
+	  #nice .footnote-item p em {
+	      font-weight: 400;
+	      font-size: 14px;
+	      color: #353535;
+	  }
+	  
+	  /* 行间公式
+	    * 最大宽度 max-width: 300% !important;
+	    */
+	  #nice .block-equation svg {
+	      color: #353535;
+	  }
+	  
+	  /* 行内公式
+	    */
+	  #nice .inline-equation svg {
+	      color: #353535;
+	  }
+	  
+	  /* 滑动图片
+	     */
+	  #nice .imageflow-img {
+	      display: inline-block;
+	      width: 100%;
+	      margin-bottom: 0;
+	  }
+	  ```
+- #clash #service #config
+	- ![image.png](../assets/image_1693481837041_0.png)
+	- https://github.com/Fndroid/clash_for_windows_pkg/issues/3464#issuecomment-1250788591 
+	  ![image.png](../assets/image_1693481845558_0.png)
+	- https://www.v2ex.com/t/886603
+	  ![image.png](../assets/image_1693482434448_0.png)
+	-
+	- clash premium download:
+	  https://github.com/Dreamacro/clash/releases/tag/premium
+	- clash premium documentation:
+	  https://dreamacro.github.io/clash/premium/introduction.html
+	-
+	- proxy config:
+	  
+	  ```sh
+	  export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7891
+	  ```
+	  
+	  connection test: `curl -I https://www.google.com`
+	  
+	  https://yangchnet.github.io/Dessert/posts/env/%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AEclash/ 
+	  ![image.png](../assets/image_1693482790795_0.png){:height 767, :width 759}
+	-
+- #clash #config
+	- 确认外网端口 9090：
+		- ![image.png](../assets/image_1693459687141_0.png)
+		-
+	- 要外网访问（9090端口），需要先确保防火墙打开： https://console.cloud.tencent.com/lighthouse/instance/detail?searchParams=rid%3D8&rid=8&id=lhins-80a0g31e&tab=firewall
+	- ![image.png](../assets/image_1693459603872_0.png)
+	-
+- #ui #cross-platfrom
+	- #tauri
+		- ref: https://github.com/zzzgydi/clash-verge
