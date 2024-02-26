@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CS魔法社.md",
+                "file": "UI.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CS魔法社.md",
+                "file": "UI.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "CS魔法社.md",
+                "file": "UI.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CS魔法社.md"
+                "file": "UI.md"
               }
             }
           }
@@ -148,9 +148,9 @@
   },
   "active": "c0d544162323704b",
   "lastOpenFiles": [
+    "CS魔法社.md",
     "diary.work.md",
     "diary.public.md",
-    "CS魔法社.md",
     "UI.md",
     "@obsidian/TODO.md",
     "TODO.md",
