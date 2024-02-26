@@ -1,7 +1,5 @@
 # Poketto.AI: 每一个人的哆啦A梦
 
-
-
 Hi，这是一封来自 Poketto.AI 团队的邀请信。
 
 ## Poketto.AI 是什么
