@@ -382,8 +382,6 @@ It's easy that if only you generate a `id_rsa.pub` and `scp` to your `~/.ssh/aut
 username="xxx"
 server="xxxxx"
 file="~/.ssh/id_rsa.pub"
-
-# command
 cat $file | ssh $username@$server "cat - >> ~/.ssh/authorized_keys"
 
 # sample

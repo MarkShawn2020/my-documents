@@ -1,0 +1,40 @@
+- #nextjs #bug #solved #careless
+	- ![[Pasted image 20230819225055.png]]
+	- 
+- #nextjs #next-auth #type-augment
+	- 不涉及declare的一种办法： javascript - How to extend NextPage type to add custom field to page component? - Stack Overflow, https://stackoverflow.com/questions/69965829/how-to-extend-nextpage-type-to-add-custom-field-to-page-component
+	- 
+- #next-auth #profile
+	- 会在 provider 里调用 `profile()`  接口，返回后，再由 `adapter` 执行 `createUser`，注意接口要与数据库等统一，因此，不建议把 `image` field 改成 `avatar` 
+	  ![[Pasted image 20230819194238.png]]
+	- 
+- #best-practice #db-oriented-coding #面向数据库编程
+	- ![[Pasted image 20230819160053.png]]
+	- 
+- #nextjs #dotenv #script #tsx #alias
+	- 在 nextjs 项目中独立跑 script，不需要安装 dotenv （毕竟我们用了 `env.mjs`），然后直接用 `tsx` 就行，值得注意的是，如果涉及到了 ts-config.json 中 alias 相关的包导入，则可能出现问题，最简单暴力的办法就是在脚本中手动导入他们。
+- #webstorm #bug #TODO 
+	- ![[Pasted image 20230819143300.png]]
+- #prisma #webstorm #best-practice #nodejs 
+	- 1. exclude `node_modules` in `settings - directory`
+	- 2. include `node_modeuls/.prisma` in project in sidebar
+	  ![[Pasted image 20230819135026.png]]
+	- 3. enable `nodejs` assistance
+	  ![[Pasted image 20230819140557.png]]
+	  
+- #webstorm #performance
+	- webstorm 太慢，正在积极解决，参考：
+		- https://stackoverflow.com/a/29589055/9422455
+	- 1： 移除 node_modules，完了之后果然占用内存就变小了（从 4+G 降低到了 2+G）
+	  ![[Pasted image 20230819133945.png]]
+	  ![[Pasted image 20230819134106.png]]
+	  
+	- 
+- #MacOS #mds_stores #high-cpu
+	- https://www.easeus.com/computer-instruction/mds-store.html#:~:text=There%20are%20mainly%20two%20reasons,software%20or%20even%20system%20bugs.
+	- ![[Pasted image 20230819130725.png]]
+	- 
+- #trpc #nextjs #react-query #rerender 
+	- Multiple Renders With NextJs · trpc/trpc · Discussion #1987, https://github.com/trpc/trpc/discussions/1987
+	- 只做view: https://github.com/trpc/examples-next-prisma-starter/blob/main/src/pages/post/%5Bid%5D.tsx 
+	  ![[Pasted image 20230819020830.png]]

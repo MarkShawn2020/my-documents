@@ -1,0 +1,11 @@
+- #prisma #varchar
+	- 原来是这个问题！
+	- ![image.png](../assets/image_1693519214248_0.png)
+	-
+- #postgresql #performance
+	- ref: https://stackoverflow.com/a/71398222/9422455
+	- ![image.png](../assets/image_1693515520161_0.png)
+	-
+- #prisma #pgvector
+	- examples/storage/postgres-pgvector at main · vercel/examples, https://github.com/vercel/examples/tree/main/storage/postgres-pgvector
+	-

@@ -80,6 +80,17 @@ hide_table_of_contents: true
 | -          | -          | chore      | change the default TOC config                |     | finished  | SOLVED   | [^config-md-toc-depth]     |
 | -          | -          | article    | shortcuts comparison                         |     | finished  | FINISHED |                            |
 
+- 重要：做一款工具集
+	- fontface 导出
+		- Facetype.js, http://gero3.github.io/facetype.js/
+	- css 转进制
+	- ssr 转 clash
+		- ACL4SSR 在线订阅转换, https://acl4ssr-sub.github.io/
+-
+- [x] android 手机实名验证，以测试soul的残颜抢号是否被故意忽视
+- [ ] 
+
+
 [^learn-mac-reverse]:
     targets:
       - decrease the time of float timestamp when hitting Elmedia Player left/right
