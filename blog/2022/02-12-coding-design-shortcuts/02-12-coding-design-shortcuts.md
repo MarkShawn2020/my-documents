@@ -5,13 +5,13 @@ created: 2022-02-12
 
 # 编程设计艺术思考（持续更新）
 
-1. [快捷键设计](#快捷键设计)
-   1. [与代码块相关的快捷键设计](#与代码块相关的快捷键设计)
-      1. [对比分析与总结](#对比分析与总结)
-      2. [跳转与选中代码块](#跳转与选中代码块)
-      3. [折叠与展开代码块](#折叠与展开代码块)
-      4. [快捷键修改前后对比](#快捷键修改前后对比)
-   2. [bugfix: why `cmd + alt + \` converted to be `cmd + c`](#bugfix-why-cmd--alt---converted-to-be-cmd--c)
+- [快捷键设计](#快捷键设计)
+    - [与代码块相关的快捷键设计](#与代码块相关的快捷键设计)
+        - [对比分析与总结](#对比分析与总结)
+        - [跳转与选中代码块](#跳转与选中代码块)
+        - [折叠与展开代码块](#折叠与展开代码块)
+        - [快捷键修改前后对比](#快捷键修改前后对比)
+    - [bugfix: why `cmd + alt + \` converted to be `cmd + c`](#bugfix-why-cmd--alt---converted-to-be-cmd--c)
 
 ## 快捷键设计
 
@@ -59,27 +59,27 @@ created: 2022-02-12
     3. vscode尽管没有实现部分指令，但是经过仔细考虑，也确实可以接受；
     4. 两者五五开，都需要经过用户自己的定制，才能较好地在两个平台之间获得近似的体验。
 
-| item | vscode on macOS | jetbrains(pycharm) on macOS | custom design |
-| --- | --- | --- | --- |
-| jump to matched bracket | editor.action.jumpToBracket:<br/>`shift + cmd + \` | Move Caret to Matching Brace:<br/>`ctrl + m` | `cmd + \` |
-| select matched brackets | editor.action.selectToBracket: none | none | `shift + cmd + \` |
-| jump to left bracket | none | Move Caret to Code Block Start:<br/>`alt + cmd + [` | none |
-| jump to right bracket | none | Move Caret to Code Block End:<br/>`alt + cmd + ]` | none |
-| select to left bracket | none | Move Caret to Code Block Start with Selection:<br/>`shift + alt + cmd + [` | none |
-| select to right bracket | none | Move Caret to Code Block End with Selection:<br/>`shift + alt + cmd + ]` | none |
-| extend selection | none | Extend Selection:<br/>`alt + up` | `alt + up` |
-| shrink selection | none | Shrink Selection:<br/>`alt + down` | `alt + down` |
+| item                    | vscode on macOS                                    | jetbrains(pycharm) on macOS                                                | custom design     |
+| ----------------------- | -------------------------------------------------- | -------------------------------------------------------------------------- | ----------------- |
+| jump to matched bracket | editor.action.jumpToBracket:<br/>`shift + cmd + \` | Move Caret to Matching Brace:<br/>`ctrl + m`                               | `cmd + \`         |
+| select matched brackets | editor.action.selectToBracket: none                | none                                                                       | `shift + cmd + \` |
+| jump to left bracket    | none                                               | Move Caret to Code Block Start:<br/>`alt + cmd + [`                        | none              |
+| jump to right bracket   | none                                               | Move Caret to Code Block End:<br/>`alt + cmd + ]`                          | none              |
+| select to left bracket  | none                                               | Move Caret to Code Block Start with Selection:<br/>`shift + alt + cmd + [` | none              |
+| select to right bracket | none                                               | Move Caret to Code Block End with Selection:<br/>`shift + alt + cmd + ]`   | none              |
+| extend selection        | none                                               | Extend Selection:<br/>`alt + up`                                           | `alt + up`        |
+| shrink selection        | none                                               | Shrink Selection:<br/>`alt + down`                                         | `alt + down`      |
 
-| item | vscode on macOS | jetbrains(pycharm) on macOS | custom design |
-| --- | --- | --- | --- |
-| collapse this level | editor.fold:<br/>`alt + cmd + [` | Collapse:<br/>`cmd + -` | `cmd + [` |
-| expand this level | editor.unfold:<br/>`alt + cmd + ]` | Expand:<br/>`cmd + +`/`cmd + =` | `cmd + ]` |
-| collapse this level recursively | editor.foldRecursively:<br/>`cmd + k, cmd + [` | Collapse Recursively:<br/>`alt + cmd + -` | `alt + cmd + [` |
-| expand this level recursively | editor.unfoldRecursively:<br/>`cmd + k, cmd + ]` | Expand Recursively:<br/>`alt + cmd + + `/`alt + cmd + =` | `alt + cmd + ]` |
-| collapse this document | editor.foldAll:<br/>`cmd + k, cmd + 0` | Collapse All:<br/>`shift + cmd + -` | `shift + cmd + [` |
-| expand this document | editor.unfoldAll:<br/>`cmd + k, cmd + j` | Expand ALL:<br/>`shift + cmd + +`/`shift + cmd + =` | `shift + cmd + ]` |
-| collapse/expand to level [K] | none | Expand to Level [K]:<br/>`cmd + *, [K]` | `alt + cmd + \,[K]` |
-| collapse/expand this document to level [K] | editor.foldLevel[K]:<br/>`cmd + k, cmd + [K]` | Expand All to Level [K]:<br/>`alt + cmd + *, [K]` | `shift + alt + cmd + \,[K]` |
+| item                                       | vscode on macOS                                  | jetbrains(pycharm) on macOS                              | custom design               |
+| ------------------------------------------ | ------------------------------------------------ | -------------------------------------------------------- | --------------------------- |
+| collapse this level                        | editor.fold:<br/>`alt + cmd + [`                 | Collapse:<br/>`cmd + -`                                  | `cmd + [`                   |
+| expand this level                          | editor.unfold:<br/>`alt + cmd + ]`               | Expand:<br/>`cmd + +`/`cmd + =`                          | `cmd + ]`                   |
+| collapse this level recursively            | editor.foldRecursively:<br/>`cmd + k, cmd + [`   | Collapse Recursively:<br/>`alt + cmd + -`                | `alt + cmd + [`             |
+| expand this level recursively              | editor.unfoldRecursively:<br/>`cmd + k, cmd + ]` | Expand Recursively:<br/>`alt + cmd + + `/`alt + cmd + =` | `alt + cmd + ]`             |
+| collapse this document                     | editor.foldAll:<br/>`cmd + k, cmd + 0`           | Collapse All:<br/>`shift + cmd + -`                      | `shift + cmd + [`           |
+| expand this document                       | editor.unfoldAll:<br/>`cmd + k, cmd + j`         | Expand ALL:<br/>`shift + cmd + +`/`shift + cmd + =`      | `shift + cmd + ]`           |
+| collapse/expand to level [K]               | none                                             | Expand to Level [K]:<br/>`cmd + *, [K]`                  | `alt + cmd + \,[K]`         |
+| collapse/expand this document to level [K] | editor.foldLevel[K]:<br/>`cmd + k, cmd + [K]`    | Expand All to Level [K]:<br/>`alt + cmd + *, [K]`        | `shift + alt + cmd + \,[K]` |
 
 #### 跳转与选中代码块
 
