@@ -2,7 +2,13 @@
 
 [toc]
 
-## markdown image size
+## markdown image
+
+### naming
+
+不能加空格，需要的话用`%20`代替，see: https://github.com/alanshaw/markdown-pdf/issues/54#issuecomment-103174459
+
+### size
 
 There are some recommended methods to add width property into markdown image, while doesn't work.
 
