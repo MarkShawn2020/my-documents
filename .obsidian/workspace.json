@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "72b8c754f729a1ed",
+        "id": "988f0eb8ee0d5eca",
         "type": "tabs",
         "children": [
           {
-            "id": "c0d544162323704b",
+            "id": "cf21849dbd20c3ca",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "UI.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -85,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "UI.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "UI.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -124,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "UI.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -146,12 +138,22 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "c0d544162323704b",
+  "active": "cf21849dbd20c3ca",
   "lastOpenFiles": [
+    "blog/2024/06-21-Rabbit-R1分享会.md",
+    "blog/2024/06-16-CS魔法社全体创业宣言书.md",
+    "blog/2024/2422-INFP与ENTJ的日日夜夜.md",
+    "IMG_3338.jpg",
+    "IMG_3337 2.jpg",
+    "blog/2024/2422-从FP走向TJ.md",
+    "blog/2020/08-29-VuePress-Journal.md",
+    "blog/2024/01-14-觉醒的硅基.md",
+    "blog/2024/04-30-飞脑.md",
+    "blog/2024/05-01-2419-信仰一跃.md",
+    "UI.md",
     "CS魔法社.md",
     "diary.work.md",
     "diary.public.md",
-    "UI.md",
     "@obsidian/TODO.md",
     "TODO.md",
     "docs/development/DevOps/certbot ssl 证书.md",
