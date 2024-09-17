@@ -1,5 +1,5 @@
 ---
-image: .imgs/full-guide_cross-copy-over-ssh-vim-tmux-1662630169987-51fb98f3430a72c001eb7f3c151fb86fe315673a2334bb818da631aefdee2a58.png
+image: assets/full-guide_cross-copy-over-ssh-vim-tmux-1662630169987-51fb98f3430a72c001eb7f3c151fb86fe315673a2334bb818da631aefdee2a58.png
 tags: [ssh, vim, tmux, clipboard]
 title: ssh 跨系统共享 vims 剪切板的最佳解决方案
 ---
