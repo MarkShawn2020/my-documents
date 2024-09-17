@@ -1379,41 +1379,41 @@ And then consider the directory prune.
 Finally bared run is the worst.
 
 ```sh
-➜  hjxh_express_match git:(main) time find .imgs  -name readme-1641287704584-613d44afa250b17be45e5b366487d1dbd42939da44543700b5e7fbd7f6a8ca9e.png
-.imgs/readme-1641287704584-613d44afa250b17be45e5b366487d1dbd42939da44543700b5e7fbd7f6a8ca9e.png
-find .imgs -name   0.00s user 0.00s system 52% cpu 0.005 total
+➜  hjxh_express_match git:(main) time find assets  -name readme-1641287704584-613d44afa250b17be45e5b366487d1dbd42939da44543700b5e7fbd7f6a8ca9e.png
+assets/readme-1641287704584-613d44afa250b17be45e5b366487d1dbd42939da44543700b5e7fbd7f6a8ca9e.png
+find assets -name   0.00s user 0.00s system 52% cpu 0.005 total
 
 ➜  hjxh_express_match git:(main) time find . -maxdepth 3  -name readme-1641287704584-613d44afa250b17be45e5b366487d1dbd42939da44543700b5e7fbd7f6a8ca9e.png
-./.imgs/readme-1641287704584-613d44afa250b17be45e5b366487d1dbd42939da44543700b5e7fbd7f6a8ca9e.png
+./assets/readme-1641287704584-613d44afa250b17be45e5b366487d1dbd42939da44543700b5e7fbd7f6a8ca9e.png
 find . -maxdepth 3 -name   0.01s user 0.05s system 70% cpu 0.079 total
 
 ---
 
 ➜  hjxh_express_match git:(main) time find . -maxdepth 4  -name readme-1641287704584-613d44afa250b17be45e5b366487d1dbd42939da44543700b5e7fbd7f6a8ca9e.png
-./.imgs/readme-1641287704584-613d44afa250b17be45e5b366487d1dbd42939da44543700b5e7fbd7f6a8ca9e.png
+./assets/readme-1641287704584-613d44afa250b17be45e5b366487d1dbd42939da44543700b5e7fbd7f6a8ca9e.png
 find . -maxdepth 4 -name   0.06s user 0.69s system 87% cpu 0.854 total
 
 ➜  hjxh_express_match git:(main) time find . -maxdepth 5  -name readme-1641287704584-613d44afa250b17be45e5b366487d1dbd42939da44543700b5e7fbd7f6a8ca9e.png
-./.imgs/readme-1641287704584-613d44afa250b17be45e5b366487d1dbd42939da44543700b5e7fbd7f6a8ca9e.png
+./assets/readme-1641287704584-613d44afa250b17be45e5b366487d1dbd42939da44543700b5e7fbd7f6a8ca9e.png
 find . -maxdepth 5 -name   0.14s user 1.86s system 93% cpu 2.137 total
 
 ➜  hjxh_express_match git:(main) time find . -maxdepth 6  -name readme-1641287704584-613d44afa250b17be45e5b366487d1dbd42939da44543700b5e7fbd7f6a8ca9e.png
-./.imgs/readme-1641287704584-613d44afa250b17be45e5b366487d1dbd42939da44543700b5e7fbd7f6a8ca9e.png
+./assets/readme-1641287704584-613d44afa250b17be45e5b366487d1dbd42939da44543700b5e7fbd7f6a8ca9e.png
 find . -maxdepth 6 -name   0.26s user 3.21s system 94% cpu 3.683 total
 
 ---
 
 ➜  hjxh_express_match git:(main) time find .  -name readme-1641287704584-613d44afa250b17be45e5b366487d1dbd42939da44543700b5e7fbd7f6a8ca9e.png
-./.imgs/readme-1641287704584-613d44afa250b17be45e5b366487d1dbd42939da44543700b5e7fbd7f6a8ca9e.png
+./assets/readme-1641287704584-613d44afa250b17be45e5b366487d1dbd42939da44543700b5e7fbd7f6a8ca9e.png
 find . -name   0.44s user 5.85s system 51% cpu 12.172 total
 
-➜  hjxh_express_match git:(main) time find . -path './.imgs/*'  -name readme-1641287704584-613d44afa250b17be45e5b366487d1dbd42939da44543700b5e7fbd7f6a8ca9e.png
-./.imgs/readme-1641287704584-613d44afa250b17be45e5b366487d1dbd42939da44543700b5e7fbd7f6a8ca9e.png
-find . -path './.imgs/*' -name   0.46s user 5.93s system 51% cpu 12.299 total
+➜  hjxh_express_match git:(main) time find . -path './assets/*'  -name readme-1641287704584-613d44afa250b17be45e5b366487d1dbd42939da44543700b5e7fbd7f6a8ca9e.png
+./assets/readme-1641287704584-613d44afa250b17be45e5b366487d1dbd42939da44543700b5e7fbd7f6a8ca9e.png
+find . -path './assets/*' -name   0.46s user 5.93s system 51% cpu 12.299 total
 
-➜  hjxh_express_match git:(main) time find . -path './.imgs/*'  ! -path "**/node_modules/*"  -name readme-1641287704584-613d44afa250b17be45e5b366487d1dbd42939da44543700b5e7fbd7f6a8ca9e.png
-./.imgs/readme-1641287704584-613d44afa250b17be45e5b366487d1dbd42939da44543700b5e7fbd7f6a8ca9e.png
-find . -path './.imgs/*' ! -path "**/node_modules/*" -name   0.46s user 5.91s system 51% cpu 12.268 total
+➜  hjxh_express_match git:(main) time find . -path './assets/*'  ! -path "**/node_modules/*"  -name readme-1641287704584-613d44afa250b17be45e5b366487d1dbd42939da44543700b5e7fbd7f6a8ca9e.png
+./assets/readme-1641287704584-613d44afa250b17be45e5b366487d1dbd42939da44543700b5e7fbd7f6a8ca9e.png
+find . -path './assets/*' ! -path "**/node_modules/*" -name   0.46s user 5.91s system 51% cpu 12.268 total
 
 ```
 
