@@ -1,1 +1,0 @@
-- [Photoshop API - 使用 Python 和 C++ 读取和写入 PSD 文件：r/Python --- Photoshop API - Read and Write PSD files with Python and C++ : r/Python](https://www.reddit.com/r/Python/comments/1dzq8qk/photoshop_api_read_and_write_psd_files_with/)
