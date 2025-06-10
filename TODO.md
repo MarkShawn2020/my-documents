@@ -92,7 +92,7 @@ hide_table_of_contents: true
       - decrease the time of float timestamp when hitting Elmedia Player left/right
 [^mitmproxy-multi-ports]:
     problem: needs too much memory, each port(progress) with 40MB almost:
-      ![snapshot on luci2 server, after set swap to be 1GB](assets/TODO-1664545935894-23e234b5f8afeae537e7c8f907aa7d49357ea12ba8c579b58f2d20ab2ae161e5.png)  
+      ![snapshot on luci2 server, after set swap to be 1GB](TODO-1664545935894-23e234b5f8afeae537e7c8f907aa7d49357ea12ba8c579b58f2d20ab2ae161e5.png)  
 
     solutions:
       - TODO: recommended solution: https://github.com/mitmproxy/mitmproxy/issues/4887#issuecomment-1242993745 said: `You can pip install the wheel from https://snapshots.mitmproxy.org/branches/main/ and provide feedback. :-)`
