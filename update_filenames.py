@@ -31,7 +31,7 @@ class SpaceRemover:
     def clean_name(self, name: str) -> str:
         """
         清理文件/文件夹名称，去除空格和规范化
-        确保日期后面有 "-" 分隔符
+        当检测到 YYYY-MM-DD 格式时，去掉 YYYY- 前缀
         """
         # 保存文件扩展名
         path_obj = Path(name)
@@ -60,19 +60,31 @@ class SpaceRemover:
         for old, new in replacements.items():
             cleaned_stem = cleaned_stem.replace(old, new)
 
-        # 检查日期格式并确保日期后有 "-"
-        # 匹配日期格式：YYYY-MM-DD 或 MM-DD 或 YYYY-MM 等
-        date_pattern = r'^(\d{4}-\d{1,2}-\d{1,2}|\d{4}-\d{1,2}|\d{1,2}-\d{1,2})'
-        match = re.match(date_pattern, cleaned_stem)
-
+        # 检测 YYYY-MM-DD 格式并去掉 YYYY- 前缀
+        # 匹配完整的 YYYY-MM-DD 格式（4位年份-1-2位月份-1-2位日期）
+        yyyy_mm_dd_pattern = r'^(\d{4})-(\d{1,2})-(\d{1,2})(.*)'
+        match = re.match(yyyy_mm_dd_pattern, cleaned_stem)
+        
         if match:
-            date_part = match.group(1)
-            remaining = cleaned_stem[len(date_part):]
+            year, month, day, remaining = match.groups()
+            # 去掉年份前缀，保留 MM-DD 格式
+            new_stem = f"{month.zfill(2)}-{day.zfill(2)}{remaining}"
+            logger.info(f"去掉年份前缀: {cleaned_stem} -> {new_stem}")
+            cleaned_stem = new_stem
+        else:
+            # 检查其他日期格式并确保日期后有 "-"
+            # 匹配日期格式：YYYY-MM 或 MM-DD 等
+            date_pattern = r'^(\d{4}-\d{1,2}|\d{1,2}-\d{1,2})'
+            match = re.match(date_pattern, cleaned_stem)
 
-            # 如果日期后面不是以 "-" 开头，则添加 "-"
-            if remaining and not remaining.startswith('-'):
-                cleaned_stem = date_part + '-' + remaining
-                logger.info(f"为日期后添加分隔符: {date_part} -> {date_part}-{remaining}")
+            if match:
+                date_part = match.group(1)
+                remaining = cleaned_stem[len(date_part):]
+
+                # 如果日期后面不是以 "-" 开头，则添加 "-"
+                if remaining and not remaining.startswith('-'):
+                    cleaned_stem = date_part + '-' + remaining
+                    logger.info(f"为日期后添加分隔符: {date_part} -> {date_part}-{remaining}")
 
         # 移除连续的分隔符
         # cleaned_stem = re.sub(r'[-_]+', '-', cleaned_stem)
