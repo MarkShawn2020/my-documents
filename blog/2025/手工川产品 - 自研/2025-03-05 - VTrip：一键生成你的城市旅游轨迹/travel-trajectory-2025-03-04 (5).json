@@ -1,0 +1,148 @@
+[
+  {
+    "city": "常州",
+    "date": "2025-02-03",
+    "transport": []
+  },
+  {
+    "city": "无锡",
+    "date": "2025-02-07",
+    "transport": [
+      "train"
+    ]
+  },
+  {
+    "city": "苏州",
+    "date": "2025-02-08",
+    "transport": [
+      "train"
+    ]
+  },
+  {
+    "city": "上海",
+    "date": "2025-02-09",
+    "transport": [
+      "train"
+    ]
+  },
+  {
+    "city": "杭州",
+    "date": "2025-02-12",
+    "transport": [
+      "train"
+    ]
+  },
+  {
+    "city": "广州",
+    "date": "2025-02-14",
+    "transport": [
+      "flight"
+    ]
+  },
+  {
+    "city": "香港",
+    "date": "2025-02-15",
+    "transport": [
+      "train"
+    ]
+  },
+  {
+    "city": "深圳",
+    "date": "2025-02-15",
+    "transport": [
+      "train"
+    ]
+  },
+  {
+    "city": "广州",
+    "date": "2025-02-16",
+    "transport": [
+      "train"
+    ]
+  },
+  {
+    "city": "昆明",
+    "date": "2025-02-18",
+    "transport": [
+      "flight"
+    ]
+  },
+  {
+    "city": "曲靖",
+    "date": "2025-02-19",
+    "transport": [
+      "train"
+    ]
+  },
+  {
+    "city": "成都",
+    "date": "2025-02-20",
+    "transport": [
+      "train"
+    ]
+  },
+  {
+    "city": "重庆",
+    "date": "2025-02-22",
+    "transport": [
+      "train"
+    ]
+  },
+  {
+    "city": "长沙",
+    "date": "2025-02-24",
+    "transport": [
+      "train"
+    ]
+  },
+  {
+    "city": "武汉",
+    "date": "2025-02-25",
+    "transport": [
+      "train"
+    ]
+  },
+  {
+    "city": "合肥",
+    "date": "2025-02-26",
+    "transport": [
+      "train"
+    ]
+  },
+  {
+    "city": "南京",
+    "date": "2025-02-27",
+    "transport": [
+      "train"
+    ]
+  },
+  {
+    "city": "上海",
+    "date": "2025-02-28",
+    "transport": [
+      "train"
+    ]
+  },
+  {
+    "city": "泰安",
+    "date": "2025-03-01",
+    "transport": [
+      "train",
+      "flight"
+    ]
+  },
+  {
+    "city": "济南",
+    "date": "2025-03-01",
+    "transport": [
+      "train"
+    ]
+  },
+  {
+    "city": "北京",
+    "date": "2025-03-02",
+    "transport": [
+      "train"
+    ]
+  }
+]

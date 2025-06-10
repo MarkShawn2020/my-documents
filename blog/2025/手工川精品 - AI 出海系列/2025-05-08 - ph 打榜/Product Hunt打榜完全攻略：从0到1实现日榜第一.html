@@ -1,0 +1,2437 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Product Hunt打榜完全攻略：从0到1实现日榜第一</title>
+        <meta charset='utf-8'/>
+        <style>
+ svg:not(:root).svg-inline--fa {
+  overflow: visible;
+}
+
+.svg-inline--fa {
+  display: inline-block;
+  font-size: inherit;
+  height: 1em;
+  overflow: visible;
+  vertical-align: -0.125em;
+}
+.svg-inline--fa.fa-lg {
+  vertical-align: -0.225em;
+}
+.svg-inline--fa.fa-w-1 {
+  width: 0.0625em;
+}
+.svg-inline--fa.fa-w-2 {
+  width: 0.125em;
+}
+.svg-inline--fa.fa-w-3 {
+  width: 0.1875em;
+}
+.svg-inline--fa.fa-w-4 {
+  width: 0.25em;
+}
+.svg-inline--fa.fa-w-5 {
+  width: 0.3125em;
+}
+.svg-inline--fa.fa-w-6 {
+  width: 0.375em;
+}
+.svg-inline--fa.fa-w-7 {
+  width: 0.4375em;
+}
+.svg-inline--fa.fa-w-8 {
+  width: 0.5em;
+}
+.svg-inline--fa.fa-w-9 {
+  width: 0.5625em;
+}
+.svg-inline--fa.fa-w-10 {
+  width: 0.625em;
+}
+.svg-inline--fa.fa-w-11 {
+  width: 0.6875em;
+}
+.svg-inline--fa.fa-w-12 {
+  width: 0.75em;
+}
+.svg-inline--fa.fa-w-13 {
+  width: 0.8125em;
+}
+.svg-inline--fa.fa-w-14 {
+  width: 0.875em;
+}
+.svg-inline--fa.fa-w-15 {
+  width: 0.9375em;
+}
+.svg-inline--fa.fa-w-16 {
+  width: 1em;
+}
+.svg-inline--fa.fa-w-17 {
+  width: 1.0625em;
+}
+.svg-inline--fa.fa-w-18 {
+  width: 1.125em;
+}
+.svg-inline--fa.fa-w-19 {
+  width: 1.1875em;
+}
+.svg-inline--fa.fa-w-20 {
+  width: 1.25em;
+}
+.svg-inline--fa.fa-pull-left {
+  margin-right: 0.3em;
+  width: auto;
+}
+.svg-inline--fa.fa-pull-right {
+  margin-left: 0.3em;
+  width: auto;
+}
+.svg-inline--fa.fa-border {
+  height: 1.5em;
+}
+.svg-inline--fa.fa-li {
+  width: 2em;
+}
+.svg-inline--fa.fa-fw {
+  width: 1.25em;
+}
+
+.fa-layers svg.svg-inline--fa {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.fa-layers {
+  display: inline-block;
+  height: 1em;
+  position: relative;
+  text-align: center;
+  vertical-align: -0.125em;
+  width: 1em;
+}
+.fa-layers svg.svg-inline--fa {
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+.fa-layers-counter, .fa-layers-text {
+  display: inline-block;
+  position: absolute;
+  text-align: center;
+}
+
+.fa-layers-text {
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+.fa-layers-counter {
+  background-color: #ff253a;
+  border-radius: 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #fff;
+  height: 1.5em;
+  line-height: 1;
+  max-width: 5em;
+  min-width: 1.5em;
+  overflow: hidden;
+  padding: 0.25em;
+  right: 0;
+  text-overflow: ellipsis;
+  top: 0;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+}
+
+.fa-layers-bottom-right {
+  bottom: 0;
+  right: 0;
+  top: auto;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+}
+
+.fa-layers-bottom-left {
+  bottom: 0;
+  left: 0;
+  right: auto;
+  top: auto;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+}
+
+.fa-layers-top-right {
+  right: 0;
+  top: 0;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+}
+
+.fa-layers-top-left {
+  left: 0;
+  right: auto;
+  top: 0;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+}
+
+.fa-lg {
+  font-size: 1.3333333333em;
+  line-height: 0.75em;
+  vertical-align: -0.0667em;
+}
+
+.fa-xs {
+  font-size: 0.75em;
+}
+
+.fa-sm {
+  font-size: 0.875em;
+}
+
+.fa-1x {
+  font-size: 1em;
+}
+
+.fa-2x {
+  font-size: 2em;
+}
+
+.fa-3x {
+  font-size: 3em;
+}
+
+.fa-4x {
+  font-size: 4em;
+}
+
+.fa-5x {
+  font-size: 5em;
+}
+
+.fa-6x {
+  font-size: 6em;
+}
+
+.fa-7x {
+  font-size: 7em;
+}
+
+.fa-8x {
+  font-size: 8em;
+}
+
+.fa-9x {
+  font-size: 9em;
+}
+
+.fa-10x {
+  font-size: 10em;
+}
+
+.fa-fw {
+  text-align: center;
+  width: 1.25em;
+}
+
+.fa-ul {
+  list-style-type: none;
+  margin-left: 2.5em;
+  padding-left: 0;
+}
+.fa-ul > li {
+  position: relative;
+}
+
+.fa-li {
+  left: -2em;
+  position: absolute;
+  text-align: center;
+  width: 2em;
+  line-height: inherit;
+}
+
+.fa-border {
+  border: solid 0.08em #eee;
+  border-radius: 0.1em;
+  padding: 0.2em 0.25em 0.15em;
+}
+
+.fa-pull-left {
+  float: left;
+}
+
+.fa-pull-right {
+  float: right;
+}
+
+.fa.fa-pull-left,
+.fas.fa-pull-left,
+.far.fa-pull-left,
+.fal.fa-pull-left,
+.fab.fa-pull-left {
+  margin-right: 0.3em;
+}
+.fa.fa-pull-right,
+.fas.fa-pull-right,
+.far.fa-pull-right,
+.fal.fa-pull-right,
+.fab.fa-pull-right {
+  margin-left: 0.3em;
+}
+
+.fa-spin {
+  -webkit-animation: fa-spin 2s infinite linear;
+          animation: fa-spin 2s infinite linear;
+}
+
+.fa-pulse {
+  -webkit-animation: fa-spin 1s infinite steps(8);
+          animation: fa-spin 1s infinite steps(8);
+}
+
+@-webkit-keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+.fa-rotate-90 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.fa-rotate-180 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.fa-rotate-270 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+}
+
+.fa-flip-horizontal {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
+  -webkit-transform: scale(-1, 1);
+          transform: scale(-1, 1);
+}
+
+.fa-flip-vertical {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
+  -webkit-transform: scale(1, -1);
+          transform: scale(1, -1);
+}
+
+.fa-flip-both, .fa-flip-horizontal.fa-flip-vertical {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
+  -webkit-transform: scale(-1, -1);
+          transform: scale(-1, -1);
+}
+
+:root .fa-rotate-90,
+:root .fa-rotate-180,
+:root .fa-rotate-270,
+:root .fa-flip-horizontal,
+:root .fa-flip-vertical,
+:root .fa-flip-both {
+  -webkit-filter: none;
+          filter: none;
+}
+
+.fa-stack {
+  display: inline-block;
+  height: 2em;
+  position: relative;
+  width: 2.5em;
+}
+
+.fa-stack-1x,
+.fa-stack-2x {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.svg-inline--fa.fa-stack-1x {
+  height: 1em;
+  width: 1.25em;
+}
+.svg-inline--fa.fa-stack-2x {
+  height: 2em;
+  width: 2.5em;
+}
+
+.fa-inverse {
+  color: #fff;
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.sr-only-focusable:active, .sr-only-focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+.svg-inline--fa .fa-primary {
+  fill: var(--fa-primary-color, currentColor);
+  opacity: 1;
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa .fa-secondary {
+  fill: var(--fa-secondary-color, currentColor);
+  opacity: 0.4;
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-primary {
+  opacity: 0.4;
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-secondary {
+  opacity: 1;
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa mask .fa-primary,
+.svg-inline--fa mask .fa-secondary {
+  fill: black;
+}
+
+.fad.fa-inverse {
+  color: #fff;
+} .ͼ1.cm-focused {outline: 1px dotted #212121;}
+.ͼ1 {position: relative !important; box-sizing: border-box; display: flex !important; flex-direction: column;}
+.ͼ1 .cm-scroller {display: flex !important; align-items: flex-start !important; font-family: monospace; line-height: 1.4; height: 100%; overflow-x: auto; position: relative; z-index: 0; overflow-anchor: none;}
+.ͼ1 .cm-content[contenteditable=true] {-webkit-user-modify: read-write-plaintext-only;}
+.ͼ1 .cm-content {margin: 0; flex-grow: 2; flex-shrink: 0; display: block; white-space: pre; word-wrap: normal; box-sizing: border-box; min-height: 100%; padding: 4px 0; outline: none;}
+.ͼ1 .cm-lineWrapping {white-space: pre-wrap; white-space: break-spaces; word-break: break-word; overflow-wrap: anywhere; flex-shrink: 1;}
+.ͼ2 .cm-content {caret-color: black;}
+.ͼ3 .cm-content {caret-color: white;}
+.ͼ1 .cm-line {display: block; padding: 0 2px 0 6px;}
+.ͼ1 .cm-layer > * {position: absolute;}
+.ͼ1 .cm-layer {position: absolute; left: 0; top: 0; contain: size style;}
+.ͼ2 .cm-selectionBackground {background: #d9d9d9;}
+.ͼ3 .cm-selectionBackground {background: #222;}
+.ͼ2.cm-focused > .cm-scroller > .cm-selectionLayer .cm-selectionBackground {background: #d7d4f0;}
+.ͼ3.cm-focused > .cm-scroller > .cm-selectionLayer .cm-selectionBackground {background: #233;}
+.ͼ1 .cm-cursorLayer {pointer-events: none;}
+.ͼ1.cm-focused > .cm-scroller > .cm-cursorLayer {animation: steps(1) cm-blink 1.2s infinite;}
+@keyframes cm-blink {50% {opacity: 0;}}
+@keyframes cm-blink2 {50% {opacity: 0;}}
+.ͼ1 .cm-cursor, .ͼ1 .cm-dropCursor {border-left: 1.2px solid black; margin-left: -0.6px; pointer-events: none;}
+.ͼ1 .cm-cursor {display: none;}
+.ͼ3 .cm-cursor {border-left-color: #ddd;}
+.ͼ1 .cm-dropCursor {position: absolute;}
+.ͼ1.cm-focused > .cm-scroller > .cm-cursorLayer .cm-cursor {display: block;}
+.ͼ1 .cm-iso {unicode-bidi: isolate;}
+.ͼ1 .cm-announced {position: fixed; top: -10000px;}
+@media print {.ͼ1 .cm-announced {display: none;}}
+.ͼ2 .cm-activeLine {background-color: #cceeff44;}
+.ͼ3 .cm-activeLine {background-color: #99eeff33;}
+.ͼ2 .cm-specialChar {color: red;}
+.ͼ3 .cm-specialChar {color: #f78;}
+.ͼ1 .cm-gutters {flex-shrink: 0; display: flex; height: 100%; box-sizing: border-box; inset-inline-start: 0; z-index: 200;}
+.ͼ2 .cm-gutters {background-color: #f5f5f5; color: #6c6c6c; border-right: 1px solid #ddd;}
+.ͼ3 .cm-gutters {background-color: #333338; color: #ccc;}
+.ͼ1 .cm-gutter {display: flex !important; flex-direction: column; flex-shrink: 0; box-sizing: border-box; min-height: 100%; overflow: hidden;}
+.ͼ1 .cm-gutterElement {box-sizing: border-box;}
+.ͼ1 .cm-lineNumbers .cm-gutterElement {padding: 0 3px 0 5px; min-width: 20px; text-align: right; white-space: nowrap;}
+.ͼ2 .cm-activeLineGutter {background-color: #e2f2ff;}
+.ͼ3 .cm-activeLineGutter {background-color: #222227;}
+.ͼ1 .cm-panels {box-sizing: border-box; position: sticky; left: 0; right: 0; z-index: 300;}
+.ͼ2 .cm-panels {background-color: #f5f5f5; color: black;}
+.ͼ2 .cm-panels-top {border-bottom: 1px solid #ddd;}
+.ͼ2 .cm-panels-bottom {border-top: 1px solid #ddd;}
+.ͼ3 .cm-panels {background-color: #333338; color: white;}
+.ͼ1 .cm-tab {display: inline-block; overflow: hidden; vertical-align: bottom;}
+.ͼ1 .cm-widgetBuffer {vertical-align: text-top; height: 1em; width: 0; display: inline;}
+.ͼ1 .cm-placeholder {color: #888; display: inline-block; vertical-align: top;}
+.ͼ1 .cm-highlightSpace {background-image: radial-gradient(circle at 50% 55%, #aaa 20%, transparent 5%); background-position: center;}
+.ͼ1 .cm-highlightTab {background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="20"><path stroke="%23888" stroke-width="1" fill="none" d="M1 10H196L190 5M190 15L196 10M197 4L197 16"/></svg>'); background-size: auto 100%; background-position: right 90%; background-repeat: no-repeat;}
+.ͼ1 .cm-trailingSpace {background-color: #ff332255;}
+.ͼ1 .cm-button {vertical-align: middle; color: inherit; font-size: 70%; padding: .2em 1em; border-radius: 1px;}
+.ͼ2 .cm-button:active {background-image: linear-gradient(#b4b4b4, #d0d3d6);}
+.ͼ2 .cm-button {background-image: linear-gradient(#eff1f5, #d9d9df); border: 1px solid #888;}
+.ͼ3 .cm-button:active {background-image: linear-gradient(#111, #333);}
+.ͼ3 .cm-button {background-image: linear-gradient(#393939, #111); border: 1px solid #888;}
+.ͼ1 .cm-textfield {vertical-align: middle; color: inherit; font-size: 70%; border: 1px solid silver; padding: .2em .5em;}
+.ͼ2 .cm-textfield {background-color: white;}
+.ͼ3 .cm-textfield {border: 1px solid #555; background-color: inherit;}
+.ͼ1 .cm-foldPlaceholder {background-color: #eee; border: 1px solid #ddd; color: #888; border-radius: .2em; margin: 0 1px; padding: 0 1px; cursor: pointer;}
+.ͼ1 .cm-foldGutter span {padding: 0 1px; cursor: pointer;}
+ .setting-item.ex-setting-item{border-top:unset;padding-top:0}*[hidden]{display:none}
+ 
+.pandoc-plugin-error {
+    color: red;
+}
+ .better-command-palette .better-command-palette-title {
+  color: var(--text-accent);
+  margin: 5px;
+}
+.better-command-palette .hidden-items-header {
+  margin: 0px;
+  margin-left: 13px;
+  margin-top: 10px;
+  font-size: 15px;
+  color: var(--text-faint);
+}
+.better-command-palette .hidden-items-header:hover {
+  color: var(--text-muted);
+  cursor: pointer;
+}
+.better-command-palette .suggestion-item.hidden {
+  color: var(--text-accent);
+}
+.better-command-palette .suggestion-item.hidden .suggestion-flair {
+  transform: rotate(45deg);
+}
+.better-command-palette .suggestion-item .suggestion-flair {
+  color: var(--text-faint);
+  margin-right: 10px;
+}
+.better-command-palette .suggestion-item .suggestion-hotkey {
+  white-space: nowrap;
+  margin-left: 10px;
+  padding: 0px 10px;
+}
+.better-command-palette .suggestion-item .suggestion-content svg {
+  margin: 0px 5px;
+  color: var(--text-muted);
+}
+.better-command-palette .suggestion-item .suggestion-aux {
+  flex-direction: row-reverse;
+}
+.better-command-palette .suggestion-item .suggestion-title {
+  display: flex;
+  align-items: center;
+}
+.better-command-palette .suggestion-item .suggestion-note {
+  flex: 1;
+}
+.better-command-palette .suggestion-item .unresolved {
+  color: var(--text-muted);
+}
+.better-command-palette .suggestion-item .unresolved::after {
+  content: "(Unresolved link)";
+  color: var(--text-faint);
+  margin-left: 10px;
+}
+
+/* Settings Styles */
+.macro-setting {
+  flex-wrap: wrap;
+}
+.macro-setting .setting-item-name {
+  font-weight: bold;
+}
+.macro-setting .macro-main-settings {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 80% 20%;
+  border-top: solid 1px var(--background-modifier-border);
+  margin-top: 10px;
+}
+.macro-setting .macro-main-settings * {
+  margin-top: 10px;
+}
+.macro-setting .macro-command {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.macro-setting .macro-command button {
+  margin-left: 30px;
+  margin-right: 20px;
+} #better-export-pdf {
+  display: flex;
+  flex-direction: row;
+  height: 75vh;
+}
+
+#better-export-pdf .pdf-preview {
+  flex: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  align-content: flex-start;
+}
+
+#better-export-pdf .pdf-preview .webview-wrapper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+#better-export-pdf .pdf-preview .print-size {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  z-index: 99;
+  font-size: 0.6rem;
+  white-space: pre-wrap;
+  text-align: right;
+  visibility: hidden;
+}
+
+#better-export-pdf .pdf-preview > div {
+  flex: 1;
+  height: 100%;
+  width: 100%;
+}
+#better-export-pdf .pdf-preview > div.progress {
+  flex: none;
+  height: auto;
+  width: 100%;
+  text-align: left;
+}
+
+#better-export-pdf .pdf-preview .filename {
+  font-size: 0.75rem;
+  color: var(--color-base-60);
+}
+#better-export-pdf .pdf-preview .filename:not(:first-child) {
+  padding-top: calc(var(--p-spacing));
+}
+
+#better-export-pdf webview {
+  flex: 1;
+  height: 100%;
+  width: 100%;
+}
+
+#better-export-pdf .setting-wrapper {
+  width: 320px;
+  margin-left: 16px;
+}
+
+#better-export-pdf .setting-wrapper .setting-item[hidden] {
+  display: none;
+}
+ /**
+ * Copyright (c) 2014 The xterm.js authors. All rights reserved.
+ * Copyright (c) 2012-2013, Christopher Jeffrey (MIT License)
+ * https://github.com/chjj/term.js
+ * @license MIT
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ *
+ * Originally forked from (with the author's permission):
+ *   Fabrice Bellard's javascript vt100 for jslinux:
+ *   http://bellard.org/jslinux/
+ *   Copyright (c) 2011 Fabrice Bellard
+ *   The original design remains. The terminal itself
+ *   has been extended to include xterm CSI codes, among
+ *   other features.
+ */.xterm{cursor:text;position:relative;user-select:none;-ms-user-select:none;-webkit-user-select:none}.xterm.focus,.xterm:focus{outline:none}.xterm .xterm-helpers{position:absolute;top:0;z-index:5}.xterm .xterm-helper-textarea{padding:0;border:0;margin:0;position:absolute;opacity:0;left:-9999em;top:0;width:0;height:0;z-index:-5;white-space:nowrap;overflow:hidden;resize:none}.xterm .composition-view{background:#000;color:#fff;display:none;position:absolute;white-space:nowrap;z-index:1}.xterm .composition-view.active{display:block}.xterm .xterm-viewport{background-color:#000;overflow-y:scroll;cursor:default;position:absolute;inset:0}.xterm .xterm-screen{position:relative}.xterm .xterm-screen canvas{position:absolute;left:0;top:0}.xterm .xterm-scroll-area{visibility:hidden}.xterm-char-measure-element{display:inline-block;visibility:hidden;position:absolute;top:0;left:-9999em;line-height:normal}.xterm.enable-mouse-events{cursor:default}.xterm.xterm-cursor-pointer,.xterm .xterm-cursor-pointer{cursor:pointer}.xterm.column-select.focus{cursor:crosshair}.xterm .xterm-accessibility:not(.debug),.xterm .xterm-message{position:absolute;inset:0;z-index:10;color:transparent;pointer-events:none}.xterm .xterm-accessibility-tree:not(.debug) *::selection{color:transparent}.xterm .xterm-accessibility-tree{user-select:text;white-space:pre}.xterm .live-region{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}.xterm-dim{opacity:1!important}.xterm-underline-1{text-decoration:underline}.xterm-underline-2{text-decoration:double underline}.xterm-underline-3{text-decoration:wavy underline}.xterm-underline-4{text-decoration:dotted underline}.xterm-underline-5{text-decoration:dashed underline}.xterm-overline{text-decoration:overline}.xterm-overline.xterm-underline-1{text-decoration:overline underline}.xterm-overline.xterm-underline-2{text-decoration:overline double underline}.xterm-overline.xterm-underline-3{text-decoration:overline wavy underline}.xterm-overline.xterm-underline-4{text-decoration:overline dotted underline}.xterm-overline.xterm-underline-5{text-decoration:overline dashed underline}.xterm-strikethrough{text-decoration:line-through}.xterm-screen .xterm-decoration-container .xterm-decoration{z-index:6;position:absolute}.xterm-screen .xterm-decoration-container .xterm-decoration.xterm-decoration-top-layer{z-index:7}.xterm-decoration-overview-ruler{z-index:8;position:absolute;top:0;right:0;pointer-events:none}.xterm-decoration-top{z-index:2;position:relative}.workspace-leaf-content[data-type="terminal:terminal"] .view-content{overflow:clip;display:flex;flex-direction:column}.terminal\:terminal{flex:1;min-width:0;min-height:0}.is-phone .workspace-leaf-content[data-type="terminal:terminal"] .view-content{padding-bottom:max(var(--size-4-4),calc(var(--icon-l) + var(--size-4-2) + max(var(--size-4-2),var(--safe-area-inset-bottom))))}.obsidian-plugin-library\:icon{fill:none;stroke:currentColor}.obsidian-plugin-library\:await-css{display:unset!important}.obsidian-plugin-library\:hide-status-bar{display:none}
+ .hugo-line-highlight,
+/* Override for "Code Styler" plugin */
+.code-styler .markdown-source-view .HyperMD-codeblock[class*=code-styler-line][class*=language-].hugo-line-highlight
+{
+  /*
+    A color chosen to fit the default theme nicely
+    If this doesn't work on your theme, please file an issue / PR
+  */
+  background-color: var(--background-modifier-hover) !important;
+} /* src/styles.css */
+:root {
+  --shadow-color: 0deg 0% 0%;
+  --shadow-elevation-medium:
+    0.5px 0.5px 0.7px hsl(var(--shadow-color) / 0.14),
+    1.1px 1.1px 1.5px -0.9px hsl(var(--shadow-color) / 0.12),
+    2.4px 2.5px 3.3px -1.8px hsl(var(--shadow-color) / 0.1),
+    5.3px 5.6px 7.3px -2.7px hsl(var(--shadow-color) / 0.09),
+    11px 11.4px 15.1px -3.6px hsl(var(--shadow-color) / 0.07);
+}
+.image-rename-modal .modal {
+  width: 65%;
+  min-width: 600px;
+}
+.image-rename-modal .modal-content {
+  padding: 10px 5px;
+}
+.image-rename-modal .image-container {
+  display: flex;
+  justify-content: center;
+}
+.image-rename-modal .info {
+  padding: 10px 0;
+  color: var(--text-muted);
+  user-select: text;
+}
+.image-rename-modal .info li > span:nth-of-type(1) {
+  display: inline-block;
+  width: 6em;
+  margin-right: .5em;
+}
+.image-rename-modal .info li > span:nth-of-type(1):after {
+  content: ":";
+  float: right;
+}
+.image-rename-modal .image-container img {
+  display: block;
+  max-height: 300px;
+  box-shadow: var(--shadow-elevation-medium);
+}
+.image-rename-modal .setting-item-control input {
+  min-width: 300px;
+}
+.image-rename-modal .error {
+  border: 1px solid rgb(201, 90, 90);
+  color: rgb(134, 22, 22);
+  padding: 10px;
+}
+.image-rename-modal table {
+  font-size: .9em;
+  line-height: 1.8;
+  margin-bottom: 1.5em;
+  user-select: text;
+}
+.image-rename-modal table td {
+  padding-right: 1em;
+}
+.image-rename-modal table thead td {
+  font-weight: 700;
+}
+.image-rename-modal table tbody td .file-path {
+  font-size: .8em;
+  color: var(--text-faint);
+  line-height: 1;
+}
+.long-description-setting-item {
+  flex-wrap: wrap;
+}
+.long-description-setting-item .setting-item-description {
+  white-space: pre-wrap;
+  line-height: 1.3em;
+}
+.long-description-setting-item .setting-item-control {
+  padding-top: 10px;
+}
+.long-description-setting-item .setting-item-control input {
+  min-width: 300px;
+  width: 50%;
+}
+ :root{--admonition-details-icon: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http: //www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z'/></svg>");--admonition-margin-top: 1.5rem;--admonition-margin-bottom: var(--admonition-margin-top);--admonition-margin-top-lp: 0px;--admonition-margin-bottom-lp: .75rem}.admonition{margin-top:var(--admonition-margin-top);margin-bottom:var(--admonition-margin-bottom);box-shadow:0 .2rem .5rem var(--background-modifier-box-shadow)}.admonition.no-title .admonition-content{margin-top:0;margin-bottom:0}.admonition li.task-list-item.is-checked p{text-decoration:line-through}.admonition.no-drop{box-shadow:none}.admonition.no-drop>.admonition-title.no-title+.admonition-content{margin-top:0;margin-bottom:0}.admonition.no-drop .admonition .admonition-content{border-right:.0625rem solid rgba(var(--admonition-color),.2);border-bottom:.0625rem solid rgba(var(--admonition-color),.2)}.admonition.no-drop .admonition .admonition-title.no-title+.admonition-content{border-top:.0625rem solid rgba(var(--admonition-color),.2);margin-top:0;margin-bottom:0}:is(.markdown-source-view.mod-cm6) .admonition .math-block>mjx-container{display:block;text-align:center;padding:1rem}:is(.markdown-reading-view) .admonition .math-block>mjx-container{display:block;text-align:center;padding:.0625rem}*:not(.is-live-preview) .admonition.no-content{display:none}.is-live-preview .admonition{margin-top:var(--admonition-margin-top-lp);margin-bottom:var(--admonition-margin-bottom-lp)}.is-live-preview .admonition.no-content{opacity:.1}.is-live-preview .admonition-content p{line-height:inherit;margin:revert}.is-live-preview .admonition-content p br{display:initial}.is-live-preview .admonition-content p ul>li>ul{border-left:var(--blockquote-border-thickness);border-left-color:var(--list-marker-color);border-left-style:solid}.is-live-preview .admonition-content:first-child{margin-top:.8rem}.is-live-preview .admonition-content:last-child{margin-bottom:.8rem}.admonition-title.no-title{display:none}.admonition-title:hover+.admonition-content .admonition-content-copy{opacity:.7}.admonition-content,.callout-content{position:relative}.admonition-content-copy{color:var(--text-faint);cursor:pointer;opacity:0;position:absolute;margin:.375rem;right:0;top:0;transition:.3s opacity ease-in}.admonition-content-copy:hover{color:var(--text-normal)}.admonition:hover .admonition-content-copy,.callout:hover .admonition-content-copy,.admonition-content-copy:hover{opacity:1}.admonition-settings .additional{margin:.375rem .75rem}.admonition-settings .additional>.setting-item{border-top:0;padding-top:.5625rem}.admonition-settings .coffee{width:60%;color:var(--text-faint);margin:1rem auto;text-align:center}.admonition-settings .coffee img{height:30px}.admonition-settings details>summary{outline:none;display:block!important;list-style:none!important;list-style-type:none!important;min-height:1rem;border-top-left-radius:.1rem;border-top-right-radius:.1rem;cursor:pointer;position:relative}.admonition-settings details>summary>.collapser{position:absolute;top:50%;right:.5rem;transform:translateY(-50%);content:""}.admonition-settings details>summary>.collapser>.handle{transform:rotate(0);transition:transform .25s;background-color:currentColor;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-size:contain;mask-size:contain;-webkit-mask-image:var(--admonition-details-icon);mask-image:var(--admonition-details-icon);width:20px;height:20px}.admonition-settings details[open]>summary>.collapser>.handle{transform:rotate(90deg)}.setting-item>.admonition{width:50%;margin:0}.unset-align-items{align-items:unset}.admonition-settings-modal .has-invalid-message{display:grid;grid-template-columns:1fr auto;grid-template-rows:1fr 1fr;grid-template-areas:"text image" "inv inv"}.admonition-settings-modal input.is-invalid{border-color:#dc3545!important;background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");background-repeat:no-repeat;background-position:right calc(0.375em + 0.1875rem) center;background-size:calc(0.75em + 0.375rem) calc(0.75em + 0.375rem)}.admonition-settings-modal .admonition-type-setting input{grid-column:span 2}.admonition-settings-modal .invalid-feedback{display:block;grid-area:inv;width:100%;margin-top:.25rem;font-size:.875em;color:#dc3545}.suggestion-content.admonition-icon{display:flex;align-items:center;justify-content:space-between;flex-flow:row wrap}.suggestion-content.admonition-icon>.suggestion-text.admonition-text{width:fit-content}.suggestion-content.admonition-icon>.suggestion-flair.admonition-suggester-icon{width:min-content;position:relative;top:unset;left:unset;right:unset;bottom:unset;display:flex;align-items:center}.suggestion-content.admonition-icon>.suggestion-note{width:100%}.suggestion-container>.suggestion>.suggestion-item.admonition-suggester-item{color:rgb(var(--callout-color))}.suggestion-container>.suggestion>.suggestion-item.admonition-suggester-item.is-selected{background-color:rgba(var(--callout-color),.1)}.suggestion-container>.suggestion>.suggestion-item.admonition-suggester-item .admonition-suggester-icon{display:inline-block;vertical-align:middle}.suggestion-container>.suggestion>.suggestion-item.admonition-suggester-item .admonition-suggester-icon:not(:empty){padding-right:var(--size-4-1)}.admonition-color-settings .setting-item-control{gap:1rem}.admonition-color-settings input[type=color]:disabled{opacity:.75;cursor:not-allowed}.theme-dark .admonition-color-settings input[type=color]:disabled{opacity:1;cursor:not-allowed}.admonition-convert{display:flex;align-items:center;gap:.25rem}.admonition-convert-icon{display:flex;align-items:center}.admonition-convert-icon .admonition-spin{animation:admonition-convert 1s ease-in-out infinite;fill:currentColor}@keyframes admonition-convert{0%{transform:rotate(-45deg)}to{transform:rotate(315deg)}}.admonition-settings .admonition-convert{color:var(--text-error)}.notice-container .admonition-convert{justify-content:space-between;gap:1rem}.admonition-file-upload{margin-right:0;margin-left:12px}.admonition-file-upload>input[type=file]{display:none}.insert-admonition-modal button:focus,.insert-admonition-modal .clickable-icon:focus{box-shadow:0 0 5px #00000080;border-color:var(--background-modifier-border-focus)}.admonition-settings details>summary::-webkit-details-marker,.admonition-settings details>summary::marker{display:none!important}.admonition-setting-warning{display:flex;gap:.25rem;align-items:center}.admonition-setting-warning.text-warning{color:var(--text-error)}.admonitions-nested-settings{padding-bottom:18px}.admonitions-nested-settings .setting-item{border:0;padding-bottom:0}.admonitions-nested-settings[open] .setting-item-heading,.admonitions-nested-settings:not(details) .setting-item-heading{border-top:0;border-bottom:1px solid var(--background-modifier-border)}.is-live-preview .admonition-content ul,.is-live-preview .admonition-content ol{white-space:normal}.callout:not(.admonition).drop-shadow{box-shadow:0 .2rem .5rem var(--background-modifier-box-shadow)}.callout:not(.admonition) .no-title{display:none}
+ 
+ 
+/* =========================================================== */
+/* UI 样式                                                      */
+/* =========================================================== */
+.note-preview {
+  min-height: 100%;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.render-div {
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* 专业化工具栏样式 */
+.preview-toolbar {
+  position: relative;
+  border-bottom: 1px solid var(--background-modifier-border);
+  background-color: var(--background-primary);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.modern-toolbar {
+  min-height: auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* 品牌区域样式 */
+.brand-section {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  background: linear-gradient(to right, #4A6BF5, #6983fa);
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+}
+
+.brand-logo svg {
+  height: 24px;
+  width: 24px;
+}
+
+.brand-logo svg path {
+  stroke: white;
+}
+
+.brand-name {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+/* 工具栏容器 */
+.toolbar-container {
+  padding: 12px 16px;
+}
+
+.toolbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.toolbar-section {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.toolbar-section-left {
+  flex: 1;
+}
+
+/* 垂直布局工具栏，让每个设置项单独一行 */
+.toolbar-vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.toolbar-vertical .toolbar-group {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.toolbar-vertical .select-wrapper {
+  width: 70%;
+  max-width: 300px;
+}
+
+.toolbar-vertical .toolbar-select {
+  width: 100%;
+}
+
+.toolbar-section-right {
+  justify-content: flex-end;
+}
+
+/* 工具组和控件 */
+.toolbar-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  border-radius: 6px;
+}
+
+.toolbar-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-normal);
+  white-space: nowrap;
+}
+
+.toolbar-label svg {
+  opacity: 0.9;
+}
+
+.select-wrapper {
+  position: relative;
+}
+
+.select-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  border-style: solid;
+  border-width: 6px 4px 0 4px;
+  border-color: var(--text-muted) transparent transparent transparent;
+  pointer-events: none;
+}
+
+.toolbar-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 6px;
+  padding: 8px 32px 8px 12px;
+  font-size: 14px;
+  color: var(--text-normal);
+  min-width: 140px;
+  height: 36px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.toolbar-select:hover, .toolbar-select:focus {
+  border-color: #4A6BF5;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(74, 107, 245, 0.2);
+}
+
+.toolbar-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  background-color: var(--background-secondary);
+  color: var(--text-normal);
+  border: none;
+  cursor: pointer;
+  height: 36px;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.toolbar-button:hover {
+  background-color: var(--background-modifier-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.copy-button {
+  background-color: #4A6BF5;
+  color: white;
+}
+
+.copy-button:hover {
+  background-color: #3958da;
+  color: white;
+}
+
+.refresh-button {
+  background-color: var(--background-secondary);
+  color: var(--text-normal);
+  border: 1px solid var(--background-modifier-border);
+}
+
+.refresh-button:hover {
+  background-color: var(--background-secondary-alt);
+}
+
+.upload-input {
+  margin-left: 10px;
+  visibility: hidden;
+  width: 0px;
+}
+
+/* 旧工具栏元素兼容性样式 */
+.toolbar-line {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 8px 0;
+}
+
+.style-label {
+  margin-right: 8px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.style-select {
+  margin-right: 8px;
+  width: 120px;
+  background-color: var(--background-primary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 13px;
+  color: var(--text-normal);
+}
+
+.msg-view {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background-primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  z-index: 9999;
+  display: none;
+}
+
+.msg-title {
+  margin-bottom: 20px;
+}
+
+.note-mpcard-wrapper {
+  margin: 20px 20px;
+  background-color: rgb(250, 250, 250);
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+.note-mpcard-content {
+  display: flex;
+}
+.note-mpcard-headimg {
+  border: none !important;
+  border-radius: 27px !important;
+  box-shadow: none !important;
+  width: 54px !important;
+  height: 54px !important;
+  margin: 0 !important;
+}
+.note-mpcard-info { 
+  margin-left: 10px;
+}
+.note-mpcard-nickname {
+  font-size: 17px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.note-mpcard-signature {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.55);
+}
+.note-mpcard-foot {
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 1px solid #ececec;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+/* 脚注样式 */
+.footnotes {
+  margin-top: 40px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.footnotes hr {
+  margin-bottom: 20px;
+  border: none;
+  border-top: 1px solid #ececec;
+}
+
+.footnotes ol {
+  padding-left: 25px;
+}
+
+.footnotes li {
+  margin-bottom: 10px;
+  padding-left: 5px;
+  line-height: 1.5;
+  position: relative;
+}
+
+.footnote-url {
+  display: block;
+  margin-top: 4px;
+  word-break: break-all; /* 确保长 URL 能够在任何位置断行 */
+  color: rgba(0, 0, 0, 0.5);
+  font-family: monospace;
+  font-size: 13px;
+  padding-left: 8px;
+}
+
+/* 主题色控制容器 */
+.color-control-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+/* 开关容器 */
+.enable-switch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 开关文本 */
+.toggle-text {
+  font-size: 12px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+/* 开关样式 */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 36px;
+  height: 18px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--background-secondary);
+  transition: .3s;
+  border: 1px solid var(--background-modifier-border);
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 12px;
+  width: 12px;
+  left: 3px;
+  bottom: 2px;
+  background-color: var(--text-muted);
+  transition: .3s;
+}
+
+input:checked + .slider {
+  background-color: #4A6BF5;
+  border-color: #4A6BF5;
+}
+
+input:checked + .slider:before {
+  background-color: white;
+  transform: translateX(16px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* 颜色选择器样式 */
+.color-picker-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  min-width: 40px;
+  transition: opacity 0.3s ease;
+}
+
+.toolbar-color-picker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.toolbar-color-picker:disabled {
+  cursor: not-allowed;
+}
+
+.color-preview {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--background-primary);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  margin-right: 4px;
+} .fold-toggle {
+    margin-right: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 0;
+    width: 16px;
+    height: 20px;
+}
+
+.fold-toggle:focus {
+    outline: none;
+}
+
+.exclude-chars {
+    font-size: larger;
+    font-weight: bolder;
+    width: 100%;
+}
+
+.setting-title {
+    display: flex;
+    justify-content: center;
+    font-size: xx-large;
+}
+
+.insta-toc-text-info {
+    width: 33%;
+}
+
+.insta-toc-text-area {
+    width: 100%;
+}
+ .find-replace-modal .modal-content .row {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	margin-top: 8px;
+}
+
+
+.find-replace-modal .modal-content .row .input-label {
+    display: flex;
+	justify-content: flex-end;
+	height: 100%;
+}
+
+
+.find-replace-modal .modal-content .row .postfix-label {
+    display: flex;
+	height: 100%;
+	margin-left: 8px;
+	justify-content: flex-end;
+	color: gray;
+}
+
+
+.find-replace-modal .modal-content .row .check-label {
+    display: flex;
+	justify-content: flex-end;
+	width: 100%;
+	height: 100%;
+	margin-right: 8px;
+}
+
+
+.find-replace-modal .modal-content .row .input-wrapper {
+	display: flex;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+}
+
+
+.find-replace-modal .modal-content .row .input-wrapper input {
+	width: 100%;
+}
+
+
+.find-replace-modal .modal-content .button-wrapper {
+	justify-content: center;
+	margin-top: 16px;
+}
+  /* This snippet was auto-generated by the Admonitions plugin */
+
+ /* for preview mode */
+/* Align image to the right */
+img[src$="#right"] {
+    display: block ;
+    text-align: right ;
+    margin-left: auto ;
+    margin-right: 0 ;
+ }
+ 
+ /* Align image to the center */
+ img[src$="#center"] {
+    display: block ;
+    text-align: center ;
+    margin-left: auto ;
+    margin-right: auto ;
+ }
+ 
+ /* Align image to the left */
+ img[src$="#left"] {
+    display: block ;
+    text-align: left ;
+    margin-left: 0 ;
+    margin-right: auto ;
+ }
+
+ /* Align image to the left */
+ img[src$="#side-by-side"] {
+   display: inline-block;
+   width: 48%;
+   margin-right: 1%;
+}
+
+
+ /* for edit mode */
+ .markdown-source-view.mod-cm6 .cm-content > img[src$="#center"] {
+    display: block ;
+    text-align: center ;
+    margin-left: auto !important;
+    margin-right: auto !important;
+ }
+ .markdown-source-view.mod-cm6 .cm-content > img[src$="#right"] {
+    display: block ;
+    text-align: right ;
+    margin-left: auto !important;
+    margin-right: 0 !important;
+ }
+ .markdown-source-view.mod-cm6 .cm-content > img[src$="#left"] {
+    display: block ;
+    text-align: left ;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+ }
+ .markdown-source-view.mod-cm6 .cm-content > img[src$="#side-by-side"] {
+   display: inline-block;
+   width: 48%;
+   margin-right: 1%;
+}  
+
+
+/* --------------------------------------- */
+/* callout */
+/* --------------------------------------- */
+section .ad {
+  border: none;
+  padding: 1em 1em 1em 1.5em;
+  display: flex;
+  flex-direction: column;
+  margin: 1em 0;
+  border-radius: 4px;
+}
+
+section .ad-title-wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.ad-icon {
+  display: inline-block;
+  width: 18px;
+  height: 18px;  
+}
+
+.ad-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+section .ad-title {
+  margin-left: 0.25em;
+}
+
+section .ad-content {
+  color: rgb(34,34,34);
+}
+
+/* note info todo */
+section .ad-note { 
+  color: rgb(8, 109, 221);
+  background-color: rgba(8, 109, 221, 0.1);
+}
+/* abstract tip hint */
+section .ad-abstract {
+  color: rgb(0, 191, 188);
+  background-color: rgba(0, 191, 188, 0.1);
+}
+section .ad-success {
+  color: rgb(8, 185, 78);
+  background-color: rgba(8, 185, 78, 0.1);
+}
+/* question  help, faq, warning, caution, attention */
+section .ad-question {
+  color: rgb(236, 117, 0);
+  background-color: rgba(236, 117, 0, 0.1);
+}
+/* failure, fail, missing, danger, error, bug */
+section .ad-failure {
+  color: rgb(233, 49, 71);
+  background-color: rgba(233, 49, 71, 0.1);
+}
+section .ad-example {
+  color: rgb(120, 82, 238);
+  background-color: rgba(120, 82, 238, 0.1);
+}
+section .ad-quote {
+  color: rgb(158, 158, 158);
+  background-color: rgba(158, 158, 158, 0.1);
+}
+
+/* --------------------------------------- */
+/* math */
+/* --------------------------------------- */
+.block-math-svg {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin:20px 0px;
+  max-width: 300% !important;
+}
+
+/* --------------------------------------- */
+/* 高亮 */
+/* --------------------------------------- */
+.note-highlight {
+  background-color: rgba(255,208,0, 0.4);
+}
+
+/* --------------------------------------- */
+/* 列表需要强制设置样式*/
+/* --------------------------------------- */
+ul {
+  list-style-type: disc;
+}
+
+.note-svg-icon {
+  min-width: 24px;
+  height: 24px;
+  display: inline-block;
+}
+
+.note-svg-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.note-embed-excalidraw-left {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.note-embed-excalidraw-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.note-embed-excalidraw-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.note-embed-excalidraw {
+
+}
+
+
+
+pre code.hljs {
+  display: block;
+}
+/*
+
+XCode style (c) Angel Garcia <angelgarcia.mail@gmail.com>
+
+*/
+.hljs {
+  background: #fff;
+  color: black
+}
+/* Gray DOCTYPE selectors like WebKit */
+.xml .hljs-meta {
+  color: #c0c0c0
+}
+.hljs-comment,
+.hljs-quote {
+  color: #007400
+}
+.hljs-tag,
+.hljs-attribute,
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-name {
+  color: #aa0d91
+}
+.hljs-variable,
+.hljs-template-variable {
+  color: #3F6E74
+}
+.hljs-code,
+.hljs-string,
+.hljs-meta .hljs-string {
+  color: #c41a16
+}
+.hljs-regexp,
+.hljs-link {
+  color: #0E0EFF
+}
+.hljs-title,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-number {
+  color: #1c00cf
+}
+.hljs-section,
+.hljs-meta {
+  color: #643820
+}
+.hljs-title.class_,
+.hljs-class .hljs-title,
+.hljs-type,
+.hljs-built_in,
+.hljs-params {
+  color: #5c2699
+}
+.hljs-attr {
+  color: #836C28
+}
+.hljs-subst {
+  color: #000
+}
+.hljs-formula {
+  background-color: #eee;
+  font-style: italic
+}
+.hljs-addition {
+  background-color: #baeeba
+}
+.hljs-deletion {
+  background-color: #ffc8bd
+}
+.hljs-selector-id,
+.hljs-selector-class {
+  color: #9b703f
+}
+.hljs-doctag,
+.hljs-strong {
+  font-weight: bold
+}
+.hljs-emphasis {
+  font-style: italic
+}
+
+
+/*
+ * 手工川主题文章样式 - 自适应版本
+ * 根据手机亮暗模式自动切换主题
+ * 白天：亮色阅读模式，保持品牌红色强调
+ * 晚上：深色极致模式，舒适护眼
+ */
+
+/* 亮色模式变量 */
+:root {
+    --primary-color: #E31937;
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --text-tertiary: #999999;
+    --background-primary: #ffffff;
+    --background-secondary: #f8f9fa;
+    --border-color: #e5e7eb;
+    --code-bg: #f3f4f6;
+    --mark-bg: rgba(227, 25, 55, 0.1);
+    --blockquote-border: #E31937;
+    --link-color: #E31937;
+    --strong-color: #E31937;
+  }
+  
+  /* 深色模式变量 */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --primary-color: #E31937;
+      --text-primary: #ffffff;
+      --text-secondary: #d1d5db;
+      --text-tertiary: #a0a0a0;
+      --background-primary: #000000;
+      --background-secondary: #1a1a1a;
+      --border-color: #404040;
+      --code-bg: rgba(255, 255, 255, 0.05);
+      --mark-bg: rgba(227, 25, 55, 0.2);
+      --blockquote-border: #E31937;
+      --link-color: #E31937;
+      --strong-color: #ffffff;
+    }
+  }
+  
+  /* 基础容器样式 */
+  .note-to-mp {
+    font-family: AvenirNext-Regular, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+    font-size: 16px;
+    color: var(--text-secondary);
+    background-color: var(--background-primary);
+    line-height: 1.6em;
+    -webkit-text-size-adjust: 100%;
+    margin: 0px 0px;
+    padding: 1em 1em;
+    transition: all 0.3s ease;
+  }
+  
+  /* 基础元素样式 */
+  .note-to-mp * {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  
+  .note-to-mp > *:first-child {
+    margin-top: 0 !important;
+  }
+  
+  .note-to-mp > *:last-child {
+    margin-top: 0 !important;
+  }
+  
+  /* 段落和块元素间距 */
+  .note-to-mp p,
+  .note-to-mp pre,
+  .note-to-mp dl,
+  .note-to-mp form,
+  .note-to-mp details,
+  .note-to-mp blockquote,
+  .note-to-mp table,
+  .note-to-mp xmp,
+  .note-to-mp plaintext,
+  .note-to-mp listing,
+  .note-to-mp figure {
+    margin: 0.75em 0 0.45em;
+  }
+  
+  .note-to-mp hr {
+    margin: 0.75em auto;
+    height: 1px;
+    border: 0;
+    background-color: var(--border-color);
+    border-style: inset;
+    border-width: 1px;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* 标题样式 */
+  .note-to-mp h1,
+  .note-to-mp h2,
+  .note-to-mp h3,
+  .note-to-mp h4,
+  .note-to-mp h5,
+  .note-to-mp h6 {
+    margin-top: 1.5em;
+    margin-bottom: 0.75em;
+    margin-left: 0;
+    margin-right: 0;
+    font-family: AvenirNext-Medium;
+    font-weight: 600;
+    line-height: 1.5em;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+  }
+  
+  .note-to-mp h1 {
+    font-size: 1.5em;
+  }
+  
+  .note-to-mp h2 {
+    font-size: 1.3em;
+  }
+  
+  .note-to-mp h3 {
+    font-size: 1.1em;
+  }
+  
+  .note-to-mp h4,
+  .note-to-mp h5,
+  .note-to-mp h6 {
+    font-size: 1em;
+  }
+  
+  /* 段落样式 */
+  .note-to-mp p {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  /* 引用块样式 */
+  .note-to-mp blockquote {
+    display: block;
+    padding-left: 0.8em;
+    border-left: 0.2em solid var(--blockquote-border);
+    color: var(--text-secondary);
+    transition: border-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .note-to-mp blockquote > :first-child {
+    margin-top: 0;
+  }
+  
+  .note-to-mp blockquote > :last-child {
+    margin-bottom: 0;
+  }
+  
+  /* 列表样式 */
+  .note-to-mp ul {
+    padding-left: 1.0em;
+  }
+  
+  .note-to-mp li::marker {
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+  }
+  
+  .note-to-mp li > p {
+    margin: 0;
+  }
+  
+  .note-to-mp ol {
+    padding-left: 1.0em;
+    list-style-type: decimal;
+  }
+  
+  /* 链接样式 */
+  .note-to-mp a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .note-to-mp a:hover, 
+  .note-to-mp a:focus, 
+  .note-to-mp a:active {
+    text-decoration: underline;
+  }
+  
+  /* 文本样式 */
+  .note-to-mp b,
+  .note-to-mp strong {
+    font-weight: bold;
+    color: var(--strong-color);
+    transition: color 0.3s ease;
+  }
+  
+  .note-to-mp i,
+  .note-to-mp cite,
+  .note-to-mp em,
+  .note-to-mp var,
+  .note-to-mp address,
+  .note-to-mp dfn {
+    font-style: italic;
+  }
+  
+  .note-to-mp del,
+  .note-to-mp s {
+    color: var(--text-tertiary);
+    transition: color 0.3s ease;
+  }
+  
+  /* 代码样式 */
+  .note-to-mp pre,
+  .note-to-mp xmp,
+  .note-to-mp plaintext,
+  .note-to-mp listing,
+  .note-to-mp code,
+  .note-to-mp kbd,
+  .note-to-mp tt,
+  .note-to-mp samp {
+    font-family: Menlo-Regular, Menlo, Monaco, Consolas, "Courier New", monospace;
+  }
+  
+  .note-to-mp code {
+    display: inline;
+    color: var(--text-primary);
+    background-color: var(--code-bg);
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
+  
+  .note-to-mp .code-section {
+    display: flex;
+    border: solid 1px var(--border-color);
+    background-color: var(--code-bg);
+    border-radius: 8px;
+    margin: 1em 0;
+    transition: all 0.3s ease;
+  }
+  
+  .note-to-mp .code-section pre {
+    margin: 0;
+    overflow-x: auto;
+  }
+  
+  .note-to-mp .code-section code {
+    display: block;
+    padding: 0.9em;
+    font-size: 0.9em;
+    line-height: 1.6em;
+    text-wrap: nowrap;
+    background-color: transparent;
+  }
+  
+  /* 高亮样式 */
+  .note-to-mp mark {
+    color: var(--text-primary);
+    display: inline;
+    padding: 0.2em 0.5em;
+    background-color: var(--mark-bg);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
+  
+  /* 表格样式 */
+  .note-to-mp table {
+    color: var(--text-secondary);
+    border-collapse: collapse;
+    background-color: var(--background-secondary);
+    border-spacing: 2px;
+    font-size: 1em;
+    border: 1px solid var(--border-color);
+    border-spacing: 0;
+    margin: 1em 0;
+    transition: all 0.3s ease;
+  }
+  
+  .note-to-mp th,
+  .note-to-mp td {
+    padding: 0.7em 1em;
+    font-size: 0.9em;
+    border: 1px solid var(--border-color);
+    transition: border-color 0.3s ease;
+  }
+  
+  .note-to-mp th {
+    background-color: var(--mark-bg);
+    color: var(--text-primary);
+    font-weight: bold;
+  }
+  
+  /* 下划线样式 */
+  .note-to-mp u {
+    text-decoration: none;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, var(--primary-color) 50%);
+    background-repeat: repeat-x;
+    background-size: 2px 2px;
+    background-position: 0 1em;
+  }
+  
+  /* 特定于手工川主题的扩展样式 */
+  .note-to-mp .highlight {
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+  }
+  
+  .note-to-mp .important {
+    border-left: 3px solid var(--primary-color);
+    padding-left: 1em;
+    margin: 1em 0;
+    transition: border-color 0.3s ease;
+  }
+  
+  .note-to-mp .note {
+    background-color: var(--mark-bg);
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 1em;
+    margin: 1em 0;
+    transition: all 0.3s ease;
+  }
+  
+  .note-to-mp .tip {
+    border-left: 4px solid var(--primary-color);
+    padding-left: 16px;
+    margin: 1em 0;
+    background-color: var(--mark-bg);
+    transition: all 0.3s ease;
+  }
+  
+  /* 确保头尾卡片始终保持黑色主题 */
+  .header-card,
+  .footer-card {
+    background-color: #000000 !important;
+    color: #d1d5db !important;
+  }
+  
+  .header-card h1,
+  .header-card h2,
+  .footer-card p,
+  .footer-card strong {
+    color: #E31937 !important;
+  }
+
+undefined
+</style>
+    </head>
+    <body>
+
+<h1 data-heading="Product Hunt 打榜完全攻略：从 0 到 1 实现日榜第一" dir="auto">Product Hunt 打榜完全攻略：从 0 到 1 实现日榜第一</h1>
+<blockquote dir="auto">
+<p>本指南汇集了多位产品出海专家的实战经验与心得：</p>
+<p><strong>Iris（前 AFFiNE COO）</strong>：10 次日榜第 3 次周榜前 2 次月榜前五（包括 1 次月榜第一）</p>
+<p><strong>Kisson（Mindos）</strong>：4 次打榜全部进入日榜周榜 Top3，最新产品 Tanka 实现逆转登顶</p>
+<p><strong>OUTLIERS/Bootloader 团队</strong>：协助 50+出海产品成功发布，90%进入日榜前三，12+产品获日榜第一</p>
+</blockquote>
+<h2 data-heading="为什么选择 Product Hunt？" dir="auto">为什么选择 Product Hunt？</h2>
+<p dir="auto">每当讨论起产品出海，总有人问："现在还值得上 Product Hunt 冲榜吗？"让我们通过实际数据来回答这个问题。</p>
+<h3 data-heading="1.1 出海首选平台" dir="auto">1.1 出海首选平台</h3>
+<p dir="auto">Product Hunt（简称 PH）作为全球最大的产品发现平台，月活跃用户超过 450 万 <sup data-footnote-id="fnref-1-bd93c1baa00f6a88" class="footnote-ref" id="fnref-1-bd93c1baa00f6a88"><a data-footref="1" href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fn-1-bd93c1baa00f6a88" class="footnote-link" target="_blank" rel="noopener nofollow">[1]</a></sup> ，已经成为创业团队出海的标准"第一站"。无论是 Notion、Figma、Loom 这样的独角兽，还是无数中国出海团队，都曾在这里起步。</p>
+<p dir="auto">正如 Kisson 所说："对于冷启动的小团队，PH 价值非常高。我们几款产品都是在这里实现了冷启动第一步。"<sup data-footnote-id="fnref-2-bd93c1baa00f6a88" class="footnote-ref" id="fnref-2-bd93c1baa00f6a88"><a data-footref="2" href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fn-2-bd93c1baa00f6a88" class="footnote-link" target="_blank" rel="noopener nofollow">[2]</a></sup></p>
+<h3 data-heading="1.2 实际收益分析" dir="auto">1.2 实际收益分析</h3>
+<p dir="auto">根据 OUTLIERS 团队调研，PH 能为产品带来以下具体收益：</p>
+<p dir="auto"><strong>流量曝光</strong>：</p>
+<ul>
+<li dir="auto">日榜第一位置通常带来约 5000 访问量<sup data-footnote-id="fnref-3-bd93c1baa00f6a88" class="footnote-ref" id="fnref-3-bd93c1baa00f6a88"><a data-footref="3" href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fn-3-bd93c1baa00f6a88" class="footnote-link" target="_blank" rel="noopener nofollow">[3]</a></sup></li>
+<li dir="auto">即使长期不维护的产品，也能持续获得每天数百 UV 的长尾流量</li>
+<li dir="auto">80%的产品团队表示打榜主要是为了寻求曝光率和知名度<sup data-footnote-id="fnref-4-bd93c1baa00f6a88" class="footnote-ref" id="fnref-4-bd93c1baa00f6a88"><a data-footref="4" href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fn-4-bd93c1baa00f6a88" class="footnote-link" target="_blank" rel="noopener nofollow">[4]</a></sup></li>
+</ul>
+<p dir="auto"><strong>用户增长</strong>：</p>
+<ul>
+<li dir="auto">约 50%的创始人表示注册量有所增加，30%表示大幅增加<sup data-footnote-id="fnref-5-bd93c1baa00f6a88" class="footnote-ref" id="fnref-5-bd93c1baa00f6a88"><a data-footref="5" href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fn-5-bd93c1baa00f6a88" class="footnote-link" target="_blank" rel="noopener nofollow">[5]</a></sup></li>
+<li dir="auto">26.5%的团队获得 500-1000 名用户，22.4%获得 1000-2000 个用户</li>
+<li dir="auto">10.2%的幸运团队获得 2000-5000 名用户<sup data-footnote-id="fnref-6-bd93c1baa00f6a88" class="footnote-ref" id="fnref-6-bd93c1baa00f6a88"><a data-footref="6" href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fn-6-bd93c1baa00f6a88" class="footnote-link" target="_blank" rel="noopener nofollow">[6]</a></sup></li>
+</ul>
+<p dir="auto"><strong>其他核心价值</strong>：</p>
+<ul>
+<li dir="auto">SEO 与反链提升：每天增加数十条高质量反链<sup data-footnote-id="fnref-7-bd93c1baa00f6a88" class="footnote-ref" id="fnref-7-bd93c1baa00f6a88"><a data-footref="7" href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fn-7-bd93c1baa00f6a88" class="footnote-link" target="_blank" rel="noopener nofollow">[7]</a></sup></li>
+<li dir="auto">品牌背书：获得 PH 徽章作为官网背书，增强用户信任</li>
+<li dir="auto">商业合作：54%团队表示打榜后建立了有价值的合作关系<sup data-footnote-id="fnref-8-bd93c1baa00f6a88" class="footnote-ref" id="fnref-8-bd93c1baa00f6a88"><a data-footref="8" href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fn-8-bd93c1baa00f6a88" class="footnote-link" target="_blank" rel="noopener nofollow">[8]</a></sup></li>
+<li dir="auto">产品验证：获得早期用户的直接反馈与认可</li>
+<li dir="auto">投资机会：吸引投资人关注</li>
+</ul>
+<p dir="auto">重要提示：流量转化率与你的产品和 PH 用户画像的匹配度高度相关，没有万能公式。但有 61%的团队表示，会向其他创业者推荐在 PH 发布产品。<sup data-footnote-id="fnref-9-bd93c1baa00f6a88" class="footnote-ref" id="fnref-9-bd93c1baa00f6a88"><a data-footref="9" href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fn-9-bd93c1baa00f6a88" class="footnote-link" target="_blank" rel="noopener nofollow">[9]</a></sup></p>
+<h2 data-heading="打榜前的战略准备" dir="auto">打榜前的战略准备</h2>
+<h3 data-heading="2.1 目标确定与榜单选择" dir="auto">2.1 目标确定与榜单选择</h3>
+<p dir="auto">首先必须明确：你的打榜目标是什么？这将决定你的发布策略和资源分配。</p>
+<p dir="auto"><strong>榜单体系解析</strong>：</p>
+<ul>
+<li dir="auto"><strong>日榜</strong>：24 小时周期（美西时间 00:01 开始，即北京时间 15:00/16:00）<sup data-footnote-id="fnref-10-bd93c1baa00f6a88" class="footnote-ref" id="fnref-10-bd93c1baa00f6a88"><a data-footref="10" href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fn-10-bd93c1baa00f6a88" class="footnote-link" target="_blank" rel="noopener nofollow">[10]</a></sup></li>
+<li dir="auto"><strong>周榜</strong>：从周一到下周一计算</li>
+<li dir="auto"><strong>月榜/年榜</strong>：分别计算月度和年度排名</li>
+</ul>
+<p dir="auto"><strong>根据目标选择发布时间</strong>：</p>
+<ol>
+<li dir="auto">
+<p><strong>只为获得日榜徽章</strong>：</p>
+<ul>
+<li dir="auto">选择周五至周日，竞争较小</li>
+<li dir="auto">通常 400-600 票即可获得周末日榜第一<sup data-footnote-id="fnref-11-bd93c1baa00f6a88" class="footnote-ref" id="fnref-11-bd93c1baa00f6a88"><a data-footref="11" href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fn-11-bd93c1baa00f6a88" class="footnote-link" target="_blank" rel="noopener nofollow">[11]</a></sup></li>
+<li dir="auto">适合预算和资源有限的团队</li>
+</ul>
+</li>
+<li dir="auto">
+<p><strong>追求最大流量曝光</strong>：</p>
+<ul>
+<li dir="auto">选择周二至周四，平台日活最高<sup data-footnote-id="fnref-12-bd93c1baa00f6a88" class="footnote-ref" id="fnref-12-bd93c1baa00f6a88"><a data-footref="12" href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fn-12-bd93c1baa00f6a88" class="footnote-link" target="_blank" rel="noopener nofollow">[12]</a></sup></li>
+<li dir="auto">竞争激烈，日榜第一可能需要 700-1000+票</li>
+<li dir="auto">日榜 TOP1-3 当日 UV 通常在 1000-3000 左右</li>
+</ul>
+</li>
+<li dir="auto">
+<p><strong>想要二次传播效应</strong>：</p>
+<ul>
+<li dir="auto">冲击周榜前十，进入官方 Newsletter<sup data-footnote-id="fnref-13-bd93c1baa00f6a88" class="footnote-ref" id="fnref-13-bd93c1baa00f6a88"><a data-footref="13" href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fn-13-bd93c1baa00f6a88" class="footnote-link" target="_blank" rel="noopener nofollow">[13]</a></sup></li>
+<li dir="auto">获得更多媒体报道和导航站收录</li>
+<li dir="auto">需要持续拉票，维持热度</li>
+</ul>
+</li>
+<li dir="auto">
+<p><strong>冲刺月榜/年榜</strong>：</p>
+<ul>
+<li dir="auto">尽量选择周一或周二，月初发布</li>
+<li dir="auto">给自己留足时间积累票数</li>
+<li dir="auto">资源和耐心要求较高</li>
+</ul>
+</li>
+</ol>
+<p dir="auto">选择发布日期时，还需考虑：</p>
+<ul>
+<li dir="auto">检查 Coming soon 页面上的竞争对手情况</li>
+<li dir="auto">查看 hunted.space 日历上已公布的发布计划<sup data-footnote-id="fnref-14-bd93c1baa00f6a88" class="footnote-ref" id="fnref-14-bd93c1baa00f6a88"><a data-footref="14" href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fn-14-bd93c1baa00f6a88" class="footnote-link" target="_blank" rel="noopener nofollow">[14]</a></sup></li>
+<li dir="auto">注意 10-11 月份可能的冬令时转换</li>
+</ul>
+<p dir="auto">OUTLIERS 团队建议："周一至周三的竞争最激烈，各种大佬项目都在这几天发布。如果是首次打榜，可以考虑选择周末，难度会小很多。"<sup data-footnote-id="fnref-15-bd93c1baa00f6a88" class="footnote-ref" id="fnref-15-bd93c1baa00f6a88"><a data-footref="15" href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fn-15-bd93c1baa00f6a88" class="footnote-link" target="_blank" rel="noopener nofollow">[15]</a></sup></p>
+<h3 data-heading="2.2 产品侧准备（提前 2-4 周）" dir="auto">2.2 产品侧准备（提前 2-4 周）</h3>
+<p dir="auto">不要忘记，PH 只是引流的开始，产品本身才是关键。</p>
+<p dir="auto"><strong>Landing Page 优化</strong>：</p>
+<ul>
+<li dir="auto">设计简洁直观的官网着陆页</li>
+<li dir="auto">确保产品价值在 3 秒内能被访客理解</li>
+<li dir="auto">设置清晰的行动召唤按钮(CTA)</li>
+</ul>
+<p dir="auto"><strong>数据埋点</strong>：</p>
+<ul>
+<li dir="auto">配置关键数据追踪指标：页面浏览、CTA 点击率、注册转化率等<sup data-footnote-id="fnref-16-bd93c1baa00f6a88" class="footnote-ref" id="fnref-16-bd93c1baa00f6a88"><a data-footref="16" href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fn-16-bd93c1baa00f6a88" class="footnote-link" target="_blank" rel="noopener nofollow">[16]</a></sup></li>
+<li dir="auto">使用 GA、Plausible 等工具进行分析</li>
+<li dir="auto">准备报表模板，随时监控转化</li>
+</ul>
+<p dir="auto"><strong>用户线索收集</strong>：</p>
+<ul>
+<li dir="auto">为不能直接转化的访客提供"钩子"</li>
+<li dir="auto">设计小型福利换取邮箱等联系方式</li>
+<li dir="auto">规划后续邮件营销流程</li>
+</ul>
+<h3 data-heading="2.3 账号与社区准备（提前 1-2 个月）" dir="auto">2.3 账号与社区准备（提前 1-2 个月）</h3>
+<p dir="auto">PH 非常重视账号权重，这方面工作必须提前做。</p>
+<p dir="auto"><strong>养号策略</strong>：</p>
+<ul>
+<li dir="auto">每个投票账号至少需注册 1 个月，积累 5+ K-points<sup data-footnote-id="fnref-17-bd93c1baa00f6a88" class="footnote-ref" id="fnref-17-bd93c1baa00f6a88"><a data-footref="17" href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fn-17-bd93c1baa00f6a88" class="footnote-link" target="_blank" rel="noopener nofollow">[17]</a></sup></li>
+<li dir="auto">铜牌账号(100+ points)被砍票概率极低</li>
+<li dir="auto">使用真人头像，绑定 LinkedIn 和 email</li>
+<li dir="auto">养号方法：在论坛点赞评论，参与讨论</li>
+</ul>
+<p dir="auto"><strong>社区布局</strong>：</p>
+<ul>
+<li dir="auto">加入各大 PH 相关社区群组（LinkedIn/Facebook/Telegram/微信）</li>
+<li dir="auto">提前刷脸，积累人脉，为打榜日互助做准备</li>
+<li dir="auto">保持团队统一风格头像，增强记忆点<sup data-footnote-id="fnref-18-bd93c1baa00f6a88" class="footnote-ref" id="fnref-18-bd93c1baa00f6a88"><a data-footref="18" href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fn-18-bd93c1baa00f6a88" class="footnote-link" target="_blank" rel="noopener nofollow">[18]</a></sup></li>
+</ul>
+<p dir="auto"><strong>Maker 账号优化</strong>：</p>
+<ul>
+<li dir="auto">完善个人资料，添加产品链接和社交媒体</li>
+<li dir="auto">确保账号活跃度达标（5+ points）</li>
+<li dir="auto">团队成员统一头像风格，带上产品 logo</li>
+</ul>
+<h3 data-heading="2.4 官方页面设置（提前 2 周）" dir="auto">2.4 官方页面设置（提前 2 周）</h3>
+<p dir="auto"><strong>Coming Soon 页面</strong>：</p>
+<ul>
+<li dir="auto">提前上传产品信息，生成预热页面</li>
+<li dir="auto">积累关注者，目标 100+人点击"notify me"<sup data-footnote-id="fnref-19-bd93c1baa00f6a88" class="footnote-ref" id="fnref-19-bd93c1baa00f6a88"><a data-footref="19" href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fn-19-bd93c1baa00f6a88" class="footnote-link" target="_blank" rel="noopener nofollow">[19]</a></sup></li>
+<li dir="auto">通过预热页推广，锁定种子用户</li>
+</ul>
+<p dir="auto"><strong>核心内容准备</strong>：</p>
+<ul>
+<li dir="auto"><strong>Title</strong>：简洁产品名称，不加装饰</li>
+<li dir="auto"><strong>Tagline</strong>：传达核心价值的一句话，不超 60 字符（Iris 成功案例："Where Notion Meets Miro"）<sup data-footnote-id="fnref-20-bd93c1baa00f6a88" class="footnote-ref" id="fnref-20-bd93c1baa00f6a88"><a data-footref="20" href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fn-20-bd93c1baa00f6a88" class="footnote-link" target="_blank" rel="noopener nofollow">[20]</a></sup></li>
+<li dir="auto"><strong>Description</strong>：简明扼要地解释产品解决什么问题</li>
+<li dir="auto"><strong>Images/Video</strong>：高质量视觉展示，尤其是一段 60 秒产品演示视频</li>
+<li dir="auto"><strong>First Comment</strong>：由创始人发布的产品背景故事与价值主张</li>
+</ul>
+<p dir="auto"><strong>提高被 Feature 几率</strong>：</p>
+<ul>
+<li dir="auto">产品完成度要高，非 waitlist 状态</li>
+<li dir="auto">提前一周提交审核，让官方有足够时间<sup data-footnote-id="fnref-21-bd93c1baa00f6a88" class="footnote-ref" id="fnref-21-bd93c1baa00f6a88"><a data-footref="21" href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fn-21-bd93c1baa00f6a88" class="footnote-link" target="_blank" rel="noopener nofollow">[21]</a></sup></li>
+<li dir="auto">确保产品可以立即体验，有明确价值</li>
+<li dir="auto">视觉设计要专业，提升产品印象分</li>
+</ul>
+<h3 data-heading="2.5 Hunter 与合作资源" dir="auto">2.5 Hunter 与合作资源</h3>
+<p dir="auto"><strong>Hunter 选择</strong>：</p>
+<ul>
+<li dir="auto">国外 Hunter 价值在于粉丝量和通知覆盖</li>
+<li dir="auto">国内 Hunter 通常附带票仓资源</li>
+<li dir="auto">知名 Hunter 如 Chris Messina(500 美元/小时)、Kevin William David(250 美元/30 分钟)等<sup data-footnote-id="fnref-22-bd93c1baa00f6a88" class="footnote-ref" id="fnref-22-bd93c1baa00f6a88"><a data-footref="22" href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fn-22-bd93c1baa00f6a88" class="footnote-link" target="_blank" rel="noopener nofollow">[22]</a></sup></li>
+<li dir="auto">国内可考虑罗百顺等资源</li>
+</ul>
+<p dir="auto">Iris 提醒："无需追求最头部 Hunter，关键是对方愿意主动推广的程度。"<sup data-footnote-id="fnref-23-bd93c1baa00f6a88" class="footnote-ref" id="fnref-23-bd93c1baa00f6a88"><a data-footref="23" href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fn-23-bd93c1baa00f6a88" class="footnote-link" target="_blank" rel="noopener nofollow">[23]</a></sup></p>
+<p dir="auto"><strong>合作流程</strong>：</p>
+<ol>
+<li dir="auto">预约会议：20 分钟产品介绍+10 分钟 Q&amp;A+10 分钟内容审核</li>
+<li dir="auto">Hunter 创建草稿页，添加你为 maker</li>
+<li dir="auto">完善页面内容直到发布</li>
+</ol>
+<p dir="auto"><strong>拓展资源准备</strong>：</p>
+<ul>
+<li dir="auto">票仓联系：提前接洽李自然、Arshal、Bootloader 等资源</li>
+<li dir="auto">KOL 准备：如有预算，可联系 5-10 个领域 KOL 协同宣传<sup data-footnote-id="fnref-24-bd93c1baa00f6a88" class="footnote-ref" id="fnref-24-bd93c1baa00f6a88"><a data-footref="24" href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fn-24-bd93c1baa00f6a88" class="footnote-link" target="_blank" rel="noopener nofollow">[24]</a></sup></li>
+<li dir="auto">社媒计划：规划 LinkedIn/Twitter 发布内容，准备直播或 AMA 活动</li>
+</ul>
+<h2 data-heading="票源规划与拉票策略" dir="auto">票源规划与拉票策略</h2>
+<h3 data-heading="3.1 票源分析" dir="auto">3.1 票源分析</h3>
+<p dir="auto">根据 Kisson 和 Bootloader 团队的经验，票源按转化率高低排序：</p>
+<ol>
+<li dir="auto">内部票（团队成员、亲友）</li>
+<li dir="auto">票仓（专业资源）</li>
+<li dir="auto">DM 其他产品的 maker</li>
+<li dir="auto">各类 PH 互助群</li>
+<li dir="auto">现有用户</li>
+<li dir="auto">各 PH 社交平台社区</li>
+<li dir="auto">广告（转化率最低）<sup data-footnote-id="fnref-25-bd93c1baa00f6a88" class="footnote-ref" id="fnref-25-bd93c1baa00f6a88"><a data-footref="25" href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fn-25-bd93c1baa00f6a88" class="footnote-link" target="_blank" rel="noopener nofollow">[25]</a></sup></li>
+</ol>
+<p dir="auto">核心策略原则：</p>
+<ul>
+<li dir="auto">提前统计各来源预期票数</li>
+<li dir="auto">转化率高的资源放在后期或紧急时刻使用</li>
+<li dir="auto">Bootloader 团队总结："权重越高越早出；越难控制的渠道越早启动；内部票和票仓留作补位和冲刺"<sup data-footnote-id="fnref-26-bd93c1baa00f6a88" class="footnote-ref" id="fnref-26-bd93c1baa00f6a88"><a data-footref="26" href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fn-26-bd93c1baa00f6a88" class="footnote-link" target="_blank" rel="noopener nofollow">[26]</a></sup></li>
+</ul>
+<h3 data-heading="3.2 防砍票技巧" dir="auto">3.2 防砍票技巧</h3>
+<p dir="auto">PH 每 2 小时左右进行一次清票，了解规则很关键：</p>
+<p dir="auto"><strong>容易被砍的票</strong>：</p>
+<ul>
+<li dir="auto">新注册账号（1 周内）</li>
+<li dir="auto">低权重账号（低于 5 points）</li>
+<li dir="auto">集中时间段内大量涌入的票</li>
+<li dir="auto">来自同一 IP 区域的批量票<sup data-footnote-id="fnref-27-bd93c1baa00f6a88" class="footnote-ref" id="fnref-27-bd93c1baa00f6a88"><a data-footref="27" href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fn-27-bd93c1baa00f6a88" class="footnote-link" target="_blank" rel="noopener nofollow">[27]</a></sup></li>
+</ul>
+<p dir="auto"><strong>有效防砍方法</strong>：</p>
+<ul>
+<li dir="auto">使用高权重账号：尤其是铜牌(100+ points)或更高等级</li>
+<li dir="auto">控制投票速度：日榜前 4 小时除外，一般控制在 20-30 票/小时</li>
+<li dir="auto">分散投票 IP：使用不同网络、地区的投票源</li>
+<li dir="auto">投票行为自然化：避免机器人式操作模式</li>
+</ul>
+<h3 data-heading="3.3 免费拉票渠道" dir="auto">3.3 免费拉票渠道</h3>
+<p dir="auto"><strong>LinkedIn 策略</strong>：</p>
+<ul>
+<li dir="auto">DM 回复率高达 60%，最有效的拉票渠道之一<sup data-footnote-id="fnref-28-bd93c1baa00f6a88" class="footnote-ref" id="fnref-28-bd93c1baa00f6a88"><a data-footref="28" href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fn-28-bd93c1baa00f6a88" class="footnote-link" target="_blank" rel="noopener nofollow">[28]</a></sup></li>
+<li dir="auto">优先联系产品创始人、核心团队成员</li>
+<li dir="auto">3 人持续 DM 可获得 200-300 票</li>
+<li dir="auto">Premium 账号可提高效率</li>
+</ul>
+<p dir="auto"><strong>Reddit 操作</strong>：</p>
+<ul>
+<li dir="auto">先积累 80+karma（可通过发宠物图片快速获得）<sup data-footnote-id="fnref-29-bd93c1baa00f6a88" class="footnote-ref" id="fnref-29-bd93c1baa00f6a88"><a data-footref="29" href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fn-29-bd93c1baa00f6a88" class="footnote-link" target="_blank" rel="noopener nofollow">[29]</a></sup></li>
+<li dir="auto">针对产品类型选择子版块：开源、创业、生产力等</li>
+<li dir="auto">发帖遵循各版块规则，避免明显广告嫌疑</li>
+<li dir="auto">曝光转化率约 1%-8%</li>
+</ul>
+<p dir="auto"><strong>社区群组</strong>：</p>
+<ul>
+<li dir="auto">Telegram 群：主要私信活跃用户，不要群发广告</li>
+<li dir="auto">Facebook 群：需提前加入，等待审核通过</li>
+<li dir="auto">微信群：国内出海团队互助效果显著</li>
+<li dir="auto">其他：Discord、Slack 专业社区等</li>
+</ul>
+<p dir="auto"><strong>现有用户激活</strong>：</p>
+<ul>
+<li dir="auto">发布前梯度邮件提醒（72/48/24 小时）</li>
+<li dir="auto">引导点击"notify me"并设置日历提醒</li>
+<li dir="auto">提供投票激励（如优惠券、额外功能等）</li>
+</ul>
+<h3 data-heading="3.4 付费营销策略" dir="auto">3.4 付费营销策略</h3>
+<p dir="auto">如果有预算，以下渠道值得投入：</p>
+<p dir="auto"><strong>Twitter KOL</strong>：</p>
+<ul>
+<li dir="auto">价格区间：5 万粉丝约 150-200 美元，30 万粉丝约 500 美元<sup data-footnote-id="fnref-30-bd93c1baa00f6a88" class="footnote-ref" id="fnref-30-bd93c1baa00f6a88"><a data-footref="30" href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fn-30-bd93c1baa00f6a88" class="footnote-link" target="_blank" rel="noopener nofollow">[30]</a></sup></li>
+<li dir="auto">建议先试水 5-10 个 KOL，观察效果</li>
+<li dir="auto">要求四项配合：发布主题推文、转发官方、PH 点赞评论、二次推文</li>
+</ul>
+<p dir="auto"><strong>YouTube 影响者</strong>：</p>
+<ul>
+<li dir="auto">准备周期更长（1 个月+），但专业度和转化率更高</li>
+<li dir="auto">垂直领域专业 KOL 比泛科技 KOL 效果更佳<sup data-footnote-id="fnref-31-bd93c1baa00f6a88" class="footnote-ref" id="fnref-31-bd93c1baa00f6a88"><a data-footref="31" href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fn-31-bd93c1baa00f6a88" class="footnote-link" target="_blank" rel="noopener nofollow">[31]</a></sup></li>
+<li dir="auto">产品深度评测能带来持续流量</li>
+</ul>
+<p dir="auto"><strong>垂直领域 LinkedIn KOL</strong>：</p>
+<ul>
+<li dir="auto">比 Twitter 更便宜，针对性更强</li>
+<li dir="auto">垂直领域（如设计师 KOL）转化率可达 1:1<sup data-footnote-id="fnref-32-bd93c1baa00f6a88" class="footnote-ref" id="fnref-32-bd93c1baa00f6a88"><a data-footref="32" href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fn-32-bd93c1baa00f6a88" class="footnote-link" target="_blank" rel="noopener nofollow">[32]</a></sup></li>
+<li dir="auto">避免泛科技内容创作者，效果有限</li>
+</ul>
+<h2 data-heading="打榜实战与关键时刻" dir="auto">打榜实战与关键时刻</h2>
+<h3 data-heading="4.1 打榜前 24 小时" dir="auto">4.1 打榜前 24 小时</h3>
+<p dir="auto"><strong>最后检查</strong>：</p>
+<ul>
+<li dir="auto">确认素材无误，First Maker Comment 已准备好</li>
+<li dir="auto">所有拉票渠道就绪，团队分工明确</li>
+<li dir="auto">设置实时票数监控工具（hunted.space、productwars2）<sup data-footnote-id="fnref-33-bd93c1baa00f6a88" class="footnote-ref" id="fnref-33-bd93c1baa00f6a88"><a data-footref="33" href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fn-33-bd93c1baa00f6a88" class="footnote-link" target="_blank" rel="noopener nofollow">[33]</a></sup></li>
+</ul>
+<p dir="auto"><strong>提前部署</strong>：</p>
+<ul>
+<li dir="auto">在官网嵌入 PH 投票插件代码，准备上线</li>
+<li dir="auto">准备社交媒体发布内容和图片</li>
+<li dir="auto">团队成员调整时区，确保关键时刻在线</li>
+</ul>
+<h3 data-heading="4.2 关键的前 4 小时" dir="auto">4.2 关键的前 4 小时</h3>
+<p dir="auto">发布后前 4 小时是决定成败的关键窗口：</p>
+<p dir="auto"><strong>特殊机制</strong>：</p>
+<ul>
+<li dir="auto">前 4 小时 PH 榜单顺序随机，不显示票数<sup data-footnote-id="fnref-34-bd93c1baa00f6a88" class="footnote-ref" id="fnref-34-bd93c1baa00f6a88"><a data-footref="34" href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fn-34-bd93c1baa00f6a88" class="footnote-link" target="_blank" rel="noopener nofollow">[34]</a></sup></li>
+<li dir="auto">这个阶段的票数决定 4 小时后的初始排名位置</li>
+<li dir="auto">高初始排名带来更多自然流量，形成正向循环</li>
+</ul>
+<p dir="auto"><strong>行动策略</strong>：</p>
+<ul>
+<li dir="auto">第一波投票使用最高权重账号</li>
+<li dir="auto">立即激活所有预备渠道，但保持 IP 分散</li>
+<li dir="auto">确保 First Maker Comment 第一时间发出</li>
+<li dir="auto">4 小时后出现排名时，根据情况调整策略</li>
+</ul>
+<h3 data-heading="4.3 Feature 机制应对" dir="auto">4.3 Feature 机制应对</h3>
+<p dir="auto">被"Feature"（官方精选）是成功的必要条件：</p>
+<p dir="auto"><strong>特点</strong>：</p>
+<ul>
+<li dir="auto">只有被 Feature 的产品才能出现在首页，才有机会获得徽章</li>
+<li dir="auto">近期 PH 每天 Feature 的产品越来越少（约 20 个）<sup data-footnote-id="fnref-35-bd93c1baa00f6a88" class="footnote-ref" id="fnref-35-bd93c1baa00f6a88"><a data-footref="35" href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fn-35-bd93c1baa00f6a88" class="footnote-link" target="_blank" rel="noopener nofollow">[35]</a></sup></li>
+<li dir="auto">被 Feature 产品会获得初始票数优势（如 60-80 票）</li>
+</ul>
+<p dir="auto"><strong>如未被 Feature</strong>：</p>
+<ul>
+<li dir="auto">立即联系客服询问原因（邮箱：<a data-tooltip-position="top" aria-label="mailto:hello@producthunt.co" rel="noopener nofollow" class="external-link" href="mailto:hello@producthunt.co" target="_blank">hello@producthunt.co</a>等）<sup data-footnote-id="fnref-36-bd93c1baa00f6a88" class="footnote-ref" id="fnref-36-bd93c1baa00f6a88"><a data-footref="36" href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fn-36-bd93c1baa00f6a88" class="footnote-link" target="_blank" rel="noopener nofollow">[36]</a></sup></li>
+<li dir="auto">继续快速加票，短时间内获得大量高权重票有几率被补选</li>
+<li dir="auto">必要时申请撤回发布，修改后再次尝试</li>
+</ul>
+<h3 data-heading="4.4 全程管理与应变" dir="auto">4.4 全程管理与应变</h3>
+<p dir="auto"><strong>持续监控</strong>：</p>
+<ul>
+<li dir="auto">密切关注票数增长曲线和排名变化</li>
+<li dir="auto">观察清票情况，适时调整投票策略</li>
+<li dir="auto">灵活调配各种票源，避免过度集中</li>
+</ul>
+<p dir="auto"><strong>积极互动</strong>：</p>
+<ul>
+<li dir="auto">及时回复评论区的每一条反馈</li>
+<li dir="auto">引导用户提问并解答，增加互动热度</li>
+<li dir="auto">在社交媒体实时更新打榜进展，形成声势</li>
+</ul>
+<p dir="auto"><strong>应对变数</strong>：</p>
+<ul>
+<li dir="auto">保留部分高质量票源作为"底牌"</li>
+<li dir="auto">如遇强劲对手，灵活调整目标（如从冲第一调整为稳住前三）</li>
+<li dir="auto">在关键时刻动员一切可用资源</li>
+</ul>
+<h2 data-heading="打榜后的运营与转化" dir="auto">打榜后的运营与转化</h2>
+<h3 data-heading="5.1 短期转化优化" dir="auto">5.1 短期转化优化</h3>
+<p dir="auto"><strong>官网优化</strong>：</p>
+<ul>
+<li dir="auto">在 PH 徽章公布后立即添加到官网显眼位置</li>
+<li dir="auto">为 PH 带来的流量设计专属欢迎页</li>
+<li dir="auto">提供 PH 用户专属优惠，促进转化</li>
+</ul>
+<p dir="auto"><strong>数据分析</strong>：</p>
+<ul>
+<li dir="auto">分析流量来源、停留时间、转化路径</li>
+<li dir="auto">识别潜在问题点，及时优化</li>
+<li dir="auto">对比不同地区用户的行为差异</li>
+</ul>
+<p dir="auto"><strong>用户沟通</strong>：</p>
+<ul>
+<li dir="auto">对新注册用户进行分组，标记来源</li>
+<li dir="auto">设计针对性的欢迎邮件和引导流程</li>
+<li dir="auto">主动收集 PH 用户的产品反馈</li>
+</ul>
+<h3 data-heading="5.2 二次传播最大化" dir="auto">5.2 二次传播最大化</h3>
+<p dir="auto"><strong>社区引流</strong>：</p>
+<ul>
+<li dir="auto">将 PH 用户引导至产品社区（如 Discord/Slack）</li>
+<li dir="auto">AFFiNE 团队提醒："在 PH 页面醒目位置放置社群链接，帮助快速积累新用户"<sup data-footnote-id="fnref-37-bd93c1baa00f6a88" class="footnote-ref" id="fnref-37-bd93c1baa00f6a88"><a data-footref="37" href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fn-37-bd93c1baa00f6a88" class="footnote-link" target="_blank" rel="noopener nofollow">[37]</a></sup></li>
+<li dir="auto">设计入群福利，促进用户留存</li>
+</ul>
+<p dir="auto"><strong>媒体扩散</strong>：</p>
+<ul>
+<li dir="auto">整理 PH 成功案例，联系科技媒体报道</li>
+<li dir="auto">主动联系产品导航站和 Newsletter 收录</li>
+<li dir="auto">分享打榜经验，增加品牌曝光</li>
+</ul>
+<p dir="auto"><strong>SEO 优化</strong>：</p>
+<ul>
+<li dir="auto">利用 PH 带来的反链提升 SEO 排名</li>
+<li dir="auto">创建与 PH 相关的博客内容，吸引长尾流量</li>
+<li dir="auto">监测并记录各导航站的自动收录情况</li>
+</ul>
+<h3 data-heading="5.3 长期规划与再次打榜" dir="auto">5.3 长期规划与再次打榜</h3>
+<p dir="auto"><strong>产品迭代</strong>：</p>
+<ul>
+<li dir="auto">根据 PH 用户反馈优化产品</li>
+<li dir="auto">识别最受欢迎功能，考虑优先开发方向</li>
+<li dir="auto">调整产品路线图，适应目标用户需求</li>
+</ul>
+<p dir="auto"><strong>再次打榜准备</strong>：</p>
+<ul>
+<li dir="auto">PH 官方允许产品有重大更新时再次发布<sup data-footnote-id="fnref-38-bd93c1baa00f6a88" class="footnote-ref" id="fnref-38-bd93c1baa00f6a88"><a data-footref="38" href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fn-38-bd93c1baa00f6a88" class="footnote-link" target="_blank" rel="noopener nofollow">[38]</a></sup></li>
+<li dir="auto">至少准备全新 UI 和功能点，URL 也需更换</li>
+<li dir="auto">多家成功产品（如 Notion、Figma）都采用多次打榜策略</li>
+</ul>
+<p dir="auto"><strong>社区维护</strong>：</p>
+<ul>
+<li dir="auto">保持与 PH 社区的互动，为下次打榜积累人脉</li>
+<li dir="auto">定期回访支持过你的用户，保持联系</li>
+<li dir="auto">构建自己的"票仓"资源，形成良性循环</li>
+</ul>
+<h2 data-heading="常见问题与建议" dir="auto">常见问题与建议</h2>
+<p dir="auto"><strong>Q1: 现在还值得冲 PH 榜吗？</strong> A: 值得。尽管竞争加剧，但 PH 仍是产品出海的优质首发平台，能提供初始曝光、用户反馈和品牌背书。</p>
+<p dir="auto"><strong>Q2: 票数要求和预算大概是多少？</strong> A: 工作日日榜第一通常需要 700-1000 票，周末约 400-600 票。预算从几百美元到几千美元不等，取决于目标和资源。<sup data-footnote-id="fnref-39-bd93c1baa00f6a88" class="footnote-ref" id="fnref-39-bd93c1baa00f6a88"><a data-footref="39" href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fn-39-bd93c1baa00f6a88" class="footnote-link" target="_blank" rel="noopener nofollow">[39]</a></sup></p>
+<p dir="auto"><strong>Q3: 被砍票是否意味着违规？</strong> A: 不一定。PH 有自动清票机制，每 2 小时左右一次。只要遵循平台规则，控制速度，使用正规账号，就不必过度担心。</p>
+<p dir="auto"><strong>Q4: 找 Hunter/咨询值得吗？</strong> A: 首次打榜建议寻求专业帮助。好的 Hunter 和咨询可以避免许多常见错误，但要注意控制成本，部分服务可能定价过高。<sup data-footnote-id="fnref-40-bd93c1baa00f6a88" class="footnote-ref" id="fnref-40-bd93c1baa00f6a88"><a data-footref="40" href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fn-40-bd93c1baa00f6a88" class="footnote-link" target="_blank" rel="noopener nofollow">[40]</a></sup></p>
+<p dir="auto"><strong>Q5: 打榜后转化不理想怎么办？</strong> A: 首先分析原因——是产品与 PH 用户不匹配，还是着陆页有问题？记住 PH 只是起点，真正的价值在于如何将流量转化为长期用户。</p>
+<h2 data-heading="结语" dir="auto">结语</h2>
+<p dir="auto">一次成功的 Product Hunt 打榜背后，是团队的精心策划和执行力。正如 Kisson 所说："从零到一设计一艘火箭，然后所有的零部件，在最后一刻，就这么神奇地完美地运作起来，火箭升空。这种感觉，我想只有 builders 能懂。"<sup data-footnote-id="fnref-41-bd93c1baa00f6a88" class="footnote-ref" id="fnref-41-bd93c1baa00f6a88"><a data-footref="41" href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fn-41-bd93c1baa00f6a88" class="footnote-link" target="_blank" rel="noopener nofollow">[41]</a></sup></p>
+<p dir="auto">希望这份来自多位实战专家的经验总结，能帮助更多中国产品成功出海。记住，PH 只是开始，真正的挑战和机遇，在于你如何将这次发布转化为产品成长的持续动力。</p>
+<p dir="auto">祝你打榜成功！</p>
+<hr>
+<h2 data-heading="参考" dir="auto">参考</h2>
+<ul>
+<li dir="auto"></li>
+<li dir="auto"></li>
+<li dir="auto"></li>
+<li dir="auto"></li>
+<li dir="auto"></li>
+<li dir="auto"></li>
+<li dir="auto"></li>
+<li dir="auto"></li>
+<li dir="auto"></li>
+<li dir="auto"></li>
+<li dir="auto"></li>
+<li dir="auto"></li>
+<li dir="auto"></li>
+<li dir="auto"></li>
+<li dir="auto"></li>
+<li dir="auto"></li>
+<li dir="auto"></li>
+<li dir="auto"></li>
+<li dir="auto"></li>
+<li dir="auto"></li>
+<li dir="auto"></li>
+<li dir="auto"></li>
+<li dir="auto"></li>
+<li dir="auto"></li>
+<li dir="auto"></li>
+<li dir="auto"></li>
+<li dir="auto"></li>
+<li dir="auto"></li>
+<li dir="auto"></li>
+<li dir="auto"></li>
+<li dir="auto"></li>
+<li dir="auto"></li>
+<li dir="auto"></li>
+<li dir="auto"></li>
+<li dir="auto"></li>
+<li dir="auto"></li>
+<li dir="auto"></li>
+<li dir="auto"></li>
+<li dir="auto"></li>
+<li dir="auto"></li>
+<li dir="auto"></li>
+</ul>
+
+
+<section class="footnotes"><hr><ol>
+<li data-footnote-id="fn-1-bd93c1baa00f6a88" id="fn-1-bd93c1baa00f6a88" dir="auto"><p>根据 Bootloader 报告，Product Hunt 月流量达 450 万左右。<a href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fnref-1-bd93c1baa00f6a88" class="footnote-backref footnote-link" target="_blank" rel="noopener nofollow">↩︎</a></p></li>
+<li data-footnote-id="fn-2-bd93c1baa00f6a88" id="fn-2-bd93c1baa00f6a88" dir="auto"><p>Kisson 在其文章《226AFFiNE PH Launch 之后》的直接引述。<a href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fnref-2-bd93c1baa00f6a88" class="footnote-backref footnote-link" target="_blank" rel="noopener nofollow">↩︎</a></p></li>
+<li data-footnote-id="fn-3-bd93c1baa00f6a88" id="fn-3-bd93c1baa00f6a88" dir="auto"><p>OUTLIERS 调研数据，首页第一位置通常带来约 5000 访问量。<a href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fnref-3-bd93c1baa00f6a88" class="footnote-backref footnote-link" target="_blank" rel="noopener nofollow">↩︎</a></p></li>
+<li data-footnote-id="fn-4-bd93c1baa00f6a88" id="fn-4-bd93c1baa00f6a88" dir="auto"><p>MySignature.io 对 PH Top 10 排名开发者和创业者的调查结果。<a href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fnref-4-bd93c1baa00f6a88" class="footnote-backref footnote-link" target="_blank" rel="noopener nofollow">↩︎</a></p></li>
+<li data-footnote-id="fn-5-bd93c1baa00f6a88" id="fn-5-bd93c1baa00f6a88" dir="auto"><p>MySignature.io 调查：50%创始人表示注册量增加，30%表示大幅增加。<a href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fnref-5-bd93c1baa00f6a88" class="footnote-backref footnote-link" target="_blank" rel="noopener nofollow">↩︎</a></p></li>
+<li data-footnote-id="fn-6-bd93c1baa00f6a88" id="fn-6-bd93c1baa00f6a88" dir="auto"><p>来自 MySignature.io 的用户增长数据统计。<a href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fnref-6-bd93c1baa00f6a88" class="footnote-backref footnote-link" target="_blank" rel="noopener nofollow">↩︎</a></p></li>
+<li data-footnote-id="fn-7-bd93c1baa00f6a88" id="fn-7-bd93c1baa00f6a88" dir="auto"><p>Bootloader 团队测试：PH 冲榜后每天增长几十条反链。<a href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fnref-7-bd93c1baa00f6a88" class="footnote-backref footnote-link" target="_blank" rel="noopener nofollow">↩︎</a></p></li>
+<li data-footnote-id="fn-8-bd93c1baa00f6a88" id="fn-8-bd93c1baa00f6a88" dir="auto"><p>MySignature.io 调查：54%受访者表示冲榜后建立了有价值的合作关系。<a href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fnref-8-bd93c1baa00f6a88" class="footnote-backref footnote-link" target="_blank" rel="noopener nofollow">↩︎</a></p></li>
+<li data-footnote-id="fn-9-bd93c1baa00f6a88" id="fn-9-bd93c1baa00f6a88" dir="auto"><p>MySignature.io 调查：61%的人表示会推荐在 PH 上发布产品。<a href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fnref-9-bd93c1baa00f6a88" class="footnote-backref footnote-link" target="_blank" rel="noopener nofollow">↩︎</a></p></li>
+<li data-footnote-id="fn-10-bd93c1baa00f6a88" id="fn-10-bd93c1baa00f6a88" dir="auto"><p>PH 官方规则：日榜为美西时间 00:01 开始的 24 小时。<a href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fnref-10-bd93c1baa00f6a88" class="footnote-backref footnote-link" target="_blank" rel="noopener nofollow">↩︎</a></p></li>
+<li data-footnote-id="fn-11-bd93c1baa00f6a88" id="fn-11-bd93c1baa00f6a88" dir="auto"><p>OUTLIERS 团队数据：周末日榜第一通常需要 400-600 票。<a href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fnref-11-bd93c1baa00f6a88" class="footnote-backref footnote-link" target="_blank" rel="noopener nofollow">↩︎</a></p></li>
+<li data-footnote-id="fn-12-bd93c1baa00f6a88" id="fn-12-bd93c1baa00f6a88" dir="auto"><p>跟踪数据显示周二至周四是 PH 用户活跃度最高的时段。<a href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fnref-12-bd93c1baa00f6a88" class="footnote-backref footnote-link" target="_blank" rel="noopener nofollow">↩︎</a></p></li>
+<li data-footnote-id="fn-13-bd93c1baa00f6a88" id="fn-13-bd93c1baa00f6a88" dir="auto"><p>PH 规则：周榜前十可以进入官方 Newsletter 推荐。<a href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fnref-13-bd93c1baa00f6a88" class="footnote-backref footnote-link" target="_blank" rel="noopener nofollow">↩︎</a></p></li>
+<li data-footnote-id="fn-14-bd93c1baa00f6a88" id="fn-14-bd93c1baa00f6a88" dir="auto"><p>hunted.space 提供 PH 冲榜日历查看功能。<a href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fnref-14-bd93c1baa00f6a88" class="footnote-backref footnote-link" target="_blank" rel="noopener nofollow">↩︎</a></p></li>
+<li data-footnote-id="fn-15-bd93c1baa00f6a88" id="fn-15-bd93c1baa00f6a88" dir="auto"><p>OUTLIERS 团队《ProductHunt 榜 1 实操指南》直接建议。<a href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fnref-15-bd93c1baa00f6a88" class="footnote-backref footnote-link" target="_blank" rel="noopener nofollow">↩︎</a></p></li>
+<li data-footnote-id="fn-16-bd93c1baa00f6a88" id="fn-16-bd93c1baa00f6a88" dir="auto"><p>Bootloader 团队建议的基础数据埋点指标列表。<a href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fnref-16-bd93c1baa00f6a88" class="footnote-backref footnote-link" target="_blank" rel="noopener nofollow">↩︎</a></p></li>
+<li data-footnote-id="fn-17-bd93c1baa00f6a88" id="fn-17-bd93c1baa00f6a88" dir="auto"><p>Kisson 建议：每个账号至少一个月历史和 5 分 K-point。<a href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fnref-17-bd93c1baa00f6a88" class="footnote-backref footnote-link" target="_blank" rel="noopener nofollow">↩︎</a></p></li>
+<li data-footnote-id="fn-18-bd93c1baa00f6a88" id="fn-18-bd93c1baa00f6a88" dir="auto"><p>Kisson 建议：团队统一头像风格，增强记忆点。<a href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fnref-18-bd93c1baa00f6a88" class="footnote-backref footnote-link" target="_blank" rel="noopener nofollow">↩︎</a></p></li>
+<li data-footnote-id="fn-19-bd93c1baa00f6a88" id="fn-19-bd93c1baa00f6a88" dir="auto"><p>Bootloader 建议：Coming soon 页面有 100+通知用户有助提高被 feature 概率。<a href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fnref-19-bd93c1baa00f6a88" class="footnote-backref footnote-link" target="_blank" rel="noopener nofollow">↩︎</a></p></li>
+<li data-footnote-id="fn-20-bd93c1baa00f6a88" id="fn-20-bd93c1baa00f6a88" dir="auto"><p>Iris 分享的 AFFiNE 成功标语案例。<a href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fnref-20-bd93c1baa00f6a88" class="footnote-backref footnote-link" target="_blank" rel="noopener nofollow">↩︎</a></p></li>
+<li data-footnote-id="fn-21-bd93c1baa00f6a88" id="fn-21-bd93c1baa00f6a88" dir="auto"><p>Bootloader 提示：至少提前一周提交产品，官方需要 7 天审核。<a href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fnref-21-bd93c1baa00f6a88" class="footnote-backref footnote-link" target="_blank" rel="noopener nofollow">↩︎</a></p></li>
+<li data-footnote-id="fn-22-bd93c1baa00f6a88" id="fn-22-bd93c1baa00f6a88" dir="auto"><p>Hunter 费用标准：Chris Messina(500 美元/小时)、Kevin William David(250 美元/30 分钟)等。<a href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fnref-22-bd93c1baa00f6a88" class="footnote-backref footnote-link" target="_blank" rel="noopener nofollow">↩︎</a></p></li>
+<li data-footnote-id="fn-23-bd93c1baa00f6a88" id="fn-23-bd93c1baa00f6a88" dir="auto"><p>AFFiNE 的 Iris 在若曦 Ross 文章中的直接引述。<a href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fnref-23-bd93c1baa00f6a88" class="footnote-backref footnote-link" target="_blank" rel="noopener nofollow">↩︎</a></p></li>
+<li data-footnote-id="fn-24-bd93c1baa00f6a88" id="fn-24-bd93c1baa00f6a88" dir="auto"><p>AFFiNE 的 Iris 建议：可以先试探性找 5-10 个 KOL 观察反馈。<a href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fnref-24-bd93c1baa00f6a88" class="footnote-backref footnote-link" target="_blank" rel="noopener nofollow">↩︎</a></p></li>
+<li data-footnote-id="fn-25-bd93c1baa00f6a88" id="fn-25-bd93c1baa00f6a88" dir="auto"><p>Kisson 总结的票源优先级排序。<a href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fnref-25-bd93c1baa00f6a88" class="footnote-backref footnote-link" target="_blank" rel="noopener nofollow">↩︎</a></p></li>
+<li data-footnote-id="fn-26-bd93c1baa00f6a88" id="fn-26-bd93c1baa00f6a88" dir="auto"><p>Bootloader 团队在"打榜实操"中的直接引述。<a href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fnref-26-bd93c1baa00f6a88" class="footnote-backref footnote-link" target="_blank" rel="noopener nofollow">↩︎</a></p></li>
+<li data-footnote-id="fn-27-bd93c1baa00f6a88" id="fn-27-bd93c1baa00f6a88" dir="auto"><p>Bootloader 团队总结的容易被砍票情况。<a href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fnref-27-bd93c1baa00f6a88" class="footnote-backref footnote-link" target="_blank" rel="noopener nofollow">↩︎</a></p></li>
+<li data-footnote-id="fn-28-bd93c1baa00f6a88" id="fn-28-bd93c1baa00f6a88" dir="auto"><p>Grimo AI 团队数据：LinkedIn DM 回复率高达 60%。<a href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fnref-28-bd93c1baa00f6a88" class="footnote-backref footnote-link" target="_blank" rel="noopener nofollow">↩︎</a></p></li>
+<li data-footnote-id="fn-29-bd93c1baa00f6a88" id="fn-29-bd93c1baa00f6a88" dir="auto"><p>Iris 建议：通过发宠物图片到 r/catpics 或 r/dogpictures，1 天可以到 200 karma。<a href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fnref-29-bd93c1baa00f6a88" class="footnote-backref footnote-link" target="_blank" rel="noopener nofollow">↩︎</a></p></li>
+<li data-footnote-id="fn-30-bd93c1baa00f6a88" id="fn-30-bd93c1baa00f6a88" dir="auto"><p>Twitter KOL 价格区间：5 万粉丝约 150-200 美元，30 万粉丝约 500 美元。<a href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fnref-30-bd93c1baa00f6a88" class="footnote-backref footnote-link" target="_blank" rel="noopener nofollow">↩︎</a></p></li>
+<li data-footnote-id="fn-31-bd93c1baa00f6a88" id="fn-31-bd93c1baa00f6a88" dir="auto"><p>AFFiNE 的 Iris 建议：YouTube 垂直 KOL 效果最佳。<a href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fnref-31-bd93c1baa00f6a88" class="footnote-backref footnote-link" target="_blank" rel="noopener nofollow">↩︎</a></p></li>
+<li data-footnote-id="fn-32-bd93c1baa00f6a88" id="fn-32-bd93c1baa00f6a88" dir="auto"><p>Creatie 团队反馈：垂直领域（设计师）KOL 转化率高达 1:1。<a href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fnref-32-bd93c1baa00f6a88" class="footnote-backref footnote-link" target="_blank" rel="noopener nofollow">↩︎</a></p></li>
+<li data-footnote-id="fn-33-bd93c1baa00f6a88" id="fn-33-bd93c1baa00f6a88" dir="auto"><p>Bootloader 推荐的票数监控工具：hunted.space、productwars2.akkio.com。<a href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fnref-33-bd93c1baa00f6a88" class="footnote-backref footnote-link" target="_blank" rel="noopener nofollow">↩︎</a></p></li>
+<li data-footnote-id="fn-34-bd93c1baa00f6a88" id="fn-34-bd93c1baa00f6a88" dir="auto"><p>PH 平台机制：前 4 小时榜单顺序随机，不显示票数。<a href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fnref-34-bd93c1baa00f6a88" class="footnote-backref footnote-link" target="_blank" rel="noopener nofollow">↩︎</a></p></li>
+<li data-footnote-id="fn-35-bd93c1baa00f6a88" id="fn-35-bd93c1baa00f6a88" dir="auto"><p>Bootloader 观察：PH 每天约 20 几个产品被 feature，占上传总数约 15-20%。<a href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fnref-35-bd93c1baa00f6a88" class="footnote-backref footnote-link" target="_blank" rel="noopener nofollow">↩︎</a></p></li>
+<li data-footnote-id="fn-36-bd93c1baa00f6a88" id="fn-36-bd93c1baa00f6a88" dir="auto"><p>Bootloader 提供的 PH 客服邮箱：<a data-tooltip-position="top" aria-label="mailto:hello@producthunt.co" rel="noopener nofollow" class="external-link" href="mailto:hello@producthunt.co" target="_blank">hello@producthunt.co</a>等。<a href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fnref-36-bd93c1baa00f6a88" class="footnote-backref footnote-link" target="_blank" rel="noopener nofollow">↩︎</a></p></li>
+<li data-footnote-id="fn-37-bd93c1baa00f6a88" id="fn-37-bd93c1baa00f6a88" dir="auto"><p>AFFiNE 团队在若曦 Ross 文章中的建议。<a href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fnref-37-bd93c1baa00f6a88" class="footnote-backref footnote-link" target="_blank" rel="noopener nofollow">↩︎</a></p></li>
+<li data-footnote-id="fn-38-bd93c1baa00f6a88" id="fn-38-bd93c1baa00f6a88" dir="auto"><p>PH CEO 在 Twitter 上表示支持产品多次上传 Product Hunt。<a href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fnref-38-bd93c1baa00f6a88" class="footnote-backref footnote-link" target="_blank" rel="noopener nofollow">↩︎</a></p></li>
+<li data-footnote-id="fn-39-bd93c1baa00f6a88" id="fn-39-bd93c1baa00f6a88" dir="auto"><p>OUTLIERS 数据：工作日日榜第一通常需要 700-1000 票，周末约 400-600 票。<a href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fnref-39-bd93c1baa00f6a88" class="footnote-backref footnote-link" target="_blank" rel="noopener nofollow">↩︎</a></p></li>
+<li data-footnote-id="fn-40-bd93c1baa00f6a88" id="fn-40-bd93c1baa00f6a88" dir="auto"><p>OUTLIERS 建议：首次打榜值得找咨询，但要控制预算。<a href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fnref-40-bd93c1baa00f6a88" class="footnote-backref footnote-link" target="_blank" rel="noopener nofollow">↩︎</a></p></li>
+<li data-footnote-id="fn-41-bd93c1baa00f6a88" id="fn-41-bd93c1baa00f6a88" dir="auto"><p>Kisson《打榜感想》文章结尾直接引述。<a href="/Users/mark/my-private-documents/手工川精品 - 创业者系列/2025-05-08 - ph 打榜/index.html#fnref-41-bd93c1baa00f6a88" class="footnote-backref footnote-link" target="_blank" rel="noopener nofollow">↩︎</a></p></li>
+</ol></section>
+    </body>
+</html>

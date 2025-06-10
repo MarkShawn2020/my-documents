@@ -1,0 +1,842 @@
+➜  /Users/mark/my-private-documents git:(main) ✗ gs
+On branch main
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    assets/2025-04-16_cover.png
+        deleted:    assets/2025-04-16_cover2.png
+        deleted:    assets/2025-04-16_cover3.png
+        deleted:    assets/2025-04-16_cover4.png
+        deleted:    assets/2025-04-16_cover4_out.png
+        deleted:    assets/21ac9a2e-0ea9-41c6-923e-58198828855f.png
+        deleted:    assets/7f133668-e181-4242-8622-3a79108da586.png
+        deleted:    assets/IMG_6318 Large.jpeg
+        deleted:    assets/IMG_6318.jpg
+        deleted:    assets/IMG_6472 Large.jpeg
+        deleted:    assets/IMG_7198 Large.jpeg
+        deleted:    assets/Pasted image 20241011003031.png
+        deleted:    assets/Pasted image 20241011003037.png
+        deleted:    assets/Pasted image 20250120023524.png
+        deleted:    assets/Pasted image 20250120023849.png
+        deleted:    assets/Pasted image 20250120025659.png
+        deleted:    assets/Pasted image 20250120040629.png
+        deleted:    assets/Pasted image 20250120050121.png
+        deleted:    assets/Pasted image 20250120050243.png
+        deleted:    assets/Pasted image 20250120050308.png
+        deleted:    assets/Pasted image 20250120050424.png
+        deleted:    assets/Pasted image 20250120050748.png
+        deleted:    assets/Pasted image 20250120050758.png
+        deleted:    assets/Pasted image 20250120050806.png
+        deleted:    assets/Pasted image 20250120065249.png
+        deleted:    assets/Pasted image 20250120134645.png
+        deleted:    assets/Pasted image 20250120150638.png
+        deleted:    assets/Pasted image 20250120162052.png
+        deleted:    assets/Pasted image 20250120171254.png
+        deleted:    assets/Pasted image 20250120171907.png
+        deleted:    assets/Pasted image 20250120173036.png
+        deleted:    assets/Pasted image 20250120173544.png
+        deleted:    assets/Pasted image 20250120175809.png
+        deleted:    assets/Pasted image 20250120181645.png
+        deleted:    assets/Pasted image 20250120182640.png
+        deleted:    assets/Pasted image 20250120182739.png
+        deleted:    assets/Pasted image 20250120183035.png
+        deleted:    assets/Pasted image 20250120184956.png
+        deleted:    assets/Pasted image 20250202000028.png
+        deleted:    assets/Pasted image 20250202000207.png
+        deleted:    assets/Pasted image 20250202000226.png
+        deleted:    assets/Pasted image 20250202000634.png
+        deleted:    assets/Pasted image 20250202001051.png
+        deleted:    assets/Pasted image 20250202001143.png
+        deleted:    assets/Pasted image 20250202001405.png
+        deleted:    assets/Pasted image 20250202001413.png
+        deleted:    assets/Pasted image 20250202002003.png
+        deleted:    assets/Pasted image 20250202210951.png
+        deleted:    assets/Pasted image 20250402013718.png
+        deleted:    assets/Pasted image 20250402013727.png
+        deleted:    assets/Pasted image 20250410165144.png
+        deleted:    assets/Pasted image 20250410165149.png
+        deleted:    assets/Pasted image 20250413194625.png
+        deleted:    assets/Pasted image 20250414095720.png
+        deleted:    assets/Pasted image 20250414131306.png
+        deleted:    assets/Pasted image 20250414131315.png
+        deleted:    assets/Pasted image 20250414151134.png
+        deleted:    assets/Pasted image 20250414151218.png
+        deleted:    assets/Pasted image 20250415223744.png
+        deleted:    assets/Pasted image 20250415224238.png
+        deleted:    assets/Pasted image 20250418203427.png
+        deleted:    assets/Pasted image 20250418203435.png
+        deleted:    assets/Screen Recording 2025-04-14 at 13.11.08.mov
+        deleted:    assets/Screen Recording 2025-04-15 at 22.45.55.mov
+        deleted:    assets/Untitled 1 1.canvas
+        deleted:    assets/Untitled 1 2.canvas
+        deleted:    assets/Untitled 1.canvas
+        deleted:    assets/Untitled 2 1.canvas
+        deleted:    assets/Untitled 2.canvas
+        deleted:    assets/Untitled 3 1.canvas
+        deleted:    assets/Untitled 3.canvas
+        deleted:    assets/Untitled 4 1.canvas
+        deleted:    assets/Untitled 4.canvas
+        deleted:    assets/Untitled 5.canvas
+        deleted:    assets/Untitled 6.canvas
+        deleted:    assets/Untitled 7.canvas
+        deleted:    assets/Untitled 8.canvas
+        deleted:    assets/Untitled 9.canvas
+        deleted:    assets/Untitled.canvas
+        deleted:    assets/Untitled.md
+        deleted:    assets/c2042791-76d0-4008-bd0d-c51a3ecaeeb9.png
+        deleted:    "assets/canvas/100\344\270\207vs1\344\272\277.canvas"
+        deleted:    assets/canvas/Untitled 1Untitled 1.canvas
+        deleted:    assets/canvas/Untitled.canvas
+        deleted:    assets/canvas/chatbot-exporter screenshots.canvas
+        deleted:    assets/canvas/exts_chrome_chatbot-exporter.canvas
+        deleted:    assets/canvas/notion-calendar-dependencies.canvas
+        deleted:    "assets/canvas/\345\220\210\344\274\231\344\272\272.canvas"
+        deleted:    "assets/canvas/\351\235\222\345\271\264\347\244\276.canvas"
+        deleted:    assets/exported.png
+        deleted:    assets/images/.life-daily.private-1660330258587-f1954dd60e44cedc8b08f63fac63f669a452a6d52f9283c0c37680c74806d0c8.png
+        deleted:    assets/images/.life-daily.private-1660330390974-16738d12d1c8e2c35f744141eb9a012eda72477b6741c342906496464b571111.png
+        deleted:    assets/images/2024-10-03 - chat - Draggable Floating Button in React - Claude (1).jpeg
+        deleted:    assets/images/2024-10-03 - chat - Draggable Floating Button in React - Claude.jpeg
+        deleted:    "assets/images/2024-10-03 - chat - \345\205\254\345\217\270\344\277\241\346\201\257\350\241\250\346\240\274\346\261\207\346\200\273 (1).jpeg"
+        deleted:    "assets/images/2024-10-03 - chat - \345\205\254\345\217\270\344\277\241\346\201\257\350\241\250\346\240\274\346\261\207\346\200\273.jpeg"
+        deleted:    "assets/images/2024-10-03 - chat - \347\273\231\346\210\221\346\213\211\344\270\252\350\241\250\357\274\214\350\246\201\346\261\202\345\210\227\345\207\272\345\205\254\345\217\270\347\232\204\346\263\225\345\256\232\345\220\215\347\247\260\343\200\201\346\263\225\344\272\272\343\200\201\346\263\250\345\206\214\350\265\204\346\234\254\343\200\201\347\273\217\350\220\245\350\214\203\345\233\264\343\200\202_\350\276\223\345\205\245\357\274\232_\347\231\276\345\267\235_\346\231\272\350\260\261_\346\234\210\344\271\213\346\232\227\351\235\242_\351\230\266\350\267\203\346\230\237\350\276\260-\347\247\230\345\241\224AI\346\220\234\347\264\242.jpeg"
+        deleted:    "assets/images/2024-10-03 - chat - \350\267\203\351\227\256 (1) 1.jpeg"
+        deleted:    "assets/images/2024-10-03 - chat - \350\267\203\351\227\256 (1).jpeg"
+        deleted:    assets/images/2024-10-07 - chat - The Mule and the Elderly Caretaker - Claude.jpeg
+        deleted:    assets/images/IMG_0504.png
+        deleted:    assets/images/IMG_0505.jpg
+        deleted:    assets/images/IMG_5884.jpg
+        deleted:    assets/images/IMG_9816.jpg
+        deleted:    assets/images/Pasted image 20240506194413.png
+        deleted:    assets/images/Pasted image 20240506194509.png
+        deleted:    assets/images/Pasted image 20240506194811.png
+        deleted:    assets/images/Pasted image 20240506195220.png
+        deleted:    assets/images/Pasted image 20240506200339.png
+        deleted:    assets/images/Pasted image 20240515161242.png
+        deleted:    assets/images/Pasted image 20240515161700.png
+        deleted:    assets/images/Pasted image 20240515163330.png
+        deleted:    assets/images/Pasted image 20240515163447.png
+        deleted:    assets/images/Pasted image 20240515175233.png
+        deleted:    assets/images/Pasted image 20240515175924.png
+        deleted:    assets/images/Pasted image 20240515181252.png
+        deleted:    assets/images/Pasted image 20240515181921.png
+        deleted:    assets/images/Pasted image 20240515192032.png
+        deleted:    assets/images/Pasted image 20240706010948.png
+        deleted:    assets/images/Pasted image 20240706011000.png
+        deleted:    assets/images/Pasted image 20240714191840.png
+        deleted:    assets/images/Pasted image 20240718113943.png
+        deleted:    assets/images/Pasted image 20240811150001.png
+        deleted:    assets/images/Pasted image 20240811151136.png
+        deleted:    assets/images/Pasted image 20240814140435.png
+        deleted:    assets/images/Pasted image 20240821082642.png
+        deleted:    assets/images/Pasted image 20240821082653.png
+        deleted:    assets/images/Pasted image 20240821160828.png
+        deleted:    assets/images/Pasted image 20240821223702.png
+        deleted:    assets/images/Pasted image 20240822094503.png
+        deleted:    assets/images/Pasted image 20240822105056.png
+        deleted:    assets/images/Pasted image 20240822110445.png
+        deleted:    assets/images/Pasted image 20240822115011.png
+        deleted:    assets/images/Pasted image 20240822233032.png
+        deleted:    assets/images/Pasted image 20240822235111.png
+        deleted:    assets/images/Pasted image 20240823115827.png
+        deleted:    assets/images/Pasted image 20240823231226.png
+        deleted:    assets/images/Pasted image 20240823231455.png
+        deleted:    assets/images/Pasted image 20240824012538.png
+        deleted:    assets/images/Pasted image 20240824013031.png
+        deleted:    assets/images/Pasted image 20240824100002.png
+        deleted:    assets/images/Pasted image 20240824100135.png
+        deleted:    assets/images/Pasted image 20240824112224.png
+        deleted:    assets/images/Pasted image 20240824112229.png
+        deleted:    assets/images/Pasted image 20240824114245.png
+        deleted:    assets/images/Pasted image 20240825201631.png
+        deleted:    assets/images/Pasted image 20240825221410.png
+        deleted:    assets/images/Pasted image 20240825224339.png
+        deleted:    assets/images/Pasted image 20240825225143.png
+        deleted:    assets/images/Pasted image 20240825225157.png
+        deleted:    assets/images/Pasted image 20240825225858.png
+        deleted:    assets/images/Pasted image 20240825225904.png
+        deleted:    assets/images/Pasted image 20240825225937.png
+        deleted:    assets/images/Pasted image 20240825225955.png
+        deleted:    assets/images/Pasted image 20240825230011.png
+        deleted:    assets/images/Pasted image 20240826020231.png
+        deleted:    assets/images/Pasted image 20240826020244.png
+        deleted:    assets/images/Pasted image 20240826020253.png
+        deleted:    assets/images/Pasted image 20240826041645.png
+        deleted:    assets/images/Pasted image 20240826133346.png
+        deleted:    assets/images/Pasted image 20240828164333.png
+        deleted:    assets/images/Pasted image 20240829003947.png
+        deleted:    assets/images/Pasted image 20240829004002.png
+        deleted:    assets/images/Pasted image 20240829004028.png
+        deleted:    assets/images/Pasted image 20240829213332.png
+        deleted:    assets/images/Pasted image 20240831110138.png
+        deleted:    assets/images/Pasted image 20240831142323.png
+        deleted:    assets/images/Pasted image 20240831142331.png
+        deleted:    assets/images/Pasted image 20240901192556.png
+        deleted:    assets/images/Pasted image 20240901192604.png
+        deleted:    assets/images/Pasted image 20240910003651.png
+        deleted:    assets/images/Pasted image 20240910003656.png
+        deleted:    assets/images/Pasted image 20240912081100.png
+        deleted:    assets/images/Pasted image 20240912081115.png
+        deleted:    assets/images/Pasted image 20240913154447.png
+        deleted:    assets/images/Pasted image 20240913154934.png
+        deleted:    assets/images/Pasted image 20240913155735.png
+        deleted:    assets/images/Pasted image 20240913155928.png
+        deleted:    assets/images/Pasted image 20240917175239.png
+        deleted:    assets/images/Pasted image 20240919083355.png
+        deleted:    assets/images/Pasted image 20240919083502.png
+        deleted:    assets/images/Pasted image 20240923022604.png
+        deleted:    assets/images/Pasted image 20240923022621.png
+        deleted:    assets/images/Pasted image 20241007210539.png
+        deleted:    assets/images/Pasted image 20241007210941.png
+        deleted:    assets/images/Pasted image 20241007211001.png
+        deleted:    assets/images/Pasted image 20241007211211.png
+        deleted:    assets/images/Pasted image 20241007211231.png
+        deleted:    assets/images/button-v2.png
+        deleted:    assets/images/button-v3.png
+        deleted:    assets/images/button.png
+        deleted:    assets/images/cubox.png
+        deleted:    assets/images/image_1724753176250_0.png
+        deleted:    assets/images/image_1724753236629_0.png
+        deleted:    assets/images/image_1724753875827_0.png
+        deleted:    assets/images/image_1724754160048_0.png
+        deleted:    assets/images/image_1724754229166_0.png
+        deleted:    assets/images/image_1724754542009_0.png
+        deleted:    assets/images/image_1724754608639_0.png
+        deleted:    assets/images/image_1724754664596_0.png
+        deleted:    assets/images/image_1724754787982_0.png
+        deleted:    assets/images/image_1724754831105_0.png
+        deleted:    assets/images/image_1724754938270_0.png
+        deleted:    assets/images/image_1724755040978_0.png
+        deleted:    assets/images/image_1724755094191_0.png
+        deleted:    assets/images/image_1724755127689_0.png
+        deleted:    assets/images/image_1724755164712_0.png
+        deleted:    assets/images/image_1724755715814_0.png
+        deleted:    assets/images/image_1724755822115_0.png
+        deleted:    assets/images/image_1724755901221_0.png
+        deleted:    assets/images/image_1724756115410_0.png
+        deleted:    assets/images/image_1724756326808_0.png
+        deleted:    assets/images/image_1724756431503_0.png
+        deleted:    assets/images/image_1724756448529_0.png
+        deleted:    assets/images/image_1724756468719_0.png
+        deleted:    assets/images/image_1724756506177_0.png
+        deleted:    assets/images/image_1724871560324_0.png
+        deleted:    assets/images/image_1724872012085_0.png
+        deleted:    assets/images/image_1724872070882_0.png
+        deleted:    "assets/images/\346\210\2212020\345\271\264\344\270\200\344\270\252\346\234\210\345\206\231\347\232\204\351\241\271\347\233\256.png"
+        deleted:    "assets/images/\347\237\245\344\272\206.png"
+        deleted:    "assets/miki \345\223\252\345\274\240\347\205\247\347\211\207\346\233\264\345\245\275.canvas"
+        deleted:    "assets/\345\223\210\345\223\210\345\223\210\345\223\210.png"
+        deleted:    "assets/\345\235\232\346\214\201\344\270\216\344\274\230\347\247\200\347\232\204\345\212\233\351\207\217.canvas"
+
+no changes added to commit (use "git add" and/or "git commit -a")
+➜  /Users/mark/my-private-documents git:(main) ✗ git add . && git commit -m "rm assets"
+[main 0d23c0d] rm assets
+ 224 files changed, 187 deletions(-)
+ delete mode 100644 assets/2025-04-16_cover.png
+ delete mode 100644 assets/2025-04-16_cover2.png
+ delete mode 100644 assets/2025-04-16_cover3.png
+ delete mode 100644 assets/2025-04-16_cover4.png
+ delete mode 100644 assets/2025-04-16_cover4_out.png
+ delete mode 100644 assets/21ac9a2e-0ea9-41c6-923e-58198828855f.png
+ delete mode 100644 assets/7f133668-e181-4242-8622-3a79108da586.png
+ delete mode 100644 assets/IMG_6318 Large.jpeg
+ delete mode 100644 assets/IMG_6318.jpg
+ delete mode 100644 assets/IMG_6472 Large.jpeg
+ delete mode 100644 assets/IMG_7198 Large.jpeg
+ delete mode 100644 assets/Pasted image 20241011003031.png
+ delete mode 100644 assets/Pasted image 20241011003037.png
+ delete mode 100644 assets/Pasted image 20250120023524.png
+ delete mode 100644 assets/Pasted image 20250120023849.png
+ delete mode 100644 assets/Pasted image 20250120025659.png
+ delete mode 100644 assets/Pasted image 20250120040629.png
+ delete mode 100644 assets/Pasted image 20250120050121.png
+ delete mode 100644 assets/Pasted image 20250120050243.png
+ delete mode 100644 assets/Pasted image 20250120050308.png
+ delete mode 100644 assets/Pasted image 20250120050424.png
+ delete mode 100644 assets/Pasted image 20250120050748.png
+ delete mode 100644 assets/Pasted image 20250120050758.png
+ delete mode 100644 assets/Pasted image 20250120050806.png
+ delete mode 100644 assets/Pasted image 20250120065249.png
+ delete mode 100644 assets/Pasted image 20250120134645.png
+ delete mode 100644 assets/Pasted image 20250120150638.png
+ delete mode 100644 assets/Pasted image 20250120162052.png
+ delete mode 100644 assets/Pasted image 20250120171254.png
+ delete mode 100644 assets/Pasted image 20250120171907.png
+ delete mode 100644 assets/Pasted image 20250120173036.png
+ delete mode 100644 assets/Pasted image 20250120173544.png
+ delete mode 100644 assets/Pasted image 20250120175809.png
+ delete mode 100644 assets/Pasted image 20250120181645.png
+ delete mode 100644 assets/Pasted image 20250120182640.png
+ delete mode 100644 assets/Pasted image 20250120182739.png
+ delete mode 100644 assets/Pasted image 20250120183035.png
+ delete mode 100644 assets/Pasted image 20250120184956.png
+ delete mode 100644 assets/Pasted image 20250202000028.png
+ delete mode 100644 assets/Pasted image 20250202000207.png
+ delete mode 100644 assets/Pasted image 20250202000226.png
+ delete mode 100644 assets/Pasted image 20250202000634.png
+ delete mode 100644 assets/Pasted image 20250202001051.png
+ delete mode 100644 assets/Pasted image 20250202001143.png
+ delete mode 100644 assets/Pasted image 20250202001405.png
+ delete mode 100644 assets/Pasted image 20250202001413.png
+ delete mode 100644 assets/Pasted image 20250202002003.png
+ delete mode 100644 assets/Pasted image 20250202210951.png
+ delete mode 100644 assets/Pasted image 20250402013718.png
+ delete mode 100644 assets/Pasted image 20250402013727.png
+ delete mode 100644 assets/Pasted image 20250410165144.png
+ delete mode 100644 assets/Pasted image 20250410165149.png
+ delete mode 100644 assets/Pasted image 20250413194625.png
+ delete mode 100644 assets/Pasted image 20250414095720.png
+ delete mode 100644 assets/Pasted image 20250414131306.png
+ delete mode 100644 assets/Pasted image 20250414131315.png
+ delete mode 100644 assets/Pasted image 20250414151134.png
+ delete mode 100644 assets/Pasted image 20250414151218.png
+ delete mode 100644 assets/Pasted image 20250415223744.png
+ delete mode 100644 assets/Pasted image 20250415224238.png
+ delete mode 100644 assets/Pasted image 20250418203427.png
+ delete mode 100644 assets/Pasted image 20250418203435.png
+ delete mode 100644 assets/Screen Recording 2025-04-14 at 13.11.08.mov
+ delete mode 100644 assets/Screen Recording 2025-04-15 at 22.45.55.mov
+ delete mode 100644 assets/Untitled 1 1.canvas
+ delete mode 100644 assets/Untitled 1 2.canvas
+ delete mode 100644 assets/Untitled 1.canvas
+ delete mode 100644 assets/Untitled 2 1.canvas
+ delete mode 100644 assets/Untitled 2.canvas
+ delete mode 100644 assets/Untitled 3 1.canvas
+ delete mode 100644 assets/Untitled 3.canvas
+ delete mode 100644 assets/Untitled 4 1.canvas
+ delete mode 100644 assets/Untitled 4.canvas
+ delete mode 100644 assets/Untitled 5.canvas
+ delete mode 100644 assets/Untitled 6.canvas
+ delete mode 100644 assets/Untitled 7.canvas
+ delete mode 100644 assets/Untitled 8.canvas
+ delete mode 100644 assets/Untitled 9.canvas
+ delete mode 100644 assets/Untitled.canvas
+ delete mode 100644 assets/Untitled.md
+ delete mode 100644 assets/c2042791-76d0-4008-bd0d-c51a3ecaeeb9.png
+ delete mode 100644 "assets/canvas/100\344\270\207vs1\344\272\277.canvas"
+ delete mode 100644 assets/canvas/Untitled 1Untitled 1.canvas
+ delete mode 100644 assets/canvas/Untitled.canvas
+ delete mode 100644 assets/canvas/chatbot-exporter screenshots.canvas
+ delete mode 100644 assets/canvas/exts_chrome_chatbot-exporter.canvas
+ delete mode 100644 assets/canvas/notion-calendar-dependencies.canvas
+ delete mode 100644 "assets/canvas/\345\220\210\344\274\231\344\272\272.canvas"
+ delete mode 100644 "assets/canvas/\351\235\222\345\271\264\347\244\276.canvas"
+ delete mode 100644 assets/exported.png
+ delete mode 100644 assets/images/.life-daily.private-1660330258587-f1954dd60e44cedc8b08f63fac63f669a452a6d52f9283c0c37680c74806d0c8.png
+ delete mode 100644 assets/images/.life-daily.private-1660330390974-16738d12d1c8e2c35f744141eb9a012eda72477b6741c342906496464b571111.png
+ delete mode 100644 assets/images/2024-10-03 - chat - Draggable Floating Button in React - Claude (1).jpeg
+ delete mode 100644 assets/images/2024-10-03 - chat - Draggable Floating Button in React - Claude.jpeg
+ delete mode 100644 "assets/images/2024-10-03 - chat - \345\205\254\345\217\270\344\277\241\346\201\257\350\241\250\346\240\274\346\261\207\346\200\273 (1).jpeg"
+ delete mode 100644 "assets/images/2024-10-03 - chat - \345\205\254\345\217\270\344\277\241\346\201\257\350\241\250\346\240\274\346\261\207\346\200\273.jpeg"
+ delete mode 100644 "assets/images/2024-10-03 - chat - \347\273\231\346\210\221\346\213\211\344\270\252\350\241\250\357\274\214\350\246\201\346\261\202\345\210\227\345\207\272\345\205\254\345\217\270\347\232\204\346\263\225\345\256\232\345\220\215\347\247\260\343\200\201\346\263\225\344\272\272\343\200\201\346\263\250\345\206\214\350\265\204\346\234\254\343\200\201\347\273\217\350\220\245\350\214\203\345\233\264\343\200\202_\350\276\223\345\205\245\357\274\232_\347\231\276\345\267\235_\346\231\272\350\260\261_\346\234\210\344\271\213\346\232\227\351\235\242_\351\230\266\350\267\203\346\230\237\350\276\260-\347\247\230\345\241\224AI\346\220\234\347\264\242.jpeg"
+ delete mode 100644 "assets/images/2024-10-03 - chat - \350\267\203\351\227\256 (1) 1.jpeg"
+ delete mode 100644 "assets/images/2024-10-03 - chat - \350\267\203\351\227\256 (1).jpeg"
+ delete mode 100644 assets/images/2024-10-07 - chat - The Mule and the Elderly Caretaker - Claude.jpeg
+ delete mode 100644 assets/images/IMG_0504.png
+ delete mode 100644 assets/images/IMG_0505.jpg
+ delete mode 100644 assets/images/IMG_5884.jpg
+ delete mode 100644 assets/images/IMG_9816.jpg
+ delete mode 100644 assets/images/Pasted image 20240506194413.png
+ delete mode 100644 assets/images/Pasted image 20240506194509.png
+ delete mode 100644 assets/images/Pasted image 20240506194811.png
+ delete mode 100644 assets/images/Pasted image 20240506195220.png
+ delete mode 100644 assets/images/Pasted image 20240506200339.png
+ delete mode 100644 assets/images/Pasted image 20240515161242.png
+ delete mode 100644 assets/images/Pasted image 20240515161700.png
+ delete mode 100644 assets/images/Pasted image 20240515163330.png
+ delete mode 100644 assets/images/Pasted image 20240515163447.png
+ delete mode 100644 assets/images/Pasted image 20240515175233.png
+ delete mode 100644 assets/images/Pasted image 20240515175924.png
+ delete mode 100644 assets/images/Pasted image 20240515181252.png
+ delete mode 100644 assets/images/Pasted image 20240515181921.png
+ delete mode 100644 assets/images/Pasted image 20240515192032.png
+ delete mode 100644 assets/images/Pasted image 20240706010948.png
+ delete mode 100644 assets/images/Pasted image 20240706011000.png
+ delete mode 100644 assets/images/Pasted image 20240714191840.png
+ delete mode 100644 assets/images/Pasted image 20240718113943.png
+ delete mode 100644 assets/images/Pasted image 20240811150001.png
+ delete mode 100644 assets/images/Pasted image 20240811151136.png
+ delete mode 100644 assets/images/Pasted image 20240814140435.png
+ delete mode 100644 assets/images/Pasted image 20240821082642.png
+ delete mode 100644 assets/images/Pasted image 20240821082653.png
+ delete mode 100644 assets/images/Pasted image 20240821160828.png
+ delete mode 100644 assets/images/Pasted image 20240821223702.png
+ delete mode 100644 assets/images/Pasted image 20240822094503.png
+ delete mode 100644 assets/images/Pasted image 20240822105056.png
+ delete mode 100644 assets/images/Pasted image 20240822110445.png
+ delete mode 100644 assets/images/Pasted image 20240822115011.png
+ delete mode 100644 assets/images/Pasted image 20240822233032.png
+ delete mode 100644 assets/images/Pasted image 20240822235111.png
+ delete mode 100644 assets/images/Pasted image 20240823115827.png
+ delete mode 100644 assets/images/Pasted image 20240823231226.png
+ delete mode 100644 assets/images/Pasted image 20240823231455.png
+ delete mode 100644 assets/images/Pasted image 20240824012538.png
+ delete mode 100644 assets/images/Pasted image 20240824013031.png
+ delete mode 100644 assets/images/Pasted image 20240824100002.png
+ delete mode 100644 assets/images/Pasted image 20240824100135.png
+ delete mode 100644 assets/images/Pasted image 20240824112224.png
+ delete mode 100644 assets/images/Pasted image 20240824112229.png
+ delete mode 100644 assets/images/Pasted image 20240824114245.png
+ delete mode 100644 assets/images/Pasted image 20240825201631.png
+ delete mode 100644 assets/images/Pasted image 20240825221410.png
+ delete mode 100644 assets/images/Pasted image 20240825224339.png
+ delete mode 100644 assets/images/Pasted image 20240825225143.png
+ delete mode 100644 assets/images/Pasted image 20240825225157.png
+ delete mode 100644 assets/images/Pasted image 20240825225858.png
+ delete mode 100644 assets/images/Pasted image 20240825225904.png
+ delete mode 100644 assets/images/Pasted image 20240825225937.png
+ delete mode 100644 assets/images/Pasted image 20240825225955.png
+ delete mode 100644 assets/images/Pasted image 20240825230011.png
+ delete mode 100644 assets/images/Pasted image 20240826020231.png
+ delete mode 100644 assets/images/Pasted image 20240826020244.png
+ delete mode 100644 assets/images/Pasted image 20240826020253.png
+ delete mode 100644 assets/images/Pasted image 20240826041645.png
+ delete mode 100644 assets/images/Pasted image 20240826133346.png
+ delete mode 100644 assets/images/Pasted image 20240828164333.png
+ delete mode 100644 assets/images/Pasted image 20240829003947.png
+ delete mode 100644 assets/images/Pasted image 20240829004002.png
+ delete mode 100644 assets/images/Pasted image 20240829004028.png
+ delete mode 100644 assets/images/Pasted image 20240829213332.png
+ delete mode 100644 assets/images/Pasted image 20240831110138.png
+ delete mode 100644 assets/images/Pasted image 20240831142323.png
+ delete mode 100644 assets/images/Pasted image 20240831142331.png
+ delete mode 100644 assets/images/Pasted image 20240901192556.png
+ delete mode 100644 assets/images/Pasted image 20240901192604.png
+ delete mode 100644 assets/images/Pasted image 20240910003651.png
+ delete mode 100644 assets/images/Pasted image 20240910003656.png
+ delete mode 100644 assets/images/Pasted image 20240912081100.png
+ delete mode 100644 assets/images/Pasted image 20240912081115.png
+ delete mode 100644 assets/images/Pasted image 20240913154447.png
+ delete mode 100644 assets/images/Pasted image 20240913154934.png
+ delete mode 100644 assets/images/Pasted image 20240913155735.png
+ delete mode 100644 assets/images/Pasted image 20240913155928.png
+ delete mode 100644 assets/images/Pasted image 20240917175239.png
+ delete mode 100644 assets/images/Pasted image 20240919083355.png
+ delete mode 100644 assets/images/Pasted image 20240919083502.png
+ delete mode 100644 assets/images/Pasted image 20240923022604.png
+ delete mode 100644 assets/images/Pasted image 20240923022621.png
+ delete mode 100644 assets/images/Pasted image 20241007210539.png
+ delete mode 100644 assets/images/Pasted image 20241007210941.png
+ delete mode 100644 assets/images/Pasted image 20241007211001.png
+ delete mode 100644 assets/images/Pasted image 20241007211211.png
+ delete mode 100644 assets/images/Pasted image 20241007211231.png
+ delete mode 100644 assets/images/button-v2.png
+ delete mode 100644 assets/images/button-v3.png
+ delete mode 100644 assets/images/button.png
+ delete mode 100644 assets/images/cubox.png
+ delete mode 100644 assets/images/image_1724753176250_0.png
+ delete mode 100644 assets/images/image_1724753236629_0.png
+ delete mode 100644 assets/images/image_1724753875827_0.png
+ delete mode 100644 assets/images/image_1724754160048_0.png
+ delete mode 100644 assets/images/image_1724754229166_0.png
+ delete mode 100644 assets/images/image_1724754542009_0.png
+ delete mode 100644 assets/images/image_1724754608639_0.png
+ delete mode 100644 assets/images/image_1724754664596_0.png
+ delete mode 100644 assets/images/image_1724754787982_0.png
+ delete mode 100644 assets/images/image_1724754831105_0.png
+ delete mode 100644 assets/images/image_1724754938270_0.png
+ delete mode 100644 assets/images/image_1724755040978_0.png
+ delete mode 100644 assets/images/image_1724755094191_0.png
+ delete mode 100644 assets/images/image_1724755127689_0.png
+ delete mode 100644 assets/images/image_1724755164712_0.png
+ delete mode 100644 assets/images/image_1724755715814_0.png
+ delete mode 100644 assets/images/image_1724755822115_0.png
+ delete mode 100644 assets/images/image_1724755901221_0.png
+ delete mode 100644 assets/images/image_1724756115410_0.png
+ delete mode 100644 assets/images/image_1724756326808_0.png
+ delete mode 100644 assets/images/image_1724756431503_0.png
+ delete mode 100644 assets/images/image_1724756448529_0.png
+ delete mode 100644 assets/images/image_1724756468719_0.png
+ delete mode 100644 assets/images/image_1724756506177_0.png
+ delete mode 100644 assets/images/image_1724871560324_0.png
+ delete mode 100644 assets/images/image_1724872012085_0.png
+ delete mode 100644 assets/images/image_1724872070882_0.png
+ delete mode 100644 "assets/images/\346\210\2212020\345\271\264\344\270\200\344\270\252\346\234\210\345\206\231\347\232\204\351\241\271\347\233\256.png"
+ delete mode 100644 "assets/images/\347\237\245\344\272\206.png"
+ delete mode 100644 "assets/miki \345\223\252\345\274\240\347\205\247\347\211\207\346\233\264\345\245\275.canvas"
+ delete mode 100644 "assets/\345\223\210\345\223\210\345\223\210\345\223\210.png"
+ delete mode 100644 "assets/\345\235\232\346\214\201\344\270\216\344\274\230\347\247\200\347\232\204\345\212\233\351\207\217.canvas"
+➜  /Users/mark/my-private-documents git:(main) du -sh assets
+du: assets: No such file or directory
+➜  /Users/mark/my-private-documents git:(main) du -sh .     
+1.0G    .
+➜  /Users/mark/my-private-documents git:(main) du -sh .git
+598M    .git
+➜  /Users/mark/my-private-documents git:(main) git gc --aggressive --prune=now
+Enumerating objects: 754, done.
+Counting objects: 100% (754/754), done.
+Delta compression using up to 10 threads
+Compressing objects: 100% (719/719), done.
+Writing objects: 100% (754/754), done.
+Total 754 (delta 51), reused 702 (delta 0), pack-reused 0
+➜  /Users/mark/my-private-documents git:(main) du -sh .git                    
+598M    .git
+➜  /Users/mark/my-private-documents git:(main) pip3 install git-filter-repo
+Requirement already satisfied: git-filter-repo in /opt/homebrew/anaconda3/lib/python3.12/site-packages (2.47.0)
+➜  /Users/mark/my-private-documents git:(main) git filter-repo --path ./assets --invert-paths 
+Error: Invalid path component '.' found in './assets'
+➜  /Users/mark/my-private-documents git:(main) git filter-repo --path assets --invert-paths 
+Aborting: Refusing to destructively overwrite repo history since
+this does not look like a fresh clone.
+  (expected one remote, origin)
+Please operate on a fresh clone instead.  If you want to proceed
+anyway, use --force.
+➜  /Users/mark/my-private-documents git:(main) git filter-repo --path assets --invert-paths --force
+Parsed 4 commits
+New history written in 0.07 seconds; now repacking/cleaning...
+Repacking your repo and cleaning out old unneeded objects
+HEAD is now at cbee213 update
+Enumerating objects: 512, done.
+Counting objects: 100% (512/512), done.
+Delta compression using up to 10 threads
+Compressing objects: 100% (449/449), done.
+Writing objects: 100% (512/512), done.
+Total 512 (delta 36), reused 504 (delta 35), pack-reused 0
+Completely finished after 3.04 seconds.
+➜  /Users/mark/my-private-documents git:(main) du -sh .git                                         
+390M    .git
+➜  /Users/mark/my-private-documents git:(main)  git ls-files | while IFS= read -r file; do
+  if [ -f "$file" ]; then
+    wc -c "$file" | awk -v fname="$file" '{print $1 " " fname}'
+  fi
+done | sort -nr | head -n 10 | awk '{printf "%.2f MB\t%s\n", $1/1048576, $2}'
+0.06 MB journals/diary_2022-Q3.private.md
+0.06 MB journals/diary_2022-Q2.private.md
+0.04 MB .obsidian-ocr.sqlite
+0.03 MB journals/diary_2022-Q4.private.md
+0.03 MB journals/diary_2022-Q1.private.md
+0.02 MB TODO.md
+0.01 MB journals/2023_08_31.md
+0.01 MB journals/diary_2023-Q1.private.md
+0.01 MB journals/2023-08-24.md
+0.01 MB journals/2023-08-17.md
+➜  /Users/mark/my-private-documents git:(main) du -sh .git
+390M    .git
+➜  /Users/mark/my-private-documents git:(main) # 查找 Git 仓库中最大的对象
+git rev-list --objects --all | git cat-file --batch-check='%(objecttype) %(objectname) %(objectsize) %(rest)' | sort -k3nr | head -n 20
+blob b39b358f95e3fb750f06b5ce60eaafe1d9139a69 20078237 手工川产品 - 精选/2025-04-18 - 周五 - 谢杨 - fellou/2025-04-18 - 谢扬 - fellou - by 南川/主动智能.mp4
+blob e2f6a4af95ebb57c61e94daa8455e8f6ccbca344 18747517 手工川产品 - 精选/2025-04-18 - 周五 - 谢杨 - fellou/fellou 官方/fellou - 视频/4月2日+product+hunt.mp4
+blob 89bd4742c511d5e94f4bb005a0164c21a31750bf 18393525 手工川产品 - 精选/2025-04-18 - 周五 - 谢杨 - fellou/2025-04-18 - 谢扬 - fellou - by 南川/宣发视频.mp4
+blob 4143fb895f4955aad38abbcb73d9c9af2ee107f8 16573744 手工川产品 - 精选/2025-04-18 - 周五 - 谢杨 - fellou/2025-04-18 - 谢扬 - fellou - by 南川/混合影子空间.mp4
+blob 18b252ffb0e9150b2b39b6dc1a01c77359aacb2f 16037714 手工川产品 - 精选/2025-04-18 - 周五 - 谢杨 - fellou/fellou 官方/fellou - 视频/slack-send-message.mp4
+blob af87d965f6f0d5049bf00bdb0544ec480defeec3 15866869 手工川产品 - 精选/2025-04-18 - 周五 - 谢杨 - fellou/2025-04-18 - 谢扬 - fellou - by 南川/深度行动.mp4
+blob 02ebd5ae2f844b722f5aab98165230ee18bd87fb 13884266 手工川产品 - 精选/2025-04-18 - 周五 - 谢杨 - fellou/fellou 官方/fellou - 视频/4月2日+多任务处理2.mp4
+blob 4111725a0431beb6ef133d6b41f65d7f35e7459f 13109741 手工川产品 - 精选/2025-04-18 - 周五 - 谢杨 - fellou/fellou 官方/fellou - 视频/4月2日+amazon+(1).mp4
+blob 630fb2d33f7fd865b0f3a641ac1ee47e41d0e24b 8744335 手工川产品 - 精选/2025-04-18 - 周五 - 谢杨 - fellou/fellou 官方/fellou - 视频/4月2日+send+email.mp4
+blob ab559f555344ead36c81420bb2dd2d2324e1c011 7881403 手工川产品 - 精选/2025-04-18 - 周五 - 谢杨 - fellou/fellou 官方/fellou - 视频/4月2日+workflow+calendar+(1).mp4
+blob f0e3c485e15914e98b96c84b19384d032eec6e74 7691351 手工川产品 - 精选/2025-04-18 - 周五 - 谢杨 - fellou/fellou 官方/fellou - 视频/browse-nike-jerseys.mp4
+blob 23225c6169db896c47afaf5a9d1c9c3720f178b0 6397496 手工川产品 - 精选/2025-03-15 - Manus没有秘密---70页PPT解读AI Agent - 屠龙之术/media/image35.png
+blob 967a3acdcc412142d618099ba0296360b517e32d 6274836 手工川产品 - 精选/2025-03-15 - Manus没有秘密---70页PPT解读AI Agent - 屠龙之术/media/image63.png
+blob bbbcbca5c2b09037c30c927fd5cc9c5a9dec5456 6178813 手工川产品 - 精选/2025-04-18 - 周五 - 谢杨 - fellou/assets/四种浏览器.psd
+blob c4e98bf316e92735c4ec49a4b61674c574d3891b 6088838 手工川产品 - 精选/2025-03-15 - Manus没有秘密---70页PPT解读AI Agent - 屠龙之术/media/image46.png
+blob cd52c22630a829b60ce119e6f51823b3d259f7f2 4741811 手工川产品 - 精选/2025-03-15 - Manus没有秘密---70页PPT解读AI Agent - 屠龙之术/media/image16.png
+blob d2c008518766bc40b261e7c9f86ad6fd4a622dc0 4522578 手工川产品 - 精选/2025-03-15 - Manus没有秘密---70页PPT解读AI Agent - 屠龙之术/media/image67.png
+blob 9401a4dfe19bc2dd8190d0a10a38f233b8a91d0f 4382991 手工川产品 - 精选/2025-03-15 - Manus没有秘密---70页PPT解读AI Agent - 屠龙之术/media/image37.png
+blob 7ae0a5eaebedb0f3da212d5c564dcc7bdcfd8ee9 4309544 手工川产品 - 精选/2025-03-15 - Manus没有秘密---70页PPT解读AI Agent - 屠龙之术/media/image34.png
+blob 20a8791d8dd4c38492c4d609961d45ce0d9a8bff 4220248 手工川产品 - 精选/2025-03-15 - Manus没有秘密---70页PPT解读AI Agent - 屠龙之术/media/image1.png
+➜  /Users/mark/my-private-documents git:(main) ln -fs ~/assets assets
+➜  /Users/mark/my-private-documents git:(main) ✗ gs
+On branch main
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-04-18 - \345\221\250\344\272\224 - \350\260\242\346\235\250 - fellou/2025-04-18 - \350\260\242\346\211\254 - fellou - by \345\215\227\345\267\235/\344\270\273\345\212\250\346\231\272\350\203\275.mp4"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-04-18 - \345\221\250\344\272\224 - \350\260\242\346\235\250 - fellou/2025-04-18 - \350\260\242\346\211\254 - fellou - by \345\215\227\345\267\235/\345\256\243\345\217\221\350\247\206\351\242\221.mp4"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-04-18 - \345\221\250\344\272\224 - \350\260\242\346\235\250 - fellou/2025-04-18 - \350\260\242\346\211\254 - fellou - by \345\215\227\345\267\235/\346\267\261\345\272\246\350\241\214\345\212\250.mp4"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-04-18 - \345\221\250\344\272\224 - \350\260\242\346\235\250 - fellou/2025-04-18 - \350\260\242\346\211\254 - fellou - by \345\215\227\345\267\235/\346\267\267\345\220\210\345\275\261\345\255\220\347\251\272\351\227\264.mp4"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-04-18 - \345\221\250\344\272\224 - \350\260\242\346\235\250 - fellou/assets/cover-Recovered.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-04-18 - \345\221\250\344\272\224 - \350\260\242\346\235\250 - fellou/assets/cover.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-04-18 - \345\221\250\344\272\224 - \350\260\242\346\235\250 - fellou/assets/new-logo-title.svg"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-04-18 - \345\221\250\344\272\224 - \350\260\242\346\235\250 - fellou/assets/\345\233\233\347\247\215\346\265\217\350\247\210\345\231\250.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-04-18 - \345\221\250\344\272\224 - \350\260\242\346\235\250 - fellou/assets/\345\233\233\347\247\215\346\265\217\350\247\210\345\231\250.psd"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-04-18 - \345\221\250\344\272\224 - \350\260\242\346\235\250 - fellou/fellou \345\256\230\346\226\271/fellou - \350\247\206\351\242\221/4\346\234\2102\346\227\245+amazon+(1).mp4"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-04-18 - \345\221\250\344\272\224 - \350\260\242\346\235\250 - fellou/fellou \345\256\230\346\226\271/fellou - \350\247\206\351\242\221/4\346\234\2102\346\227\245+product+hunt.mp4"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-04-18 - \345\221\250\344\272\224 - \350\260\242\346\235\250 - fellou/fellou \345\256\230\346\226\271/fellou - \350\247\206\351\242\221/4\346\234\2102\346\227\245+send+email.mp4"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-04-18 - \345\221\250\344\272\224 - \350\260\242\346\235\250 - fellou/fellou \345\256\230\346\226\271/fellou - \350\247\206\351\242\221/4\346\234\2102\346\227\245+workflow+calendar+(1).mp4"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-04-18 - \345\221\250\344\272\224 - \350\260\242\346\235\250 - fellou/fellou \345\256\230\346\226\271/fellou - \350\247\206\351\242\221/4\346\234\2102\346\227\245+\345\244\232\344\273\273\345\212\241\345\244\204\347\220\2062.mp4"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-04-18 - \345\221\250\344\272\224 - \350\260\242\346\235\250 - fellou/fellou \345\256\230\346\226\271/fellou - \350\247\206\351\242\221/browse-nike-jerseys.mp4"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-04-18 - \345\221\250\344\272\224 - \350\260\242\346\235\250 - fellou/fellou \345\256\230\346\226\271/fellou - \350\247\206\351\242\221/slack-send-message.mp4"
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        assets
+
+no changes added to commit (use "git add" and/or "git commit -a")
+➜  /Users/mark/my-private-documents git:(main) ✗ git add . && git commit -m "update assets"
+[main f68f306] update assets
+ 17 files changed, 1 insertion(+), 28 deletions(-)
+ create mode 120000 assets
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-04-18 - \345\221\250\344\272\224 - \350\260\242\346\235\250 - fellou/2025-04-18 - \350\260\242\346\211\254 - fellou - by \345\215\227\345\267\235/\344\270\273\345\212\250\346\231\272\350\203\275.mp4"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-04-18 - \345\221\250\344\272\224 - \350\260\242\346\235\250 - fellou/2025-04-18 - \350\260\242\346\211\254 - fellou - by \345\215\227\345\267\235/\345\256\243\345\217\221\350\247\206\351\242\221.mp4"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-04-18 - \345\221\250\344\272\224 - \350\260\242\346\235\250 - fellou/2025-04-18 - \350\260\242\346\211\254 - fellou - by \345\215\227\345\267\235/\346\267\261\345\272\246\350\241\214\345\212\250.mp4"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-04-18 - \345\221\250\344\272\224 - \350\260\242\346\235\250 - fellou/2025-04-18 - \350\260\242\346\211\254 - fellou - by \345\215\227\345\267\235/\346\267\267\345\220\210\345\275\261\345\255\220\347\251\272\351\227\264.mp4"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-04-18 - \345\221\250\344\272\224 - \350\260\242\346\235\250 - fellou/assets/cover-Recovered.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-04-18 - \345\221\250\344\272\224 - \350\260\242\346\235\250 - fellou/assets/cover.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-04-18 - \345\221\250\344\272\224 - \350\260\242\346\235\250 - fellou/assets/new-logo-title.svg"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-04-18 - \345\221\250\344\272\224 - \350\260\242\346\235\250 - fellou/assets/\345\233\233\347\247\215\346\265\217\350\247\210\345\231\250.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-04-18 - \345\221\250\344\272\224 - \350\260\242\346\235\250 - fellou/assets/\345\233\233\347\247\215\346\265\217\350\247\210\345\231\250.psd"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-04-18 - \345\221\250\344\272\224 - \350\260\242\346\235\250 - fellou/fellou \345\256\230\346\226\271/fellou - \350\247\206\351\242\221/4\346\234\2102\346\227\245+amazon+(1).mp4"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-04-18 - \345\221\250\344\272\224 - \350\260\242\346\235\250 - fellou/fellou \345\256\230\346\226\271/fellou - \350\247\206\351\242\221/4\346\234\2102\346\227\245+product+hunt.mp4"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-04-18 - \345\221\250\344\272\224 - \350\260\242\346\235\250 - fellou/fellou \345\256\230\346\226\271/fellou - \350\247\206\351\242\221/4\346\234\2102\346\227\245+send+email.mp4"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-04-18 - \345\221\250\344\272\224 - \350\260\242\346\235\250 - fellou/fellou \345\256\230\346\226\271/fellou - \350\247\206\351\242\221/4\346\234\2102\346\227\245+workflow+calendar+(1).mp4"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-04-18 - \345\221\250\344\272\224 - \350\260\242\346\235\250 - fellou/fellou \345\256\230\346\226\271/fellou - \350\247\206\351\242\221/4\346\234\2102\346\227\245+\345\244\232\344\273\273\345\212\241\345\244\204\347\220\2062.mp4"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-04-18 - \345\221\250\344\272\224 - \350\260\242\346\235\250 - fellou/fellou \345\256\230\346\226\271/fellou - \350\247\206\351\242\221/browse-nike-jerseys.mp4"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-04-18 - \345\221\250\344\272\224 - \350\260\242\346\235\250 - fellou/fellou \345\256\230\346\226\271/fellou - \350\247\206\351\242\221/slack-send-message.mp4"
+➜  /Users/mark/my-private-documents git:(main) du -sh .git
+390M    .git
+➜  /Users/mark/my-private-documents git:(main) git filter-repo --path *.mp4 --invert-paths --force 
+zsh: no matches found: *.mp4
+➜  /Users/mark/my-private-documents git:(main) git filter-repo --path "*.mp4" --invert-paths --force
+Parsed 4 commits
+New history written in 0.08 seconds; now repacking/cleaning...
+Repacking your repo and cleaning out old unneeded objects
+HEAD is now at f68f306 update assets
+Enumerating objects: 519, done.
+Counting objects: 100% (519/519), done.
+Delta compression using up to 10 threads
+Compressing objects: 100% (454/454), done.
+Writing objects: 100% (519/519), done.
+Total 519 (delta 40), reused 510 (delta 36), pack-reused 0
+Completely finished after 4.31 seconds.
+➜  /Users/mark/my-private-documents git:(main) du -sh .git
+390M    .git
+➜  /Users/mark/my-private-documents git:(main) git filter-repo --path-glob "**/*.mp4" --invert-paths --force
+Parsed 4 commits
+New history written in 0.07 seconds; now repacking/cleaning...
+Repacking your repo and cleaning out old unneeded objects
+HEAD is now at 488331d update assets
+Enumerating objects: 505, done.
+Counting objects: 100% (505/505), done.
+Delta compression using up to 10 threads
+Compressing objects: 100% (443/443), done.
+Writing objects: 100% (505/505), done.
+Total 505 (delta 39), reused 495 (delta 33), pack-reused 0
+Completely finished after 2.34 seconds.
+➜  /Users/mark/my-private-documents git:(main) du -sh .git                                                  
+241M    .git
+➜  /Users/mark/my-private-documents git:(main) git rev-list --objects --all | git cat-file --batch-check='%(objecttype) %(objectname) %(objectsize) %(rest)' | grep -E '^blob' | sort -k3nr | head -n 20
+blob 23225c6169db896c47afaf5a9d1c9c3720f178b0 6397496 手工川产品 - 精选/2025-03-15 - Manus没有秘密---70页PPT解读AI Agent - 屠龙之术/media/image35.png
+blob 967a3acdcc412142d618099ba0296360b517e32d 6274836 手工川产品 - 精选/2025-03-15 - Manus没有秘密---70页PPT解读AI Agent - 屠龙之术/media/image63.png
+blob bbbcbca5c2b09037c30c927fd5cc9c5a9dec5456 6178813 手工川产品 - 精选/2025-04-18 - 周五 - 谢杨 - fellou/assets/四种浏览器.psd
+blob c4e98bf316e92735c4ec49a4b61674c574d3891b 6088838 手工川产品 - 精选/2025-03-15 - Manus没有秘密---70页PPT解读AI Agent - 屠龙之术/media/image46.png
+blob cd52c22630a829b60ce119e6f51823b3d259f7f2 4741811 手工川产品 - 精选/2025-03-15 - Manus没有秘密---70页PPT解读AI Agent - 屠龙之术/media/image16.png
+blob d2c008518766bc40b261e7c9f86ad6fd4a622dc0 4522578 手工川产品 - 精选/2025-03-15 - Manus没有秘密---70页PPT解读AI Agent - 屠龙之术/media/image67.png
+blob 9401a4dfe19bc2dd8190d0a10a38f233b8a91d0f 4382991 手工川产品 - 精选/2025-03-15 - Manus没有秘密---70页PPT解读AI Agent - 屠龙之术/media/image37.png
+blob 7ae0a5eaebedb0f3da212d5c564dcc7bdcfd8ee9 4309544 手工川产品 - 精选/2025-03-15 - Manus没有秘密---70页PPT解读AI Agent - 屠龙之术/media/image34.png
+blob 20a8791d8dd4c38492c4d609961d45ce0d9a8bff 4220248 手工川产品 - 精选/2025-03-15 - Manus没有秘密---70页PPT解读AI Agent - 屠龙之术/media/image1.png
+blob 6824875ec9019f750e493d7184d8e37ca062666e 4210909 手工川产品 - 精选/2025-03-15 - Manus没有秘密---70页PPT解读AI Agent - 屠龙之术/media/image40.png
+blob c60946adf7c70ae5d429c90ccbf98be3b7db245b 4183695 手工川产品 - 精选/2025-03-15 - Manus没有秘密---70页PPT解读AI Agent - 屠龙之术/media/image32.png
+blob 02966dce88a88cd8023b46d96d20d45a30a0d3a3 4177508 手工川产品 - 精选/2025-03-15 - Manus没有秘密---70页PPT解读AI Agent - 屠龙之术/media/image38.png
+blob be235b26ec6c6d51f9f7521a0f45efd1300a9eda 4003507 手工川产品 - 精选/2025-03-15 - Manus没有秘密---70页PPT解读AI Agent - 屠龙之术/media/image26.png
+blob 129b739b7b8829cd8cb4ce72d9a2360d6a389f03 3997952 手工川产品 - 精选/2025-03-15 - Manus没有秘密---70页PPT解读AI Agent - 屠龙之术/media/image57.png
+blob d870552d71b8e0f8bd9c175aaaa69423823e45f1 3870456 手工川产品 - 精选/2025-03-15 - Manus没有秘密---70页PPT解读AI Agent - 屠龙之术/media/image33.png
+blob 91768bddb6d82201bb45fbf388bc85e07f8e7847 3627346 手工川产品 - 精选/2025-03-15 - Manus没有秘密---70页PPT解读AI Agent - 屠龙之术/media/image44.png
+blob 13d9aac4fce9bd20986ebaabf9d896350d5a8467 3594522 手工川产品 - 精选/2025-03-15 - Manus没有秘密---70页PPT解读AI Agent - 屠龙之术/media/image50.png
+blob 366671b366ea924487d96da403210aba485629b4 3551028 手工川产品 - 精选/2025-03-15 - Manus没有秘密---70页PPT解读AI Agent - 屠龙之术/media/image62.png
+blob 63d76fd9a23f8463f6737740b4b8881004ed0c5e 3532064 手工川产品 - 精选/2025-03-15 - Manus没有秘密---70页PPT解读AI Agent - 屠龙之术/media/image69.png
+blob 2f2ce773f3c333f149cc24dc504bb67472d754f9 3476178 手工川产品 - 精选/2025-03-15 - Manus没有秘密---70页PPT解读AI Agent - 屠龙之术/media/image39.png
+➜  /Users/mark/my-private-documents git:(main) gs
+On branch main
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image1.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image10.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image11.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image12.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image13.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image14.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image15.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image16.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image17.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image18.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image19.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image2.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image20.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image21.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image22.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image23.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image24.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image25.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image26.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image27.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image28.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image29.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image3.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image30.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image31.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image32.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image33.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image34.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image35.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image36.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image37.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image38.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image39.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image4.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image40.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image41.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image42.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image43.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image44.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image45.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image46.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image47.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image48.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image49.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image5.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image50.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image51.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image52.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image53.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image54.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image55.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image56.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image57.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image58.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image59.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image6.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image60.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image61.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image62.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image63.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image64.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image65.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image66.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image67.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image68.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image69.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image7.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image8.png"
+        deleted:    "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image9.png"
+
+no changes added to commit (use "git add" and/or "git commit -a")
+➜  /Users/mark/my-private-documents git:(main) ✗ git add . && git commit -m "update manus" 
+[main 0b177ee] update manus
+ 69 files changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image1.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image10.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image11.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image12.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image13.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image14.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image15.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image16.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image17.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image18.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image19.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image2.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image20.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image21.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image22.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image23.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image24.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image25.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image26.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image27.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image28.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image29.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image3.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image30.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image31.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image32.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image33.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image34.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image35.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image36.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image37.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image38.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image39.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image4.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image40.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image41.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image42.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image43.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image44.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image45.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image46.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image47.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image48.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image49.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image5.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image50.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image51.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image52.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image53.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image54.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image55.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image56.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image57.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image58.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image59.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image6.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image60.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image61.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image62.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image63.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image64.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image65.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image66.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image67.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image68.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image69.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image7.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image8.png"
+ delete mode 100644 "\346\211\213\345\267\245\345\267\235\344\272\247\345\223\201 - \347\262\276\351\200\211/2025-03-15 - Manus\346\262\241\346\234\211\347\247\230\345\257\206---70\351\241\265PPT\350\247\243\350\257\273AI Agent - \345\261\240\351\276\231\344\271\213\346\234\257/media/image9.png"
+➜  /Users/mark/my-private-documents git:(main) du -sh .git
+241M    .git
+➜  /Users/mark/my-private-documents git:(main) git filter-repo --path-glob "**/*.png" --invert-paths --force
+Parsed 5 commits
+New history written in 0.08 seconds; now repacking/cleaning...
+Repacking your repo and cleaning out old unneeded objects
+HEAD is now at 2534b01 update assets
+Enumerating objects: 404, done.
+Counting objects: 100% (404/404), done.
+Delta compression using up to 10 threads
+Compressing objects: 100% (345/345), done.
+Writing objects: 100% (404/404), done.
+Total 404 (delta 38), reused 363 (delta 29), pack-reused 0
+Completely finished after 0.37 seconds.
+➜  /Users/mark/my-private-documents git:(main) du -sh .git                                                  
+7.5M    .git
+➜  /Users/mark/my-private-documents git:(main) gs
+On branch main
+nothing to commit, working tree clean
+➜  /Users/mark/my-private-documents git:(main) gp -f
+fatal: The current branch main has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream mirror main
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+➜  /Users/mark/my-private-documents git:(main) git remote -v                                                            
+mirror  /Users/mark/my-private-documents.git (fetch)
+mirror  /Users/mark/my-private-documents.git (push)
+➜  /Users/mark/my-private-documents git:(main) git push --set-upstream mirror main
+To /Users/mark/my-private-documents.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to '/Users/mark/my-private-documents.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+➜  /Users/mark/my-private-documents git:(main) git push --set-upstream mirror main -f
+Enumerating objects: 404, done.
+Counting objects: 100% (404/404), done.
+Delta compression using up to 10 threads
+Compressing objects: 100% (336/336), done.
+Writing objects: 100% (404/404), 7.36 MiB | 46.25 MiB/s, done.
+Total 404 (delta 38), reused 404 (delta 38), pack-reused 0
+remote: Resolving deltas: 100% (38/38), done.
+To /Users/mark/my-private-documents.git
+ + ce6ff5a...2534b01 main -> main (forced update)
+branch 'main' set up to track 'mirror/main'.
+➜  /Users/mark/my-private-documents git:(main) gs
+On branch main
+Your branch is up to date with 'mirror/main'.
+
+nothing to commit, working tree clean
+➜  /Users/mark/my-private-documents git:(main) 

@@ -1,0 +1,186 @@
+---
+epigraph:
+  - 我们
+  - 你们
+---
+
+
+>[!note] 
+> >本文核心参考：architecture - One Database for Multiple Applications?， https://softwareengineering.stackexchange.com/questions/378386/one-database-for-multiple-applications#:~:text=If%20there%20is%20a%20natural,enormous%20pain%20in%20the%20ass
+
+
+
+
+在现代Web应用开发中，我们经常需要面临**多应用协同**的场景：一个已有的应用A，新建一个完全独立用户系统的应用B，以及新建一个与应用A共享用户系统的应用C。与此同时，Supabase作为后端服务，可以有不同的部署和使用方式，包括每个应用独立部署Supabase实例、多个应用共享一个Supabase实例，以及使用官方云端托管的Supabase。本篇文章将针对这些**3×3共9种组合**进行深入分析，并归纳为几种主要模式，探讨在不同模式下**跨应用表设计**的最佳实践，包括用户系统设计、表结构划分、数据隔离与访问控制、数据一致性与同步，以及维护与扩展性的考虑。
+
+
+
+场景与Supabase部署方式
+---------------
+
+在展开分析前，先明确**三种应用场景**和**三种Supabase使用方式**：
+
+*   **应用场景：**
+    
+    1.  **应用A**：单一应用，无既有依赖。
+        
+    2.  **应用B**：新建的独立应用，**拥有独立的用户系统**（不与其他应用共享用户）。
+          
+    3.  **应用C**：新建的应用，**需要与应用A共享用户系统**（即用户注册登录通用）。
+        
+*   **Supabase使用方式：**
+    
+    1.  **独立Supabase实例（每应用一套）**：每个应用各自部署独立的Supabase项目/实例，彼此数据库完全独立。
+        
+    2.  **共享Supabase实例（系统级Supabase）**：多个应用共享同一个Supabase数据库实例，通过架构设计在同一数据库中支持多应用。
+        
+    3.  **官方云托管Supabase**：使用Supabase官方云平台的托管项目（可理解为每个项目一个独立Supabase实例，由官方托管）。
+        
+
+**组合空间**：理论上上述3种场景和3种Supabase使用方式可以组合成9种情形。然而，其中不少组合在实践中等价或相似，我们将它们**归纳为以下主要模式**以避免重复：
+
+*   **模式一：每应用独立Supabase** – 应用A、B、C各自使用独立的Supabase项目/实例（无共享数据库）。
+    
+*   **模式二：部分应用共享Supabase** – 应用A与C共享同一个Supabase实例（因为C需要共享A的用户系统），应用B使用自己的独立Supabase。
+    
+*   **模式三：所有应用共享单一Supabase** – 应用A、B、C全部共用同一个Supabase实例（通过逻辑隔离保证B的独立用户系统）。
+    
+
+此外，我们还会讨论在**官方云Supabase托管**环境下如何对应上述模式，以及其中的特定考虑。
+
+接下来，我们逐一分析各模式下跨应用表设计的最佳实践。
+
+模式一：每应用独立 Supabase 实例
+---------------------
+
+![](https://poketto.oss-cn-hangzhou.aliyuncs.com/e58b3519559e300c18f6097aab82f7a2.png?x-oss-process=image/resize,w_800/quality,q_100/rotate,0)
+
+**模式描述：** 在此模式下，应用A、B、C各自拥有完全独立的Supabase实例/项目，各自的数据库互不相连。这种架构相当于**每个应用拥有自己的数据库**，应用之间通过API等方式集成，而不是直接共享数据库层。
+
+**用户系统设计（共享 or 独立）：** 每个应用的用户系统完全独立。应用A、B、C各自使用自己Supabase实例内置的认证（Auth）机制，用户数据存储在各自实例的`auth.users`表中。应用C虽然逻辑上需要与A共享用户系统，但由于数据库独立，**无法直接共享**。解决方案通常是通过**外部身份提供**或**同步机制**来实现间接共享，例如使用OAuth/OpenID连接同一身份源，或者在用户注册时将数据复制到另一个应用。这种方式增加了一定的开发量和复杂度，但保证了应用B和其他应用的完全隔离。
+
+**表结构划分：** 由于每个应用有自己的数据库，不存在命名冲突问题。各应用可以在各自Supabase实例中按照最佳实践设计表结构，例如`public.profiles`存储用户扩展信息，业务数据表按功能划分等。应用之间无需考虑表名前缀或模式区分，因为压根不共享数据库。在应用内部，仍然可以使用模式（Schema）来组织表（例如按模块分schema），但这纯粹是应用内的设计选择。
+
+**数据隔离与访问控制：** 天然实现——不同应用在不同数据库实例中，数据物理隔离。**行级安全（Row Level Security, RLS）**策略和访问控制规则只需针对各自应用内部制定，无需跨应用考虑。每个Supabase实例的安全策略互不影响。这种隔离好处是**安全边界清晰**，某应用的漏洞不太可能直接影响其他应用的数据。
+
+**数据一致性与同步：** 由于没有共用的数据表，**不存在跨应用直接数据一致性**的问题。需要共享的数据（如应用A和C共享的用户信息）只能通过**应用层集成**来解决。例如，当用户在应用A注册/更新时，通过服务器调用应用C的API将变化同步过去，或者依赖第三方统一身份认证服务来避免多处同步。要注意避免产生“数据孤岛”，可以制定定期对账或同步机制确保应用A和C的用户数据一致。
+
+**维护与扩展性：** 每个应用的数据库**独立演进**，互不牵制。这样做的好处是：
+
+*   **维护简单**：一个应用的数据库迁移、升级不会影响其他应用；如果应用B需要重构数据库，只需处理B自己的实例。
+    
+*   **扩展灵活**：可针对每个应用的负载单独优化数据库（如分配更多资源或不同集群配置）。官方云托管下，每个项目也可以独立调配付费计划，互不影响。
+    
+
+需要权衡的是**运营成本和协作效率**：多个独立数据库意味着资源利用上可能有冗余，而且**无法直接跨库查询**。如果应用之间需要紧密协同数据（比如运营后台需要汇总A、B、C的数据），跨数据库整合将麻烦许多（需通过中间层聚合）。正如某技术讨论所指出的，“跨数据库的关联（join）非常麻烦”​[softwareengineering.stackexchange.com](https://softwareengineering.stackexchange.com/questions/378386/one-database-for-multiple-applications#:~:text=If%20there%20is%20a%20natural,enormous%20pain%20in%20the%20ass)。因此，当应用之间的数据共享需求很高时，每应用独立数据库可能不是最佳方案。
+
+**总结：** 模式一强调**强隔离**。适用于应用之间关联很小、各自用户体系和数据完全独立的情况。它遵循了微服务/DDD的原则，即每个服务（应用）拥有自己的数据库，从而避免了全局耦合​[softwareengineering.stackexchange.com](https://softwareengineering.stackexchange.com/questions/378386/one-database-for-multiple-applications#:~:text=%2A%20In%20our%20internet,it%27s%20included%20in%20the%20price)。但对于需要共享用户或数据的需求，需要额外的集成工作来弥合隔阂。
+
+模式二：部分应用共享 Supabase 实例
+----------------------
+![](https://poketto.oss-cn-hangzhou.aliyuncs.com/da2b8c243162de22e522bc664f7d4e06.png?x-oss-process=image/resize,w_800/quality,q_100/rotate,0)
+
+**模式描述：** 在这种模式下，我们有**部分应用共享**同一个Supabase数据库实例。例如让**应用A和应用C共用一个Supabase项目**（因为C要与A共享用户），而应用B继续使用它自己的独立Supabase实例。这样，A和C的数据存储在同一个数据库中，而B完全分离。
+
+**用户系统设计：** 应用A和C共享Supabase Auth，因此用户系统合二为一。用户只需注册一次，就能被A和C识别和使用。这在Supabase中天然实现：在共享的Supabase项目中，`auth.users`表存储了A+C应用的所有用户，A和C可以共用此用户集。不需要重复注册或同步，真正做到**单一登录**体验。而应用B由于在独立实例上，仍使用自己的`auth.users`，与A/C用户完全隔离（B的用户登陆B应用无影响于A/C）。此模式下需要明确用户在A和C的权限范围，例如可以通过`auth.users`中的元数据或关联Profile表字段区分哪些用户有权访问A、C或两者。
+
+**表结构划分：** **重点在于如何在一个数据库实例中区分应用A和C的数据表**。推荐的最佳实践是**使用不同的Schema或表名前缀**来划分应用数据，以避免命名冲突并实现逻辑隔离。例如，可在数据库中创建两个 schema：`app_a` 和 `app_c`，分别存放应用A和应用C的业务表；共同的用户Profile等表可以放在公共的schema如`public`下。正如社区所建议的，可以“为每个项目建立一个专属的schema”，这样每个应用的表各在其schema下。具体来说：
+
+*   _共享表_：如用户Profile表，可能应用A和C都会用，且和Auth用户一一对应，可以设计在公共`public`模式下，如`public.profiles`，包含用户基本信息、头像等。
+    
+*   _应用A专属表_：如`app_a.orders`, `app_a.products`等，只被应用A使用的业务数据表。
+    
+*   _应用C专属表_：如`app_c.tasks`, `app_c.reports`等，只被应用C使用的业务数据表。
+    
+
+通过Schema划分，保证即使在同一个数据库中，也能清晰地区隔两套应用的数据模型。同时schema名称本身也相当于命名空间，杜绝表名冲突。
+
+**数据隔离与访问控制：** 借助Supabase强大的PostgreSQL内核，我们可以在**同库不同应用**的场景中实现安全隔离：
+
+*   **访问角色控制**：可以为应用A和应用C创建不同的数据库角色（如`role_app_a`、`role_app_c`），配置各自的search\_path或权限，使其只允许访问对应schema的数据。例如，`role_app_a`只读写`app_a`和公共schema，`role_app_c`只读写`app_c`和公共schema。这可以防止应用A的后端误操作到应用C的表，反之亦然。
+    
+*   **Row Level Security**：如果应用A和C有**细粒度的访问控制**需求（如同一张表中不同来源的数据需隔离），则RLS依然适用。比如公共的`profiles`表中可能需要区分哪些用户属于A应用的有效用户、哪些属于C，根据某字段或关联进行RLS策略设置。但总体来说，由于A和C的大部分业务表是分开的，在各自schema内，可选择**简化RLS策略**。正如一份多租户讨论所指出的，如果通过schema将租户（此处类比为应用）数据隔离，那么在各自的表上**不需要额外的RLS**即可实现隔离；只有在涉及跨应用共享表（如profiles）时，再通过RLS限制用户只能访问自己的记录。
+    
+
+**数据一致性与同步：** 应用A和C共享数据库带来的最大好处就是**数据一致性易于保证**。用户数据作为共享资源，A和C实时访问同一份数据，避免了重复和同步问题。例如用户修改个人资料，无论通过A应用还是C应用，更新的都是`public.profiles`中的同一行数据，对另一应用立即可见。业务数据如果需要共享（比如A产生了一些数据需要被C读取），也因为共库而能直接查询。不过需要注意**应用职责划分**，尽量避免过多跨应用直接操作对方schema的情况，以免耦合过深。
+
+对于独立的应用B，与A/C之间仍需通过API等方式交换数据。因为B在完全独立的库上，没有直接的数据连接。如果有少量需要共享的数据（例如运营人员希望将B的部分数据和A/C整合分析），可以通过定期ETL、数据仓库或中间服务来汇聚。但B和A/C的数据一致性不在数据库层解决，而是应用层考虑。
+
+**维护与扩展性：** 在这种模式下，**共享Supabase实例的应用A和C在维护上会相互影响**，而应用B依然独立演进：
+
+*   **数据库变更影响**：对共享实例的架构更改需要慎重——修改公共的表结构（例如`profiles`字段）需要同时考虑A和C的需求；调整某个schema的配置可能影响整体实例配置。例如调整`auth`设置会影响A/C双方。团队需要建立协调机制，统一管理共享数据库的模式更改。
+    
+*   **性能与扩容**：A和C共用资源，因此**数据库性能是共享**的。如果A的查询过慢过多，可能拖慢C的响应。这要求对数据库进行持续监控和优化，必要时考虑读写分离、分区、索引优化等手段。扩容时可能需要整体考虑——例如Supabase官方云下需要统一将项目升到更高规格。当然，共库也带来资源利用率提升的优点：A和C可以弹性利用数据库资源峰谷差，比如A白天流量高C低，晚上相反，共享资源能避免闲置。
+    
+*   **备份与恢复**：共享实例意味着备份是**整体备份**。恢复数据时也会一起恢复。如果某应用需要回档或出现严重错误，处理会比较棘手，因为不能简单地只恢复单个应用的数据而不影响另一个。为此，设计上可以考虑将关键业务表设置为不同schema，有助于在需要时针对性地导出/导入。
+    
+
+在**官方云Supabase**环境下，实现模式二通常意味着：**将应用A和C放在同一个Supabase项目中**，而应用B在另一个项目中。官方平台对不同项目间的数据不会直接通信，所以B依然隔离。A和C共享一个项目ID、API Key、一套Auth配置。这时必须注意安全设置，例如Dashboard上的权限、调用API时正确区分应用逻辑等。官方云的好处是它**天然提供项目级别的隔离**和**易于管理的备份**。开发者只需维护A/C的一个项目即可，同时维护B的项目，各自有独立的API Endpoint和Anon/Admin密钥等。
+
+**总结：** 模式二在隔离与共享之间取得折中：**该共享的共享，该独立的独立**。通过让相关性强的应用（A和C）共用数据库，实现用户体系和相关数据的统一，降低重复与同步成本；同时让无关的应用（B）独立，保证其灵活性。关键在于**良好的数据库模式设计**和**访问控制**，确保即使共库也不会出现数据混乱和权限漏洞。模式二适用于**多应用属于同一产品线**（需要一定数据互通，如统一用户）的情况，但也**谨防过度耦合**导致将来难以拆分。正如一份架构讨论所言，共享数据库适合于“紧密相关并属于同一有界领域的应用”​[softwareengineering.stackexchange.com](https://softwareengineering.stackexchange.com/questions/378386/one-database-for-multiple-applications#:~:text=I%20have%20worked%20in%20both,in%20the%20same%20bounded%20context)；对于这样的应用群，公用数据库是有效的方案，但前提是团队有能力从全局视角设计数据库，避免各应用各自为政导致全局Schema混乱​[softwareengineering.stackexchange.com](https://softwareengineering.stackexchange.com/questions/378386/one-database-for-multiple-applications#:~:text=Risks%20and%20disadvantages%3A)。
+
+模式三：所有应用共享单一 Supabase 实例
+------------------------
+
+![](https://poketto.oss-cn-hangzhou.aliyuncs.com/317c7a4034aaa106417083ea934538fb.png?x-oss-process=image/resize,w_800/quality,q_100/rotate,0)
+
+**模式描述:** 在某些情况下，我们可能考虑**将应用A、B、C都放入同一个Supabase实例**中。也就是整个系统只有一个数据库，涵盖了所有应用的数据。这种模式相当于一个**多租户的数据库架构**，每个应用相当于一个“租户”。需要强调的是，应用B按场景原本要求独立用户系统，但在**物理共库**的情况下，我们只能通过逻辑区分来实现“独立”。
+
+**用户系统设计：** 这是此模式最大的挑战。Supabase Auth当前**不支持多租户**或多独立用户池。也就是说，在一个Supabase实例的`auth.users`表中，无法天然分隔出B应用的一套用户而不被A/C看到。为了在共库下维持B的用户独立，有几种思路：
+
+*   **方案1：共享Auth系统**（改变需求）：让B也使用与A/C相同的用户体系。也就是放弃B完全独立用户的要求，改为统一账号体系。这显然改变了业务前提，如果不能接受则不适用。
+    
+*   **方案2：逻辑隔离Auth**：仍使用一个Auth，但通过附加字段标记用户来源。例如在`auth.users`增加`app_code`或在Profile表增加标识，注明该用户属于哪几个应用。应用B只认可那些标记为B的用户，A/C认可标记为A或C的用户。登录流程上，可以在用户元数据中存储可访问的应用列表。然而，需要前端/后台在登录后检查用户标识，阻止“不属于本应用”的用户访问。这种方案实现统一账号表下的逻辑隔离，但**安全复杂度较高**，且难以防止某些漏洞让用户越界访问。
+    
+*   **方案3：自定义用户表**：绕开Supabase内置Auth机制，为应用B实现自定义认证。即在共用数据库中，A/C继续使用内置`auth.users`，而B应用**不用**Supabase Auth，而是在数据库里建立例如`app_b.users`表自行管理密码哈希等。这样B的用户完全存在于`app_b.users`表，`auth.users`只服务A/C。B应用的前端可能需要自行实现登录流程或借助第三方Auth库。这种方式技术上可行，实现了物理共库下的用户逻辑独立，但丧失了Supabase Auth的大量便利（如第三方登录、密码重置等现成功能）。
+    
+
+无论哪种方案，都需要在**安全性**和**实现复杂度**之间权衡。如果可以调整需求，**尽量避免在单一Supabase内维护两个独立的用户系统**，因为这不是Supabase设计的初衷，且极易出错。
+
+**表结构划分：** 类似模式二，这里更需要用**Schema或表前缀**划分每个应用的业务数据。可以采取 **“每应用一模式”** 的做法：如`app_a`、`app_b`、`app_c`三个schema，分别容纳各应用专属的业务表。这样不仅避免命名冲突，也方便赋予不同应用的服务密钥不同的访问权限。同时，共享的表（如果有跨应用共享的数据）可以放在公共schema。如前述，如果B坚持独立用户，那么B的用户表可以是`app_b.users`，而A/C共用`auth.users`和`public.profiles`等公共表。通过清晰的模式分层，做到**在同库中划出应用边界**。
+
+**数据隔离与访问控制：** 在单库多应用模式下，**行级安全（RLS）和其他访问控制的作用更突显**，因为一不小心就可能“串库串表”。以下是关键的策略：
+
+*   **Schema权限**：如前所述，设置数据库角色使得应用B的后端只拥有访问`app_b`schema的权限，不允许查询`app_a`或`app_c`的表；应用A/C的后端则可以访问各自schema以及公共schema。如果没有细分角色而所有应用共用数据库管理员权限，将很难避免代码层面的错误访问。
+    
+*   **RLS策略**：对于**共享的表**（比如所有应用共用的某些参考数据，或统一的`auth.users`），必须编写RLS策略以区分应用来源。例如可以在`auth.users`的JWT令牌中附带`app_id`（通过Supabase的JWT自定义字段），然后在访问`auth.users`或`public.profiles`时使用`app_id = jwt.app_id`作为RLS条件，确保应用B的请求只能看到属于B的用户行，A/C同理。对于**各自schema内的表**，如果确认一个应用的表完全不会被其他应用访问，可以视情况简化RLS，但依然建议启用RLS以防止“超级用户令牌”误用。总之，RLS在多应用共库时是一道重要的防线，防止**数据越权**访问。
+    
+*   **多租户设计**：可以将每个应用视为一个“租户（tenant）”，在业务表中加入`tenant_id`或`app_id`列，并在所有查询上默认加过滤。例如应用A和C都在用的某张共享业务表，就通过`app_id`区分记录归属，并用RLS确保各应用只能操作各自的数据。这实际上就是多租户SaaS的典型设计，只不过tenant变成应用。本质目标是**数据隔离**，让共库看起来对应用而言像是独立的。
+    
+
+**数据一致性与同步：** 所有应用数据同库带来的好处是**实时共享**。任何一个应用写入的数据，其他应用立即可见（前提是有访问权限）。数据一致性在库内由事务保证，非常可靠。然而，要注意应用B本应独立的数据，现在混在一个库里，要确保**不会无意中被其他应用依赖**。团队应严格约定哪些表是全局共享的，哪些是应用私有的。如果没有明确边界，开发者可能偷懒直接跨应用查询数据，造成隐性依赖。此外，如果将来某应用需要拆离出独立数据库，之前在单库的强耦合会使拆分异常困难​[softwareengineering.stackexchange.com](https://softwareengineering.stackexchange.com/questions/378386/one-database-for-multiple-applications#:~:text=most%20of%20its%20advantages.%20,organise%20the%20db%20evolution)​[softwareengineering.stackexchange.com](https://softwareengineering.stackexchange.com/questions/378386/one-database-for-multiple-applications#:~:text=,create%20inconsistencies%20across%20the%20db)。因此，尽管数据一致性在共库下易于保证，但也**要克制跨界读写**，以免走向“大一统数据库”的反面。
+
+**维护与扩展性：** 一个数据库服务所有应用，在维护和扩展上既有优点也有隐患：
+
+*   **集中化维护**：只需管理一个数据库实例的备份、监控、升级。这在官方云Supabase下体现为只维护一个项目，所有日志、权限等集中管理，运维成本较低​[softwareengineering.stackexchange.com](https://softwareengineering.stackexchange.com/questions/378386/one-database-for-multiple-applications#:~:text=Single,time%2C%20different%20applications%20very%20easily)。而数据备份恢复是全或无的操作，不会出现部分项目忘记备份的情况。
+    
+*   **演进协调**：集中也意味着**所有应用的演进步调需要协调**。数据库模式的更改需要考虑对所有应用的影响。一张表的模式更改可能牵涉多个应用的代码修改。如果应用团队相互独立，协调成本会很高，容易产生冲突或放慢开发速度​[softwareengineering.stackexchange.com](https://softwareengineering.stackexchange.com/questions/378386/one-database-for-multiple-applications#:~:text=,touch%20a%20working%20production%20db)。因此单库更适合**统一管理**的团队，而不适合完全分散的团队。
+    
+*   **性能瓶颈**：所有应用共用同一个数据库实例，**将数据库推向单点瓶颈**。当应用数量和数据量增长，可能出现**扩展上限受限于单机**的问题​[softwareengineering.stackexchange.com](https://softwareengineering.stackexchange.com/questions/378386/one-database-for-multiple-applications#:~:text=,Due%20to%20the%20unknown)。虽然云服务可以纵向扩展数据库资源，但横向拆分会比较难（毕竟数据紧密连在一起）。如果A、B、C在不同领域增长，需求各异，共库可能无法针对个别应用进行优化（比如无法为某应用单独迁移到更强的硬件）。这也是为什么现代架构倾向于服务独立数据库的原因之一。
+    
+*   **故障影响面**：单库意味着**牵一发而动全身**。任何一个应用的不当操作（如误删大量数据、导致长时间锁表）可能影响所有应用的可用性​[softwareengineering.stackexchange.com](https://softwareengineering.stackexchange.com/questions/378386/one-database-for-multiple-applications#:~:text=,touch%20a%20working%20production%20db)。维护人员在执行变更时也需要更加谨慎小心，最好在各种变更前做好备份及影响评估，必要时在低峰期停机维护。
+    
+
+在官方云Supabase中，基本等同于创建一个项目包含全部A/B/C逻辑。这**并不常见**，因为官方更推荐按应用/产品划分项目。但如果这么做，需要意识到Supabase提供的一些功能假定单项目就是单应用。例如Auth邮件模板、Storage命名空间等，都将一起共享。团队需要策划好如何在一个项目中运营多个应用，例如注册邮件是否需要根据应用来源定制发送内容（这可能需要借助额外的逻辑，因为Supabase Auth可能无法针对不同app发送不同模板）。
+
+**总结：** 模式三将**所有应用融合在一起**，实现了最彻底的“数据统一”，带来一些实时协同和运营上的便利，但也引入**架构上的高耦合风险**。在实践中，除非应用A/B/C紧密相关到几乎不可分割（甚至可以被视为一个应用的不同模块），否则不太建议采用完全共库的方案​[softwareengineering.stackexchange.com](https://softwareengineering.stackexchange.com/questions/378386/one-database-for-multiple-applications#:~:text=I%20have%20worked%20in%20both,in%20the%20same%20bounded%20context)。如果不得不这样做，务必要在架构上做好分区和隔离策略，将“大一统”数据库人为划分出子边界，并对代码和团队流程进行约束，防止混乱。在当今的云和微服务时代，更流行的做法是**通过API集成不同服务的数据**，而非都放在同一个数据库里​[softwareengineering.stackexchange.com](https://softwareengineering.stackexchange.com/questions/378386/one-database-for-multiple-applications#:~:text=%2A%20In%20our%20internet,dbs%20servers%20you%20need%20to)。正如有经验的架构师所说，现在好的架构关键不在于是否放在一个库，而在于定义好服务之间的接口，让服务而不是数据库成为应用之间的纽带​[softwareengineering.stackexchange.com](https://softwareengineering.stackexchange.com/questions/378386/one-database-for-multiple-applications#:~:text=Conclusion)。因此，共库模式需要慎用，更多作为一种**特殊场景下的折中方案**或历史原因下的产物。
+
+总结
+--
+
+综合以上分析，我们将跨应用表设计的思路归纳如下：
+
+*   **根据业务关联度选择架构**：应用独立则各自独立数据库，减少耦合；应用强相关则可考虑共享部分或全部数据库，提高复用。务必识别应用之间的\*\* bounded context \*\*边界​[softwareengineering.stackexchange.com](https://softwareengineering.stackexchange.com/questions/378386/one-database-for-multiple-applications#:~:text=I%20have%20worked%20in%20both,in%20the%20same%20bounded%20context)，在同一边界内共享，在不同边界间隔离。
+    
+*   **用户体系设计优先**：共享用户是驱动架构的首要因素。Supabase当前每个项目自带一套Auth用户表，不支持多个用户池共存。因此确定哪些应用共享用户，可以决定是共库还是分库。如果必须共享但又要部分独立，考虑引入**第三方身份提供**来解耦用户体系与数据库。
+    
+*   **模式(schema)与表命名**：在**共享数据库**的场景下，充分利用PostgreSQL的Schema来划分应用，实现**逻辑隔离**。同时约定清晰的表命名或前缀，方便辨识哪个表属于哪个应用。这不仅是规范问题，更是防止误用数据的安全措施。
+    
+*   **数据隔离与RLS**：无论多应用是否共享数据库，安全永远是底线。对于共库，一定设计好**行级安全**策略或至少确保不同应用的服务密钥权限只限于各自数据范围。对于独立库，也不要因物理隔离而忽视自身的RLS和权限管理。
+    
+*   **数据共享与同步**：需要共享的数据，优先在库内共享（共库模式）以保证强一致；如果因架构独立不得不跨库，则通过**事件、API或批处理**保持同步，并做好失败重试和定期校验。在用户体验层面，力求让跨应用的数据共享对最终用户是无缝的。
+    
+*   **演进规划**：架构不是一成不变的。在初期可以为了速度先选择共库以减少开发成本，但要为未来**拆分做好准备**。相反，如果一开始各库独立，但后来发现强相关需要融合，也要评估**数据迁移**成本。保持代码对数据库的低耦合（例如通过服务层拿数据，而不是跨库JOIN）会让你在调整架构时更从容​[softwareengineering.stackexchange.com](https://softwareengineering.stackexchange.com/questions/378386/one-database-for-multiple-applications#:~:text=Conclusion)。
+    
+
+最后，Supabase作为后端即服务（BaaS）提供了丰富的工具，但架构上的取舍仍然需要我们根据业务需求谨慎权衡。希望本文的分析能够帮助开发者在面对**多应用、多数据库**的复杂局面时，设计出清晰而健壮的表结构方案，为未来的扩展和维护打下良好的基础。
