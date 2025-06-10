@@ -59,15 +59,15 @@ git status命令显示 Git 仓库工作目录和暂存区的当前状态。它�
 git checkout .命令会丢弃工作目录中的所有更改，将文件恢复到上次提交的状态。此命令对于快速撤消本地修改并将工作目录恢复到干净状态很有用。
 ### <a name="git-reset--p"></a>**git 重置 -p**
 git reset -p命令允许你以交互方式重置工作目录中的更改。它提供了一种选择性撤消修改的方法，让你能够细粒度地控制哪些更改需要保留或丢弃。
-### <a name="git-add-file"></a>**git add <文件>**
+### <a name="git-add-file"></a>**git add \<文件\>**
 git add file 命令会将特定文件添加到 Git 的暂存区。这会为文件包含在下一次提交中做好准备，让您可以选择性地选择要包含在版本历史记录中的更改。
 ### <a name="git-add--p"></a>**git add -p**
 允许您通过将工作目录中的更改分成块（块）来以交互方式暂存更改，从而使您能够在提交之前检查更改的部分并将其有选择地添加到索引中。
 ### <a name="git-add--i"></a>**git add -i**
 进入添加文件的交互模式。提供基于文本的交互式菜单，您可以在其中选择要执行的各种操作，例如暂存各个更改、更新文件或查看状态。
-### <a name="git-rm-file"></a>**git rm <文件>**
+### <a name="git-rm-file"></a>**git rm \<文件\>**
 从工作目录中删除文件并暂存删除
-### <a name="git-rm---cached-file"></a>**git rm --cached <文件>**
+### <a name="git-rm---cached-file"></a>**git rm --cached \<文件\>**
 从暂存区（索引）中删除指定的文件，但将其完整地保留在工作目录中，从而有效地从版本控制中取消对文件的跟踪。
 ### <a name="git-mv-old_path-new_path"></a>**git mv <旧路径> <新路径>**
 git mv <old\_path> <new\_path>命令用于移动或重命名 Git 仓库中的文件或目录。它会自动暂存更改，为下一次提交做好准备。
@@ -203,7 +203,7 @@ Git 标记功能允许您使用有意义的名称将存储库历史记录中的�
 创建具有指定名称和消息的带注释的标签，其中包括标记者的姓名、电子邮件和日期等其他元数据，并指向当前提交。
 ### <a name="git-tag--d-tag_name"></a>**git tag -d <标签名称>**
 从本地存储库中删除指定的标签
-### <a name="git-tag--f-tag-commit"></a>**git tag -f <标签> <提交>**
+### <a name="git-tag--f-tag-commit"></a>**git tag -f <标签> \<提交\>**
 强制标签指向不同的提交。
 ### <a name="git-show-tag_name"></a>**git show <标签名>**
 显示指定标签的详细信息，包括它指向的提交以及任何相关的标签消息或注释
@@ -217,19 +217,19 @@ Git 标记功能允许您使用有意义的名称将存储库历史记录中的�
 从默认远程存储库中检索所有标签并使用它们更新本地存储库，而不会影响您当前的分支。
 # <a name="reverting-changes"></a>**恢复更改**
 在 Git 中，还原更改是指撤消对仓库历史记录所做的修改。这可以通过多个命令来实现，例如 git revert，它会创建一个新的提交，并否定指定先前提交的更改，从而有效地撤消其效果，同时保留提交历史记录。另一种方法是使用 git reset，它会将当前 HEAD 更改为指定的提交，并可以根据所选选项（-soft、-mixed 或 -hard）更新暂存区和工作目录。此外，git checkout 可用于放弃工作目录中的更改，将文件还原到上次提交时的状态。这些工具为管理和更正更改提供了灵活性，确保仓库保持准确和整洁。
-### <a name="git-checkout----file"></a>**git checkout -- <文件>**
+### <a name="git-checkout----file"></a>**git checkout -- \<文件\>**
 放弃工作目录中指定文件的更改，将其恢复到上次提交的状态，并有效撤消尚未暂存的任何修改。
-### <a name="git-revert-commit"></a>**git revert <提交>**
+### <a name="git-revert-commit"></a>**git revert \<提交\>**
 创建一个新的提交，撤消指定提交中的更改，有效地逆转其影响，同时保留历史记录。
-### <a name="git-revert--n-commit"></a>**git revert -n <提交>**
+### <a name="git-revert--n-commit"></a>**git revert -n \<提交\>**
 撤销提交但不提交结果。
 ### <a name="git-reset"></a>**git 重置**
 将当前 HEAD 重置为指定状态，并选择性地更新暂存区和工作目录，具体取决于所使用的选项（-soft、-mixed 或 -hard）。
-### <a name="git-reset---soft-commit"></a>**git reset --soft <提交>**
+### <a name="git-reset---soft-commit"></a>**git reset --soft \<提交\>**
 将 HEAD 移动到指定的提交，同时保持索引（暂存区）和工作目录不变，这样指定提交之后的所有更改都将保留在暂存区等待提交。当你想撤消提交但保留更改以便再次提交时，此功能非常有用。
-### <a name="git-reset---mixed-commit"></a>**git reset --mixed <提交>**
+### <a name="git-reset---mixed-commit"></a>**git reset --mixed \<提交\>**
 将 HEAD 移动到指定的提交并更新索引（暂存区）以匹配该提交，但保持工作目录不变，因此指定提交之后的更改将保留但不会被跟踪。
-### <a name="git-reset---hard-commit"></a>**git reset --hard <提交>**
+### <a name="git-reset---hard-commit"></a>**git reset --hard \<提交\>**
 将 HEAD 移动到指定的提交并更新索引（暂存区）和工作目录以匹配该提交，丢弃指定提交后的所有更改和未跟踪的文件。
 # <a name="viewing-history-logs"></a>**查看历史记录**
 Git 历史记录指的是对仓库在一段时间内所做的所有更改的记录。它包含按时间顺序排列的提交，每个提交代表仓库在特定时间点的快照。通过提供详细的更改记录（包括更改者、更改时间和更改原因），这些历史记录可以帮助开发者追踪修改、了解代码库的演变，并实现高效的协作。像 git log 这样的工具可以帮助浏览这些历史记录，深入了解开发过程，并辅助调试和项目管理。
@@ -254,7 +254,7 @@ Git 历史记录指的是对仓库在一段时间内所做的所有更改的记�
 显示在指定日期之后的提交。
 ### <a name="git-log---cherry-pick"></a>**git log --cherry-pick**
 忽略两个分支之间等效的提交。
-### <a name="git-log---follow-file"></a>**git log --follow <文件>**
+### <a name="git-log---follow-file"></a>**git log --follow \<文件\>**
 显示文件的提交，包括重命名。
 ### <a name="git-log---show-signature"></a>**git log --show-signature**
 显示提交的 GPG 签名信息。
@@ -268,7 +268,7 @@ Git 历史记录指的是对仓库在一段时间内所做的所有更改的记�
 从日志中忽略合并提交。
 ### <a name="git-whatchanged"></a>**git 发生了什么变化**
 以类似于提交日志的格式列出提交数据。
-### <a name="xc556efbd07a0c3cca88820b565cdb1aae5ab98e"></a>**git diff-tree --pretty --name-only --root <提交>**
+### <a name="xc556efbd07a0c3cca88820b565cdb1aae5ab98e"></a>**git diff-tree --pretty --name-only --root \<提交\>**
 显示提交树的详细信息。
 ### <a name="git-log---first-parent"></a>**git log --first-parent**
 仅显示当前分支的提交并排除从其他分支合并的提交。
@@ -278,13 +278,13 @@ Git 差异是 Git 的一项功能，可让您查看代码库中不同状态之�
 显示存储库中不同状态之间的差异，例如工作目录与索引（暂存区）之间的差异、索引与上次提交之间的差异，以及两次提交之间的差异。它逐行显示文件中的更改，帮助您在提交或合并之前检查修改。
 ### <a name="git-diff---stat"></a>**git diff --stat**
 显示工作目录和索引（暂存区）之间的更改摘要，帮助您查看已修改的文件以及已添加或删除的行数。
-### <a name="git-diff---stat-commit"></a>**git diff --stat <提交>**
+### <a name="git-diff---stat-commit"></a>**git diff --stat \<提交\>**
 查看提交和工作目录之间的更改
 ### <a name="git-diff---stat-commit1-commit2"></a>**git diff --stat <提交1> <提交2>**
 提供两次提交之间的更改摘要，显示哪些文件被更改以及它们之间的更改程度。
 ### <a name="git-diff---stat-branch1-branch2"></a>**git diff --stat <分支1> <分支2>**
 总结两个分支之间的差异，指出更改的文件和更改的幅度。
-### <a name="git-diff---name-only-commit"></a>**git diff --name-only <提交>**
+### <a name="git-diff---name-only-commit"></a>**git diff --name-only \<提交\>**
 仅显示在指定提交中更改的文件的名称。
 ### <a name="git-diff---cached"></a>**git diff --cached**
 显示暂存更改（索引）与上次提交之间的差异，帮助您查看下次提交将包含的内容
@@ -322,7 +322,7 @@ Git 配置涉及设置各种选项和首选项，用于控制 Git 环境的行�
 在全球范围内设置用户电子邮件。
 ### <a name="git-config---global-core.editor-editor"></a>**git config --global core.editor <编辑器>**
 设置默认文本编辑器。
-### <a name="x8bac38a68511d4962da00b83fcd7d62e9fa79c0"></a>**git config --global core.excludesfile <文件>**
+### <a name="x8bac38a68511d4962da00b83fcd7d62e9fa79c0"></a>**git config --global core.excludesfile \<文件\>**
 设置全局忽略文件。
 ### <a name="git-config---list"></a>**git config --list**
 列出所有配置设置。
@@ -365,7 +365,7 @@ git rebase 命令用于将提交重新应用到另一个基础提交之上。它
 
 基本用法是 git rebase ，它将当前分支重新定位到指定的分支上。
 ### <a name="git-rebase---interactive-branch"></a>**git rebase --interactive <分支>**
-启动交互式 rebase 会话，允许你修改从当前 HEAD 开始的提交。这允许你重新排序、压缩、编辑或删除提交，从而提供一种在推送更改之前清理和优化提交历史记录的方法。简化版本： git rebase -i <branch>
+启动交互式 rebase 会话，允许你修改从当前 HEAD 开始的提交。这允许你重新排序、压缩、编辑或删除提交，从而提供一种在推送更改之前清理和优化提交历史记录的方法。简化版本： git rebase -i /<branch/>
 ### <a name="git-rebase---continue"></a>**git rebase --continue**
 解决冲突后继续重新定基过程。
 ### <a name="git-rebase---abort"></a>**git rebase --abort**
@@ -374,14 +374,14 @@ git rebase 命令用于将提交重新应用到另一个基础提交之上。它
 从远程存储库获取并重新设置本地更改。
 # <a name="cherry-picking"></a>**挑选**
 Git 的 Cherry-Picking 功能允许您将特定提交引入的更改从一个分支应用到另一个分支。当您想选择性地合并来自不同分支的个别更改而不合并整个分支时，此功能尤其有用。通过使用 git cherry-pick 命令，您可以隔离并仅集成所需的提交，确保特定修改包含在当前分支中，同时避免来自分支其他部分的潜在冲突和不必要的更改。
-### <a name="git-cherry-pick-commit"></a>**git cherry-pick <提交>**
+### <a name="git-cherry-pick-commit"></a>**git cherry-pick \<提交\>**
 应用现有提交引入的更改。
 ### <a name="git-cherry-pick---continue"></a>**git cherry-pick --continue**
 解决冲突后继续挑选。
 ### <a name="git-cherry-pick---abort"></a>**git cherry-pick --abort**
 中止挑选过程。
-### <a name="git-cherry-pick---no-commit-commit"></a>**git cherry-pick --no-commit <提交>**
-挑选一个提交，但不自动提交，并允许进一步修改。简短版本： git cherry-pick -n <commit>
+### <a name="git-cherry-pick---no-commit-commit"></a>**git cherry-pick --no-commit \<提交\>**
+挑选一个提交，但不自动提交，并允许进一步修改。简短版本： git cherry-pick -n \<commit\>
 # <a name="patching"></a>**修补**
 Git 补丁是一种将更改从一个仓库应用到另一个仓库，或将同一仓库内的一个分支应用到另一个分支的方法。它涉及创建补丁文件，这些文件是表示提交或分支之间差异的文本文件。然后，可以使用 git apply 或 git am 等命令将这些补丁文件应用到仓库，这样无需直接合并分支即可传输和集成更改。补丁对于在不同代码库之间共享特定的更改或更新特别有用，可确保仅应用预期的修改。
 ### <a name="git-apply-patch_file"></a>**git apply <补丁文件>**
@@ -414,19 +414,19 @@ Git 相对日期允许用户使用易于理解的时间表达式来引用代码�
 其他用法示例。
 # <a name="blaming"></a>**责备**
 Git Blaming 是 Git 的一项功能，它可以识别文件每一行的最后修改，并将更改归因于特定的提交和作者。此功能使用 git blame 命令完成，该命令提供文件的详细注释，显示更改的执行者和更改时间。此工具对于跟踪文件历史记录、了解代码演变以及识别错误或更改的来源特别有用。通过精确定位每行代码的提交和作者，开发人员可以深入了解开发过程，并促进团队内部的协作和问责。
-### <a name="git-blame-file"></a>**git blame <文件>**
+### <a name="git-blame-file"></a>**git blame \<文件\>**
 显示文件每一行的最后修改。
-### <a name="git-blame-file--l-startend"></a>**git blame <文件> -L <开始>,<结束>**
+### <a name="git-blame-file--l-startend"></a>**git blame \<文件\> -L <开始>,<结束>**
 将 blame 输出限制在指定的行范围内。
-### <a name="git-blame-file-commit"></a>**git blame <文件> <提交>**
+### <a name="git-blame-file-commit"></a>**git blame \<文件\> \<提交\>**
 显示指定提交之前的责任信息。
-### <a name="git-blame-file--c--c"></a>**git blame <文件> -C -C**
+### <a name="git-blame-file--c--c"></a>**git blame \<文件\> -C -C**
 显示文件每一行最后修改的修订版本和作者，并带有复制检测。
 
 -C选项用于检测同一文件中移动或复制的行。使用一次 ( -C ) 即可检测同一文件中移动或复制的行。使用两次( -C -C ) 则会让 git 检查未修改的文件作为复制源的候选文件。这意味着它不仅会尝试在同一个文件中查找复制行的来源，还会在其他文件中查找。
-### <a name="git-blame-file---reverse"></a>**git blame <文件> --reverse**
+### <a name="git-blame-file---reverse"></a>**git blame \<文件\> --reverse**
 向后操作，显示谁最后修改了指定文件中的每一行。
-### <a name="git-blame-file---first-parent"></a>**git blame <文件> --first-parent**
+### <a name="git-blame-file---first-parent"></a>**git blame \<文件\> --first-parent**
 显示最近修改文件中每一行的人，仅遵循合并更改的第一个父提交。
 # <a name="archiving"></a>**归档**
 Git 归档功能允许您创建包含特定提交、分支或标签内容的归档文件（例如 .tar 或 .zip）。此功能可用于打包特定时间点的仓库快照，让您能够分发或备份仓库的状态，而无需包含完整的 Git 历史记录。git archive 命令通常用于此目的，它提供了一种便捷的方法，可以将项目的当前状态导出为可移植的格式。
@@ -446,13 +446,13 @@ Git 跟踪是指监控和管理存储库中文件的过程。git ls-files 命令
 列出树对象的内容。
 # <a name="index-manipulation"></a>**指数操纵**
 Git 索引操作涉及管理暂存区（也称为索引），用于在提交之前准备更改。这包括将文件标记为“假定未更改”以暂时忽略更改，或重置这些标记以再次跟踪更改。索引操作命令（例如 git update-index）允许您控制下次提交时包含哪些文件，从而灵活地处理更改并优化特定任务的工作流程。
-### <a name="git-update-index---assume-unchanged-file"></a>**git update-index --assume-unchanged <文件>**
+### <a name="git-update-index---assume-unchanged-file"></a>**git update-index --assume-unchanged \<文件\>**
 将文件标记为假定未改变。
-### <a name="x28adaaeea45a9ee3f5f748a42c3cd63fde618f9"></a>**git update-index --no-assume-unchanged <文件>**
+### <a name="x28adaaeea45a9ee3f5f748a42c3cd63fde618f9"></a>**git update-index --no-assume-unchanged \<文件\>**
 取消标记文件为假定未更改。
 # <a name="squashing"></a>**挤压**
 Git 压缩是将多个提交合并为一个提交的过程。这通常用于在将更改合并到主分支之前清理提交历史记录，使历史记录更简洁易读。压缩可以使用交互式变基命令 (git rebase -i) 执行，该命令允许开发人员选择性地合并、重新排序或编辑提交。通过压缩提交，可以整合冗余或较小的更改，从而更清晰地呈现开发过程。
-### <a name="git-rebase--i-headn"></a>**git rebase -i HEAD~<n>**
+### <a name="git-rebase--i-headn"></a>**git rebase -i HEAD~\<n\>**
 以交互方式压缩提交。
 # <a name="data-integrity"></a>**数据完整性**
 Git 数据完整性是指 Git 用于确保存储库中数据准确性和一致性的机制和流程。Git 使用加密哈希（SHA-1 或 SHA-256）来唯一标识提交、树和 Blob 等对象。这种哈希不仅为每个对象提供唯一标识符，还能确保对对象内容的任何修改都会导致不同的哈希值，从而检测任何损坏或篡改行为。像 git fsck 这样的命令可用于验证数据库中对象的连接性和有效性，从而确保存储库的整体健康和完整性。
@@ -502,7 +502,7 @@ Git bisecting 是一款强大的调试工具，可以帮助识别项目中引入
 开始二分会话。
 ### <a name="git-bisect-bad"></a>**git bisect 错误**
 将当前版本标记为不良版本。
-### <a name="git-bisect-good-commit"></a>**git bisect good <提交>**
+### <a name="git-bisect-good-commit"></a>**git bisect good \<提交\>**
 将指定的提交标记为良好。
 ### <a name="git-bisect-reset"></a>**git bisect 重置**
 结束二分会话并返回原始分支。
@@ -510,15 +510,15 @@ Git bisecting 是一款强大的调试工具，可以帮助识别项目中引入
 启动一个可视化工具来协助平分。
 # <a name="attributes"></a>**属性**
 Git 属性是定义 Git 如何处理仓库中特定文件或路径的设置。这些属性定义在名为 .gitattributes 的文件中，它们可以控制各种行为，例如文本编码、行尾规范化、合并策略和差异算法。通过设置属性，您可以确保在不同环境和协作者之间保持一致的行为，从而更轻松地管理具有特殊要求或复杂性的文件。例如，您可以将某些文件标记为二进制文件，以防止 Git 尝试合并它们，或者指定自定义差异驱动程序以进行更有意义的比较。
-### <a name="git-check-attr-attribute----file"></a>**git check-attr <属性> -- <文件>**
+### <a name="git-check-attr-attribute----file"></a>**git check-attr <属性> -- \<文件\>**
 显示 .gitattributes 配置中定义的给定文件的特定属性的值，帮助您了解 Git 如何根据文本编码、合并行为或差异处理等属性处理文件。
 # <a name="checkout"></a>**查看**
 git checkout 是 Git 中的一个多功能命令，用于在仓库内的不同分支、标签或提交之间切换。通过更新工作目录和索引以匹配指定的分支或提交，它允许您查看或操作该点的仓库状态。此外，git checkout 还可用于创建新分支、从提交中恢复特定文件，甚至使用 –orphan 选项创建一个没有历史记录的新分支。此命令对于导航和管理项目代码库的不同版本至关重要。
-### <a name="git-checkout-commit"></a>**git checkout <提交>**
+### <a name="git-checkout-commit"></a>**git checkout \<提交\>**
 更新工作目录和索引以匹配指定的提交，允许您查看或使用该提交的存储库状态，但它会使您处于“分离的 HEAD”状态，这意味着您不在任何分支上
-### <a name="git-checkout--b-branch-commit"></a>**git checkout -b <分支> <提交>**
+### <a name="git-checkout--b-branch-commit"></a>**git checkout -b <分支> \<提交\>**
 从指定的提交开始创建一个名为的新分支并切换到该分支，允许您从提交历史记录中的该点开始工作。
-### <a name="git-checkout-commit----file"></a>**git checkout <提交> -- <文件>**
+### <a name="git-checkout-commit----file"></a>**git checkout \<提交\> -- \<文件\>**
 将指定文件从特定提交恢复到您的工作目录中，用该提交的版本替换文件的当前版本，而不更改提交历史记录或索引。
 ### <a name="git-checkout---orphan-new_branch"></a>**git checkout --orphan <新分支>**
 创建一个名为 的新分支，没有提交历史记录，有效地启动一个以干净的工作目录和索引开始的新分支，就好像它是一个新的存储库一样。
@@ -526,7 +526,7 @@ git checkout 是 Git 中的一个多功能命令，用于在仓库内的不同�
 Git reflog 是一个强大的工具，它记录了 Git 仓库中分支末端和 HEAD 引用的所有更改。这些更改包括提交、检出、合并和重置等操作。通过维护这些更改的历史记录，reflog 允许用户跟踪最近的修改并恢复丢失的提交，即使它们不包含在当前分支历史记录中。它提供了一种浏览仓库状态变化的方法，使其成为调试和撤销错误的宝贵资源。
 ### <a name="git-reflog"></a>**git 引用日志**
 显示对 HEAD 引用和分支提示的所有更改的日志，包括提交、签出、合并和重置，允许您恢复丢失的提交或跟踪存储库状态的最近更改
-### <a name="git-reflog-show-ref"></a>**git reflog 显示 <ref>**
+### <a name="git-reflog-show-ref"></a>**git reflog 显示 \<ref\>**
 显示指定引用 () 的 reflog，显示该引用的更改日志，包括 HEAD 或分支提示的更新，以及相关的提交消息和时间戳。
 # <a name="handling-untracked-files"></a>**处理未跟踪的文件**
 ### <a name="git-clean"></a>**git 清理**
