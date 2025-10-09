@@ -4,3 +4,6 @@
 [submodule ".obsidian"]
 	path = .obsidian
 	url = git@github.com:markshawn2020/.obsidian.git
+[submodule "DeepLearning.ai-Courses-ClaudeCode"]
+	path = DeepLearning.ai-Courses-ClaudeCode
+	url = git@github.com:markshawn2020/DeepLearning.ai-Courses-ClaudeCode.git

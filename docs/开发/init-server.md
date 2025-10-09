@@ -13,10 +13,11 @@
   sudo apt update
   sudo apt upgrade -y
   
-  sudo apt install zsh
+  sudo apt install zsh -y
   # install oh-my-zsh
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-  
+echo "y" |  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+ zsh
+ 
   sudo apt install tmux
   # install oh-my-tmux
   git clone https://github.com/gpakosz/.tmux.git
@@ -29,10 +30,12 @@
   export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
   
-  nvm install 18
-  nvm use 18
+  nvm install 22
+  nvm use 22
   
-  npm install -g yarn
+  npm install -g yarn pnpm
+
+# ----
   
   # ssh/rsync no-secret login (from local to server)
   username="xxx"
