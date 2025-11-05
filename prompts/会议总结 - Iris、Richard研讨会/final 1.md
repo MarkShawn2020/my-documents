@@ -8,19 +8,17 @@ authors:
 source: 手工川社区
 ---
 
-> 「**AI 出海**」无疑是这几年的热点，尤其是广为人知的「**35 倍定律**」，但想做好，每一步可能都充满挑战：**如何搭建产品的增长路径？海外的合规、支付、市场到底怎么选？有没有一套可复用的 SOP？**
->
-> 带着这些问题，我们  **手工川 / Vibe Genius 社群**  邀请了业内经验丰富的  **Iris**  与  **Richard** ，并在多个社群的共同支持下一起举办了一场「**AI 产品出海运营增长实战研讨会**」，原计划 2 小时最终接近 3 小时，希望能帮大家打通 AI 出海的任督二脉！
+> 「**AI 出海**」无疑是这几年的热点，尤其是广为人知的「**35倍定律**」，但想做好，每一步可能都充满挑战：**如何搭建产品的增长路径？海外的合规、支付、市场到底怎么选？有没有一套可复用的 SOP？**
+> 
+> 带着这些问题，我们 **手工川 / Vibe Genius 社群** 邀请了业内经验丰富的 **Iris** 与 **Richard** ，并在 **EpicConnector、Linkloud、东升大厦AI原点学堂等社群** 的支持下一起举办了一场「**AI 产品出海运营增长实战研讨会**」，希望能帮大家打通AI出海的任督二脉！
 > 
 > 如果对您有所帮助，欢迎点赞关注转发，大家的支持将激励我们举办更优质的活动，带给大家更优质的内容！
-
-![](https://the-dummy.oss-cn-beijing.aliyuncs.com/undefined%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20251023145330_1433_221.jpg)
 
 
 本文较长，约一万字，以下是详细目录：
 
 - Key Insights
-- Iris：从 0 到 1，AI 产品出海的实战 SOP
+- Part 1：从 0 到 1，AI 产品出海的实战 SOP
 	- 一、 心态与认知：打破出海的两大误区
 	- 二、 出海五步法：从定位到规模化增长
 		- 第一步：定禀赋 - 去哪里学习和找对标？
@@ -28,7 +26,7 @@ source: 手工川社区
 		- 第三步：早期用户 - 如何不花钱找到前 10 个人？
 		- 第四步：验证 PMF - 如何用好你的早期用户？
 		- 第五步：规模化增长 - 什么时候可以开始“花钱”？
-- Richard：开源为道，如何赢得全球开发者的信任
+- Part 2：开源为道，如何赢得全球开发者的信任
 	- 一、开源不是情怀，是经过精密计算的商业工具
 	- 二、 开源出海的四大误区
 		- 误区一：代码开源 ≠ 成功出海
@@ -38,12 +36,16 @@ source: 手工川社区
 	- 二、 开发者关系（DevRel）的内核：开发者成功
 	- 三、 开源战略与许可证选择
 	- 四、 实践案例与总结
-- 圆桌讨论
+- Part 3：圆桌讨论
 	- 关于开源的哲学：工具还是信仰?
+	- 关于 IP 战略的思考
 	- 关于创始人个人品牌的重要性
 - 致谢
-- 关于
 - 附注
+
+
+
+
 
 ### Key Insights
 
@@ -188,6 +190,7 @@ PMF即产品市场契合度，是指你的产品真正满足了市场需求，�
 **南川 Mark @手工川**： 像微软 Clarity 这样的热力图和录屏工具，能替代用户访谈吗？
 
 ![微软的 Clarity 可以生成用户行为的热度地图](https://the-dummy.oss-cn-beijing.aliyuncs.com/undefined20251028065757400.png)
+
 
 **生姜 Iris**： 可以作为补充，但不能替代。访谈能让你更立体地了解一个“人”，他是在什么行业、什么职业、什么场景下进行的那些操作。单纯看录屏，你得不到这些场外信息。而且，愿意花时间接受你访谈的用户，本身就是对你产品有高度兴趣和信任的，他们提供的信息价值极高。
 
@@ -387,6 +390,18 @@ Open Core是开源软件最主流的商业模式之⼀。其核⼼思想是：
 
 所以我不会建议我的客户说"你应开尽开"，不是的，而是说怎么样做?即使是慢慢地开都比一下开了又收回来好。开的时候就会先跳脚的是那些有情节的人。所以其实这个是有一个度要去做的。
 
+### 关于 IP 战略的思考
+
+**南川 Mark**： 我之前研究了 POP MART 的 IP 策略，我发现它其实不走传统的内容驱动路线，而是通过大量的社交媒体曝光来建立品牌认知度。这对我们做 AI 产品出海有什么启示?
+
+**生姜 Iris**： 我觉得 POP MART 的策略很有意思，但它适用于消费品，不太适用于软件产品。软件产品，特别是 TO B 的，用户需要理解你的产品能做什么，能解决什么问题。
+
+单纯的曝光是不够的，你需要教育用户。所以内容营销还是非常重要的。但是 POP MART 给我们的启示是：品牌认知度很重要，你要让用户记住你，要有 distinctive 的视觉形象，要有一致的品牌调性。
+
+**Richard 林旅强**： 我补充一点，我觉得 TO C 产品和 TO B 产品的营销策略确实非常不一样。TO C 可以更感性，更注重视觉冲击，更注重情绪价值。TO B 更理性，更注重价值证明，更注重 case study。
+
+但是不管哪种，都需要建立品牌认知度。只不过 TO C 可能通过 social media、influencer 等方式，TO B 可能通过 content marketing、thought leadership 等方式。
+
 ### 关于创始人个人品牌的重要性
 
 **南川 Mark**： 你们怎么看创始人个人品牌对出海的帮助?
@@ -411,40 +426,35 @@ Open Core是开源软件最主流的商业模式之⼀。其核⼼思想是：
 
 手工川社区会继续组织这样的高质量研讨会，帮助更多的创业者实现出海梦想。如果你对 AI 产品出海、开源增长、全球化运营等话题感兴趣，欢迎关注手工川社区的后续活动。
 
-## 关于
-
 **关于手工川社区**
 
-手工川社区是一个专注于 AI 和技术内容创作的社区，致力于帮助内容创作者和技术从业者提升认知、分享经验、共同成长。
-
-我们会不定期举办线上线下研讨会，邀请行业专家分享实战经验和方法论，例如往期：[Vibe Seminar 合辑](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzg2OTg5NDg3Mg==&action=getalbum&album_id=4114785509204000771#wechat_redirect)。
+手工川社区是一个专注于 AI 和技术内容创作的社区，致力于帮助内容创作者和技术从业者提升认知、分享经验、共同成长。我们会**不定期**举办线上线下研讨会，邀请行业专家分享实战经验和方法论，例如往期：[Vibe Seminar 合辑](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzg2OTg5NDg3Mg==&action=getalbum&album_id=4114785509204000771#wechat_redirect)。
 
 **关于嘉宾**
 
-- **生姜 Iris**： 前 AFFiNE 创始团队成员，前 Lark(飞书海外版)社区负责人，现为多家企业的出海顾问，在开源增长、社区运营、出海策略方面有丰富经验。**关注她的即刻：生姜 iris**。
-- **Richard 林旅强**： 前 01 开源增长负责人，现为独立顾问，专注于开源策略、全球化运营、内容营销。帮助多家开源项目实现全球增长。**关注他的即刻：OPEN 强**。
+- **生姜 Iris**： 前 AFFiNE 创始团队成员，前 Lark(飞书海外版)社区负责人，现为多家企业的出海顾问，在开源增长、社区运营、出海策略方面有丰富经验。**关注她的即刻：生姜iris**。
+- **Richard 林旅强**： 前 01 开源增长负责人，现为独立顾问，专注于开源策略、全球化运营、内容营销。帮助多家开源项目实现全球增长。
 
 ## 附注
 
 **Iris 推荐的几个好用工具：**
-
 1. AI 社媒监听: https://www.toolify.ai/social-listening
-2. Twitter DM: https://xautodm.com/
-3. 爆款内容分析: https://app.vizzylabs.ai/trending
-4. 天天上 PH，专看 featured 的产品 https://www.phdeck.com/
-5. Linkedin DM 工具: https://phantombuster.com/
+2. Twitter DM: https://xautodm.com/ 
+3. 爆款内容分析: https://app.vizzylabs.ai/trending 
+4. 天天上 PH，专看 featured 的产品 https://www.phdeck.com/ 
+5. Linkedin DM 工具: https://phantombuster.com/ 
 6. KOL 匹配工具
 	1. EEzycollab: https://www.eezycollab.com/ (帮忙匹配 & 发邮件）
 	2. Nanoinfluncer: https://www.nanoinfluencer.ai/ (KOL 匹配/竞品账号调研）
 	3. easykol: https://easykol.com/
 7. SEO 插件
-	1. AITDK: https://aitdk.com/
-	2. keywords everywhere: https://chromewebstore.google.com/detail/keywords-everywhere-keywo/hbapdpeemoojbophdfndmlgdhppljgmp
-8. SEO 的相关知识: https://bysocket.com/seo/
-9. 埋点工具: mixpanel & posthog
+	1. AITDK: https://aitdk.com/ 
+	2. keywords everywhere: https://chromewebstore.google.com/detail/keywords-everywhere-keywo/hbapdpeemoojbophdfndmlgdhppljgmp 
+8. SEO 的相关知识: https://bysocket.com/seo/ 
+9. 埋点工具: **mixpanel & posthog**
 
 ---
 
-_本文根据 2025 年 10 月 25 日手工川社区 AI 产品出海在线研讨会整理而成，已获得嘉宾授权。_
+*本文根据 2025 年 10 月 25 日手工川社区 AI 产品出海在线研讨会整理而成，已获得嘉宾授权。*
 
 ![](https://the-dummy.oss-cn-beijing.aliyuncs.com/undefined0ce3e7924117cc5c9841ddaffd4fdc6d.jpg)
