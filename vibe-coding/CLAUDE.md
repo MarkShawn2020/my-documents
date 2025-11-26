@@ -19,7 +19,6 @@ Documentation and research repository on Claude Code best practices and Vibe Cod
 - `/prompts/reference/` - System prompt extractions and KIRO spec framework
 - `/why-claude-code-is-good/` - Deep analysis of Claude Code architecture
 - `/speed-up-your-vibe-coding/` - Optimization techniques (code-inspector, session hooks, flow state)
-- `/share/` - Conference talks and presentations
 
 ## Key Documents
 
@@ -27,7 +26,6 @@ Documentation and research repository on Claude Code best practices and Vibe Cod
 |------|---------|
 | `claude-code-best-practice/official.md` | Anthropic's definitive Claude Code guide |
 | `prompts/reference/claide-code.md` | Complete system prompt extraction (9400+ tokens) |
-| `share/1127-蚂蚁/Vibe Coding Like Water.md` | "Like Water" philosophy |
 
 ## Key Patterns in This Repository
 
