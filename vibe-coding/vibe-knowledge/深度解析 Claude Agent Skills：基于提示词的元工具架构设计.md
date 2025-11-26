@@ -1,3 +1,12 @@
+---
+title: "深度解析 Claude Agent Skills：基于提示词的元工具架构设计"
+subtitle: "从第一性原理拆解 Claude 智能体技能系统的内部运作机制"
+date: 2025-11-26
+source: "https://leehanchung.github.io/blogs/2025/10/26/claude-skills-deep-dive/"
+author: "Hanchung Lee"
+translator: "手工川"
+---
+
 # 深度解析 Claude Agent Skills：基于提示词的元工具架构设计
 
 Anthropic 于今年推出的 Agent Skills 系统，代表了一种独特的 LLM 能力扩展范式。与传统的函数调用或代码执行不同，Skills 通过 **提示词扩展（Prompt Expansion）** 和 **上下文修改（Context Modification）** 来改变 Claude 处理后续请求的方式——而非编写可执行代码。
@@ -16,7 +25,7 @@ Anthropic 于今年推出的 Agent Skills 系统，代表了一种独特的 LLM 
 - **双重上下文修改机制**：Skills 通过注入指令提示修改 **对话上下文**，同时通过改变工具权限和模型选择修改 **执行上下文**
 - **渐进式信息披露（Progressive Disclosure）** 是核心设计原则：先展示最少必要信息让 Claude 做出选择，再在需要时加载完整指令
 
-```ad-tip
+```ad-tip 可解释性术语说明
 
 本文涉及的关键术语区分：
 - **Skill 工具（大写 S）**：位于 Claude tools 数组中的元工具，负责分发和管理所有技能
@@ -31,8 +40,7 @@ Claude 使用 Skills 来提升执行特定任务的能力。Skills 被定义为�
 
 这里需要特别强调的是：**在代码层面不存在算法化的技能选择或 AI 驱动的意图检测**。决策完全发生在 Claude 的推理过程中，基于系统提供的技能描述。
 
-![](http://cdn.cs-magic.cn/picgo/20251126235802494.png)
-
+![Claude Skill Flowchart](https://leehanchung.github.io/assets/img/2025-10-26/01-claude-skill-1.png)
 
 那么 Skills 到底是什么？
 
@@ -54,27 +62,27 @@ Skills **是**专门的提示词模板，用于向对话上下文注入领域特
 
 以下表格帮助理解传统工具与 Skills 的本质差异：
 
-|维度|传统工具|Skills|
-|---|---|---|
-|**执行模型**|同步、直接执行|提示词扩展|
-|**目的**|执行特定操作|引导复杂工作流|
-|**返回值**|即时结果|对话上下文 + 执行上下文变更|
-|**示例**|`Read`、`Write`、`Bash`|`internal-comms`、`skill-creator`|
-|**并发安全**|通常安全|非并发安全|
-|**类型**|多种|始终为 `"prompt"`|
+| 维度 | 传统工具 | Skills |
+| --- | --- | --- |
+| **执行模型** | 同步、直接执行 | 提示词扩展 |
+| **目的** | 执行特定操作 | 引导复杂工作流 |
+| **返回值** | 即时结果 | 对话上下文 + 执行上下文变更 |
+| **示例** | `Read`、`Write`、`Bash` | `internal-comms`、`skill-creator` |
+| **并发安全** | 通常安全 | 非并发安全 |
+| **类型** | 多种 | 始终为 `"prompt"` |
 
 ## 构建 Agent Skills
 
 现在让我们以 Anthropic 技能仓库中的 [`skill-creator` 技能](https://github.com/anthropics/skills/tree/main/skill-creator) 为案例，深入探讨如何构建 Skills。
 
-```ad-tip
+```ad-tip Skills 的本质公式
 
 **Skill = 提示词模板 + 对话上下文注入 + 执行上下文修改 + 可选的数据文件和脚本**
 ```
 
 每个 Skill 都定义在一个名为 `SKILL.md`（不区分大小写）的 Markdown 文件中，可以附带存储在 `/scripts`、`/references` 和 `/assets` 目录下的资源文件。这些资源可以是 Python 脚本、Shell 脚本、字体定义、模板等。
 
-![](http://cdn.cs-magic.cn/picgo/20251126235927015.png)
+![skill-creator package](https://leehanchung.github.io/assets/img/2025-10-26/03-claude-skill-package.png)
 
 Skills 从多个来源被发现和加载：Claude Code 会扫描用户设置（`~/.config/claude/skills/`）、项目设置（`.claude/skills/`）、插件提供的技能以及内置技能来构建可用技能列表。
 
@@ -119,7 +127,7 @@ license: Complete terms in LICENSE.txt
 ---
 ```
 
-![](http://cdn.cs-magic.cn/picgo/20251126235911199.png)
+![Claude Skills Frontmatter](https://leehanchung.github.io/assets/img/2025-10-26/04-claude-skill-frontmatter.png)
 
 **`name`（必需）**：技能名称，用作 Skill 工具中的 `command` 参数。
 
@@ -234,7 +242,7 @@ my-skill/
 
 用于需要多个命令或确定性逻辑的复杂操作。将计算任务卸载到 `scripts/` 目录中的 Python 或 Bash 脚本。
 
-![Claude Skill Script Automation](https://claude.ai/assets/img/2025-10-26/09-script-automation.png)
+![Claude Skill Script Automation](https://leehanchung.github.io/assets/img/2025-10-26/09-script-automation.png)
 
 ```yaml
 allowed-tools: "Bash(python {baseDir}/scripts/*:*), Read, Write"
@@ -244,19 +252,19 @@ allowed-tools: "Bash(python {baseDir}/scripts/*:*), Read, Write"
 
 最简单的模式——读取输入、按指令转换、写入输出。适用于格式转换、数据清理或报告生成。
 
-![Claude Skill Read Process Write](https://claude.ai/assets/img/2025-10-26/10-read-process-write.png)
+![Claude Skill Read Process Write](https://leehanchung.github.io/assets/img/2025-10-26/10-read-process-write.png)
 
 **模式 3：搜索-分析-报告**
 
 用于代码库分析和模式检测。使用 Grep 搜索模式，读取匹配文件获取上下文，分析发现，生成结构化报告。
 
-![Claude Skill Search Analyze Report](https://claude.ai/assets/img/2025-10-26/06-search-analyze-report.png)
+![Claude Skill Search Analyze Report](https://leehanchung.github.io/assets/img/2025-10-26/06-search-analyze-report.png)
 
 **模式 4：命令链执行**
 
 用于有依赖关系的多步骤操作。执行一系列命令，每个步骤都依赖前一步的成功。常见于类 CI/CD 工作流。
 
-![Claude Skill Command Chain Execution](https://claude.ai/assets/img/2025-10-26/05-command-chain-execution.png)
+![Claude Skill Command Chain Execution](https://leehanchung.github.io/assets/img/2025-10-26/05-command-chain-execution.png)
 
 ### 高级模式
 
@@ -272,7 +280,7 @@ allowed-tools: "Bash(python {baseDir}/scripts/*:*), Read, Write"
 
 了解了概览和构建过程后，现在来深入研究 Skills 在底层是如何工作的。Skills 系统通过元工具架构运作，其中名为 `Skill` 的工具作为所有单独技能的容器和调度器。这一设计从根本上将技能与传统工具在实现和目的上区分开来。
 
-```ad-tip
+```ad-tip Skill 工具的本质
 
 Skill 工具是管理所有技能的元工具。它不直接执行操作，而是注入指令并修改执行环境。
 ```
@@ -281,16 +289,16 @@ Skill 工具是管理所有技能的元工具。它不直接执行操作，而�
 
 传统工具如 `Read`、`Bash` 或 `Write` 执行离散操作并返回即时结果。Skills 的运作方式根本不同——它们不是直接执行操作，而是将全面的指令集注入对话历史，并动态修改 Claude 的执行环境。
 
-![Claude Skill Execution Flow](https://claude.ai/assets/img/2025-10-26/08-claude-skill-execution-flow.png)
+![Claude Skill Execution Flow](https://leehanchung.github.io/assets/img/2025-10-26/08-claude-skill-execution-flow.png)
 
-|特性|普通工具|Skill 工具|
-|---|---|---|
-|**本质**|直接动作执行器|提示词注入 + 上下文修改器|
-|**消息角色**|assistant → tool_use<br>user → tool_result|assistant → tool_use Skill<br>user → tool_result<br>user → skill prompt ← 注入！|
-|**复杂度**|简单（3-4 条消息）|复杂（5-10+ 条消息）|
-|**上下文**|静态|动态（每轮修改）|
-|**持久性**|仅工具交互|工具交互 + 技能提示词|
-|**Token 开销**|最小（约 100 tokens）|显著（每轮 1,500+ tokens）|
+| 特性 | 普通工具 | Skill 工具 |
+| --- | --- | --- |
+| **本质** | 直接动作执行器 | 提示词注入 + 上下文修改器 |
+| **消息角色** | assistant → tool_use<br>user → tool_result | assistant → tool_use Skill<br>user → tool_result<br>user → skill prompt ← 注入！ |
+| **复杂度** | 简单（3-4 条消息） | 复杂（5-10+ 条消息） |
+| **上下文** | 静态 | 动态（每轮修改） |
+| **持久性** | 仅工具交互 | 工具交互 + 技能提示词 |
+| **Token 开销** | 最小（约 100 tokens） | 显著（每轮 1,500+ tokens） |
 
 复杂度是显著的。普通工具生成简单的消息交换——一个 assistant 工具调用后跟一个 user 结果。Skills 注入多条消息，在动态修改的上下文中运作，并承担显著的 token 开销来提供引导 Claude 行为的专门指令。
 
@@ -419,14 +427,14 @@ User arguments: report.pdf
 
 典型的技能提示词运行 500 到 5,000 词，提供全面的指导来转变 Claude 的行为。通过 `isMeta: true`，整个提示词被发送到 API，但从不杂乱用户的对话记录。
 
-|方面|元数据消息|技能提示词消息|
-|---|---|---|
-|**受众**|人类用户|Claude（AI）|
-|**目的**|状态/透明度|指令/引导|
-|**长度**|约 50-200 字符|约 500-5,000 词|
-|**格式**|结构化 XML|自然语言 Markdown|
-|**可见性**|应该可见|应该隐藏|
-|**内容**|"正在发生什么？"|"如何做？"|
+| 方面 | 元数据消息 | 技能提示词消息 |
+| --- | --- | --- |
+| **受众** | 人类用户 | Claude（AI） |
+| **目的** | 状态/透明度 | 指令/引导 |
+| **长度** | 约 50-200 字符 | 约 500-5,000 词 |
+| **格式** | 结构化 XML | 自然语言 Markdown |
+| **可见性** | 应该可见 | 应该隐藏 |
+| **内容** | "正在发生什么？" | "如何做？" |
 
 <!-- 评注建议：双消息架构是一个值得深入评论的工程设计——它优雅地解决了"透明度"与"简洁性"的矛盾，体现了对用户体验的深思熟虑 -->
 
@@ -434,7 +442,7 @@ User arguments: report.pdf
 
 现在让我们通过一个假设的 `pdf` 技能作为案例，逐步分析当用户说"从 report.pdf 提取文本"时发生的完整执行流程。
 
-![Claude Skill Execution Flow](https://claude.ai/assets/img/2025-10-26/07-claude-skill-sequence-diagram.png)
+![Claude Skill Execution Flow](https://leehanchung.github.io/assets/img/2025-10-26/07-claude-skill-sequence-diagram.png)
 
 ### 阶段 1：发现与加载（启动时）
 
@@ -598,7 +606,7 @@ async *call({ command }, context) {
 }
 ```
 
-![Turn 1 Completion](https://claude.ai/assets/img/2025-10-26/11-turn-1-completion.png)
+![Turn 1 Completion](https://leehanchung.github.io/assets/img/2025-10-26/11-turn-1-completion.png)
 
 执行上下文修改器被应用，预先批准 `Bash(pdftotext:*)`、`Read` 和 `Write` 用于后续工具调用。请求发送到 Anthropic API。这完成了技能执行。如果是普通工具，我们就完成了。然而，技能不同——agent skill 只是注入了对话上下文和执行上下文。这意味着我们仍然需要用所有这些注入的上下文调用 Claude agent 来完成用户的请求！
 
@@ -654,7 +662,7 @@ Claude Code 中的 Skills 是 **基于提示词的对话和执行上下文修改
 
 ### 设计的优雅之处
 
-通过将专门知识视为 _修改对话上下文的提示词_ 和 _修改执行上下文的权限_，而非 _执行的代码_，Claude Code 实现了传统函数调用难以达到的灵活性、安全性和可组合性。
+通过将专门知识视为 *修改对话上下文的提示词* 和 *修改执行上下文的权限*，而非 *执行的代码*，Claude Code 实现了传统函数调用难以达到的灵活性、安全性和可组合性。
 
 <!-- 评注建议：这里是全文的黄金评注位置。可以从三个维度展开：1）这种架构对 AI 安全的深远意义——通过提示词而非代码扩展能力，本质上限制了潜在的攻击面；2）对开发者生态的影响——降低了创建"AI 原生插件"的门槛；3）对 LLM 应用架构设计的启示——"提示词即接口"的范式值得更广泛地探索 -->
 
