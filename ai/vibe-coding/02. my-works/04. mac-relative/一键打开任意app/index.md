@@ -1,93 +1,142 @@
-最近在创作时，经常有把两张图片放在一起对比的需求，调研了一圈，比如 native 的解决方案是使用无边记（英文名：Freeform）这个 app，它是一个平凡的画布软件，可以放任意多张图片，任意摆放，在一键或者拖选复制，复制后会默认有个空白的背景色，方便我们在其他平台粘贴。
+---
+title: Alfred Workflow：把重复操作变成一键自动化
+description: Mac 提效神器，任何重复操作都能一键触发
+---
 
-比如这就是我们在调研产品 Monica、Sider 时使用无边记的效果：
+Mac 上总有些操作让你觉得"要是能一键搞定就好了"——比如每次想对比两张图，都要先打开某个 app、再新建画布、再开始操作。
+
+今天介绍一个我常用的提效神器：**Alfred Workflow**。它本质上是一个自动化引擎，能把任何"重复操作序列"变成"一键触发"。
+
+### Alfred Workflow 能做什么
+
+简单说，它是 **触发器 + 脚本 + 串联** 的组合：
+
+- **触发方式**：快捷键、关键词、文件拖拽、剪贴板内容...
+- **执行能力**：AppleScript、Shell、Python、调用 API...
+- **串联能力**：多个动作可以像流水线一样串起来
+
+今天用一个实战案例来演示：**一键新建无边记画布**。
+
+### 背景：为什么是无边记
+
+最近创作时经常需要对比图片，调研了一圈发现 macOS 自带的「无边记」（Freeform）挺好用——无限画布，随意摆放，选中后复制自带白底，方便粘贴到其他地方。
+
+比如这是我对比 Monica 和 Sider 产品时的效果：
 
 ![](http://cdn.cs-magic.cn/picgo/20251128160542163.png)
 
-无边记确实好用，也提供了`cmd+N`的快捷键，但只支持在无边记处于前台时才可以调用，而我希望它能在任意时刻通过快捷键打开。
+无边记自带 `Cmd+N` 新建窗口，但只能在 app 前台时用。我想要的是：**在任意场景下，按一个快捷键就能直接弹出新画布**。
 
-### 跟着 AI 鼓捣
+这正是 Alfred Workflow 擅长的事。
 
-问了一下 claude，说可以使用 alfred 的工作流功能。
+### 实战：5 分钟搭建 Workflow
+
+问了一下 Claude，确认 Alfred Workflow 可以实现：
 
 ![](http://cdn.cs-magic.cn/picgo/20251128160912698.png)
 
-alfred 我是用的，所以我确实希望尝试一下，否则的话我可能得考虑自己开发一个更方便的无边记了：）
+跟着搞起来。
 
-![](http://cdn.cs-magic.cn/picgo/20251128160924789.png)
+**第一步：创建 Workflow**
 
-接下来我就跟着 claude 的指引，尝试在我们的 alfred 里搭建这样的 workflow。
-
-首先先打开 alfred:
+打开 Alfred Preferences，点击 Workflows，创建一个新的：
 
 ![](http://cdn.cs-magic.cn/picgo/20251128160958485.png)
 
-接着点击 create a new workflow，会提示我们输入一些信息，我先试着填了一些我暂时能填的：
+填写基本信息：
 
 ![](http://cdn.cs-magic.cn/picgo/20251128161148240.png)
 
-接着跟着教程 右键-triggers-hotkey：
+**第二步：设置触发器**
+
+右键 → Triggers → Hotkey：
 
 ![](http://cdn.cs-magic.cn/picgo/20251128161239197.png)
 
-然后就让我们填要绑定什么键。
-
-由于无边记的英文是 Freeform，首字母是 F，但 F 一般和 Find 绑定，而且 Find 是一个超高频操作，所以不太合适。
-
-考虑到它是创建新的窗口，又是画布形式，我就给了 `cmd+shift+alt+N`：
+我选了 `Cmd+Shift+Option+N`（N for New canvas）：
 
 ![](http://cdn.cs-magic.cn/picgo/20251128161554133.png)
 
-接着要右键创建一个新的脚本：
+**第三步：添加执行脚本**
+
+右键 → Actions → Run Script：
 
 ![](http://cdn.cs-magic.cn/picgo/20251128161630586.png)
 
-再粘贴脚本：
+粘贴这段 AppleScript：
 
 ```applescript
 tell application "Freeform"
     activate
-    delay 0.1
+    delay 0.1  -- 等待 app 完全激活
     tell application "System Events"
         keystroke "n" using {command down}
     end tell
 end tell
 ```
 
-记得勾选`/usr/bin/osascript (AppleScript)`，这个是 mac 官方的脚本器，会比其他的优先级更高一些：
+语言选择 `/usr/bin/osascript (AppleScript)`：
 
 ![](http://cdn.cs-magic.cn/picgo/20251128161740333.png)
 
-最后再连接一下两者，就成功了：
+**第四步：连接触发器和脚本**
+
+把两个节点连起来，完成：
 
 ![](http://cdn.cs-magic.cn/picgo/20251128161855553.png)
 
-### 看看效果。
+### 效果
 
-执行快捷键，显示：
+按下快捷键，首次会请求权限：
 
 ![](http://cdn.cs-magic.cn/picgo/20251128161944658.png)
 
-确认后，后续就好了。
+确认后，以后随时随地一键新建画布。
 
-### 复盘
+### 举一反三
 
-这次 claude 给的指引里面，有一定的幻觉。
+这个模式可以套用到很多场景：
 
-比如它给的原程序是：
+```applescript
+-- 通用模板
+tell application "你的App"
+    activate
+    delay 0.1
+    tell application "System Events"
+        keystroke "快捷键" using {command down}
+    end tell
+end tell
+```
+
+比如：
+- 一键新建 Notion 页面
+- 一键打开 VSCode 最近项目
+- 一键启动某个终端脚本
+
+甚至不限于快捷键——你可以让 Workflow 执行任意 Shell 命令、调用 API、操作文件...
+
+### AI 协作复盘
+
+这次 Claude 给了正确的方向，但脚本细节有幻觉。
+
+它原本给的是：
 
 ```applescript
 keystroke "n" using {command down, shift down}
 ```
 
-也就是说 alfred 打开无边记后，调用 `cmd+shift+N`，但事实上，无边记默认打开新窗口的快捷键是 `cmd+N`，而 `cmd+shift+N`打开的是主窗口。
+但实际上无边记的"新建窗口"是 `Cmd+N`，而 `Cmd+Shift+N` 是"显示主窗口"：
 
 ![](http://cdn.cs-magic.cn/picgo/20251128162404699.png)
 
 ![](http://cdn.cs-magic.cn/picgo/20251128162510357.png)
 
-所以我们要简单修改一下。
+所以 AI 给的方案要验证，尤其是涉及具体 app 的快捷键这种细节。
 
 ---
 
-以上就是本期我们研究的一点小小心得啦，如果你想持续学习此类小技巧，欢迎关注我们，感谢~
+Alfred Workflow 的玩法远不止这些，后续可以再聊聊更高级的用法。
+
+> 注：Alfred 的 Workflow 功能需要 Powerpack（付费买断）。我把本文的 Workflow 打包好了，公众号回复「Alfred」即可获取，省去配置时间。
+
+如果你有什么重复操作想自动化，欢迎评论区交流~
