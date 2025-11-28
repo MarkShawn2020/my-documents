@@ -4,3 +4,6 @@
 [submodule "DeepLearning.ai-Courses-ClaudeCode"]
 	path = DeepLearning.ai-Courses-ClaudeCode
 	url = git@github.com:markshawn2020/DeepLearning.ai-Courses-ClaudeCode.git
+[submodule "ai/vibe-coding/05. vibe-coding-articles/vibe-coding-best-practice/awesome-vibe-coding-guide"]
+	path = ai/vibe-coding/05. vibe-coding-articles/vibe-coding-best-practice/awesome-vibe-coding-guide
+	url = git@github.com:analyticalrohit/awesome-vibe-coding-guide.git
