@@ -19,15 +19,13 @@ categories:
 draft: false
 toc: true
 ---
-
->这是一份用于测试 Markdown 渲染引擎的综合性文档，包含了大部分主流的 Markdown 语法特性。
-
+ >这是一份用于测试 Markdown 渲染引擎的综合性文档，包含了大部分主流的 Markdown 语法特性。
 ## 6. 代码块
-
 ### JavaScript 代码
+
 ```javascript
 function fibonacci(n) {
-    if (n <= 1) return n;
+    if (n <= 1) return n; 
     return fibonacci(n - 1) + fibonacci(n -  2); // 测试单行，很长很长很长很长很长很长很长很长很长很长
 }
 
@@ -35,6 +33,7 @@ console.log(fibonacci(10)); // 输出: 55
 ```
 
 ### Python 代码
+
 ```python
 def quick_sort(arr):
     if len(arr) <= 1:
@@ -47,11 +46,11 @@ def quick_sort(arr):
 ```
 
 ### 无语法高亮的代码块
+
 ```
 这是一个无语法高亮的代码块
 可以用来显示纯文本或配置文件
 ```
-
 
 ## 5. 表格
 
@@ -65,6 +64,7 @@ def quick_sort(arr):
 
 
 > no title
+
 ```ad-tip
 line 1
 line 2
