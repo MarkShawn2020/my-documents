@@ -1,0 +1,91 @@
+---
+title: Anthropic API Messages
+slug: anthropic-api-messages-1765483775838
+source: https://docs.zenmux.ai/api/anthropic/create-messages.html
+datetime: 2025-12-11T20:09:35.838Z
+---
+
+# Anthropic API: Messages [​](#anthropic-api-messages)
+
+ZenMux supports the Anthropic API. See the API call examples below for usage. For detailed request parameters and response schemas, refer to the [Anthropic documentation](https://docs.anthropic.com/en/api/messages).
+
+## Supported Features [​](#supported-features)
+
+All Anthropic API features are supported except for the following:
+
+1.  The header parameter anthropic-version only supports "2023-06-01".
+2.  The header parameter anthropic-beta does not support "code-execution-2025-08-25", i.e., the code\_execution tool is unavailable.
+
+## API Call Examples [​](#api-call-examples)
+
+When using cURL directly, you must specify anthropic-version: 2023-06-01 (this is the only supported version).
+
+PythonTypeScriptcURL
+
+python
+
+```
+import anthropic
+
+## 1. Initialize the Anthropic client
+client = anthropic.Anthropic(
+    # Replace with the API key from your ZenMux console
+    api_key="<YOUR ZENMUX_API_KEY>", 
+    # 3. Point the base URL to the ZenMux endpoint
+    base_url="https://zenmux.ai/api/anthropic"
+)
+message = client.messages.create(
+    model="anthropic/claude-sonnet-4.5",
+    max_tokens=1024,
+    messages=[
+        {"role": "user", "content": "Hello, Claude"}
+    ]
+)
+print(message.content)
+```
+
+ts
+
+```
+import Anthropic from '@anthropic-ai/sdk';
+
+// 1. Initialize the Anthropic client
+const anthropic = new Anthropic({
+  // 2. Replace with the API key from your ZenMux console
+  apiKey: '<YOUR ZENMUX_API_KEY>', 
+  // 3. Point the base URL to the ZenMux endpoint
+  baseURL: "https://zenmux.ai/api/anthropic", 
+});
+
+async function main () {
+    const msg = await anthropic.messages.create({
+        model: "anthropic/claude-sonnet-4.5",
+        max_tokens: 1024,
+        messages: [{ role: "user", content: "Hello, Claude" }],
+    });
+    console.log(msg);
+}
+
+main();
+```
+
+bash
+
+```
+curl https://zenmux.ai/api/anthropic/v1/messages \
+     --header "x-api-key: $ZENMUX_API_KEY" \
+     --header "anthropic-version: 2023-06-01" \
+     --header "content-type: application/json" \
+     --data \
+'{
+    "model": "anthropic/claude-sonnet-4.5",
+    "max_tokens": 1024,
+    "messages": [
+        {"role": "user", "content": "Hello, world"}
+    ]
+}'
+```
+
+## Claude Code Usage [​](#claude-code-usage)
+
+See [Claude Code Integration](/best-practices/claude-code.html)
