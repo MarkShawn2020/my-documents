@@ -1,8 +1,8 @@
 ---
 title: System Tray
-slug: system-tray-1765850387012
+slug: system-tray-1766149360960
 source: https://v2.tauri.app/learn/system-tray/
-datetime: 2025-12-16T01:59:47.011Z
+datetime: 2025-12-19T13:02:40.959Z
 ---
 
 # System Tray
@@ -31,8 +31,8 @@ The tray API is available in both JavaScript and Rust.
 
 [Section titled “Create a Tray Icon”](#create-a-tray-icon)
 
--   [JavaScript](#tab-panel-883)
--   [Rust](#tab-panel-884)
+-   [JavaScript](#tab-panel-918)
+-   [Rust](#tab-panel-919)
 
 Use the [`TrayIcon.new`](/reference/javascript/api/namespacetray/#new) static function to create a new tray icon:
 
@@ -57,8 +57,8 @@ See [`TrayIconBuilder`](https://docs.rs/tauri/2.0.0/tauri/tray/struct.TrayIconBu
 
 When creating the tray you can use the application icon as the tray icon:
 
--   [JavaScript](#tab-panel-885)
--   [Rust](#tab-panel-886)
+-   [JavaScript](#tab-panel-920)
+-   [Rust](#tab-panel-921)
 
 ```
 import { TrayIcon } from '@tauri-apps/api/tray';import { defaultWindowIcon } from '@tauri-apps/api/app';
@@ -82,8 +82,8 @@ By default the menu is displayed on both left and right clicks.
 
 To prevent the menu from popping up on left click, call the [`menu_on_left_click(false)`](https://docs.rs/tauri/2.0.0/tauri/tray/struct.TrayIconBuilder.html#method.menu_on_left_click) Rust function or set the [`menuOnLeftClick`](/reference/javascript/api/namespacetray/#properties-1) JavaScript option to `false`.
 
--   [JavaScript](#tab-panel-887)
--   [Rust](#tab-panel-888)
+-   [JavaScript](#tab-panel-922)
+-   [Rust](#tab-panel-923)
 
 ```
 import { TrayIcon } from '@tauri-apps/api/tray';import { Menu } from '@tauri-apps/api/menu';
@@ -102,8 +102,8 @@ let tray = TrayIconBuilder::new()  .menu(&menu)  .menu_on_left_click(true)  .bui
 
 [Section titled “Listen to Menu Events”](#listen-to-menu-events)
 
--   [JavaScript](#tab-panel-889)
--   [Rust](#tab-panel-890)
+-   [JavaScript](#tab-panel-924)
+-   [Rust](#tab-panel-925)
 
 On JavaScript you can attach a menu click event listener directly to the menu item:
 
@@ -146,8 +146,8 @@ Note
 
 Linux: Unsupported. The event is not emitted even though the icon is shown and will still show a context menu on right click.
 
--   [JavaScript](#tab-panel-891)
--   [Rust](#tab-panel-892)
+-   [JavaScript](#tab-panel-926)
+-   [Rust](#tab-panel-927)
 
 ```
 import { TrayIcon } from '@tauri-apps/api/tray';

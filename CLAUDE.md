@@ -16,12 +16,22 @@ Personal knowledge base and documentation repository. Content includes AI method
 
 | Directory | Purpose |
 |-----------|---------|
+| `inbox/` | 灵感捕捉区 - 快速记录想法和草稿 |
+| `posts/standalone/` | 单篇博客文章 (按年份子目录) |
+| `posts/series/` | 系列文章 (物理聚合) |
+| `posts/publish/` | 已发布内容的分发版本 |
 | `ai/vibe-coding/` | Core Vibe Coding knowledge base and methodology |
 | `ai/prompts/场景/` | AI prompt templates organized by scenario |
-| `blog/` | Blog posts organized by year (2020-2025) |
 | `docs/` | Tutorials and educational content |
-| `TODO/` | Task backlog and drafts |
+| `templates/` | Obsidian模板 (idea, post, series) |
+| `reference/` | 外部参考资料 |
 | `__archive__/` | Superseded content (don't delete, archive) |
+
+### Content Lifecycle (Frontmatter status)
+`idea` → `draft` → `scheduled` → `published` → `archived`
+
+### Key Files
+- `Dashboard.md` - 内容管理中心 (Dataview仪表板)
 
 ## Commands
 

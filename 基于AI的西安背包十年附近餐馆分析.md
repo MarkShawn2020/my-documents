@@ -1,10 +1,28 @@
+最近几天在西安的背包十年青年客栈，每天都不知道吃什么，好在前台甩给了我一份pdf文档，里面记载着附近很多被验证过的美食店。
+
+![](http://cdn.cs-magic.cn/picgo/20251219233627295.png?imageslim%7CimageMogr2/format/jpeg/size-limit/1000k!)
+
+
+但坏也坏在这里，我看着这pdf里这么多的店名，不禁眼花缭乱，实在是一头雾水啊，总不能一个个去搜吧！
+
+![](http://cdn.cs-magic.cn/picgo/20251219233720152.png?imageslim%7CimageMogr2/format/jpeg/size-limit/1000k!)
+
+这时候突然灵机一动，要不，我 vibe 个程序，它自动解析pdf里的店名，然后基于高德批量地获取精确的坐标，然后在地图上显示出来？
+
+说干就干，that's it！
+
+---
+
+在此之前，我们需要先在[高德开放平台](https://console.amap.com/dev/key/app) 上新建一个应用：
 
 ![](http://cdn.cs-magic.cn/picgo/20251217150503586.png?imageslim%7CimageMogr2/format/jpeg/size-limit/1000k!)
+
+并且生成key（注意前端和后端的key要分开）：
 
 ![](http://cdn.cs-magic.cn/picgo/20251217150701716.png?imageslim%7CimageMogr2/format/jpeg/size-limit/1000k!)
 
 
-拿到高德 key之后在claude app里配置高德mcp：
+拿到高德 key之后在，参考 [概述-MCP Server | 高德地图API](https://lbs.amap.com/api/mcp-server/summary) 在 claude app 里配置高德mcp：
 
 ![](http://cdn.cs-magic.cn/picgo/20251217150806103.png?imageslim%7CimageMogr2/format/jpeg/size-limit/1000k!)
 
@@ -12,16 +30,19 @@
 
 ![](http://cdn.cs-magic.cn/picgo/20251217151628570.png?imageslim%7CimageMogr2/format/jpeg/size-limit/1000k!)
 
+接着交给claude artifact（我看artifact上有这么多小程序、轻页面，就想着先拿它试试手，天真地以为可以满足我的需求）：
 
 ![](http://cdn.cs-magic.cn/picgo/20251217150929982.png?imageslim%7CimageMogr2/format/jpeg/size-limit/1000k!)
 
+点击（始终）允许claude调用mcp：
+
 ![](http://cdn.cs-magic.cn/picgo/20251217151302425.png?imageslim%7CimageMogr2/format/jpeg/size-limit/1000k!)
 
-报错了，platform不匹配：
+但报错了！高德提示 platform不匹配：
 
 ![](http://cdn.cs-magic.cn/picgo/20251217151348483.png?imageslim%7CimageMogr2/format/jpeg/size-limit/1000k!)
 
-但它还是做了个app：
+被高德无情拒绝了之后（虽然是我的锅），claude还是不依不饶默默地做了个app，像一个无比可靠的老实人：
 
 ![](http://cdn.cs-magic.cn/picgo/20251217151725358.png?imageslim%7CimageMogr2/format/jpeg/size-limit/1000k!)
 
@@ -37,16 +58,21 @@
 
 ![](http://cdn.cs-magic.cn/picgo/20251217152023041.png?imageslim%7CimageMogr2/format/jpeg/size-limit/1000k!)
 
+**至此，艺术已成！**
 
-应该换用web服务的key：
+---
+
+但，我们还是想玩把大的，搏一搏，单车变摩托！
+
+赶紧换上web服务的key：
 
 ![](http://cdn.cs-magic.cn/picgo/20251217151457305.png?imageslim%7CimageMogr2/format/jpeg/size-limit/1000k!)
 
-配置好后，让AI重新测试，确实可以了：
+配置好后，让claude重新测试，确实可以了：
 
 ![](http://cdn.cs-magic.cn/picgo/20251217152128412.png?imageslim%7CimageMogr2/format/jpeg/size-limit/1000k!)
 
-你看这个ai，写的高德搜索接口，还知道设置位置和距离的组合搜索：
+你看这个claude，写的高德搜索接口，还知道设置位置和距离的组合搜索：
 
 ![](http://cdn.cs-magic.cn/picgo/3c8d6a75112a0cb8ce5e38759ad56aca.png?imageslim%7CimageMogr2/format/jpeg/size-limit/1000k!)
 
@@ -74,9 +100,30 @@ claude里输出的是：`108.947547, 34.261267`，是一样的，但地图（基
 
 而且大部分情况下，它都需要重写整个tsx文件，效率有点慢。
 
-但lovable又不支持高德mcp，一人血书跪求：
+打算换一个家伙！
+
+---
+
+上Lovable！
+
+![欢迎 Lovable，generated via nano-banana-pro](http://cdn.cs-magic.cn/picgo/2f5813b6e7618940b18c5457770637771c820b8d.jpeg?imageslim%7CimageMogr2/format/jpeg/size-limit/1000k!)
+
+
+结果tmd lovable不支持高德mcp，一人血书跪求……
 
 ![](http://cdn.cs-magic.cn/picgo/20251217155630530.png?imageslim%7CimageMogr2/format/jpeg/size-limit/1000k!)
+
+
+---
+
+再换！
+
+上 cc！
+
+![欢迎 Claude Code，generated via nano-banana-pro](http://cdn.cs-magic.cn/picgo/%E6%AC%A2%E8%BF%8E%20claude%20code%20-%20nano-banana-pro.jpeg?imageslim%7CimageMogr2/format/jpeg/size-limit/1000k!)
+
+
+
 
 考虑到这个项目对高德mcp还是有一定需求，所以我切回了cc尝试继续调试（先把artifact里的tsx文件下载下来，再初始化初始化）：
 
@@ -105,7 +152,7 @@ claude里输出的是：`108.947547, 34.261267`，是一样的，但地图（基
 ![AI手搓的力导向布局算法](http://cdn.cs-magic.cn/picgo/b5a6ce49b1d983687b8523cdf4084537.png?imageslim%7CimageMogr2/format/jpeg/size-limit/1000k!)
 
 
-再接着我们进一步基于高德，实现了搜索匹配，AI还手搓了一个Haversine距离算法以解决高德搜索结果里不包含距离的问题：
+再接着我们进一步基于高德，实现了搜索匹配，cc还手搓了一个Haversine距离算法以解决高德搜索结果里不包含距离的问题：
 
 ![](http://cdn.cs-magic.cn/picgo/16e415405c9c63876a246f6275bf5419.png?imageslim%7CimageMogr2/format/jpeg/size-limit/1000k!)
 
@@ -251,15 +298,37 @@ claude里输出的是：`108.947547, 34.261267`，是一样的，但地图（基
 
 尽管逗了一大圈，但好在还是实现了自己想要的效果。
 
-它支持创建多个项目：
+它支持创建多个项目！
 
 ![](http://cdn.cs-magic.cn/picgo/20251217232828256.png?imageslim%7CimageMogr2/format/jpeg/size-limit/1000k!)
 
-每个项目支持独立的数据管理：
+每个项目支持独立的数据管理！
 
 ![](http://cdn.cs-magic.cn/picgo/20251217232905994.png?imageslim%7CimageMogr2/format/jpeg/size-limit/1000k!)
 
-支持手动输入与文件导入两种录入模式：
+支持手动输入与文件导入两种录入模式！
 
 ![](http://cdn.cs-magic.cn/picgo/20251217232924525.png?imageslim%7CimageMogr2/format/jpeg/size-limit/1000k!)
+
+
+……（以下省略十万字）
+
+---
+
+当我兴奋地拿着这个（充满商业潜力的：）美食可视化项目和清迈的朋友交流时：
+
+
+![](http://cdn.cs-magic.cn/picgo/20251219231505731.png?imageslim%7CimageMogr2/format/jpeg/size-limit/1000k!)
+
+好家伙！
+
+![](http://cdn.cs-magic.cn/picgo/20251219231553537.png?imageslim%7CimageMogr2/format/jpeg/size-limit/1000k!)
+
+
+反向产品设计！
+
+你觉得这个idea如何！
+
+你一票我一票，我们下个版本肝出来！
+
 
