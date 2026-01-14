@@ -1,1 +1,1 @@
-docs/sub-agents.md
+3-Resources/docs/sub-agents.md
